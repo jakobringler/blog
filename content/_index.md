@@ -10,6 +10,8 @@ Host your second brain and [digital garden](https://jzhao.xyz/posts/networked-th
 4. Built-in [[notes/CJK + Latex Support (测试) | CJK + Latex Support]]
 5. Support for both Markdown Links and Wikilinks
 
+[[Setting up Anaconda & Houdini for 3D Deep Learning on Linux]]
+
 ## Get Started
 > 📚 [Setup your own digital garden using Quartz](notes/setup.md)
 
