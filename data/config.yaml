@@ -6,7 +6,7 @@ enableLatex: true
 enableSPA: true
 enableContextualBacklinks: true
 description:
-  digital garden about houdini, visual effects & 3d deep learning
+  collection of notes about houdini, visual effects & 3d deep learning
 page_title:
   "fx garden"
 links:
