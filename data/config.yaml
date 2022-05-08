@@ -8,7 +8,7 @@ enableContextualBacklinks: true
 description:
   collection of notes about houdini, visual effects & 3d deep learning
 page_title:
-  "fx garden"
+  "fx notes"
 links:
   - link_name: Twitter
     link: https://twitter.com/jakobrin

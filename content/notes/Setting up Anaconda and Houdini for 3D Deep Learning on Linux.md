@@ -13,6 +13,8 @@ Tags: [[Linux]] [[Houdini]] [[PyTorch]] [[Machine Learning]] [[Anaconda]] [[PyTo
 
 # Setting up Anaconda & Houdini for 3D Deep Learning on Linux
 
+---
+
 To get started install [Anaconda](https://anaconda.org/) and run the following commands in your terminal:
 
 ( **hou** is the name of the new enviroment and python **3.7.4** is required because this is the version used in Houdini )
