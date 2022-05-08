@@ -1,10 +1,13 @@
 ---
 title: "Setting up Anaconda and Houdini for 3D Deep Learning on Linux"
+tags:
+- linux
+- houdini
+- anaconda
+- machinelearning
+- pytorch
+- pytorch3d
 ---
-
-2022-03-10 - 23:47
-
-Status: #idea
 
 Tags: [[Linux]] [[Houdini]] [[PyTorch]] [[Machine Learning]] [[Anaconda]] [[PyTorch3D]]
 
