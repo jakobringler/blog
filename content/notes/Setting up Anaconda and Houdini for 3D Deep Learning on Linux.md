@@ -10,8 +10,6 @@ tags:
 enableToc: false
 ---
 
-Related: [[Linux]] [[notes/Houdini | Houdini]] [[PyTorch]] [[Machine Learning]] [[Anaconda]] [[PyTorch3D]]
-
 # Setting up Anaconda & Houdini for 3D Deep Learning on Linux
 
 To get started install [Anaconda](https://anaconda.org/) and run the following commands in your terminal:
@@ -71,3 +69,7 @@ import torch
 ```
 
 If it doesn’t give you any errors you should be good to go.
+
+
+
+Related: [[Linux]] [[notes/Houdini | Houdini]] [[PyTorch]] [[Machine Learning]] [[Anaconda]] [[PyTorch3D]]
