@@ -1,4 +1,4 @@
----
+setting up Anaconda & Houdini for 3D Deep Learning on Linuxsetting up Anaconda & Houdini for 3D Deep Learning on Linux---
 title: "Editing Content in Quartz"
 tags:
 - setup

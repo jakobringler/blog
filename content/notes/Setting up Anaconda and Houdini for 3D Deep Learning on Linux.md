@@ -1,5 +1,5 @@
 ---
-title: "setting up Anaconda & Houdini for 3D Deep Learning on Linux"
+title: "Setting up Anaconda and Houdini for 3D Deep Learning on Linux"
 ---
 
 2022-03-10 - 23:47
