@@ -10,7 +10,7 @@ tags:
 enableToc: false
 ---
 
-Related: [[Linux]] [[Houdini]] [[PyTorch]] [[Machine Learning]] [[Anaconda]] [[PyTorch3D]]
+Related: [[Linux]] [[notes/Houdini | Houdini]] [[PyTorch]] [[Machine Learning]] [[Anaconda]] [[PyTorch3D]]
 
 # Setting up Anaconda & Houdini for 3D Deep Learning on Linux
 
