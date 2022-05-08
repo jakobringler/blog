@@ -1,4 +1,4 @@
-baseURL = "https://blog.jakobringler.com/"
+baseURL = "https://fxnotes.xyz/"
 languageCode = "en-us"
 googleAnalytics = "G-XYFD95KB4J"
 pygmentsUseClasses = true
