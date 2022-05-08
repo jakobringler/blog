@@ -1,4 +1,4 @@
-name: Jacky Zhao
+name: Jakob Ringler
 enableToc: true
 openToc: false
 enableLinkPreview: true
@@ -6,12 +6,11 @@ enableLatex: true
 enableSPA: true
 enableContextualBacklinks: true
 description:
-  Host your second brain and digital garden for free. Quartz features extremely fast full-text search,
-  Wikilink support, backlinks, local graph, tags, and link previews.
+  blog
 page_title:
-  "🪴 Quartz 3.2"
+  "jr blog"
 links:
   - link_name: Twitter
-    link: https://twitter.com/_jzhao
+    link: https://twitter.com/jakobrin
   - link_name: Github
-    link: https://github.com/jackyzha0
+    link: https://github.com/jakobringler
