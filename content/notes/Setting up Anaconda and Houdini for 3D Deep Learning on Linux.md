@@ -7,13 +7,12 @@ tags:
 - machinelearning
 - pytorch
 - pytorch3d
+enableToc: false
 ---
 
-Tags: [[Linux]] [[Houdini]] [[PyTorch]] [[Machine Learning]] [[Anaconda]] [[PyTorch3D]]
+Related: [[Linux]] [[Houdini]] [[PyTorch]] [[Machine Learning]] [[Anaconda]] [[PyTorch3D]]
 
 # Setting up Anaconda & Houdini for 3D Deep Learning on Linux
-
----
 
 To get started install [Anaconda](https://anaconda.org/) and run the following commands in your terminal:
 
