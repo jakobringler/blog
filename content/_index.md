@@ -12,6 +12,8 @@ Host your second brain and [digital garden](https://jzhao.xyz/posts/networked-th
 
 [[Setting up Anaconda & Houdini for 3D Deep Learning on Linux]]
 
+[[test]]
+
 ## Get Started
 > 📚 [Setup your own digital garden using Quartz](notes/setup.md)
 
