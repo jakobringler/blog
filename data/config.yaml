@@ -8,7 +8,7 @@ enableContextualBacklinks: true
 description:
   blog
 page_title:
-  "jr blog"
+  "blog"
 links:
   - link_name: Twitter
     link: https://twitter.com/jakobrin
