@@ -6,9 +6,9 @@ enableLatex: true
 enableSPA: true
 enableContextualBacklinks: true
 description:
-  blog
+  digital garden about houdini, visual effects & 3d deep learning
 page_title:
-  "blog"
+  "fx garden"
 links:
   - link_name: Twitter
     link: https://twitter.com/jakobrin
