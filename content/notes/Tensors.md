@@ -5,7 +5,7 @@ tag:
 - math
 ---
 
-# What are "Tensors"?
+### What are "Tensors"?
 ![[notes/images/tensordims.png]]
-# Image Tensors
+### Image Tensors
 ![[notes/images/imagetensor.png]]

@@ -6,6 +6,4 @@ tag:
 - algorithms
 ---
 
-# Gradient Descent
-
 ![[notes/images/gradientDescent.png]]
