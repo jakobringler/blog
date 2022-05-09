@@ -10,6 +10,8 @@ tags:
 enableToc: false
 ---
 
+### installation
+
 To get started install [Anaconda](https://anaconda.org/) and run the following commands in your terminal:
 
 ( **hou** is the name of the new enviroment and python **3.7.4** is required because this is the version used in Houdini )
@@ -33,6 +35,8 @@ As [jpparkeramnh](https://www.sidefx.com/profile/jpparkeramnh/) pointed out in [
 ```bash
 export LD_PRELOAD=$CONDA_PREFIX/lib/libpython3.7m.so
 ```
+
+### .bashrc modifications
 
 I also recommend sourcing Houdini in the terminal.
 
