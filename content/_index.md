@@ -6,7 +6,7 @@ fx notes serves as a public *second brain* for some of my visual effects and dee
 
 Press `Ctrl` + `k` to search for something
 
-***
+<br/><br/><br/><br/>
 
 ### Content Lists
 If you prefer browsing the contents of this site through a list instead of a graph, you can find content lists here too:
