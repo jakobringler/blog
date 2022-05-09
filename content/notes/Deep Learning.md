@@ -1,5 +1,5 @@
 ---
-title: "Machine Learning"
+title: "Deep Learning"
 ---
 
 # ML Basics for 3D Artists

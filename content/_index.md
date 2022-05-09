@@ -11,5 +11,4 @@ If you prefer browsing the contents of this site through a list instead of a gra
 
 - [All Notes](/notes)
 - [[/notes/Houdini |Houdini Notes]]
-- [[notes/Machine Learning |Machine Learning Notes]]
-
+- [[notes/Deep Learning |Deep Learning Notes]]
