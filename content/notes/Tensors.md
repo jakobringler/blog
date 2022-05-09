@@ -1,11 +1,12 @@
 ---
 title: "Tensors"
-tag:
+tags:
 - machinelearning
 - deeplearning
 - math
 ---
 
-# Tensors
+# What are "Tensors"?
 ![[notes/images/tensordims.png]]
+# Image Tensors
 ![[notes/images/imagetensor.png]]
