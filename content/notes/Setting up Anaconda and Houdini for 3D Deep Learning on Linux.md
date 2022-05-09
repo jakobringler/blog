@@ -71,5 +71,4 @@ import torch
 If it doesn’t give you any errors you should be good to go.
 
 
-
-Related: [[Linux]] [[notes/Houdini |Houdini]] [[PyTorch]] [[notes/Deep Learning |Machine Learning]] [[Anaconda]] [[PyTorch3D]]
+Related: [[notes/Houdini |Houdini]], [[notes/Deep Learning |Deep Learning]]
