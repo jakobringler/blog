@@ -10,5 +10,6 @@ Press `Ctrl` + `k` to search for something
 If you prefer browsing the contents of this site through a list instead of a graph, you can find content lists here too:
 
 - [All Notes](/notes)
-- [Houdini related Notes](/notes/Houdini)
+- [[/notes/Houdini |Houdini Notes]]
+- [[notes/Machine Learning |Machine Learning Notes]]
 
