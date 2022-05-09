@@ -1,7 +1,9 @@
 ---
 title: "Tensors"
 tag:
-- 
+- machinelearning
+- deeplearning
+- math
 ---
 
 # Tensors

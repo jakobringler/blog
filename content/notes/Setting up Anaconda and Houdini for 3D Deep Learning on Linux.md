@@ -30,7 +30,7 @@ Then install libraries like for example [PyTorch 3D](https://github.com/facebook
 conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
 ```
 
-As [jpparkeramnh](https://www.sidefx.com/profile/jpparkeramnh/) pointed out in [this](https://www.sidefx.com/forum/topic/58397/) sideFX forum post you have to export the **LD_PRELOAD** variable.
+As [jpparkeramnh](https://www.sidefx.com/profile/jpparkeramnh/) pointed out in [this](https://www.sidefx.com/forum/topic/58397/) SideFX forum post you have to export the **LD_PRELOAD** variable.
 
 ```bash
 export LD_PRELOAD=$CONDA_PREFIX/lib/libpython3.7m.so
