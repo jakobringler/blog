@@ -1,6 +1,6 @@
 ---
 title: "Tensors"
-tag:
+tags:
 - machinelearning
 - math
 ---
