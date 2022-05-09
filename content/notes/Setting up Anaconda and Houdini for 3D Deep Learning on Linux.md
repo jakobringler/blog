@@ -72,4 +72,4 @@ If it doesn’t give you any errors you should be good to go.
 
 
 
-Related: [[Linux]] [[notes/Houdini | Houdini]] [[PyTorch]] [[Machine Learning]] [[Anaconda]] [[PyTorch3D]]
+Related: [[Linux]] [[notes/Houdini |Houdini]] [[PyTorch]] [[notes/Machine Learning |Machine Learning]] [[Anaconda]] [[PyTorch3D]]
