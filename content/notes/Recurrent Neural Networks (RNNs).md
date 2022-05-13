@@ -6,7 +6,7 @@ tags:
 
 ### Architecture
 
-Related: [[notes/Feed Forward Networks (FFNs) |Feed Forward Networks (FFNs)]] [[notes/Convolutional Neural Networks (CNNs) |Convolutional Neural Networks (CNNs)]] [[notes/Generative Adversarial Networks (GANs) |Generative Adversarial Networks (GANs)]] 
+Related: [[notes/Feed Forward Networks (FFNs) |Feed Forward Networks (FFNs)]], [[notes/Convolutional Neural Networks (CNNs) |Convolutional Neural Networks (CNNs)]], [[notes/Generative Adversarial Networks (GANs) |Generative Adversarial Networks (GANs)]] 
 
 
 

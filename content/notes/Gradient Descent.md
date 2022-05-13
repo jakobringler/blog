@@ -7,4 +7,4 @@ tags:
 ---
 
 ![[notes/images/gradientDescent.png]]
-Related: [[notes/Deep Learning |Deep Learning]]
+Related: [[notes/Back Propagation |Back Propagation]]

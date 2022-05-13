@@ -73,4 +73,3 @@ import torch
 If it doesn’t give you any errors you should be good to go.
 
 
-Related: [[notes/Houdini |Houdini]], [[notes/Deep Learning |Deep Learning]]

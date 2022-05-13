@@ -9,15 +9,18 @@ tags:
 - [[notes/Tensors |Tensors]]
 - [[notes/Gradient Descent |Gradient Descent]]
 - [[notes/Back Propagation |Back Propagation]]
+
 ##### Model Archtiectures
 - [[notes/Feed Forward Networks (FFNs) |Feed Forward Networks (FFNs)]]
 - [[notes/Convolutional Neural Networks (CNNs) |Convolutional Neural Networks (CNNs)]]
 - [[notes/Generative Adversarial Networks (GANs) |Generative Adversarial Networks (GANs)]]
 - [[notes/Recurrent Neural Networks (RNNs) |Recurrent Neural Networks (RNNs)]]
+
 ##### Data
 - Data Synthesis
 - Data Augmentation
 - Noise
+
 ##### Realistic Applications
 - Compress Algorithms
 - Increase Usabiliy & Accessability
