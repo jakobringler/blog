@@ -7,7 +7,9 @@ tags:
 ### Architecture:
 
 ### Kernels:
-![[notes/images/convkernel2CC.png |300]]
+
+
+![[notes/images/convkernel2CC.png]]
 
 ![[notes/images/convkernel_2 1.png]]
 

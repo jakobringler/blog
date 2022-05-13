@@ -4,7 +4,7 @@ tags:
 - list
 ---
 
-### ML Basics for Technical 3D Artists/TDs:
+### ML Basics for Technical 3D Artists / TDs:
 ##### Concepts:
 - [[notes/Tensors |Tensors]]
 - [[notes/Gradient Descent |Gradient Descent]]
