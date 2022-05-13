@@ -8,8 +8,4 @@ tags:
 
 Here's the Hip:
 
-![[notes/images/forest_spirit.hiplc]]
-
-[Hip](notes/images/forest_spirit.hiplc)
-
-![Hip](notes/images/forest_spirit.hiplc)
+[Hip](https://github.com/jakobringler/blog/blob/hugo/content/notes/images/forest_spirit.hiplc)
