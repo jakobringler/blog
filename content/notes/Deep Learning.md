@@ -8,12 +8,12 @@ tags:
 ##### Concepts:
 - [[notes/Tensors |Tensors]]
 - [[notes/Gradient Descent |Gradient Descent]]
-- Back Propagation
+- [[notes/Back Propagation |Back Propagation]]
 ##### Model Archtiectures
-- Feed Forward Networks (FFNs)
-- Convolutional Neural Networks (CNNs)
-- Generative Adversarial Networks (GANs)
-- Recurrent Neural Networks (RNNs)
+- [[notes/Feed Forward Networks (FFNs) |Feed Forward Networks (FFNs)]]
+- [[notes/Convolutional Neural Networks (CNNs) |Convolutional Neural Networks (CNNs)]]
+- [[notes/Generative Adversarial Networks (GANs) |Generative Adversarial Networks (GANs)]]
+- [[notes/Recurrent Neural Networks (RNNs) |Recurrent Neural Networks (RNNs)]]
 ##### Data
 - Data Synthesis
 - Data Augmentation
