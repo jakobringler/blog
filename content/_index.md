@@ -19,5 +19,5 @@ If you prefer browsing the contents of this site through a list instead of a gra
 
 Hi there!
 
-Im currently a FX TD living in Berlin, Germany and created [[fxnotes |fxnotes.xyz]] to document and share workflows, ideas and notes about various vfx topics as well as my recent deep learning adventures.
+Im currently a FX TD living in Berlin, Germany and created this page to document and share workflows, ideas and notes about various vfx topics as well as my recent deep learning adventures.
 
