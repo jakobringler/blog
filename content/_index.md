@@ -23,9 +23,5 @@ Im currently working as FX TD and created this page to document and share workfl
 
 Hit me up if you find any mistakes or know of better ways to do certain things.
 
-I hope you find the notes useful!
-
-Best,
-
-Jakob
+I hope you find something useful!
 
