@@ -24,5 +24,3 @@ Im currently working as an FX TD and created this page to document and share wor
 Hit me up if you find any mistakes or know of better ways to do certain things.
 
 I hope you find something useful!
-
--Jakob
