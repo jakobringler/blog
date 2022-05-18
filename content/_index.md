@@ -2,7 +2,7 @@
 title: "fx notes"
 ---
 
-fx notes serves as a public *second brain* for some of my visual effects and deep learning related notes and experiments
+fx notes serves as a public *second brain* for some of my visual effects, proceduralism and deep learning related notes and experiments
 
 Press `Ctrl` + `K` to search for something
 
