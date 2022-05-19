@@ -17,4 +17,6 @@ enableToc: false
 - [Essence of Linear Algebra - 3Blue1Brown](https://www.3blue1brown.com/topics/linear-algebra)
 
 ### Deep Learning
+##### Houdini:
+[Houdini Machine Learning - Edmond Boulet-Gilly](https://www.youtube.com/watch?v=WNEEokEq-Fg&list=PLSie_1zkANDbn7wCD9kifPAp5wJmok02V)
 

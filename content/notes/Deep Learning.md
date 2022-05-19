@@ -32,6 +32,7 @@ tags:
 - [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
 
 ### Projects & Examples:
+- [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]]
 - Sketch to Tower
 - Vegetation & Erosion
 - Wave Function Collapse Prediction
