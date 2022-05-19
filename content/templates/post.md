@@ -1,5 +1,6 @@
 ---
 title: "{{title}}"
+date: "{{date}}"
 tags:
 - 
 ---
@@ -7,4 +8,8 @@ tags:
 # {{title}}
 
 
+related to:
+
+sources / further reading:
+- 
 
