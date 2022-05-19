@@ -18,8 +18,9 @@ To extract the data somewhat _liveish_ without having to write anything to disk 
 
 This brings us to the main issue: Where to store the data?
 
-Unfortunately storing image data on 3D geometry isn't very efficient. Polygon grids also store connectivity information and other data.
+Unfortunately storing image data on 3D geometry isn't very efficient. Polygon grids also store connectivity information and other data which make them rather slow to work with, especially when dealing with higher resolutions. 
 
+Tested when trying to do [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]].
 
 ### The Solution:
 
@@ -27,7 +28,7 @@ Unfortunately storing image data on 3D geometry isn't very efficient. Polygon gr
 
 They have a grid-like topology and only store a single value per voxel instead of unnecessary connectivity information or other  data. 
 
-Houdini ships with a python function to extract voxel data quickly, which allows us to convert the 2D information into the necessary shape.
+Houdini also ships with a python function to extract voxel data quickly, which allows us to convert the 2D information into the necessary shape.
 
 ```Python 
 # this goes in a Python SOP
