@@ -6,9 +6,7 @@ tags:
 ### SOPs:
 
 ### VEX:
-- [[notes/Vector Operations |Vector Operations]]
 - [[notes/Matrix Operations |Matrix Operations]]
-
 
 ### Deep Learning:
 - [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]
