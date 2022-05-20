@@ -64,9 +64,9 @@ function float gain(float val; float gain)
 float val = pow(val, exp); 
 ```
 
-source:
-- https://twitter.com/mfrederickson/status/1523148417349816320
-- https://blog.demofox.org/2012/09/24/bias-and-gain-are-your-friend/
+sources:
+- [Michael Frederickson's Tweet](https://twitter.com/mfrederickson/status/1523148417349816320)
+- [Alan Wolfe's Blog Post](https://blog.demofox.org/2012/09/24/bias-and-gain-are-your-friend/)
 
 ##### Calculate Point Density
 ```VEX
@@ -85,6 +85,33 @@ foreach(string g; grps)
 }
 ```
 
+##### Edgefalloff
+```VEX
+if (@edgefalloff==1)
+{
+	int near[] = nearpoints(0,@P,chf("dist"));
+	
+	foreach (int pnt;near)
+	{
+		vector pntP = point(0,"P",pnt);
+		float dist = fit(distance(pntP,@P),0,chf("dist")*2,1,-1);
+		setpointattrib(0,"edgefalloff",pnt,dist,"set");
+	}
+}
+```
+
+##### Expand Group Over Geo
+
+```VEX
+int pc = pcopen(0, 'P', @P, chf('radius'), chi('maxpts'));
+
+while (pciterate(pc) > 0)
+{
+	int currentpt;	
+	pcimport(pc, 'point.number', currentpt);
+	setpointgroup(0, 'group1', currentpt, 1);
+}
+```
 
 related to: [[notes/Houdini |Houdini]] 
 
