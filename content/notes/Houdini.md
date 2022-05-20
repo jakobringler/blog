@@ -6,6 +6,7 @@ tags:
 ### SOPs:
 
 ### VEX:
+- [[notes/VEX Snippets |VEX Snippets]]
 - [[notes/Matrix Operations |Matrix Operations]]
 
 ### Deep Learning:

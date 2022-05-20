@@ -4,6 +4,10 @@ tags:
 - list
 enableToc: false
 ---
+# Downloads & Scripts:
+[[notes/VEX Snippets |VEX Snippets]]
+
+# Links:
 
 ### CG & VFX
 ##### Houdini:
