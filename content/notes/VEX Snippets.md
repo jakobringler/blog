@@ -2,17 +2,18 @@
 title: "VEX Snippets"
 tags:
 - list
+enableToc: false
 ---
 
 ### Wrangle Cheat Sheet
 
 ##### Attribute to String
-```VEX
+```C
 s@name = "piece_" + itoa(i@class);
 ```
 
 ##### Attribute Transfer
-```VEX
+```C
 int posprim;
 vector param_uv;
 float maxdist = 10;
@@ -22,7 +23,7 @@ v@rest = pos;
 ```
 
 ##### Average Point Cloud Positions
-```VEX
+```C
 vector value;
 vector values[];
 
@@ -43,7 +44,7 @@ if(@ptnum>0)
 ```
 
 ##### Bias and Gain
-```VEX
+```C
 function float bias(float val; float bias) 
 {
     return (val / ((((1.0/bias) - 2.0)*(1.0 - val))+1.0));
@@ -69,15 +70,16 @@ sources:
 - [Alan Wolfe's Blog Post](https://blog.demofox.org/2012/09/24/bias-and-gain-are-your-friend/)
 
 ##### Calculate Point Density
-```VEX
+```C
 float maxdist = chf("maxdist");
 int maxpts = chi("maxpts");
 int points = len(nearpoints, 0, @P, maxdist, maxpts);
+
 f@density = float(points) / maxpts;
 ```
 
 ##### Create Name Attribute for each Prim Group
-```VEX
+```C
 string grps[] = detailintrinsic(0, 'primitivegroups');
 foreach(string g; grps)
 {
@@ -86,7 +88,7 @@ foreach(string g; grps)
 ```
 
 ##### Edgefalloff
-```VEX
+```C
 if (@edgefalloff==1)
 {
 	int near[] = nearpoints(0,@P,chf("dist"));
@@ -102,7 +104,7 @@ if (@edgefalloff==1)
 
 ##### Expand Group Over Geo
 
-```VEX
+```C
 int pc = pcopen(0, 'P', @P, chf('radius'), chi('maxpts'));
 
 while (pciterate(pc) > 0)
@@ -112,6 +114,3 @@ while (pciterate(pc) > 0)
 	setpointgroup(0, 'group1', currentpt, 1);
 }
 ```
-
-related to: [[notes/Houdini |Houdini]] 
-
