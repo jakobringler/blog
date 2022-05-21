@@ -7,6 +7,8 @@ enableToc: false
 
 ### Wrangle Cheat Sheet
 
+> I try my best to credit and link to any sources but some of those are pretty old and I have no idea where they came from and whether they are "mine".
+
 ##### Attribute Min Max
 ```C
 float value;
