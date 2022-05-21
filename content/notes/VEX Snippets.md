@@ -7,6 +7,29 @@ enableToc: false
 
 ### Wrangle Cheat Sheet
 
+##### Attribute Min Max
+```C
+float value;
+float values[];
+string attrname = "name";
+float max_value;
+float min_value;
+
+for (int i=0; i<@numpt; i++)
+{
+	value = point(geoself(), attrname, i);
+	append(values,value);
+}
+
+min_value = min(values);
+max_value = max(values);
+
+f[]@range;
+
+@range[0] = min_value;
+@range[1] = max_value;
+```
+
 ##### Attribute to String
 ```C
 s@name = "piece_" + itoa(i@class);
@@ -65,9 +88,21 @@ function float gain(float val; float gain)
 float val = pow(val, exp); 
 ```
 
-sources:
+Sources:
 - [Michael Frederickson's Tweet](https://twitter.com/mfrederickson/status/1523148417349816320)
 - [Alan Wolfe's Blog Post](https://blog.demofox.org/2012/09/24/bias-and-gain-are-your-friend/)
+
+##### Bounding Box
+```C
+vector bbox = getbbox_size(0);
+vector bbox_max = getbbox_max(0);
+vector bbox_min = getbbox_min(0);
+vector bbox_center = getbbox_center(0);
+  
+float xsize = getbbox_size(0).x;
+float y_max = getbbox_max(0).y;
+float z_min = getbbox_min(0).z;
+```
 
 ##### Calculate Point Density
 ```C
@@ -103,7 +138,6 @@ if (@edgefalloff==1)
 ```
 
 ##### Expand Group Over Geo
-
 ```C
 int pc = pcopen(0, 'P', @P, chf('radius'), chi('maxpts'));
 
@@ -113,4 +147,32 @@ while (pciterate(pc) > 0)
 	pcimport(pc, 'point.number', currentpt);
 	setpointgroup(0, 'group1', currentpt, 1);
 }
+```
+
+##### Group by N Connections
+```C
+int n = chi("Neighbours");
+
+if (neighbourcount (0, @ptnum) > n)
+{
+	setpointgroup (0, "grouped", @ptnum, 1);
+}
+```
+
+##### Isolate Overlapping Points
+```C
+int near[] = pcfind(0, "P", @P, 0.0001, 2);
+
+if(len(near) > 1)
+{
+	setpointgroup(0, "double", @ptnum, 1);
+}
+```
+
+##### Orientation Template for Copy
+```C
+@up = {0,1,0};
+@orient = quaternion(maketransform(@N,@up));
+vector4 rot_Y = quaternion(radians(ch('Y')),{0,1,0});
+@orient = qmultiply(@orient, rot_Y);
 ```
