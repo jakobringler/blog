@@ -9,7 +9,7 @@ enableToc: true
 
 >I try my best to credit and link to any sources. That being said, some of those are pretty old and I have no idea where they came from and whether or not they are "mine".
 >
->I recommend installing and managing your own snippet collection with this handy python panel [Vex Snippet Library](https://github.com/dchow1992/Vex_Snippet_Library)
+>I recommend installing and managing your own snippet collection with this handy python panel: [Vex Snippet Library](https://github.com/dchow1992/Vex_Snippet_Library)
 
 ### Attribute Min Max
 ```C
