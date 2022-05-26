@@ -1,5 +1,6 @@
 ---
 title: "fx notes"
+enableToc: false
 ---
 
 fx notes serves as a public *second brain* for some of my visual effects, proceduralism and deep learning related notes and experiments
@@ -9,13 +10,13 @@ Press `Ctrl` + `K` to search for something
 ### Content Lists
 If you prefer browsing the contents of this site through a list instead of a graph, you can find content lists here too:
 
+- [All Notes](/notes)
 - [[notes/Houdini |Houdini]]
 - [[notes/Deep Learning |Deep Learning]]
-- [[notes/Other |Other]]
-- [All Notes](/notes)
-
-- [[notes/rnd and projects |R&D / Projects]]
+- [[notes/Projects and RnD |Projects / R&D]]
 - [[notes/Resources |Resources]]
+- [[notes/Other |Other]]
+
 
 ### About
 

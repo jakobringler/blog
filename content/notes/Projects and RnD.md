@@ -1,5 +1,5 @@
 ---
-title: "rnd and projects"
+title: "Projects / R&D"
 tags:
 - list
 enableToc: false
