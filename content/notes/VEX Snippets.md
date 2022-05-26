@@ -5,7 +5,7 @@ tags:
 enableToc: true
 ---
 
-### Wrangle Cheat Sheet
+# Wrangle Cheat Sheet
 
 > I try my best to credit and link to any sources. That being said, some of those are pretty old and I have no idea where they came from and whether or not they are "mine".
 
