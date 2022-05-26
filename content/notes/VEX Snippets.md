@@ -2,7 +2,7 @@
 title: "VEX Snippets"
 tags:
 - list
-enableToc: false
+enableToc: true
 ---
 
 ### Wrangle Cheat Sheet
