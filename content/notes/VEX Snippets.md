@@ -180,3 +180,13 @@ if(len(near) > 1)
 vector4 rot_Y = quaternion(radians(ch('Y')),{0,1,0});
 @orient = qmultiply(@orient, rot_Y);
 ```
+
+### Remove Point Percentage
+```C
+int percentage = ch('percentage'); 
+
+if(@ptnum % 100 < percentage)
+{
+	removepoint(0, @ptnum );
+}
+```
