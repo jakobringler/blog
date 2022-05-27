@@ -181,6 +181,30 @@ vector4 rot_Y = quaternion(radians(ch('Y')),{0,1,0});
 @orient = qmultiply(@orient, rot_Y);
 ```
 
+### Remove Point by Condition
+[Mai Ao](https://twitter.com/aomai01) compared two point deletion methods, where method 1 gives a 15x speed increase over the traditional `removepoint()` function
+
+1. group points first and blast group in another step
+
+```C
+float half_cone_rad = radians(chf("half_cone"));
+@group_to_delete = acos(dot(@P, {0,0,1})) <= half_cone_rad;
+```
+
+2. removepoint()
+
+```C
+float half_cone_rad = radians(chf("half_cone"));
+
+if(acos(dot(@P, {0,0,1})) <= half_cone_rad)
+{
+	removepoint(0, @ptnum);
+}
+```
+
+Sources:
+- [Mai Ao's Tweet](https://twitter.com/aomai01/status/1514226273794641925/photo/1)
+
 ### Remove Point Percentage
 ```C
 int percentage = ch('percentage'); 
