@@ -2,6 +2,8 @@
 title: "VEX Snippets"
 tags:
 - list
+- vex
+- houdini
 enableToc: true
 ---
 
