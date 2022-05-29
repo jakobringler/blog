@@ -12,6 +12,9 @@ tags:
 
 ##### Creating a Tranformation Matrix
 $$
+f(x) = x^2
+$$
+$$
 \definecolor{x}{RGB}{255,0,0}
 \definecolor{y}{RGB}{0,255,0}
 \definecolor{z}{RGB}{0,0,255}
@@ -36,7 +39,25 @@ $$
 
 ```C
 matrix transform = set(X, Y, Z, P); // create matrix
+```
 
+$$
+\definecolor{x}{RGB}{255,0,0}
+\definecolor{y}{RGB}{0,255,0}
+\definecolor{z}{RGB}{0,0,255}
+\definecolor{p}{RGB}{255,255,0}
+
+\Bigg\{\,\begin{array}{rcl}
+	\color{x} X.x&\color{x}X.y&\color{x}X.z&1 \\
+	\color{y} Y.x&\color{y}Y.y&\color{y}Y.z&1 \\
+	\color{z} Z.x&\color{z}Z.y&\color{z}Z.z&1 \\
+	\color{p} P.x&\color{p}P.y&\color{p}P.z&1 \\
+\end{array}\,\Bigg\}
+$$
+
+To fix this we can use the setcomp() function.
+
+```C
 setcomp(transform, 0, 0, 3); // set row 1 col 4 to 0
 setcomp(transform, 0, 1, 3); // set row 2 col 4 to 0
 setcomp(transform, 0, 2, 3); // set row 3 col 4 to 0
