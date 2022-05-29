@@ -14,13 +14,6 @@ tags:
 
 $$
 \begin{array}{rcl}
-	x-Axis \\
-	y-Axis \\
-	z-Axis \\
-	Position \\
-\end{array}
--
-\begin{array}{rcl}
 	X.x&X.y&X.z&0 \\
 	Y.x&Y.y&Y.z&0 \\
 	Z.x&Z.y&Z.z&0 \\
@@ -35,14 +28,14 @@ matrix transform = set(X, Y, Z, P); // create matrix
 
 However this will give us the following matrix with the ones in the fourth column
 
-$$
+
 \Bigg\{\begin{array}{rcl}
 	X.x&X.y&X.z&1 \\
 	Y.x&Y.y&Y.z&1 \\
 	Z.x&Z.y&Z.z&1 \\
 	P.x&P.y&P.z&1 \\
 \end{array}\Bigg\}
-$$
+
 
 To fix this we can use the setcomp() function.
 
