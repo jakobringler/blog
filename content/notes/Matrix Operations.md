@@ -21,9 +21,7 @@ $$
 	\color{blue} z-Axis \\
 	\color{yellow} Position \\
 \end{array}
-\,\,\,\,\
 \equiv
-\,\,\,\,\
 \begin{array}{rcl}
 	\color{red} 1&\color{red}0&\color{red}0&0 \\
 	\color{green}0&\color{green}1&\color{green}0&0 \\
@@ -63,4 +61,5 @@ related to:
 
 sources / further reading:
 - [Houdini Tutorial | Extracting transformation matrix with VEX - Paweł Rutkowski](https://vimeo.com/284712920)
+- [Houdini Translate Rotate Scale Bend with Matrices & Quaternions in VEX - Nodes of Nature](https://www.youtube.com/watch?v=e9qLWS2La28)
 
