@@ -15,11 +15,6 @@ $$
 f(x) = x^2
 $$
 $$
-\definecolor{x}{RGB}{255,0,0}
-\definecolor{y}{RGB}{0,255,0}
-\definecolor{z}{RGB}{0,0,255}
-\definecolor{p}{RGB}{255,255,0}
-
 \,\begin{array}{rcl}
 	\color{x} x-Axis \\
 	\color{y} y-Axis \\
@@ -42,11 +37,6 @@ matrix transform = set(X, Y, Z, P); // create matrix
 ```
 
 $$
-\definecolor{x}{RGB}{255,0,0}
-\definecolor{y}{RGB}{0,255,0}
-\definecolor{z}{RGB}{0,0,255}
-\definecolor{p}{RGB}{255,255,0}
-
 \Bigg\{\,\begin{array}{rcl}
 	\color{x} X.x&\color{x}X.y&\color{x}X.z&1 \\
 	\color{y} Y.x&\color{y}Y.y&\color{y}Y.z&1 \\
