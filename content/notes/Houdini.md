@@ -8,6 +8,7 @@ tags:
 ### VEX:
 - [[notes/VEX Snippets |VEX Snippets]]
 - [[notes/Matrix Operations |Matrix Operations]]
+- [[notes/primuv & xyzdist |primuv & xyzdist]]
 
 ### Deep Learning:
 - [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]
