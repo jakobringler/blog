@@ -18,9 +18,9 @@ $$
 	y-Axis \\
 	z-Axis \\
 	Position \\
-\end{array}\,
+\end{array}
 -
-\Bigg\{\,\begin{array}{rcl}
+\Bigg\{\begin{array}{rcl}
 	X.x&X.y&X.z&0 \\
 	Y.x&Y.y&Y.z&0 \\
 	Z.x&Z.y&Z.z&0 \\
