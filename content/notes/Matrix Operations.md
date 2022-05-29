@@ -15,23 +15,20 @@ tags:
 
 
 $$
-\definecolor{x}{RGB}{255,0,0}
-\definecolor{y}{RGB}{0,255,0}
-\definecolor{z}{RGB}{0,0,255}
-\definecolor{p}{RGB}{255,255,0}
-
 \begin{array}{rcl}
-	\color{x} x-Axis \\
-	\color{y} y-Axis \\
-	\color{z} z-Axis \\
-	\color{p} Position \\
+	\color{red} x-Axis \\
+	\color{green} y-Axis \\
+	\color{blue} z-Axis \\
+	\color{yellow} Position \\
 \end{array}
+\,\,\,\,\
 \equiv
+\,\,\,\,\
 \begin{array}{rcl}
-	\color{x} 1&\color{x}0&\color{x}0&0 \\
-	\color{y}0&\color{y}1&\color{y}0&0 \\
-	\color{z}0&\color{z}0&\color{z}1&0 \\
-	\color{p}0&\color{p}0&\color{p}0&1 \\
+	\color{red} 1&\color{red}0&\color{red}0&0 \\
+	\color{green}0&\color{green}1&\color{green}0&0 \\
+	\color{blue}0&\color{blue}0&\color{blue}1&0 \\
+	\color{yellow}0&\color{yellow}0&\color{yellow}0&1 \\
 \end{array}
 $$
 
@@ -44,17 +41,12 @@ matrix transform = set(X, Y, Z, P); // create matrix
 However this will give us the following matrix with the ones in the fourth column
 
 $$
-\definecolor{x}{RGB}{255,0,0}
-\definecolor{y}{RGB}{0,255,0}
-\definecolor{z}{RGB}{0,0,255}
-\definecolor{p}{RGB}{255,255,0}
-
-\Bigg\{\,\begin{array}{rcl}
-	\color{x} X.x&\color{x}X.y&\color{x}X.z&1 \\
-	\color{y} Y.x&\color{y}Y.y&\color{y}Y.z&1 \\
-	\color{z} Z.x&\color{z}Z.y&\color{z}Z.z&1 \\
-	\color{p} P.x&\color{p}P.y&\color{p}P.z&1 \\
-\end{array}\,\Bigg\}
+\begin{array}{rcl}
+	\color{red} X.x&\color{red}X.y&\color{red}X.z&1 \\
+	\color{green} Y.x&\color{green}Y.y&\color{green}Y.z&1 \\
+	\color{blue} Z.x&\color{blue}Z.y&\color{blue}Z.z&1 \\
+	\color{yellow} P.x&\color{yellow}P.y&\color{yellow}P.z&1 \\
+\end{array}
 $$
 
 To fix this we can use the setcomp() function.
