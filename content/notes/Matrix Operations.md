@@ -11,9 +11,15 @@ tags:
 ### Extracting Transformation Matrix with VEX
 
 ##### Creating a Tranformation Matrix
+
 $$
-f(x) = x^2
+\begin{array}{rcl}
+	1&1&1 \\
+	1&1&1 \\
+	1&1&1 \\
+\end{array}
 $$
+
 $$
 \,\begin{array}{rcl}
 	\color{x} x-Axis \\
