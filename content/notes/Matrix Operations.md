@@ -13,7 +13,7 @@ tags:
 ##### Creating a Tranformation Matrix
 
 $$
-\,\begin{array}{rcl}
+\begin{array}{rcl}
 	x-Axis \\
 	y-Axis \\
 	z-Axis \\
@@ -25,7 +25,7 @@ $$
 	Y.x&Y.y&Y.z&0 \\
 	Z.x&Z.y&Z.z&0 \\
 	P.x&P.y&P.z&1 \\
-\end{array}\,\Bigg\}
+\end{array}\Bigg\}
 $$
 We don't really need the fourth column but 3x4 matrices dont "exist". 
 
@@ -36,12 +36,12 @@ matrix transform = set(X, Y, Z, P); // create matrix
 However this will give us the following matrix with the ones in the fourth column
 
 $$
-\Bigg\{\,\begin{array}{rcl}
+\Bigg\{\begin{array}{rcl}
 	X.x&X.y&X.z&1 \\
 	Y.x&Y.y&Y.z&1 \\
 	Z.x&Z.y&Z.z&1 \\
 	P.x&P.y&P.z&1 \\
-\end{array}\,\Bigg\}
+\end{array}\Bigg\}
 $$
 
 To fix this we can use the setcomp() function.
