@@ -12,21 +12,23 @@ tags:
 
 ##### Creating a Tranformation Matrix
 
+
+
 $$
 \begin{array}{rcl}
 	\color{red} x-Axis \\
 	\color{green} y-Axis \\
 	\color{blue} z-Axis \\
-	\color{yellow} Position \\
+	\color{orange} Position \\
 \end{array}
 \equiv
 \bigg[\begin{array}{rcl}
 	\color{red} 1&\color{red}0&\color{red}0&0 \\
 	\color{green}0&\color{green}1&\color{green}0&0 \\
 	\color{blue}0&\color{blue}0&\color{blue}1&0 \\
-	\color{yellow}0&\color{yellow}0&\color{yellow}0&1 \\
+	\color{orange}0&\color{orange}0&\color{orange}0&1 \\
 \end{array}\bigg]
-$$
+$$ 
 
 We don't really need the fourth column but 3x4 matrices dont "exist". 
 
@@ -42,7 +44,7 @@ $$
 	\color{red} X.x&\color{red}X.y&\color{red}X.z&1 \\
 	\color{green} Y.x&\color{green}Y.y&\color{green}Y.z&1 \\
 	\color{blue} Z.x&\color{blue}Z.y&\color{blue}Z.z&1 \\
-	\color{yellow} P.x&\color{yellow}P.y&\color{yellow}P.z&1 \\
+	\color{orange} P.x&\color{orange}P.y&\color{orange}P.z&1 \\
 \end{array}\bigg]
 $$
 
