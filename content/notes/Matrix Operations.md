@@ -12,14 +12,29 @@ tags:
 
 ##### Creating a Tranformation Matrix
 
+
+
 $$
+\definecolor{x}{RGB}{255,0,0}
+\definecolor{y}{RGB}{0,255,0}
+\definecolor{z}{RGB}{0,0,255}
+\definecolor{p}{RGB}{255,255,0}
+
 \begin{array}{rcl}
-	X.x&X.y&X.z&0 \\
-	Y.x&Y.y&Y.z&0 \\
-	Z.x&Z.y&Z.z&0 \\
-	P.x&P.y&P.z&1 \\
+	\color{x} x-Axis \\
+	\color{y} y-Axis \\
+	\color{z} z-Axis \\
+	\color{p} Position \\
+\end{array}
+\equiv
+\begin{array}{rcl}
+	\color{x} 1&\color{x}0&\color{x}0&0 \\
+	\color{y}0&\color{y}1&\color{y}0&0 \\
+	\color{z}0&\color{z}0&\color{z}1&0 \\
+	\color{p}0&\color{p}0&\color{p}0&1 \\
 \end{array}
 $$
+
 We don't really need the fourth column but 3x4 matrices dont "exist". 
 
 ```C
@@ -28,14 +43,19 @@ matrix transform = set(X, Y, Z, P); // create matrix
 
 However this will give us the following matrix with the ones in the fourth column
 
+$$
+\definecolor{x}{RGB}{255,0,0}
+\definecolor{y}{RGB}{0,255,0}
+\definecolor{z}{RGB}{0,0,255}
+\definecolor{p}{RGB}{255,255,0}
 
-\Bigg\{\begin{array}{rcl}
-	X.x&X.y&X.z&1 \\
-	Y.x&Y.y&Y.z&1 \\
-	Z.x&Z.y&Z.z&1 \\
-	P.x&P.y&P.z&1 \\
-\end{array}\Bigg\}
-
+\Bigg\{\,\begin{array}{rcl}
+	\color{x} X.x&\color{x}X.y&\color{x}X.z&1 \\
+	\color{y} Y.x&\color{y}Y.y&\color{y}Y.z&1 \\
+	\color{z} Z.x&\color{z}Z.y&\color{z}Z.z&1 \\
+	\color{p} P.x&\color{p}P.y&\color{p}P.z&1 \\
+\end{array}\,\Bigg\}
+$$
 
 To fix this we can use the setcomp() function.
 
