@@ -31,3 +31,5 @@ enableToc: false
 ### Houdini:
 [Houdini Machine Learning - Edmond Boulet-Gilly](https://www.youtube.com/watch?v=WNEEokEq-Fg&list=PLSie_1zkANDbn7wCD9kifPAp5wJmok02V)
 
+### Theory:
+- [PyTorch & Tensorflow Tutorials, Paper Reviews - Aladdin Persson](https://www.youtube.com/c/AladdinPersson)

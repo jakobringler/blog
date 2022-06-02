@@ -6,14 +6,28 @@ tags:
 - vex
 ---
 
-### coming soon / WIP
+# WIP
 
 ### Extracting Transformation Matrix with VEX
+Sometimes it is desirable to lock an animated mesh to the origin to perform further operations. To move it from it's position in world space to the origin we need it's transformation matrix.
 
-##### Creating a Tranformation Matrix
+[Paweł Rutkowski](https://vimeo.com/284712920) has a great video on the topic. The following is basically a writeup of the contents of his video for my own memory and to easily get back to it.
 
+To create a transformation matrix we first have to create a local coordinate system that moves with the object. To do so we have to idetinfy 2 Points that don't deform and calculate a vector between the two.
 
+```C
+// this goes in the first point wrangle
 
+vector P1 = point(0, "P", 0);
+vector P2 = point(0, "P", 1);
+vector up = {0,1,0};
+
+vector X = normalize(P2-P1);
+vector Z = normalize(cross(X, up));
+vector Y = normalize(cross(X, Z));
+
+vector P = P1 + (P2 - P1) / 2;
+```
 $$
 \begin{array}{rcl}
 	\color{red} x-Axis \\
@@ -33,6 +47,8 @@ $$
 We don't really need the fourth column but 3x4 matrices dont "exist". 
 
 ```C
+// this continues the first point wrangle
+
 matrix transform = set(X, Y, Z, P); // create matrix
 ```
 
@@ -51,12 +67,38 @@ $$
 To fix this we can use the setcomp() function.
 
 ```C
+// this continues the first point wrangle
+
 setcomp(transform, 0, 0, 3); // set row 1 col 4 to 0
 setcomp(transform, 0, 1, 3); // set row 2 col 4 to 0
 setcomp(transform, 0, 2, 3); // set row 3 col 4 to 0
+
+4@transform = transform; // create matrix attribute
 ```
 
+Which will give us the correct transformation matrix:
 
+$$
+\bigg[\begin{array}{rcl}
+	\color{red} X.x&\color{red}X.y&\color{red}X.z&0 \\
+	\color{green} Y.x&\color{green}Y.y&\color{green}Y.z&0 \\
+	\color{blue} Z.x&\color{blue}Z.y&\color{blue}Z.z&0 \\
+	\color{orange} P.x&\color{orange}P.y&\color{orange}P.z&1 \\
+\end{array}\bigg]
+$$
+to move the object to the center the inverted matrix has to be multiplied with the position.
+
+```C
+// this goes in the second point wrangle
+
+matrix transform = point(1, "transform", 0);
+
+v@P *= invert(transform);
+v@N *= matrix3(invert(transform));
+v@v *= matrix3(invert(transform));
+```
+
+Download: [File](https://github.com/jakobringler/blog/tree/hugo/content/notes/sharedfiles/ExtractTransformationMatrix.hiplc)
 
 related to:
 

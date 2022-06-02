@@ -155,6 +155,29 @@ while (pciterate(pc) > 0)
 }
 ```
 
+### Extract Tranformation Matrix
+```C
+vector P1 = point(0, "P", 0);
+vector P2 = point(0, "P", 1);
+vector up = {0,1,0};
+
+vector X = normalize(P2-P1);
+vector Z = normalize(cross(up, X));
+vector Y = normalize(cross(X, Z));
+
+vector P = P1 + (P2 - P1) / 2;
+
+matrix transform = set(X, Y, Z, P);
+
+setcomp(transform, 0, 0, 3); 
+setcomp(transform, 0, 1, 3);
+setcomp(transform, 0, 2, 3); 
+
+4@transform = transform;
+```
+
+Have a look at [[notes/Matrix Operations#Extracting Transformation Matrix with VEX |this note for more information on how it's used]]
+
 ### Group by N Connections
 ```C
 int n = chi("Neighbours");
