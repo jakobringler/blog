@@ -9,7 +9,7 @@ enableToc: true
 
 # Wrangle Cheat Sheet
 
->I try my best to credit and link to any sources. That being said, some of those are pretty old and I have no idea where they came from and whether or not they are "mine".
+>I try my best to credit and link to any sources. That being said, some of those are pretty old and I have no idea where they came from.
 >
 >I recommend installing this handy python panel to manage your own snippet collection: [Vex Snippet Library](https://github.com/dchow1992/Vex_Snippet_Library)
 
@@ -176,7 +176,7 @@ setcomp(transform, 0, 2, 3);
 4@transform = transform;
 ```
 
-Have a look at [[notes/Matrix Operations#Extracting Transformation Matrix with VEX |this note for more information on how it's used]]
+Have a look at [[notes/Matrix Operations |this note]] for more information on how it's used.
 
 ### Group by N Connections
 ```C
@@ -239,3 +239,78 @@ if(@ptnum % 100 < percentage)
 	removepoint(0, @ptnum );
 }
 ```
+
+### Translate, Rotate, Scale & Bend
+```C
+vector t = chv('translate');
+vector r = radians(chv('rotate_before'));
+vector rot = radians(chv('rotate_after'));
+vector s = chv('scale');
+matrix xform = detail(0,'xform');
+
+if(determinant(xform) == 0) xform = ident(); //initialize xform if not found
+
+//Scaling
+matrix3 S = set(set(s.x, 0, 0), set(0, s.y, 0), set(0, 0, s.z));
+
+//General Rotation Before
+matrix3 R = set( cos(r.b)*cos(r.g), cos(r.b)*sin(r.g)*sin(r.r)-sin(r.b)*cos(r.r), cos(r.b)*sin(r.g)*cos(r.r)+sin(r.b)*sin(r.r),
+                 sin(r.b)*cos(r.g), sin(r.b)*sin(r.g)*sin(r.r)+cos(r.b)*cos(r.r), sin(r.b)*sin(r.g)*cos(r.r)-cos(r.b)*sin(r.r),
+                 -sin(r.g), cos(r.g)*sin(r.r), cos(r.g)*cos(r.r) );
+
+//Translation
+matrix T = set(set(1, 0, 0, 0), set(0, 1, 0, 0), set(0, 0, 1, 0), set(t.x, t.y, t.z, 1));
+
+//Basic Rotation After
+
+matrix3 Rx = set(1,0,0, 0,cos(rot.x),-sin(rot.x), 0,sin(rot.x),cos(rot.x));
+matrix3 Ry = set(cos(rot.y),0,sin(rot.y), 0,1,0, -sin(rot.y),0,cos(rot.y));
+matrix3 Rz = set(cos(rot.z),-sin(rot.z),0, sin(rot.z),cos(rot.z),0 ,0,0,1);
+matrix3 Rxyz = Rx*Ry*Rz;
+
+//Bend
+
+vector bendaxis = chv('Bend_Axis');
+vector min = getbbox_min(0);
+vector max = getbbox_max(0);
+float grad;
+
+if(chi('bend_coord') == 0)
+{
+    grad = fit(@P.x, min.x, max.x, 0, 1);
+}
+
+else if(chi('bend_coord') == 1)
+{
+    grad = fit(@P.y, min.y, max.y, 0, 1);
+}
+
+else
+{
+    grad = fit(@P.z, min.z, max.z, 0, 1);
+}
+
+float angle = chf('bend') *pow(chramp('BendRamp',grad), 1+chf('bend_power'));
+vector4 quat = quaternion(radians(angle), bendaxis);
+@P = qrotate(quat, @P);
+
+//Rotate around axis at Centroid
+
+matrix mtx1 = ident(); 
+vector axis = normalize(chv('axis'));
+float ang = radians(chf('angle'));
+rotate(mtx1, ang, axis);
+
+//Matrix Multiplication
+
+matrix mtx2 = invert(xform)*S*mtx1*xform*R*T*Rxyz; //order matters
+@P *= mtx2;
+
+//store in xform detail
+
+setdetailattrib(0, 'xform', xform*mtx2, 'set');
+```
+
+Sources:
+- [Houdini Translate Rotate Scale Bend with Matrices & Quaternions in VEX - Nodes Of Nature](https://www.youtube.com/watch?v=e9qLWS2La28)
+- [Mohamad Salame's ArtStation](https://www.artstation.com/blogs/mohamad_salame1/OQNX/translate-rotate-scale-bend-with-matrices-quaternions-in-vex)

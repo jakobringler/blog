@@ -7,16 +7,19 @@ tags:
 ---
 
 # WIP
+---
 
 ### Extracting Transformation Matrix with VEX
-Sometimes it is desirable to lock an animated mesh to the origin to perform further operations. To move it from it's position in world space to the origin we need it's transformation matrix.
+Sometimes it's desirable to lock an animated mesh to the origin to perform further operations. To move it from it's position in world space to the origin we need it's transformation matrix.
 
 [Paweł Rutkowski](https://vimeo.com/284712920) has a great video on the topic. The following is basically a writeup of the contents of his video for my own memory and to easily get back to it.
 
-To create a transformation matrix we first have to create a local coordinate system that moves with the object. To do so we have to idetinfy 2 Points that don't deform and calculate a vector between the two.
+To create a transformation matrix we first have to create a local coordinate system that moves with the object. To do so we have to identify 2 Points that don't deform and calculate a vector between the two. First isolate the the 2 points by deleting everything else.
+
+![[notes/images/Pasted image 20220602234539.png]]
 
 ```C
-// this goes in the first point wrangle
+// this goes in point wrangle 1
 
 vector P1 = point(0, "P", 0);
 vector P2 = point(0, "P", 1);
@@ -44,7 +47,7 @@ $$
 \end{array}\bigg]
 $$ 
 
-We don't really need the fourth column but 3x4 matrices dont "exist". 
+We don't really need the fourth column but 3x4 matrices dont "exist" in VEX. 
 
 ```C
 // this continues the first point wrangle
@@ -89,7 +92,7 @@ $$
 to move the object to the center the inverted matrix has to be multiplied with the position.
 
 ```C
-// this goes in the second point wrangle
+// this goes in point wrangle 2
 
 matrix transform = point(1, "transform", 0);
 
@@ -98,11 +101,12 @@ v@N *= matrix3(invert(transform));
 v@v *= matrix3(invert(transform));
 ```
 
-Download: [File](https://github.com/jakobringler/blog/tree/hugo/content/notes/sharedfiles/ExtractTransformationMatrix.hiplc)
+##### Download: [File](https://github.com/jakobringler/blog/tree/hugo/content/notes/sharedfiles/ExtractTransformationMatrix.hiplc)
 
-related to:
+--- 
 
-sources / further reading:
+### sources / further reading:
 - [Houdini Tutorial | Extracting transformation matrix with VEX - Paweł Rutkowski](https://vimeo.com/284712920)
 - [Houdini Translate Rotate Scale Bend with Matrices & Quaternions in VEX - Nodes of Nature](https://www.youtube.com/watch?v=e9qLWS2La28)
+- [Matrix Transformation- Mohamad Salame](https://www.artstation.com/blogs/mohamad_salame1/v6eP/matrix-transformation)
 

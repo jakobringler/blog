@@ -25,11 +25,11 @@ enableToc: false
 ### Other:
 
 ## Math:
-- [Essence of Linear Algebra - 3Blue1Brown](https://www.3blue1brown.com/topics/linear-algebra)
+- [Essence of Linear Algebra - 3Blue1Brown](https://www.3blue1brown.com/topics/linear-algebra) theory
 
 ## Deep Learning
 ### Houdini:
-[Houdini Machine Learning - Edmond Boulet-Gilly](https://www.youtube.com/watch?v=WNEEokEq-Fg&list=PLSie_1zkANDbn7wCD9kifPAp5wJmok02V)
+- [Houdini Machine Learning - Edmond Boulet-Gilly](https://www.youtube.com/watch?v=WNEEokEq-Fg&list=PLSie_1zkANDbn7wCD9kifPAp5wJmok02V) ML, PyTorch, technical
 
 ### Theory:
-- [PyTorch & Tensorflow Tutorials, Paper Reviews - Aladdin Persson](https://www.youtube.com/c/AladdinPersson)
+- [Aladdin Persson](https://www.youtube.com/c/AladdinPersson) theory, paper review, pytorch & tensorflow tutorials
