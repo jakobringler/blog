@@ -4,7 +4,9 @@ openToc: false
 enableLinkPreview: true
 enableLatex: true
 enableSPA: true
+enableFooter: true
 enableContextualBacklinks: true
+enableRecentNotes: false
 description:
   collection of notes about houdini, visual effects & 3d deep learning
 page_title:
