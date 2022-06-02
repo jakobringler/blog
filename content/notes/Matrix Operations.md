@@ -6,7 +6,36 @@ tags:
 - vex
 ---
 
-# WIP
+# very WIP
+### Identity Matrix
+
+### Translation
+```C#
+vector t = chv('translate');
+
+matrix T = set(set(1, 0, 0, 0), set(0, 1, 0, 0), set(0, 0, 1, 0), set(t.x, t.y, t.z, 1));
+
+@P *= T;
+```
+
+### Rotations
+
+```C#
+vector rot = radians(chv('rotate'));
+
+matrix3 Rx = set(1,0,0, 0,cos(rot.x),-sin(rot.x), 0,sin(rot.x),cos(rot.x));
+
+matrix3 Ry = set(cos(rot.y),0,sin(rot.y), 0,1,0, -sin(rot.y),0,cos(rot.y));
+
+matrix3 Rz = set(cos(rot.z),-sin(rot.z),0, sin(rot.z),cos(rot.z),0 ,0,0,1);
+
+@P = @P*Rx*Ry*Rz;
+```
+
+### Permutations
+
+### Shear
+
 ---
 
 ### Extracting Transformation Matrix with VEX
@@ -18,7 +47,7 @@ To create a transformation matrix we first have to create a local coordinate sys
 
 ![[notes/images/Pasted image 20220602234539.png]]
 
-```C
+```C#
 // this goes in point wrangle 1
 
 vector P1 = point(0, "P", 0);
@@ -49,7 +78,7 @@ $$
 
 We don't really need the fourth column but 3x4 matrices dont "exist" in VEX. 
 
-```C
+```C#
 // this continues the first point wrangle
 
 matrix transform = set(X, Y, Z, P); // create matrix
@@ -69,7 +98,7 @@ $$
 
 To fix this we can use the setcomp() function.
 
-```C
+```C#
 // this continues the first point wrangle
 
 setcomp(transform, 0, 0, 3); // set row 1 col 4 to 0
@@ -91,7 +120,7 @@ $$
 $$
 to move the object to the center the inverted matrix has to be multiplied with the position.
 
-```C
+```C#
 // this goes in point wrangle 2
 
 matrix transform = point(1, "transform", 0);
@@ -106,6 +135,7 @@ v@v *= matrix3(invert(transform));
 --- 
 
 ### sources / further reading:
+- [Linear Transformations - 3Blue1Brown](https://www.3blue1brown.com/lessons/linear-transformations)
 - [Houdini Tutorial | Extracting transformation matrix with VEX - Paweł Rutkowski](https://vimeo.com/284712920)
 - [Houdini Translate Rotate Scale Bend with Matrices & Quaternions in VEX - Nodes of Nature](https://www.youtube.com/watch?v=e9qLWS2La28)
 - [Matrix Transformation- Mohamad Salame](https://www.artstation.com/blogs/mohamad_salame1/v6eP/matrix-transformation)
