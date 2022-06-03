@@ -8,7 +8,6 @@ enableToc: true
 ---
 
 # Wrangle Cheat Sheet
-
 >I try my best to credit and link to any sources. That being said, some of those are pretty old and I have no idea where they came from.
 >
 >I recommend installing this handy python panel to manage your own snippet collection: [Vex Snippet Library](https://github.com/dchow1992/Vex_Snippet_Library)
@@ -128,6 +127,17 @@ foreach(string g; grps)
 }
 ```
 
+### Collision Check and Deintersection with SDF VDB
+```C
+vector gradient = volumegradient(1, "surface", v@P); 
+float surface = volumesample(1, "surface", v@P);
+
+if(surface < chf("dist"))
+{
+	v@P += normalize(gradient) * abs(surface);
+}
+```
+
 ### Edgefalloff
 ```C
 if (@edgefalloff==1)
@@ -238,6 +248,15 @@ if(@ptnum % 100 < percentage)
 {
 	removepoint(0, @ptnum );
 }
+```
+
+### Rotate Vector
+```C
+float angle = chf("angle");
+vector axis = normalize(chv("axis"));
+
+vector4 rot = quaternion(radians(angle), axis);
+@P = qrotate(rot, @P);
 ```
 
 ### Translate, Rotate, Scale & Bend

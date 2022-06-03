@@ -18,8 +18,11 @@ enableToc: false
 - [wiki - John Kunz](https://wiki.johnkunz.com/index.php?title=Main_Page) VEX, resources
 - [Toadstorm Nerdblog - Henry Foster](https://www.toadstorm.com/blog/) MOPs, procedural workflows & python
 - [Blog - Jake Rice](https://jakerice.design/blog/) VEX, math, technical
+- [Blog - Sergen Eren](https://sergeneren.com/) FX, technical, clouds, photon simulation
 - [FX Thinking - Alessandro Pepe](https://pepefx.blogspot.com/) FX, technical
 - [1 Minute VEX - Aaron Smith](https://aaronsmith.tv/1-Minute-VEX) VEX
+- [Houdini Tutorials Tailored for Mathematicians](http://wordpress.discretization.de/houdini/) math, technical
+- [Blog - Rok Andic](https://www.rokandic.com/blog) rigging, animation
 - [The Brain Extension - Iiro Kivistö](https://www.thebrainextension.com/) grooming, CFX
 - [Creature Garage - JesusFC](https://creaturegarage.com/) grooming
 
