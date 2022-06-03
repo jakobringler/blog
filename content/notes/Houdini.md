@@ -8,8 +8,8 @@ tags:
 ### VEX:
 - [[notes/VEX Snippets |VEX Snippets]]
 - [[notes/Vector Shenanigans |Vector Shenanigans]]
-- [[notes/Matrix Operations |Matrix Operations]]
 - [[notes/Quaternion-Euler-Rotations |Quaternion & Euler Rotations]]
+- [[notes/Matrix Operations |Matrix Operations]]
 - [[notes/primuv and xyzdist |primuv & xyzdist]]
 
 ### Deep Learning:
