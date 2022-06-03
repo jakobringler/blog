@@ -8,7 +8,7 @@ tags:
 
 ### Quaternions
 
-expressed as 4 numbers `vector4 = [x, y, z, w]
+expressed as 4 numbers `vector4 = [x, y, z, w]`
 
 It's usually used to define rotational transformation in 3D Space. To do so it needs 2 types of information: 
 - rotational angle   $\theta$
