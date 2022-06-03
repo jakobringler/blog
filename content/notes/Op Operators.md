@@ -1,4 +1,4 @@
----
+// integer arguments are defined in $HH/vex/include/math.h---
 title: "Op Operators"
 tags:
 - houdini

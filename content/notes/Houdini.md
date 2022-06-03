@@ -9,7 +9,7 @@ tags:
 - [[notes/VEX Snippets |VEX Snippets]]
 - [[notes/Vector Shenanigans |Vector Shenanigans]]
 - [[notes/Matrix Operations |Matrix Operations]]
-- [[notes/Quaternions-Euler-Radians-Degrees |Quaternions & Euler, Radians & Degrees]]
+- [[notes/Quaternion-Euler-Rotations |Quaternion & Euler Rotations]]
 - [[notes/primuv and xyzdist |primuv & xyzdist]]
 
 ### Deep Learning:
