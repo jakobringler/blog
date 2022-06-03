@@ -13,6 +13,7 @@ enableToc: false
 ### Houdini:
 - [cgwiki - Matt Estela](https://www.tokeru.com/cgwiki/index.php?title=Houdini) all things houdini
 - [Entagma - Moritz Schwind & Manuel Casasola Merkle](https://entagma.com/) procedural & motion design
+- [VEX for Algorithmic Design - Junichiro Horikawa](https://www.youtube.com/playlist?list=PLzRzqTjuGIDhiXsP0hN3qBxAZ6lkVfGDI) VEX, procedural design
 - [procegen - Konstantin Magnus](https://procegen.konstantinmagnus.de/) procedural workflows, automation
 - [wiki - John Kunz](https://wiki.johnkunz.com/index.php?title=Main_Page) VEX, resources
 - [Toadstorm Nerdblog - Henry Foster](https://www.toadstorm.com/blog/) MOPs, procedural workflows & python

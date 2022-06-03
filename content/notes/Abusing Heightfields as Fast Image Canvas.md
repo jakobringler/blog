@@ -26,7 +26,7 @@ Tested when trying to do [[notes/Digit Recognition in Houdini |Digit Recognition
 
 **Heightfields** or '2D-Volumes' (weird name). 
 
-They have a grid-like topology and only store a single value per voxel instead of unnecessary connectivity information or other  data. 
+They have a grid-like topology and only store a single value per voxel instead of unnecessary connectivity information or other data. 
 
 Houdini also ships with a python function to extract voxel data quickly, which allows us to convert the 2D information into the necessary shape.
 
@@ -50,4 +50,4 @@ input = np.asarray(canvasVoxels, dtype=np.float64)
 input = input.reshape(W,H) # creates a tensor of shape [128,128,1]
 ```
 
-
+See [[notes/Towers From Sketch |Towers From Sketch]] to find out more about the applications of this technique.

@@ -7,7 +7,9 @@ tags:
 
 ### VEX:
 - [[notes/VEX Snippets |VEX Snippets]]
+- [[notes/Vector Shenanigans |Vector Shenanigans]]
 - [[notes/Matrix Operations |Matrix Operations]]
+- [[notes/Quaternions-Radians-Degrees |Quaternions, Radians, Degrees]]
 - [[notes/primuv and xyzdist |primuv & xyzdist]]
 
 ### Deep Learning:
