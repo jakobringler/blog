@@ -75,6 +75,19 @@ v@euler = degrees(euler);
 
 Matrices can do most of what quaternions can do and more (translation & scale). However, one thing that quaternions enable you to do is using the `slerp` function to blend smoothly between two rotational transformations.
 
+### Using Dihedral Function to Orient Vectors
+
+The dihedral function creates a quaternion that describes the rotational transformation between two given vectors. This can be used to switch between two orientations of a mesh.
+
+![[notes/images/Pasted image 20220604005136.png]]
+```C#
+vector v1 = normalize(point(1, "P", 1));
+vector v2 = normalize(point(2, "P", 1));
+
+vector4 quat = dihedral(v1, v2);
+
+@P = qrotate(quat, @P);
+```
 
 ### Sources /  further Reading:
 - [[VEX for Algorithmic Design] E14 _ Quaternion Basics](https://www.youtube.com/watch?v=MYRtwY-DQV8)
