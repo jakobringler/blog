@@ -20,7 +20,6 @@ $(sin(\frac{\theta}{2})*A.x, sin(\frac{\theta}{2})*A.y, sin(\frac{\theta}{2})*A.
 
 In VEX we can use the quaternion function which accepts an angle in radians and an axis vector to propagate the vector4 accordingly.
 
-
 ### Rotating Vectors
 
 ```C#
