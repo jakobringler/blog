@@ -4,12 +4,52 @@ tags:
 - houdini
 - math
 - vex
+enableToc: true
 ---
 
 # very WIP
+
+# Basics
+
+### Dimensions
+
+Houdini most commonly uses 3x3 or 4x4 matrices to store transformation data
+
+3x3 -> rotation and scale
+4x4 -> rotation, scale and translation
+
 ### Identity Matrix
 
+The identity matrix is sort of the base matrix and means no transformation is applied. The diagonal ones store the scale value.
+
+$$
+\bigg[\begin{array}{rcl}
+	1&0&0&0 \\
+	0&1&0&0 \\
+	0&0&1&0 \\
+	0&0&0&1 \\
+\end{array}\bigg]
+$$
+
+It can be created in VEX by calling `ident()`.
+
+```C#
+matrix xform = ident();
+```
+
 ### Translation
+
+```C#
+matrix xform = ident();
+vector translation = chv("translation");
+
+translate(xform, translation);
+
+@P *= xform;
+```
+
+This is what happens under the hood:
+
 ```C#
 vector t = chv('translate');
 
@@ -19,6 +59,20 @@ matrix T = set(set(1, 0, 0, 0), set(0, 1, 0, 0), set(0, 0, 1, 0), set(t.x, t.y, 
 ```
 
 ### Rotations
+
+Quaternion Rotations
+
+```C#
+matrix xform = ident();
+float angle = radians(chf("angle"));
+vector axis = chv("axis");
+
+rotate(xform, angle, axis);
+
+@P *= xform;
+```
+
+Euler Rotations
 
 ```C#
 vector rot = radians(chv('rotate'));
@@ -32,13 +86,32 @@ matrix3 Rz = set(cos(rot.z),-sin(rot.z),0, sin(rot.z),cos(rot.z),0 ,0,0,1);
 @P = @P*Rx*Ry*Rz;
 ```
 
+for more details have a look at [[notes/Quaternion-Euler-Rotations |Quaternions and Euler Rotations]]
+
+### Scale
+
+```C#
+matrix xform = ident();
+vector scale = chv("scale");
+
+scale(xform, scale);
+
+@P *= xform;
+```
+
+### Order of Operations for Transformations
+
+The default of the transform node and in most 3D packages ist `SRT`, which means first **Scaling** the object in place and then **Rotating** it before **Translating** it's position.
+
 ### Permutations
 
 ### Shear
 
 ---
 
-### Extracting Transformation Matrix with VEX
+# Usecases
+
+### Extracting a Transformation Matrix with VEX
 Sometimes it's desirable to lock an animated mesh to the origin to perform further operations. To move it from it's position in world space to the origin we need it's transformation matrix.
 
 [Paweł Rutkowski](https://vimeo.com/284712920) has a great video on the topic. The following is basically a writeup of the contents of his video for my own memory and to easily get back to it.
@@ -134,9 +207,16 @@ v@v *= matrix3(invert(transform));
 
 --- 
 
+# Driving Transformations with Point Attributes
+
+### Warping Space
+
+---
+
 ### sources / further reading:
 - [Linear Transformations - 3Blue1Brown](https://www.3blue1brown.com/lessons/linear-transformations)
 - [Houdini Tutorial | Extracting transformation matrix with VEX - Paweł Rutkowski](https://vimeo.com/284712920)
+- [Pure VEX Workshop Week 6: Warping with Matrices - John Kunz](https://www.youtube.com/watch?v=DA0ZuIJ-W7s)
 - [Houdini Translate Rotate Scale Bend with Matrices & Quaternions in VEX - Nodes of Nature](https://www.youtube.com/watch?v=e9qLWS2La28)
 - [Matrix Transformation- Mohamad Salame](https://www.artstation.com/blogs/mohamad_salame1/v6eP/matrix-transformation)
 

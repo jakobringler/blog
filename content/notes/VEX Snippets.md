@@ -259,6 +259,12 @@ vector4 rot = quaternion(radians(angle), axis);
 @P = qrotate(rot, @P);
 ```
 
+### Sharpen Point Cloud
+```C
+int handle = pcopen(0, "P", @P, chf("radius"), chi("maxpoints"));
+v@P = pcfilter(handle, "P");
+```
+
 ### Translate, Rotate, Scale & Bend
 ```C
 vector t = chv('translate');
