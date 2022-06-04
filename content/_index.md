@@ -7,6 +7,8 @@ fx notes serves as a public *second brain* for some of my visual effects, proced
 
 Press `Ctrl` + `K` to search for something 
 
+You can use the interactive graph to browse the site and discover connections between notes
+
 ### Content Lists
 If you prefer browsing the contents of this site through a list instead of a graph, you can find content lists here too:
 
