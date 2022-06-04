@@ -4,9 +4,9 @@ tags:
 - machinelearning
 ---
 
-### Architecture:
+### Architecture
 
-### Kernels:
+### Kernels
 
 
 ![[notes/images/convkernel2CC.png]]

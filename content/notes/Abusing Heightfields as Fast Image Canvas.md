@@ -8,7 +8,7 @@ tags:
 enableToc: false
 ---
 
-### The Problem:
+### The Problem
 
 A big part of getting a machine learning model to run is to prepare and import the data in the right _shape_. Usually this shape will be some n-dimensional [[notes/Tensors |Tensor]]. 
 
@@ -22,7 +22,7 @@ Unfortunately storing image data on 3D geometry isn't very efficient. Polygon gr
 
 Tested when trying to do [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]].
 
-### The Solution:
+### The Solution
 
 **Heightfields** or '2D-Volumes' (weird name). 
 

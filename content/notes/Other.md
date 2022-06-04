@@ -4,9 +4,9 @@ tags:
 - list
 ---
 
-### Nuke:
+### Nuke
 
-### Color Grading:
+### Color Grading
 
 
 

@@ -4,8 +4,8 @@ tags:
 - list
 ---
 
-### ML Basics for Technical 3D Artists / TDs:
-##### Concepts:
+### ML Basics for Technical 3D Artists / TDs
+##### Concepts
 - [[notes/Tensors |Tensors]]
 - [[notes/Gradient Descent |Gradient Descent]]
 - [[notes/Back Propagation |Back Propagation]]
@@ -25,13 +25,13 @@ tags:
 - Compress Algorithms
 - Increase Usabiliy & Accessability
 
-### Setup Guides:
+### Setup Guides
 -  [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]
 
-### Houdini DL "Hacks":
+### Houdini DL "Hacks"
 - [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
 
-### Projects & Examples:
+### Projects & Examples
 - [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]]
 - Sketch to Tower
 - Vegetation & Erosion

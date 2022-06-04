@@ -10,7 +10,7 @@ tags:
 enableToc: false
 ---
 
-### Installation:
+### Installation
 
 To get started install [Anaconda](https://anaconda.org/) and run the following commands in your terminal:
 
@@ -36,7 +36,7 @@ As [jpparkeramnh](https://www.sidefx.com/profile/jpparkeramnh/) pointed out in [
 export LD_PRELOAD=$CONDA_PREFIX/lib/libpython3.7m.so
 ```
 
-### .bashrc Modifications:
+### .bashrc Modifications
 
 I also recommend sourcing Houdini in the terminal.
 

@@ -6,7 +6,7 @@ tags:
 - vex
 ---
 
-### Quaternions:
+### Quaternions
 
 expressed as 4 numbers `vector4 = [x, y, z, w]`
 
@@ -20,7 +20,7 @@ $q = (sin(\frac{\theta}{2})*Ax, sin(\frac{\theta}{2})*Ay, sin(\frac{\theta}{2})*
 
 In VEX we can use the quaternion function which accepts an angle in radians and an axis vector to propagate the vector4 accordingly.
 
-### Rotating Vectors:
+### Rotating Vectors
 
 ```C#
 //this goes in a point wrangle
@@ -32,7 +32,7 @@ vector4 rot = quaternion(radians(angle), axis);
 @P = qrotate(rot, @P);
 ```
 
-### Euler Rotation:
+### Euler Rotation
 
 While Quaternians define the rotational transformation with an angle around a specified axis, Euler rotation is defined by 3 Parameters (compare `Transform Node` x, y, z).
 
@@ -71,7 +71,7 @@ v@euler = degrees(euler);
 ```
 
 
-### Blending Quaternions with `slerp()`:
+### Blending Quaternions with `slerp()`
 
 Matrices can do most of what quaternions can do and more (translation & scale). However, one thing that quaternions enable you to do is using the `slerp` function to blend smoothly between two rotational transformations.
 
@@ -107,7 +107,7 @@ vector4 rot = slerp(quat1, quat2, chf("blend"));
 
 ##### Download: [File](https://github.com/jakobringler/blog/tree/hugo/content/notes/sharedfiles/QuaternionSlerp.hiplc)
 
-### Using `dihedral` Function to Orient Vectors:
+### Using `dihedral` Function to Orient Vectors
 
 The dihedral function creates a quaternion that describes the rotational transformation between two given vectors. This can be used to switch between two orientations of a mesh.
 
@@ -121,8 +121,8 @@ vector4 quat = dihedral(v1, v2);
 @P = qrotate(quat, @P);
 ```
 
-### Sources /  further Reading:
+### Sources /  further Reading
 - [[VEX for Algorithmic Design] E14 _ Quaternion Basics](https://www.youtube.com/watch?v=MYRtwY-DQV8)
 
-### Related:
+### Related
 - [[notes/Matrix Operations |Matrix Operations]]

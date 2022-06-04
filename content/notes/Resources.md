@@ -4,13 +4,13 @@ tags:
 - list
 enableToc: false
 ---
-# Downloads & Scripts:
+# Downloads & Scripts
 [[notes/VEX Snippets |VEX Snippets]]
 
-# Links:
+# Links
 
 ## CG & VFX
-### Houdini:
+### Houdini
 - [cgwiki - Matt Estela](https://www.tokeru.com/cgwiki/index.php?title=Houdini) all things houdini
 - [Entagma - Moritz Schwind & Manuel Casasola Merkle](https://entagma.com/) procedural & motion design
 - [VEX for Algorithmic Design - Junichiro Horikawa](https://www.youtube.com/playlist?list=PLzRzqTjuGIDhiXsP0hN3qBxAZ6lkVfGDI) VEX, procedural design
@@ -28,14 +28,14 @@ enableToc: false
 - [The Brain Extension - Iiro Kivistö](https://www.thebrainextension.com/) grooming, CFX
 - [Creature Garage - JesusFC](https://creaturegarage.com/) grooming
 
-### Other:
+### Other
 
-## Math:
+## Math
 - [Essence of Linear Algebra - 3Blue1Brown](https://www.3blue1brown.com/topics/linear-algebra) theory
 
 ## Deep Learning
-### Houdini:
+### Houdini
 - [Houdini Machine Learning - Edmond Boulet-Gilly](https://www.youtube.com/watch?v=WNEEokEq-Fg&list=PLSie_1zkANDbn7wCD9kifPAp5wJmok02V) ML, PyTorch, technical
 
-### Theory:
+### Theory
 - [Aladdin Persson](https://www.youtube.com/c/AladdinPersson) theory, paper review, pytorch & tensorflow tutorials

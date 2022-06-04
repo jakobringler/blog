@@ -9,16 +9,16 @@ enableToc: true
 
 # very WIP
 
-# Basics:
+# Basics
 
-### Dimensions:
+### Dimensions
 
 Houdini most commonly uses 3x3 or 4x4 matrices to store transformation data
 
 3x3 -> rotation and scale
 4x4 -> rotation, scale and translation
 
-### Identity Matrix:
+### Identity Matrix
 
 The identity matrix is sort of the base matrix and means no transformation is applied. The diagonal ones store the scale value.
 
@@ -37,7 +37,7 @@ It can be created in VEX by calling `ident()`.
 matrix xform = ident();
 ```
 
-### Translation:
+### Translation
 
 ```C#
 matrix xform = ident();
@@ -58,7 +58,7 @@ matrix T = set(set(1, 0, 0, 0), set(0, 1, 0, 0), set(0, 0, 1, 0), set(t.x, t.y, 
 @P *= T;
 ```
 
-### Rotations:
+### Rotations
 
 Quaternion Rotations
 
@@ -88,7 +88,7 @@ matrix3 Rz = set(cos(rot.z),-sin(rot.z),0, sin(rot.z),cos(rot.z),0 ,0,0,1);
 
 for more details have a look at [[notes/Quaternion-Euler-Rotations |Quaternions and Euler Rotations]]
 
-### Scale:
+### Scale
 
 ```C#
 matrix xform = ident();
@@ -99,19 +99,19 @@ scale(xform, scale);
 @P *= xform;
 ```
 
-### Order of Operations for Transformations:
+### Order of Operations for Transformations
 
 The default of the transform node and in most 3D packages ist `SRT`, which means first **Scaling** the object in place and then **Rotating** it before **Translating** it's position.
 
-### Permutations:
+### Permutations
 
-### Shear:
+### Shear
 
 ---
 
-# Usecases:
+# Usecases
 
-### Extracting a Transformation Matrix with VEX:
+### Extracting a Transformation Matrix with VEX
 
 Sometimes it's desirable to lock an animated mesh to the origin to perform further operations. To move it from it's position in world space to the origin we need it's transformation matrix.
 
@@ -208,7 +208,7 @@ v@v *= matrix3(invert(transform));
 
 --- 
 
-# Warping Space:
+# Warping Space
 
 ### Twisting:
 
@@ -232,7 +232,7 @@ rotate(xform, angle, axis);
 @P *= xform;
 ```
 
-### Black Hole Vortex:
+### Black Hole Vortex
 
 John Kunz demonstrated this technique in his [Pure VEX Workshop Week 6](https://www.youtube.com/watch?v=DA0ZuIJ-W7s). 
 
@@ -256,7 +256,6 @@ translate(xform, translate);
 
 @P *= xform;
 ```
-
 
 ---
 

@@ -10,5 +10,5 @@ tags:
 
 ![[notes/images/tensordims.png]]
 
-### Image Tensors:
+### Image Tensors
 ![[notes/images/imagetensor.png]]
