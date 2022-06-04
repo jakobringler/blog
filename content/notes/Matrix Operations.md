@@ -232,6 +232,31 @@ rotate(xform, angle, axis);
 @P *= xform;
 ```
 
+### Black Whole Vortex:
+
+John Kunz demonstrated this technique in his [Pure VEX Workshop Week 6](https://www.youtube.com/watch?v=DA0ZuIJ-W7s). 
+
+![[notes/images/Pasted image 20220604182753.png]]
+
+```C#
+matrix xform = ident();
+
+vector angle = (1.0 / exp(length(@P)))*chv("rotationscale");
+float scale = pow(1 - 1 / exp(length(@P)), 5);
+vector translatedir = chv("translatedir")*chf("translatescale");
+vector translate = set(translatedir.x, translatedir.y, translatedir.z) / exp(length(@P));
+
+rotate(xform, angle.x, set(1,0,0) );
+rotate(xform, angle.y, set(0,1,0) );
+rotate(xform, angle.z, set(0,0,1) );
+
+scale(xform, scale);
+
+translate(xform, translate);
+
+@P *= xform;
+```
+
 
 ---
 
