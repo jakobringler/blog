@@ -121,7 +121,7 @@ vector4 quat = dihedral(v1, v2);
 @P = qrotate(quat, @P);
 ```
 
-### Sources /  further Reading
+### sources /  further reading
 - [[VEX for Algorithmic Design] E14 _ Quaternion Basics](https://www.youtube.com/watch?v=MYRtwY-DQV8)
 
 ### Related
