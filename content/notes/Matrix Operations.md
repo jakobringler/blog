@@ -232,7 +232,7 @@ rotate(xform, angle, axis);
 @P *= xform;
 ```
 
-### Black Whole Vortex:
+### Black Hole Vortex:
 
 John Kunz demonstrated this technique in his [Pure VEX Workshop Week 6](https://www.youtube.com/watch?v=DA0ZuIJ-W7s). 
 
