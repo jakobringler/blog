@@ -12,11 +12,11 @@ expressed as 4 numbers `vector4 = [x, y, z, w]`
 
 It's usually used to define rotational transformation in 3D Space. To do so it needs 2 types of information: 
 - rotational angle   $\theta$
-- rotational axis   $A$ 
+- rotational axis   $A$
 
 The 4 vector values of a quaternion are calculated in the following way:
 
-$(sin(\frac{\theta}{2})*A.x, sin(\frac{\theta}{2})*A.y, sin(\frac{\theta}{2})*A.z, cos(\frac{\theta}{2}))$
+$q = (sin(\frac{\theta}{2})*Ax, sin(\frac{\theta}{2})*Ay, sin(\frac{\theta}{2})*Az, cos(\frac{\theta}{2}))$
 
 In VEX we can use the quaternion function which accepts an angle in radians and an axis vector to propagate the vector4 accordingly.
 
@@ -63,7 +63,7 @@ Rotation Order Integer Arguments as defined in `$HH/vex/include/math.h`:
 Same thing works backwards:
 
 ```C#
-vector4 quat + p@quat;
+vector4 quat = p@quat;
 
 vector euler = quaterniontoeuler(quat, XFORM_XYZ);
 
@@ -74,6 +74,36 @@ v@euler = degrees(euler);
 ### Blending Quaternions with `slerp()`
 
 Matrices can do most of what quaternions can do and more (translation & scale). However, one thing that quaternions enable you to do is using the `slerp` function to blend smoothly between two rotational transformations.
+
+![[notes/images/QuaternionSlerpCut.gif]]
+
+In this example the two orientations get initialized buy rotating a line in two different ways and extracting each quaternion.
+
+```C#
+// this goes in point wrangle "quat_1 & 2"
+
+float angle = chf("angle");
+vector axis = normalize(chv("axis"));
+
+vector4 rot = quaternion(radians(angle), axis);
+@P = qrotate(rot, @P);
+
+p@quat = rot;
+```
+
+```C#
+// this goes in point wrangle  "slerp"
+
+vector4 quat1 = point(1, "quat", 1);
+vector4 quat2 = point(2, "quat", 1);
+
+vector4 rot = slerp(quat1, quat2, chf("blend"));
+
+@P = qrotate(rot, @P);
+@N = qrotate(rot, @N);
+```
+
+##### Download: [File](https://github.com/jakobringler/blog/tree/hugo/content/notes/sharedfiles/QuaternionSlerp.hiplc)
 
 ### Using Dihedral Function to Orient Vectors
 
