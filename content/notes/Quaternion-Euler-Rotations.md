@@ -91,6 +91,8 @@ vector4 rot = quaternion(radians(angle), axis);
 p@quat = rot;
 ```
 
+Then we can blend rotationally between the two orientations with the `slerp` function and apply the blended result.
+
 ```C#
 // this goes in point wrangle  "slerp"
 
