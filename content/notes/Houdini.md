@@ -7,6 +7,7 @@ tags:
 
 ### VEX:
 - [[notes/VEX Snippets |VEX Snippets]]
+- [[notes/Numbers |Numbers]]
 - [[notes/Vector Shenanigans |Vector Shenanigans]]
 - [[notes/Quaternion-Euler-Rotations |Quaternion & Euler Rotations]]
 - [[notes/Matrix Operations |Matrix Operations]]
