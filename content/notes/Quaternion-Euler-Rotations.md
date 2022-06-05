@@ -123,6 +123,7 @@ vector4 quat = dihedral(v1, v2);
 
 ### sources /  further reading
 - [[VEX for Algorithmic Design] E14 _ Quaternion Basics](https://www.youtube.com/watch?v=MYRtwY-DQV8)
+- [Visualizing quaternions - Grant Sanderson (3blue1brown)](https://eater.net/quaternions)
 
 ### Related
 - [[notes/Matrix Operations |Matrix Operations]]
