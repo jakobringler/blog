@@ -2,7 +2,7 @@
 <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
 <script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
 <script src=https://fxnotes.xyz/js/popover.688c5dcb89a57776d7f1cbeaf6f7c44b.min.js></script>
-<script>const BASE_URL="https://fxnotes.xyz/",fetchData=Promise.all([fetch("https://fxnotes.xyz/indices/linkIndex.2b437aa4703eb628ff7159e300d6fb98.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://fxnotes.xyz/indices/contentIndex.ee01061c0f150674c72d24b2c23889c3.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),draw=()=>{const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(draw);e.textContent="",drawGraph("https://fxnotes.xyz",[{"/moc":"#4388cc"}],1,!0,!1,!0),initPopover("https://fxnotes.xyz",!0,!0),renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})}</script><script type=module>
+<script>const BASE_URL="https://fxnotes.xyz/",fetchData=Promise.all([fetch("https://fxnotes.xyz/indices/linkIndex.2b437aa4703eb628ff7159e300d6fb98.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://fxnotes.xyz/indices/contentIndex.124ad18f1f43fd911d4b883a5e94e1f4.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),draw=()=>{const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(draw);e.textContent="",drawGraph("https://fxnotes.xyz",[{"/moc":"#4388cc"}],1,!0,!1,!0),initPopover("https://fxnotes.xyz",!0,!0),renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})}</script><script type=module>
     import { attachSPARouting } from "https:\/\/fxnotes.xyz\/js\/router.9a6d7a1d38ca8b3310438bee1998ae15.min.js"
     attachSPARouting(draw)
   </script></head><script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD95KB4J"></script>
@@ -28,7 +28,11 @@
 </span><span class=lnt>17
 </span><span class=lnt>18
 </span><span class=lnt>19
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=kt>float</span> <span class=n>value</span><span class=p>;</span>
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>value</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>values</span><span class=p>[];</span>
 </span></span><span class=line><span class=cl><span class=n>string</span> <span class=n>attrname</span> <span class=o>=</span> <span class=s>&#34;name&#34;</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>max_value</span><span class=p>;</span>
@@ -55,7 +59,11 @@
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=kt>int</span> <span class=n>posprim</span><span class=p>;</span>
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>posprim</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>param_uv</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>maxdist</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>dist</span> <span class=o>=</span> <span class=n>xyzdist</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=err>@</span><span class=n>P</span><span class=p>,</span><span class=n>posprim</span><span class=p>,</span><span class=n>param_uv</span><span class=p>,</span><span class=n>maxdist</span><span class=p>);</span>
@@ -78,7 +86,11 @@
 </span><span class=lnt>15
 </span><span class=lnt>16
 </span><span class=lnt>17
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=n>vector</span> <span class=n>value</span><span class=p>;</span>
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>value</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>values</span><span class=p>[];</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>for</span> <span class=p>(</span><span class=kt>int</span> <span class=n>i</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span> <span class=n>i</span><span class=o>&lt;</span><span class=err>@</span><span class=n>numpt</span><span class=p>;</span> <span class=n>i</span><span class=o>++</span><span class=p>)</span>
@@ -152,7 +164,11 @@
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=kt>float</span> <span class=n>maxdist</span> <span class=o>=</span> <span class=n>chf</span><span class=p>(</span><span class=s>&#34;maxdist&#34;</span><span class=p>);</span>
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>maxdist</span> <span class=o>=</span> <span class=n>chf</span><span class=p>(</span><span class=s>&#34;maxdist&#34;</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>maxpts</span> <span class=o>=</span> <span class=n>chi</span><span class=p>(</span><span class=s>&#34;maxpts&#34;</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>points</span> <span class=o>=</span> <span class=n>len</span><span class=p>(</span><span class=n>nearpoints</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=err>@</span><span class=n>P</span><span class=p>,</span> <span class=n>maxdist</span><span class=p>,</span> <span class=n>maxpts</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>
@@ -167,16 +183,26 @@
 </span><span class=lnt> 8
 </span><span class=lnt> 9
 </span><span class=lnt>10
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=n>string</span> <span class=n>cam</span> <span class=o>=</span> <span class=n>chs</span><span class=p>(</span><span class=s>&#34;cam&#34;</span><span class=p>);</span>
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle (best used on a single point)
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>string</span> <span class=n>cam</span> <span class=o>=</span> <span class=n>chs</span><span class=p>(</span><span class=s>&#34;cam&#34;</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=n>matrix</span> <span class=n>camXform</span> <span class=o>=</span> <span class=n>optransform</span><span class=p>(</span><span class=n>cam</span><span class=p>);</span> 
 </span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>cpos</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>cdir</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>cup</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=n>cpos</span> <span class=o>=</span> <span class=n>cracktransform</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span><span class=mi>0</span><span class=p>,</span><span class=mi>0</span><span class=p>},</span> <span class=n>camXform</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=n>cdir</span> <span class=o>=</span> <span class=n>vtransform</span><span class=p>(</span><span class=n>cam</span><span class=p>,</span><span class=s>&#34;space:world&#34;</span><span class=p>,</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span><span class=mi>0</span><span class=p>,</span><span class=o>-</span><span class=mi>1</span><span class=p>});</span>
+</span></span><span class=line><span class=cl><span class=n>cup</span> <span class=o>=</span> <span class=n>vtransform</span><span class=p>(</span><span class=n>cam</span><span class=p>,</span><span class=s>&#34;space:world&#34;</span><span class=p>,</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>0</span><span class=p>});</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=n>v</span><span class=err>@</span><span class=n>P</span> <span class=o>=</span> <span class=n>cpos</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=n>v</span><span class=err>@</span><span class=n>N</span> <span class=o>=</span> <span class=n>cdir</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>v</span><span class=err>@</span><span class=n>up</span> <span class=o>=</span> <span class=n>cup</span><span class=p>;</span>
 </span></span></code></pre></td></tr></table></div></div><a href=#create-name-attribute-for-each-prim-group><h3 id=create-name-attribute-for-each-prim-group><span class=hanchor arialabel=Anchor># </span>Create Name Attribute for each Prim Group</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
@@ -194,7 +220,11 @@
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=n>vector</span> <span class=n>gradient</span> <span class=o>=</span> <span class=n>volumegradient</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=s>&#34;surface&#34;</span><span class=p>,</span> <span class=n>v</span><span class=err>@</span><span class=n>P</span><span class=p>);</span> 
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>gradient</span> <span class=o>=</span> <span class=n>volumegradient</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=s>&#34;surface&#34;</span><span class=p>,</span> <span class=n>v</span><span class=err>@</span><span class=n>P</span><span class=p>);</span> 
 </span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>surface</span> <span class=o>=</span> <span class=n>volumesample</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=s>&#34;surface&#34;</span><span class=p>,</span> <span class=n>v</span><span class=err>@</span><span class=n>P</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>if</span><span class=p>(</span><span class=n>surface</span> <span class=o>&lt;</span> <span class=n>chf</span><span class=p>(</span><span class=s>&#34;dist&#34;</span><span class=p>))</span>
@@ -212,7 +242,11 @@
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=lnt>11
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=err>@</span><span class=n>edgefalloff</span><span class=o>==</span><span class=mi>1</span><span class=p>)</span>
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=err>@</span><span class=n>edgefalloff</span><span class=o>==</span><span class=mi>1</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl>	<span class=kt>int</span> <span class=n>near</span><span class=p>[]</span> <span class=o>=</span> <span class=n>nearpoints</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=err>@</span><span class=n>P</span><span class=p>,</span><span class=n>chf</span><span class=p>(</span><span class=s>&#34;dist&#34;</span><span class=p>));</span>
 </span></span><span class=line><span class=cl>	
@@ -223,15 +257,19 @@
 </span></span><span class=line><span class=cl>		<span class=n>setpointattrib</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=s>&#34;edgefalloff&#34;</span><span class=p>,</span><span class=n>pnt</span><span class=p>,</span><span class=n>dist</span><span class=p>,</span><span class=s>&#34;set&#34;</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>	<span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><a href=#expand-group-over-geo><h3 id=expand-group-over-geo><span class=hanchor arialabel=Anchor># </span>Expand Group Over Geo</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
-</span><span class=lnt>6
-</span><span class=lnt>7
-</span><span class=lnt>8
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=kt>int</span> <span class=n>pc</span> <span class=o>=</span> <span class=n>pcopen</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=sc>&#39;P&#39;</span><span class=p>,</span> <span class=err>@</span><span class=n>P</span><span class=p>,</span> <span class=n>chf</span><span class=p>(</span><span class=err>&#39;</span><span class=n>radius</span><span class=err>&#39;</span><span class=p>),</span> <span class=n>chi</span><span class=p>(</span><span class=err>&#39;</span><span class=n>maxpts</span><span class=err>&#39;</span><span class=p>));</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#expand-group-over-geo><h3 id=expand-group-over-geo><span class=hanchor arialabel=Anchor># </span>Expand Group Over Geo</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>pc</span> <span class=o>=</span> <span class=n>pcopen</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=sc>&#39;P&#39;</span><span class=p>,</span> <span class=err>@</span><span class=n>P</span><span class=p>,</span> <span class=n>chf</span><span class=p>(</span><span class=err>&#39;</span><span class=n>radius</span><span class=err>&#39;</span><span class=p>),</span> <span class=n>chi</span><span class=p>(</span><span class=err>&#39;</span><span class=n>maxpts</span><span class=err>&#39;</span><span class=p>));</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>while</span> <span class=p>(</span><span class=n>pciterate</span><span class=p>(</span><span class=n>pc</span><span class=p>)</span> <span class=o>&gt;</span> <span class=mi>0</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
@@ -256,7 +294,11 @@
 </span><span class=lnt>15
 </span><span class=lnt>16
 </span><span class=lnt>17
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=n>vector</span> <span class=n>P1</span> <span class=o>=</span> <span class=n>point</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;P&#34;</span><span class=p>,</span> <span class=mi>0</span><span class=p>);</span>
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>P1</span> <span class=o>=</span> <span class=n>point</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;P&#34;</span><span class=p>,</span> <span class=mi>0</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>P2</span> <span class=o>=</span> <span class=n>point</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;P&#34;</span><span class=p>,</span> <span class=mi>1</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>up</span> <span class=o>=</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>0</span><span class=p>};</span>
 </span></span><span class=line><span class=cl>
@@ -279,7 +321,11 @@
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>chi</span><span class=p>(</span><span class=s>&#34;Neighbours&#34;</span><span class=p>);</span>
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>n</span> <span class=o>=</span> <span class=n>chi</span><span class=p>(</span><span class=s>&#34;Neighbours&#34;</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>if</span> <span class=p>(</span><span class=n>neighbourcount</span> <span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=err>@</span><span class=n>ptnum</span><span class=p>)</span> <span class=o>&gt;</span> <span class=n>n</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
@@ -291,7 +337,11 @@
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=kt>int</span> <span class=n>near</span><span class=p>[]</span> <span class=o>=</span> <span class=n>pcfind</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;P&#34;</span><span class=p>,</span> <span class=err>@</span><span class=n>P</span><span class=p>,</span> <span class=mf>0.0001</span><span class=p>,</span> <span class=mi>2</span><span class=p>);</span>
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>near</span><span class=p>[]</span> <span class=o>=</span> <span class=n>pcfind</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;P&#34;</span><span class=p>,</span> <span class=err>@</span><span class=n>P</span><span class=p>,</span> <span class=mf>0.0001</span><span class=p>,</span> <span class=mi>2</span><span class=p>);</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>if</span><span class=p>(</span><span class=n>len</span><span class=p>(</span><span class=n>near</span><span class=p>)</span> <span class=o>&gt;</span> <span class=mi>1</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
@@ -301,13 +351,21 @@
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=err>@</span><span class=n>up</span> <span class=o>=</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>0</span><span class=p>};</span>
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>up</span> <span class=o>=</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>0</span><span class=p>};</span>
 </span></span><span class=line><span class=cl><span class=err>@</span><span class=n>orient</span> <span class=o>=</span> <span class=n>quaternion</span><span class=p>(</span><span class=n>maketransform</span><span class=p>(</span><span class=err>@</span><span class=n>N</span><span class=p>,</span><span class=err>@</span><span class=n>up</span><span class=p>));</span>
 </span></span><span class=line><span class=cl><span class=n>vector4</span> <span class=n>rot_Y</span> <span class=o>=</span> <span class=n>quaternion</span><span class=p>(</span><span class=n>radians</span><span class=p>(</span><span class=n>ch</span><span class=p>(</span><span class=sc>&#39;Y&#39;</span><span class=p>)),{</span><span class=mi>0</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>0</span><span class=p>});</span>
 </span></span><span class=line><span class=cl><span class=err>@</span><span class=n>orient</span> <span class=o>=</span> <span class=n>qmultiply</span><span class=p>(</span><span class=err>@</span><span class=n>orient</span><span class=p>,</span> <span class=n>rot_Y</span><span class=p>);</span>
 </span></span></code></pre></td></tr></table></div></div><a href=#remove-point-by-condition><h3 id=remove-point-by-condition><span class=hanchor arialabel=Anchor># </span>Remove Point by Condition</h3></a><p><a href=https://twitter.com/aomai01 rel=noopener>Mai Ao</a> compared two point deletion methods, where method 1 gives a 15x speed increase over the traditional <code>removepoint()</code> function</p><ol><li>group points first and blast group in another step</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=kt>float</span> <span class=n>half_cone_rad</span> <span class=o>=</span> <span class=n>radians</span><span class=p>(</span><span class=n>chf</span><span class=p>(</span><span class=s>&#34;half_cone&#34;</span><span class=p>));</span>
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>half_cone_rad</span> <span class=o>=</span> <span class=n>radians</span><span class=p>(</span><span class=n>chf</span><span class=p>(</span><span class=s>&#34;half_cone&#34;</span><span class=p>));</span>
 </span></span><span class=line><span class=cl><span class=err>@</span><span class=n>group_to_delete</span> <span class=o>=</span> <span class=n>acos</span><span class=p>(</span><span class=n>dot</span><span class=p>(</span><span class=err>@</span><span class=n>P</span><span class=p>,</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span><span class=mi>0</span><span class=p>,</span><span class=mi>1</span><span class=p>}))</span> <span class=o>&lt;=</span> <span class=n>half_cone_rad</span><span class=p>;</span>
 </span></span></code></pre></td></tr></table></div></div><ol start=2><li>removepoint()</li></ol><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -315,7 +373,11 @@
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=kt>float</span> <span class=n>half_cone_rad</span> <span class=o>=</span> <span class=n>radians</span><span class=p>(</span><span class=n>chf</span><span class=p>(</span><span class=s>&#34;half_cone&#34;</span><span class=p>));</span>
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>half_cone_rad</span> <span class=o>=</span> <span class=n>radians</span><span class=p>(</span><span class=n>chf</span><span class=p>(</span><span class=s>&#34;half_cone&#34;</span><span class=p>));</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>if</span><span class=p>(</span><span class=n>acos</span><span class=p>(</span><span class=n>dot</span><span class=p>(</span><span class=err>@</span><span class=n>P</span><span class=p>,</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span><span class=mi>0</span><span class=p>,</span><span class=mi>1</span><span class=p>}))</span> <span class=o>&lt;=</span> <span class=n>half_cone_rad</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
@@ -327,7 +389,11 @@
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=kt>int</span> <span class=n>percentage</span> <span class=o>=</span> <span class=n>ch</span><span class=p>(</span><span class=err>&#39;</span><span class=n>percentage</span><span class=err>&#39;</span><span class=p>);</span> 
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>percentage</span> <span class=o>=</span> <span class=n>ch</span><span class=p>(</span><span class=err>&#39;</span><span class=n>percentage</span><span class=err>&#39;</span><span class=p>);</span> 
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=k>if</span><span class=p>(</span><span class=err>@</span><span class=n>ptnum</span> <span class=o>%</span> <span class=mi>100</span> <span class=o>&lt;</span> <span class=n>percentage</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
@@ -338,14 +404,22 @@
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=kt>float</span> <span class=n>angle</span> <span class=o>=</span> <span class=n>chf</span><span class=p>(</span><span class=s>&#34;angle&#34;</span><span class=p>);</span>
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>angle</span> <span class=o>=</span> <span class=n>chf</span><span class=p>(</span><span class=s>&#34;angle&#34;</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>axis</span> <span class=o>=</span> <span class=n>normalize</span><span class=p>(</span><span class=n>chv</span><span class=p>(</span><span class=s>&#34;axis&#34;</span><span class=p>));</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=n>vector4</span> <span class=n>rot</span> <span class=o>=</span> <span class=n>quaternion</span><span class=p>(</span><span class=n>radians</span><span class=p>(</span><span class=n>angle</span><span class=p>),</span> <span class=n>axis</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=err>@</span><span class=n>P</span> <span class=o>=</span> <span class=n>qrotate</span><span class=p>(</span><span class=n>rot</span><span class=p>,</span> <span class=err>@</span><span class=n>P</span><span class=p>);</span>
 </span></span></code></pre></td></tr></table></div></div><a href=#sharpen-point-cloud><h3 id=sharpen-point-cloud><span class=hanchor arialabel=Anchor># </span>Sharpen Point Cloud</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=kt>int</span> <span class=n>handle</span> <span class=o>=</span> <span class=n>pcopen</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;P&#34;</span><span class=p>,</span> <span class=err>@</span><span class=n>P</span><span class=p>,</span> <span class=n>chf</span><span class=p>(</span><span class=s>&#34;radius&#34;</span><span class=p>),</span> <span class=n>chi</span><span class=p>(</span><span class=s>&#34;maxpoints&#34;</span><span class=p>));</span>
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>handle</span> <span class=o>=</span> <span class=n>pcopen</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;P&#34;</span><span class=p>,</span> <span class=err>@</span><span class=n>P</span><span class=p>,</span> <span class=n>chf</span><span class=p>(</span><span class=s>&#34;radius&#34;</span><span class=p>),</span> <span class=n>chi</span><span class=p>(</span><span class=s>&#34;maxpoints&#34;</span><span class=p>));</span>
 </span></span><span class=line><span class=cl><span class=n>v</span><span class=err>@</span><span class=n>P</span> <span class=o>=</span> <span class=n>pcfilter</span><span class=p>(</span><span class=n>handle</span><span class=p>,</span> <span class=s>&#34;P&#34;</span><span class=p>);</span>
 </span></span></code></pre></td></tr></table></div></div><a href=#translate-rotate-scale--bend><h3 id=translate-rotate-scale--bend><span class=hanchor arialabel=Anchor># </span>Translate, Rotate, Scale & Bend</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
@@ -414,7 +488,11 @@
 </span><span class=lnt>65
 </span><span class=lnt>66
 </span><span class=lnt>67
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=n>vector</span> <span class=n>t</span> <span class=o>=</span> <span class=n>chv</span><span class=p>(</span><span class=err>&#39;</span><span class=n>translate</span><span class=err>&#39;</span><span class=p>);</span>
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// point wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>t</span> <span class=o>=</span> <span class=n>chv</span><span class=p>(</span><span class=err>&#39;</span><span class=n>translate</span><span class=err>&#39;</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>r</span> <span class=o>=</span> <span class=n>radians</span><span class=p>(</span><span class=n>chv</span><span class=p>(</span><span class=err>&#39;</span><span class=n>rotate_before</span><span class=err>&#39;</span><span class=p>));</span>
 </span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>rot</span> <span class=o>=</span> <span class=n>radians</span><span class=p>(</span><span class=n>chv</span><span class=p>(</span><span class=err>&#39;</span><span class=n>rotate_after</span><span class=err>&#39;</span><span class=p>));</span>
 </span></span><span class=line><span class=cl><span class=n>vector</span> <span class=n>s</span> <span class=o>=</span> <span class=n>chv</span><span class=p>(</span><span class=err>&#39;</span><span class=n>scale</span><span class=err>&#39;</span><span class=p>);</span>
