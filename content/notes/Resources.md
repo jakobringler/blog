@@ -32,6 +32,7 @@ enableToc: false
 
 ## Math
 - [Essence of Linear Algebra - 3Blue1Brown](https://www.3blue1brown.com/topics/linear-algebra) theory
+- [The Beauty of Bézier Curves - Freya Holmér](https://www.youtube.com/watch?v=aVwxzDHniEw) theory
 
 ## Deep Learning
 ### Houdini

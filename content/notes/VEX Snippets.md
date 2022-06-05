@@ -118,6 +118,20 @@ int points = len(nearpoints, 0, @P, maxdist, maxpts);
 f@density = float(points) / maxpts;
 ```
 
+### Camera Position and Direction
+```C
+string cam = chs("cam");
+matrix camXform = optransform(cam); 
+vector cpos;
+vector cdir;
+
+cpos = cracktransform(0, 0, 0, {0,0,0}, camXform);
+cdir = vtransform(cam,"space:world", {0,0,-1});
+
+v@P = cpos;
+v@N = cdir;
+```
+
 ### Create Name Attribute for each Prim Group
 ```C
 string grps[] = detailintrinsic(0, 'primitivegroups');
