@@ -14,6 +14,8 @@ enableToc: true
 
 ### Attribute Min Max
 ```C
+// point wrangle
+
 float value;
 float values[];
 string attrname = "name";
@@ -42,6 +44,8 @@ s@name = "piece_" + itoa(i@class);
 
 ### Attribute Transfer
 ```C
+// point wrangle
+
 int posprim;
 vector param_uv;
 float maxdist = 10;
@@ -52,6 +56,8 @@ v@rest = pos;
 
 ### Average Point Cloud Positions
 ```C
+// point wrangle
+
 vector value;
 vector values[];
 
@@ -111,6 +117,8 @@ float z_min = getbbox_min(0).z;
 
 ### Calculate Point Density
 ```C
+// point wrangle
+
 float maxdist = chf("maxdist");
 int maxpts = chi("maxpts");
 int points = len(nearpoints, 0, @P, maxdist, maxpts);
@@ -120,16 +128,21 @@ f@density = float(points) / maxpts;
 
 ### Camera Position and Direction
 ```C
+// point wrangle (best used on a single point)
+
 string cam = chs("cam");
 matrix camXform = optransform(cam); 
 vector cpos;
 vector cdir;
+vector cup;
 
 cpos = cracktransform(0, 0, 0, {0,0,0}, camXform);
 cdir = vtransform(cam,"space:world", {0,0,-1});
+cup = vtransform(cam,"space:world", {0,1,0});
 
 v@P = cpos;
 v@N = cdir;
+v@up = cup;
 ```
 
 ### Create Name Attribute for each Prim Group
@@ -143,6 +156,8 @@ foreach(string g; grps)
 
 ### Collision Check and Deintersection with SDF VDB
 ```C
+// point wrangle
+
 vector gradient = volumegradient(1, "surface", v@P); 
 float surface = volumesample(1, "surface", v@P);
 
@@ -154,6 +169,8 @@ if(surface < chf("dist"))
 
 ### Edgefalloff
 ```C
+// point wrangle
+
 if (@edgefalloff==1)
 {
 	int near[] = nearpoints(0,@P,chf("dist"));
@@ -169,6 +186,8 @@ if (@edgefalloff==1)
 
 ### Expand Group Over Geo
 ```C
+// point wrangle
+
 int pc = pcopen(0, 'P', @P, chf('radius'), chi('maxpts'));
 
 while (pciterate(pc) > 0)
@@ -181,6 +200,8 @@ while (pciterate(pc) > 0)
 
 ### Extract Tranformation Matrix
 ```C
+// point wrangle
+
 vector P1 = point(0, "P", 0);
 vector P2 = point(0, "P", 1);
 vector up = {0,1,0};
@@ -204,6 +225,8 @@ Have a look at [[notes/Matrix Operations |this note]] for more information on ho
 
 ### Group by N Connections
 ```C
+// point wrangle
+
 int n = chi("Neighbours");
 
 if (neighbourcount (0, @ptnum) > n)
@@ -214,6 +237,8 @@ if (neighbourcount (0, @ptnum) > n)
 
 ### Isolate Overlapping Points
 ```C
+// point wrangle
+
 int near[] = pcfind(0, "P", @P, 0.0001, 2);
 
 if(len(near) > 1)
@@ -224,6 +249,8 @@ if(len(near) > 1)
 
 ### Orientation Template for Copy
 ```C
+// point wrangle
+
 @up = {0,1,0};
 @orient = quaternion(maketransform(@N,@up));
 vector4 rot_Y = quaternion(radians(ch('Y')),{0,1,0});
@@ -236,6 +263,8 @@ vector4 rot_Y = quaternion(radians(ch('Y')),{0,1,0});
 1. group points first and blast group in another step
 
 ```C
+// point wrangle
+
 float half_cone_rad = radians(chf("half_cone"));
 @group_to_delete = acos(dot(@P, {0,0,1})) <= half_cone_rad;
 ```
@@ -243,6 +272,8 @@ float half_cone_rad = radians(chf("half_cone"));
 2. removepoint()
 
 ```C
+// point wrangle
+
 float half_cone_rad = radians(chf("half_cone"));
 
 if(acos(dot(@P, {0,0,1})) <= half_cone_rad)
@@ -256,6 +287,8 @@ Sources:
 
 ### Remove Point Percentage
 ```C
+// point wrangle
+
 int percentage = ch('percentage'); 
 
 if(@ptnum % 100 < percentage)
@@ -266,6 +299,8 @@ if(@ptnum % 100 < percentage)
 
 ### Rotate Vector
 ```C
+// point wrangle
+
 float angle = chf("angle");
 vector axis = normalize(chv("axis"));
 
@@ -275,12 +310,16 @@ vector4 rot = quaternion(radians(angle), axis);
 
 ### Sharpen Point Cloud
 ```C
+// point wrangle
+
 int handle = pcopen(0, "P", @P, chf("radius"), chi("maxpoints"));
 v@P = pcfilter(handle, "P");
 ```
 
 ### Translate, Rotate, Scale & Bend
 ```C
+// point wrangle
+
 vector t = chv('translate');
 vector r = radians(chv('rotate_before'));
 vector rot = radians(chv('rotate_after'));
