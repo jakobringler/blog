@@ -3,11 +3,11 @@ enableToc: true
 openToc: false
 enableLinkPreview: true
 enableLatex: true
-enableCodeBlockTitle: false #true
+enableCodeBlockTitle: true
 enableSPA: true
 enableFooter: true
 enableContextualBacklinks: true
-enableRecentNotes: true #false
+enableRecentNotes: false
 description:
   collection of notes about houdini, visual effects & 3d deep learning
 page_title:
