@@ -25,6 +25,8 @@ enableToc: false
 - [1 Minute VEX - Aaron Smith](https://aaronsmith.tv/1-Minute-VEX) VEX
 - [Houdini Tutorials Tailored for Mathematicians](http://wordpress.discretization.de/houdini/) math, technical
 - [Blog - Rok Andic](https://www.rokandic.com/blog) rigging, animation
+- [Daily Hip - Eetu](https://dailyhip.wordpress.com/) technical, hip files
+- [Crowds Plus - Thomas K Christensen](https://crowdsplus.notion.site/)
 - [The Brain Extension - Iiro Kivistö](https://www.thebrainextension.com/) grooming, CFX
 - [Creature Garage - JesusFC](https://creaturegarage.com/) grooming
 

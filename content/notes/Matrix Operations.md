@@ -7,8 +7,6 @@ tags:
 enableToc: true
 ---
 
-# very WIP
-
 # Basics
 
 ### Dimensions

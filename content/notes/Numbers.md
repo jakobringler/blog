@@ -6,10 +6,25 @@ tags:
 - math
 ---
 
+### Golden Ratio
+
+Ratio between two numbers that equals approximately: 1.618
+
+$\frac{a+b}{a}=\frac{a}{b}$
+
 ### Golden Angle
 
-$\phi= 137.5 \degree$  
+$\phi= 137.5 \degree$ - very useful when creating organic flowery stuff. Have a look at [this](https://entagma.com/td-essentials-create-a-swept-phyllotaxis-operator-in-houdini/) awesome video from Entagma for more information.
 
+$\frac{360\degree -137,5\degree}{137,5\degree}\approx 1.618$
+
+### Fibonacci Sequence
+
+$F_1=F_2=1$       $F_n=F_{n-1} + F_{n-2}$
+
+0  1  1  2  3  5  8  13  21  34  55  89  144  233  377  610  987 ...
+
+--- 
 
 Also [John Kunz](https://wiki.johnkunz.com/index.php?title=Mathematical_Functions_in_VEX) pointed out these constants that are defined in `$HFS/houdini/vex/include/math.h`  and can be used in any VEX wrangle:
 

@@ -33,7 +33,7 @@ tags:
 
 ### Projects & Examples
 - [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]]
-- Sketch to Tower
-- Vegetation & Erosion
+- [[notes/Tower Sketcher |Tower Sketcher]]
+- [[notes/Vegetation Erosion Prediction |Vegetation & Erosion Prediction]]
 - Wave Function Collapse Prediction
 - Neural Cellular Automata
