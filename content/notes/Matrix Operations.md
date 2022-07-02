@@ -210,7 +210,7 @@ v@v *= matrix3(invert(transform));
 
 ### Twisting
 
-![[notes/images/MatrixTwist.gif |700]]
+![[notes/images/MatrixTwist.gif]]
 
 ```C#
 matrix xform = ident();
