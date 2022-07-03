@@ -41,4 +41,5 @@ enableToc: false
 - [Houdini Machine Learning - Edmond Boulet-Gilly](https://www.youtube.com/watch?v=WNEEokEq-Fg&list=PLSie_1zkANDbn7wCD9kifPAp5wJmok02V) ML, PyTorch, technical
 
 ### Theory
+- [Casual GAN Papers](https://www.casualganpapers.com/) theory, paper
 - [Aladdin Persson](https://www.youtube.com/c/AladdinPersson) theory, paper review, pytorch & tensorflow tutorials
