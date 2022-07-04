@@ -6,6 +6,8 @@ enableToc: false
 ---
 
 # Projects
+- [[notes/Tower Sketcher |Tower Sketcher]]
+- [[notes/Vegetation Erosion Prediction |Vegetation Erosion Prediction]]
 
 # R&D
 

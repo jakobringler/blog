@@ -4,6 +4,26 @@ tags:
 - list
 ---
 
+# Houdini
+
+### Projects & Examples
+- [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]]
+- [[notes/Tower Sketcher |Tower Sketcher]]
+- [[notes/Vegetation Erosion Prediction |Vegetation & Erosion Prediction]]
+
+### Setup Guides
+-  [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]
+
+### Houdini DL "Hacks"
+- [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
+
+
+# Nuke
+- [[notes/cat Files |cat Files]]
+
+
+# Coming Soon
+
 ### ML Basics for Technical 3D Artists / TDs
 ##### Concepts
 - [[notes/Tensors |Tensors]]
@@ -20,20 +40,3 @@ tags:
 - Data Synthesis
 - Data Augmentation
 - Noise
-
-##### Realistic Applications
-- Compress Algorithms
-- Increase Usabiliy & Accessability
-
-### Setup Guides
--  [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]
-
-### Houdini DL "Hacks"
-- [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
-
-### Projects & Examples
-- [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]]
-- [[notes/Tower Sketcher |Tower Sketcher]]
-- [[notes/Vegetation Erosion Prediction |Vegetation & Erosion Prediction]]
-- Wave Function Collapse Prediction
-- Neural Cellular Automata
