@@ -24,7 +24,7 @@ enableToc: false
 - [Blog - Sergen Eren](https://sergeneren.com/) FX, technical, clouds, photon simulation
 - [Blog - Rok Andic](https://www.rokandic.com/blog) rigging, animation
 - [lex.ikoon](https://lex.ikoon.cz/) VEX, Python, technical
-- [rendereverything - Gatis Kurzemnieks](https://www.rendereverything.com/blog/)
+- [rendereverything - Gatis Kurzemnieks](https://www.rendereverything.com/blog/) VEX, technical
 - [1 Minute VEX - Aaron Smith](https://aaronsmith.tv/1-Minute-VEX) VEX
 - [Houdini Tutorials Tailored for Mathematicians](http://wordpress.discretization.de/houdini/) math, technical
 - [Daily Hip - Eetu](https://dailyhip.wordpress.com/) technical, hip files
