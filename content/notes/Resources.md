@@ -26,6 +26,7 @@ enableToc: false
 - [Blog - Jake Rice](https://jakerice.design/blog/) VEX, math, technical
 - [Blog - Sergen Eren](https://sergeneren.com/) FX, technical, clouds, photon simulation
 - [Blog - Rok Andic](https://www.rokandic.com/blog) rigging, animation
+- [Blog - Chris Turner](https://www.chrisbturner.com/blog) technical
 - [lex.ikoon](https://lex.ikoon.cz/) VEX, Python, technical
 - [rendereverything - Gatis Kurzemnieks](https://www.rendereverything.com/blog/) VEX, technical
 - [1 Minute VEX - Aaron Smith](https://aaronsmith.tv/1-Minute-VEX) VEX
@@ -54,4 +55,13 @@ enableToc: false
 
 ### Theory
 - [Casual GAN Papers](https://www.casualganpapers.com/) theory, papers
-- [Aladdin Persson](https://www.youtube.com/c/AladdinPersson) theory, paper review, pytorch & tensorflow tutorials
+- [Aladdin Persson](https://www.youtube.com/c/AladdinPersson) + [Github Collection](https://github.com/aladdinpersson/Machine-Learning-Collection) theory, paper review, pytorch & tensorflow tutorials
+
+### Courses
+- [ML YouTube Courses](https://github.com/dair-ai/ML-YouTube-Courses) 
+
+---
+
+## Computer Science 
+### Courses
+- [Open Source Society University - Path to a free self-taught education in Computer Science!](https://github.com/ossu/computer-science)

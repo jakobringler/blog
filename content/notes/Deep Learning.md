@@ -35,6 +35,9 @@ tags:
 - [[notes/Convolutional Neural Networks (CNNs) |Convolutional Neural Networks (CNNs)]]
 - [[notes/Generative Adversarial Networks (GANs) |Generative Adversarial Networks (GANs)]]
 - [[notes/Recurrent Neural Networks (RNNs) |Recurrent Neural Networks (RNNs)]]
+- [[notes/Neural Radiance Fields |Neural Radiance Fields (NeRFs)]]
+
+
 
 ##### Data
 - Data Synthesis

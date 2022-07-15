@@ -12,6 +12,7 @@ tags:
 - [[notes/Quaternion-Euler-Rotations |Quaternion & Euler Rotations]]
 - [[notes/Matrix Operations |Matrix Operations]]
 - [[notes/primuv and xyzdist |primuv & xyzdist]]
+- [[notes/IrregularGridAlgorithms |Algorithms for Irregular Grids]]
 
 ### Deep Learning
 - [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]

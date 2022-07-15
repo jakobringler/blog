@@ -235,6 +235,18 @@ if (neighbourcount (0, @ptnum) > n)
 }
 ```
 
+### Gravity on Curves (Hanging Cables)
+```C
+float stiffness = clamp(chf("stiffness"), 0, 0.99);
+float u = @curveu * (1 - @curveu) * 4;
+u = pow( 1 - u, (1 / (1 - stiffness)));
+
+@P.y *= clamp(fit01(gradient, (1 - ch("gravity")), 1), 0, 1);
+```
+
+Sources: 
+- [Chris Turner's Tweet](https://twitter.com/allexceptn/status/1488954032425213958)
+
 ### Isolate Overlapping Points
 ```C
 // point wrangle
