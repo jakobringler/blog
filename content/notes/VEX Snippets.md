@@ -115,17 +115,6 @@ float y_max = getbbox_max(0).y;
 float z_min = getbbox_min(0).z;
 ```
 
-### Calculate Point Density
-```C
-// point wrangle
-
-float maxdist = chf("maxdist");
-int maxpts = chi("maxpts");
-int points = len(nearpoints, 0, @P, maxdist, maxpts);
-
-f@density = float(points) / maxpts;
-```
-
 ### Camera Position and Direction
 ```C
 // point wrangle (best used on a single point)
@@ -143,15 +132,6 @@ cup = vtransform(cam,"space:world", {0,1,0});
 v@P = cpos;
 v@N = cdir;
 v@up = cup;
-```
-
-### Create Name Attribute for each Prim Group
-```C
-string grps[] = detailintrinsic(0, 'primitivegroups');
-foreach(string g; grps)
-{
-	addprimattrib(0, g, 123);
-}
 ```
 
 ### Collision Check and Deintersection with SDF VDB
@@ -259,6 +239,15 @@ if(len(near) > 1)
 }
 ```
 
+### Name Attribute for each Prim Group
+```C
+string grps[] = detailintrinsic(0, 'primitivegroups');
+foreach(string g; grps)
+{
+	addprimattrib(0, g, 123);
+}
+```
+
 ### Orientation Template for Copy
 ```C
 // point wrangle
@@ -267,6 +256,17 @@ if(len(near) > 1)
 @orient = quaternion(maketransform(@N,@up));
 vector4 rot_Y = quaternion(radians(ch('Y')),{0,1,0});
 @orient = qmultiply(@orient, rot_Y);
+```
+
+### Point Density
+```C
+// point wrangle  
+  
+float maxdist = chf("maxdist");  
+int maxpts = chi("maxpts");  
+int points = len(nearpoints(0, @P, maxdist, maxpts));  
+  
+f@density = float(points) / maxpts;
 ```
 
 ### Remove Point by Condition
