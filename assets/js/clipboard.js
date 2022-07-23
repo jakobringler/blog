@@ -25,7 +25,10 @@ const addCopyButtons = () => {
                 () => {
                     button.blur();
                     button.innerHTML = svgCheck;
-                    setTimeout(() => (button.innerHTML = svgCopy), 2000);
+                    setTimeout(() => {
+                    	button.innerHTML = svgCopy
+                    	button.style.borderColor = ""
+                    }, 2000);
                 },
                 (error) => (button.innerHTML = "Error")
             );
@@ -33,6 +36,5 @@ const addCopyButtons = () => {
         // find chroma inside els[i]
         let chroma = els[i].getElementsByClassName("chroma")[0];
         els[i].insertBefore(button, chroma);
-        console.log(els[i].lastChild)
     }
 }
