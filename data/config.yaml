@@ -9,6 +9,8 @@ enableSPA: true
 enableFooter: true
 enableContextualBacklinks: true
 enableRecentNotes: false
+enableGitHubEdit: false
+GitHubLink: https://github.com/jackyzha0/quartz/tree/hugo/content
 description:
   collection of notes about houdini, visual effects & 3d deep learning
 page_title:
