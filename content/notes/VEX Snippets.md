@@ -13,6 +13,7 @@ enableToc: true
 >I recommend installing this handy python panel to manage your own snippet collection: [Vex Snippet Library](https://github.com/dchow1992/Vex_Snippet_Library)
 
 ### Attribute Min Max
+// point wrangle
 
 ```C
 float value;
@@ -37,12 +38,14 @@ f[]@range;
 ```
 
 ### Attribute to String
+// point wrangle
 
 ```C
 s@name = "piece_" + itoa(i@class);
 ```
 
 ### Attribute Transfer
+// point wrangle
 
 ```C
 int posprim;
@@ -54,6 +57,7 @@ v@rest = pos;
 ```
 
 ### Average Point Cloud Positions
+// point wrangle
 
 ```C
 vector value;
@@ -76,6 +80,7 @@ if(@ptnum>0)
 ```
 
 ### Bias and Gain
+// point wrangle
 
 ```C
 function float bias(float val; float bias) 
@@ -103,6 +108,7 @@ Sources:
 - [Alan Wolfe's Blog Post](https://blog.demofox.org/2012/09/24/bias-and-gain-are-your-friend/)
 
 ### Bounding Box
+// point wrangle
 
 ```C
 vector bbox = getbbox_size(0);
@@ -116,6 +122,7 @@ float z_min = getbbox_min(0).z;
 ```
 
 ### Camera Position and Direction
+// point wrangle
 
 ```C
 string cam = chs("cam");
@@ -134,6 +141,7 @@ v@up = cup;
 ```
 
 ### Collision Check and Deintersection with SDF VDB
+// point wrangle
 
 ```C
 vector gradient = volumegradient(1, "surface", v@P); 
@@ -146,6 +154,7 @@ if(surface < chf("dist"))
 ```
 
 ### Edgefalloff
+// point wrangle
 
 ```C
 if (@edgefalloff==1)
@@ -162,6 +171,7 @@ if (@edgefalloff==1)
 ```
 
 ### Expand Group Over Geo
+// point wrangle
 
 ```C
 int pc = pcopen(0, 'P', @P, chf('radius'), chi('maxpts'));
@@ -175,6 +185,7 @@ while (pciterate(pc) > 0)
 ```
 
 ### Extract Tranformation Matrix
+// point wrangle
 
 ```C
 vector P1 = point(0, "P", 0);
@@ -199,6 +210,7 @@ setcomp(transform, 0, 2, 3);
 Have a look at [[notes/Matrix Operations |this note]] for more information on how it's used.
 
 ### Group by N Connections
+// point wrangle
 
 ```C
 int n = chi("Neighbours");
@@ -210,6 +222,7 @@ if (neighbourcount (0, @ptnum) > n)
 ```
 
 ### Gravity on Curves (Hanging Cables)
+// point wrangle
 
 ```C
 float stiffness = clamp(chf("stiffness"), 0, 0.99);
@@ -223,6 +236,7 @@ Sources:
 - [Chris Turner's Tweet](https://twitter.com/allexceptn/status/1488954032425213958)
 
 ### Isolate Overlapping Points
+// point wrangle
 
 ```C
 int near[] = pcfind(0, "P", @P, 0.0001, 2);
@@ -234,6 +248,7 @@ if(len(near) > 1)
 ```
 
 ### Name Attribute for each Prim Group
+// point wrangle
 
 ```C
 string grps[] = detailintrinsic(0, 'primitivegroups');
@@ -244,6 +259,7 @@ foreach(string g; grps)
 ```
 
 ### Orientation Template for Copy
+// point wrangle
 
 ```C
 @up = {0,1,0};
@@ -253,6 +269,7 @@ vector4 rot_Y = quaternion(radians(ch('Y')),{0,1,0});
 ```
 
 ### Point Density
+// point wrangle
 
 ```C 
 float maxdist = chf("maxdist");  
@@ -263,6 +280,7 @@ f@density = float(points) / maxpts;
 ```
 
 ### Remove Point by Condition
+// point wrangle
 
 [Mai Ao](https://twitter.com/aomai01) compared two point deletion methods, where method 1 gives a 15x speed increase over the traditional `removepoint()` function
 
@@ -288,6 +306,7 @@ Sources:
 - [Mai Ao's Tweet](https://twitter.com/aomai01/status/1514226273794641925/photo/1)
 
 ### Remove Point Percentage
+// point wrangle
 
 ```C
 int percentage = ch('percentage'); 
@@ -299,6 +318,7 @@ if(@ptnum % 100 < percentage)
 ```
 
 ### Rotate Vector
+// point wrangle
 
 ```C
 float angle = chf("angle");
@@ -309,6 +329,7 @@ vector4 rot = quaternion(radians(angle), axis);
 ```
 
 ### Sharpen Point Cloud
+// point wrangle
 
 ```C
 int handle = pcopen(0, "P", @P, chf("radius"), chi("maxpoints"));
