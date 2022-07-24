@@ -13,9 +13,8 @@ enableToc: true
 >I recommend installing this handy python panel to manage your own snippet collection: [Vex Snippet Library](https://github.com/dchow1992/Vex_Snippet_Library)
 
 ### Attribute Min Max
-```C
-// point wrangle
 
+```C
 float value;
 float values[];
 string attrname = "name";
@@ -38,14 +37,14 @@ f[]@range;
 ```
 
 ### Attribute to String
+
 ```C
 s@name = "piece_" + itoa(i@class);
 ```
 
 ### Attribute Transfer
-```C
-// point wrangle
 
+```C
 int posprim;
 vector param_uv;
 float maxdist = 10;
@@ -55,9 +54,8 @@ v@rest = pos;
 ```
 
 ### Average Point Cloud Positions
-```C
-// point wrangle
 
+```C
 vector value;
 vector values[];
 
@@ -78,6 +76,7 @@ if(@ptnum>0)
 ```
 
 ### Bias and Gain
+
 ```C
 function float bias(float val; float bias) 
 {
@@ -104,6 +103,7 @@ Sources:
 - [Alan Wolfe's Blog Post](https://blog.demofox.org/2012/09/24/bias-and-gain-are-your-friend/)
 
 ### Bounding Box
+
 ```C
 vector bbox = getbbox_size(0);
 vector bbox_max = getbbox_max(0);
@@ -116,9 +116,8 @@ float z_min = getbbox_min(0).z;
 ```
 
 ### Camera Position and Direction
-```C
-// point wrangle (best used on a single point)
 
+```C
 string cam = chs("cam");
 matrix camXform = optransform(cam); 
 vector cpos;
@@ -135,9 +134,8 @@ v@up = cup;
 ```
 
 ### Collision Check and Deintersection with SDF VDB
-```C
-// point wrangle
 
+```C
 vector gradient = volumegradient(1, "surface", v@P); 
 float surface = volumesample(1, "surface", v@P);
 
@@ -148,9 +146,8 @@ if(surface < chf("dist"))
 ```
 
 ### Edgefalloff
-```C
-// point wrangle
 
+```C
 if (@edgefalloff==1)
 {
 	int near[] = nearpoints(0,@P,chf("dist"));
@@ -165,9 +162,8 @@ if (@edgefalloff==1)
 ```
 
 ### Expand Group Over Geo
-```C
-// point wrangle
 
+```C
 int pc = pcopen(0, 'P', @P, chf('radius'), chi('maxpts'));
 
 while (pciterate(pc) > 0)
@@ -179,9 +175,8 @@ while (pciterate(pc) > 0)
 ```
 
 ### Extract Tranformation Matrix
-```C
-// point wrangle
 
+```C
 vector P1 = point(0, "P", 0);
 vector P2 = point(0, "P", 1);
 vector up = {0,1,0};
@@ -204,9 +199,8 @@ setcomp(transform, 0, 2, 3);
 Have a look at [[notes/Matrix Operations |this note]] for more information on how it's used.
 
 ### Group by N Connections
-```C
-// point wrangle
 
+```C
 int n = chi("Neighbours");
 
 if (neighbourcount (0, @ptnum) > n)
@@ -216,6 +210,7 @@ if (neighbourcount (0, @ptnum) > n)
 ```
 
 ### Gravity on Curves (Hanging Cables)
+
 ```C
 float stiffness = clamp(chf("stiffness"), 0, 0.99);
 float u = @curveu * (1 - @curveu) * 4;
@@ -228,9 +223,8 @@ Sources:
 - [Chris Turner's Tweet](https://twitter.com/allexceptn/status/1488954032425213958)
 
 ### Isolate Overlapping Points
-```C
-// point wrangle
 
+```C
 int near[] = pcfind(0, "P", @P, 0.0001, 2);
 
 if(len(near) > 1)
@@ -240,6 +234,7 @@ if(len(near) > 1)
 ```
 
 ### Name Attribute for each Prim Group
+
 ```C
 string grps[] = detailintrinsic(0, 'primitivegroups');
 foreach(string g; grps)
@@ -249,9 +244,8 @@ foreach(string g; grps)
 ```
 
 ### Orientation Template for Copy
-```C
-// point wrangle
 
+```C
 @up = {0,1,0};
 @orient = quaternion(maketransform(@N,@up));
 vector4 rot_Y = quaternion(radians(ch('Y')),{0,1,0});
@@ -259,9 +253,8 @@ vector4 rot_Y = quaternion(radians(ch('Y')),{0,1,0});
 ```
 
 ### Point Density
-```C
-// point wrangle  
-  
+
+```C 
 float maxdist = chf("maxdist");  
 int maxpts = chi("maxpts");  
 int points = len(nearpoints(0, @P, maxdist, maxpts));  
@@ -270,13 +263,12 @@ f@density = float(points) / maxpts;
 ```
 
 ### Remove Point by Condition
+
 [Mai Ao](https://twitter.com/aomai01) compared two point deletion methods, where method 1 gives a 15x speed increase over the traditional `removepoint()` function
 
 1. group points first and blast group in another step
 
 ```C
-// point wrangle
-
 float half_cone_rad = radians(chf("half_cone"));
 @group_to_delete = acos(dot(@P, {0,0,1})) <= half_cone_rad;
 ```
@@ -284,8 +276,6 @@ float half_cone_rad = radians(chf("half_cone"));
 2. removepoint()
 
 ```C
-// point wrangle
-
 float half_cone_rad = radians(chf("half_cone"));
 
 if(acos(dot(@P, {0,0,1})) <= half_cone_rad)
@@ -298,9 +288,8 @@ Sources:
 - [Mai Ao's Tweet](https://twitter.com/aomai01/status/1514226273794641925/photo/1)
 
 ### Remove Point Percentage
-```C
-// point wrangle
 
+```C
 int percentage = ch('percentage'); 
 
 if(@ptnum % 100 < percentage)
@@ -310,9 +299,8 @@ if(@ptnum % 100 < percentage)
 ```
 
 ### Rotate Vector
-```C
-// point wrangle
 
+```C
 float angle = chf("angle");
 vector axis = normalize(chv("axis"));
 
@@ -321,9 +309,8 @@ vector4 rot = quaternion(radians(angle), axis);
 ```
 
 ### Sharpen Point Cloud
-```C
-// point wrangle
 
+```C
 int handle = pcopen(0, "P", @P, chf("radius"), chi("maxpoints"));
 v@P = pcfilter(handle, "P");
 ```
