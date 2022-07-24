@@ -7,7 +7,5 @@ tags:
 ### Nuke
 - [[notes/cat Files |cat Files]]
 
-### Color Grading
-
 
 

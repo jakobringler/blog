@@ -3,8 +3,6 @@ title: "Houdini"
 tags:
 - list
 ---
-### SOPs
-
 ### VEX
 - [[notes/VEX Snippets |VEX Snippets]]
 - [[notes/Numbers |Numbers]]

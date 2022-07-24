@@ -24,7 +24,7 @@ $F_1=F_2=1$       $F_n=F_{n-1} + F_{n-2}$
 
 0  1  1  2  3  5  8  13  21  34  55  89  144  233  377  610  987 ...
 
---- 
+---
 
 Also [John Kunz](https://wiki.johnkunz.com/index.php?title=Mathematical_Functions_in_VEX) pointed out these constants that are defined in `$HFS/houdini/vex/include/math.h`  and can be used in any VEX wrangle:
 
@@ -43,4 +43,3 @@ SQRT2       1.4142135
 TOLERANCE   0.0001
 
 // SOURCE: John Kunz's Wiki
-```

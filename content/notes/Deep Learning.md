@@ -26,6 +26,7 @@ tags:
 
 ### ML Basics for Technical 3D Artists / TDs
 ##### Concepts
+- [[notes/Neural Networks |Neural Networks]]
 - [[notes/Tensors |Tensors]]
 - [[notes/Gradient Descent |Gradient Descent]]
 - [[notes/Back Propagation |Back Propagation]]

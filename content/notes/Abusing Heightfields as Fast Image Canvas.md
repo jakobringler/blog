@@ -50,4 +50,4 @@ input = np.asarray(canvasVoxels, dtype=np.float64)
 input = input.reshape(W,H) # creates a tensor of shape [128,128,1]
 ```
 
-See [[notes/Towers From Sketch |Towers From Sketch]] to find out more about the applications of this technique.
+See [[notes/Tower Sketcher |"Training a Neural Net to Understand my Drawings"]] to find out more about the applications of this technique.
