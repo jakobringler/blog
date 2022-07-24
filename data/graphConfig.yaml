@@ -14,7 +14,7 @@ localGraph:
     repelForce: 2
     centerForce: 1
     linkDistance: 1
-    fontSize: 0.6
+    fontSize: 0.4
     opacityScale: 3
 
 ### Global Graph ###
@@ -24,11 +24,11 @@ globalGraph:
     enableDrag: true
     enableZoom: true
     depth: -1 # set to -1 to show full graph
-    scale: 1.4
+    scale: 1
     repelForce: 1
-    centerForce: 1
+    centerForce: 1.3
     linkDistance: 1
-    fontSize: 0.5
+    fontSize: 0.3
     opacityScale: 3
 
 ### For all graphs ###
