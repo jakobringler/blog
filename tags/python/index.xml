@@ -2,6 +2,5 @@
 the files can be found here: GitHub - Houdini + PyTorch Digit Recognition
 sources / further reading: PyTorch Tutorial 13 - Feed-Forward Neural Network 4 pixel cam AI - Machine Learning in Houdini Tutorial</description></item><item><title>Tower Sketcher</title><link>https://fxnotes.xyz/notes/Tower-Sketcher/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://fxnotes.xyz/notes/Tower-Sketcher/</guid><description>Training a Neural Net to Understand my Drawings Concept ![[notes/images/towerHDAconcept.png]]
 Setup ![[notes/images/setuptowerhda(2).jpg |400]]
-Data ![[notes/images/TowerDataset.png]]
-Results ![[notes/images/towerSketchdemo.png]]
-Since all the resulting values get clamped to a plausible range everything outputs a somewhat good tower, which results in those rather incoherent pairs:</description></item><item><title>Vegetation Erosion Prediction</title><link>https://fxnotes.xyz/notes/Vegetation-Erosion-Prediction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://fxnotes.xyz/notes/Vegetation-Erosion-Prediction/</guid><description>Predicting Heightfield Data using cGANs</description></item></channel></rss>
+Data Synthesis and PDG ![[notes/images/TowerDataset.png]]
+Results ![[notes/images/TowerSketcher.gif]] // gif plays at 2x speed</description></item><item><title>Vegetation Erosion Prediction</title><link>https://fxnotes.xyz/notes/Vegetation-Erosion-Prediction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://fxnotes.xyz/notes/Vegetation-Erosion-Prediction/</guid><description>Predicting Heightfield Data using cGANs</description></item></channel></rss>
