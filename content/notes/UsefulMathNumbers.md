@@ -1,5 +1,5 @@
 ---
-title: "Useful Math & Numbers"
+title: "Useful Math Functions & Numbers"
 tags:
 - houdini
 - vex
