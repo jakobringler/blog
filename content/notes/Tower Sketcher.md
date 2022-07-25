@@ -10,18 +10,21 @@ tags:
 ## Training a Neural Net to Understand my Drawings
 
 ### Concept
+
 ![[notes/images/towerHDAconcept.png]]
 
 ### Setup 
 
 ![[notes/images/setuptowerhda(2).jpg |400]]
 
-### Data
+### Data Synthesis and PDG
+
 ![[notes/images/TowerDataset.png]]
 
 ### Results
 
-![Demo](https://youtu.be/SomxUXyUIFk)
+![[notes/images/TowerSketcher.gif]]
+// gif plays at 2x speed
 
 ![[notes/images/towerSketchdemo.png]]
 
