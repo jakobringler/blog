@@ -20,6 +20,9 @@ tags:
 ![[notes/images/TowerDataset.png]]
 
 ### Results
+
+![Demo](https://youtu.be/SomxUXyUIFk)
+
 ![[notes/images/towerSketchdemo.png]]
 
 Since all the resulting values get clamped to a plausible range everything outputs a somewhat good tower, which results in those rather incoherent pairs:
