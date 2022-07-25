@@ -6,6 +6,8 @@ tags:
 - math
 ---
 
+
+
 ### Golden Ratio
 
 Ratio between two numbers that equals approximately: 1.618
