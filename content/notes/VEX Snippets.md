@@ -335,3 +335,8 @@ vector4 rot = quaternion(radians(angle), axis);
 int handle = pcopen(0, "P", @P, chf("radius"), chi("maxpoints"));
 v@P = pcfilter(handle, "P");
 ```
+
+### Wave Expressions
+
+[[notes/WaveExpressions |Summary]] of different useful periodic functions like square or sawtooth
+

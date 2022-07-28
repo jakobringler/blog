@@ -6,7 +6,9 @@ tags:
 - math
 ---
 
+### [[notes/WaveExpressions |Wave  Expressions]]
 
+---
 
 ### Golden Ratio
 
