@@ -12,7 +12,7 @@ I recently stumbled across [this](https://www.cameroncarson.com/nuke-wave-expres
 
 ---
 
-Every wrangle runs on a 10 unit long resampled line along the includes this base code to setup the parameters:
+Every wrangle runs on a 10 unit long resampled line along the z-axis and includes this base code to setup the parameters:
 
 ```C
 float offset = chf("offset");
