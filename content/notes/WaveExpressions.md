@@ -12,7 +12,7 @@ I recently stumbled across [this](https://www.cameroncarson.com/nuke-wave-expres
 
 ---
 
-Every wrangle includes this base code to setup the parameters:
+Every wrangle runs on a 10 unit long resampled line along the includes this base code to setup the parameters:
 
 ```C
 float offset = chf("offset");
@@ -93,6 +93,14 @@ float min = chf("min");
 @P.y = (exp(2*PI*((@P.z+offset) % wavelength)/wavelength)-1)/exp(2*PI) * (max-min) + min;
 ```
 
+### Sawtooth Exponential Reversed
+
+![[notes/images/vexwaves.9.5.jpg]]
+
+```C
+@P.y = (exp(2*PI*(1-(((@P.z+offset) % wavelength)/wavelength)))-1)/exp(2*PI) * (max-min) + min;
+```
+
 ### Bounce
 
 ![[notes/images/vexwaves.10.jpg]]
@@ -109,13 +117,18 @@ float min = chf("min");
 float bliplength = chf("bliplength");
 float value = ((@P.z+(offset+wavelength)) % (wavelength+bliplength)/(wavelength)) * (wavelength/bliplength) - (wavelength/bliplength);
 
-if(value > min)
+if(value > 0)
 {
-    @P.y = max;
+    value = 1;
 }
+
+@P.y = fit01(value, min, max);
 ```
 
+
+
 sources / further reading:
-- [Nuke Wave Expressions](https://www.cameroncarson.com/nuke-wave-expressions)
+- [Nuke Wave Expressions - Cameron Carson](https://www.cameroncarson.com/nuke-wave-expressions)
+- [List of Periodic Functions - Wikipedia](https://en.wikipedia.org/wiki/List_of_periodic_functions)
 
 
