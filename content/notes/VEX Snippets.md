@@ -261,6 +261,13 @@ foreach(string g; grps)
 }
 ```
 
+### Normalize @age
+// point wrangle
+
+```C
+@normage = @age / @life;
+```
+
 ### Orientation Template for Copy
 // point wrangle
 
