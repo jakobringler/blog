@@ -106,6 +106,7 @@ float val = pow(val, exp);
 > [!quote] **Sources:**
 > 
 > [Michael Frederickson's Tweet](https://twitter.com/mfrederickson/status/1523148417349816320)
+> 
 > [Alan Wolfe's Blog Post](https://blog.demofox.org/2012/09/24/bias-and-gain-are-your-friend/)
 
 ### Bounding Box
