@@ -13,6 +13,9 @@ tags:
 - [[notes/primuv and xyzdist |primuv & xyzdist]]
 - [[notes/IrregularGridAlgorithms |Algorithms for Irregular Grids]]
 
+### FX
+- [[notes/General Workflow Tips |General Workflow Tips]]
+
 ### Deep Learning
 - [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]
 - [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
