@@ -103,9 +103,9 @@ function float gain(float val; float gain)
 float val = pow(val, exp); 
 ```
 
-Sources:
-- [Michael Frederickson's Tweet](https://twitter.com/mfrederickson/status/1523148417349816320)
-- [Alan Wolfe's Blog Post](https://blog.demofox.org/2012/09/24/bias-and-gain-are-your-friend/)
+> [!quote] **Sources:**
+> [Michael Frederickson's Tweet](https://twitter.com/mfrederickson/status/1523148417349816320)
+> [Alan Wolfe's Blog Post](https://blog.demofox.org/2012/09/24/bias-and-gain-are-your-friend/)
 
 ### Bounding Box
 // point wrangle
@@ -232,8 +232,8 @@ u = pow( 1 - u, (1 / (1 - stiffness)));
 @P.y *= clamp(fit01(gradient, (1 - ch("gravity")), 1), 0, 1);
 ```
 
-Sources: 
-- [Chris Turner's Tweet](https://twitter.com/allexceptn/status/1488954032425213958)
+> [!quote] **Sources:**
+> [Chris Turner's Tweet](https://twitter.com/allexceptn/status/1488954032425213958)
 
 ### Isolate Overlapping Points
 // point wrangle
@@ -302,8 +302,8 @@ if(acos(dot(@P, {0,0,1})) <= half_cone_rad)
 }
 ```
 
-Sources:
-- [Mai Ao's Tweet](https://twitter.com/aomai01/status/1514226273794641925/photo/1)
+> [!quote] **Sources:**
+> [Mai Ao's Tweet](https://twitter.com/aomai01/status/1514226273794641925/photo/1)
 
 ### Remove Point Percentage
 // point wrangle
