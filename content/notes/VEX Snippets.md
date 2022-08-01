@@ -104,6 +104,7 @@ float val = pow(val, exp);
 ```
 
 > [!quote] **Sources:**
+> 
 > [Michael Frederickson's Tweet](https://twitter.com/mfrederickson/status/1523148417349816320)
 > [Alan Wolfe's Blog Post](https://blog.demofox.org/2012/09/24/bias-and-gain-are-your-friend/)
 
@@ -233,6 +234,7 @@ u = pow( 1 - u, (1 / (1 - stiffness)));
 ```
 
 > [!quote] **Sources:**
+> 
 > [Chris Turner's Tweet](https://twitter.com/allexceptn/status/1488954032425213958)
 
 ### Isolate Overlapping Points
@@ -303,6 +305,7 @@ if(acos(dot(@P, {0,0,1})) <= half_cone_rad)
 ```
 
 > [!quote] **Sources:**
+> 
 > [Mai Ao's Tweet](https://twitter.com/aomai01/status/1514226273794641925/photo/1)
 
 ### Remove Point Percentage
