@@ -6,7 +6,8 @@ tags:
 - math
 ---
 
-### [[notes/WaveExpressions |Wave  Expressions]]
+### Functions
+- [[notes/WaveExpressions |Wave  Expressions]]
 
 ---
 
@@ -29,6 +30,8 @@ $F_1=F_2=1$       $F_n=F_{n-1} + F_{n-2}$
 0  1  1  2  3  5  8  13  21  34  55  89  144  233  377  610  987 ...
 
 ---
+
+### VEX Constants
 
 [John Kunz](https://wiki.johnkunz.com/index.php?title=Mathematical_Functions_in_VEX) pointed out these constants that can be used in any VEX wrangle:
 
