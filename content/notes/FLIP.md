@@ -18,6 +18,7 @@ tags:
 - Particle Radius Scale
 
 > [!Quote] Quote from SideFX Docs
+> 
 >If the **Particle Radius Scale** / **Grid Scale** >= sqrt(3) / 2, then particles will never be under-resolved.
 
 sources / further reading:
