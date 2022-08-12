@@ -22,6 +22,7 @@ enableToc: false
 - [Toadstorm Nerdblog - Henry Foster](https://www.toadstorm.com/blog/) MOPs, procedural workflows & python
 - [Houdini Gubbins](https://houdinigubbins.wordpress.com/) technical, VEX, math, geometry, algorithms
 - [FX Thinking - Alessandro Pepe](https://pepefx.blogspot.com/) FX, technical
+- [Website / Wiki - Deborah R. Fowler](https://www.deborahrfowler.com/index.html) very technical (this has to be the worst best website)
 - [Blog - Nick Taylor (Aeoll)](https://www.nicholas-taylor.com/blog) FX, technical, motion design
 - [Blog - Jake Rice](https://jakerice.design/blog/) VEX, math, technical
 - [Blog - Sergen Eren](https://sergeneren.com/) FX, technical, clouds, photon simulation
