@@ -15,7 +15,7 @@ GitHubLink: https://github.com/jakobringler/blog/tree/hugo/content
 enableSemanticSearch: false
 operandApiKey: "REPLACE-WITH-YOUR-OPERAND-API-KEY"
 description:
-  collection of notes about houdini, visual effects & 3d deep learning
+  fx notes serves as a public second brain for some of my visual effects, proceduralism and deep learning related notes and experiments.
 page_title:
   "fx notes"
 links:
