@@ -5,11 +5,9 @@ enableToc: false
 
 Press `Ctrl` + `K` to search for something 
 
-You can use the interactive graph to browse the site and discover connections between notes
+You can use the interactive graph or the content lists below to browse the site and discover connections between notes
 
 ### Content Lists
-If you prefer browsing the contents of this site through a list instead of the graph, you can find content lists here too:
-
 - [All Notes](/notes)
 - [[notes/Houdini |Houdini]]
 - [[notes/Deep Learning |Deep Learning]]
@@ -18,7 +16,7 @@ If you prefer browsing the contents of this site through a list instead of the g
 - [[notes/Other |Other]]
 
 
-### About
+### About 
 
 fx notes serves as a public *second brain* for some of my visual effects, proceduralism and deep learning related notes and experiments.
 
@@ -28,6 +26,7 @@ Best,
 
 Jakob
 
-[[notes/about |read more]]
+[[notes/About |read more]]
+
 
 
