@@ -2,7 +2,7 @@
 title: "FLIP"
 tags:
 - houdini
-- fx
+- FX
 ---
 
 ## General

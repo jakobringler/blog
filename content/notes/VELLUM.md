@@ -2,7 +2,7 @@
 title: "VELLUM"
 tags:
 - houdini
-- fx
+- FX
 ---
 
 ## Cloth
