@@ -1,5 +1,6 @@
 ---
 title: "Legal / Impressum"
+enableToc: false
 ---
 
 Angaben gem. § 5 TMG:
@@ -8,7 +9,7 @@ Ringler, Jakob
 
 Kontaktaufnahme:
 
-E-Mail: fxnotes@proton.me
+E-Mail: [fxnotes@proton.me](mailto:fxnotes@proton.me)
 
 **Haftungsausschluss – Disclaimer:**
 
