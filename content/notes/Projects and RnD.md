@@ -5,11 +5,11 @@ tags:
 enableToc: false
 ---
 
-# Projects
+## Projects
 - [[notes/Tower Sketcher |Tower Sketcher]]
 - [[notes/Vegetation Erosion Prediction |Vegetation Erosion Prediction]]
 
-# R&D
+## R&D
 
 ### Deep Learning
 - [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]]

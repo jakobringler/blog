@@ -7,7 +7,7 @@ tags:
 enableToc: true
 ---
 
-# Basics
+## Basics
 
 ### Dimensions
 
@@ -107,7 +107,7 @@ The default of the transform node and in most 3D packages ist `SRT`, which means
 
 ---
 
-# Usecases
+## Usecases
 
 ### Extracting a Transformation Matrix with VEX
 
@@ -206,7 +206,7 @@ v@v *= matrix3(invert(transform));
 
 --- 
 
-# Warping Space
+## Warping Space
 
 ### Twisting
 
@@ -257,7 +257,7 @@ translate(xform, translate);
 
 ---
 
-### sources / further reading
+sources / further reading
 - [Linear Transformations - 3Blue1Brown](https://www.3blue1brown.com/lessons/linear-transformations)
 - [Houdini Tutorial | Extracting transformation matrix with VEX - Paweł Rutkowski](https://vimeo.com/284712920)
 - [Pure VEX Workshop Week 6: Warping with Matrices - John Kunz](https://www.youtube.com/watch?v=DA0ZuIJ-W7s)

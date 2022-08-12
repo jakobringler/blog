@@ -4,7 +4,7 @@ tags:
 - list
 ---
 
-# Houdini
+## Houdini
 
 ### Projects & Examples
 - [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]]
@@ -18,11 +18,11 @@ tags:
 - [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
 
 
-# Nuke
+## Nuke
 - [[notes/cat Files |cat Files]]
 
 
-# Coming Soon
+## Coming Soon
 
 ### ML Basics for Technical 3D Artists / TDs
 ##### Concepts

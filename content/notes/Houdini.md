@@ -16,6 +16,7 @@ tags:
 ### FX
 - [[notes/General Workflow Tips |General Workflow Tips]]
 - [[notes/FLIP |FLIP]]
+- [[notes/VELLUM |VELLUM]]
 
 ### Deep Learning
 - [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]

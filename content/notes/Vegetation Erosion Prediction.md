@@ -7,6 +7,6 @@ tags:
 - pytorch
 ---
 
-# Predicting Heightfield Data using cGANs
+## Predicting Heightfield Data using cGANs
 
 
