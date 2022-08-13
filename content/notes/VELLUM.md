@@ -19,7 +19,7 @@ Additional Tricks:
 - Automatically group sharp corners and use the resulting 'crease' group in a subdivision node to maintain sharpness
 
 ### Intersections
-When dealing with intersections on layered cloth the 'post collision passes' parameter can help. A good rule of thumb is setting them slightly above the number of expected layers of cloth.
+When dealing with intersections on layered cloth the 'post collision passes' parameter can help. A good rule of thumb is setting them slightly above the number of expected layers (collisions with itself) of cloth.
 
 ![[notes/images/layersofcloth.png]]
 

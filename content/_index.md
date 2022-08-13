@@ -8,10 +8,10 @@ Press `Ctrl` + `K` to search for something
 You can use the interactive graph or the content lists below to browse the site and discover connections between notes
 
 ### Content Lists
-- [All Notes](/notes)
+- [All Notes](/notes) / [Tags](https://fxnotes.xyz/tags/)
 - [[notes/Houdini |Houdini]]
 - [[notes/Deep Learning |Deep Learning]]
-- [[notes/Projects and RnD |Projects / R&D]]
+- [[notes/Projects and RnD |Projects and R&D]]
 - [[notes/Resources |Resources]]
 - [[notes/Other |Other]]
 
@@ -26,7 +26,7 @@ Best,
 
 Jakob
 
-[[notes/About |read more]]
+[[notes/About |more]]
 
 
 
