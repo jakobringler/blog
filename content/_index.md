@@ -8,7 +8,7 @@ Press `Ctrl` + `K` to search for something
 You can use the interactive graph or the content lists below to browse the site and discover connections between notes
 
 ### Content Lists
-- [All Notes](/notes) / [Tags](https://fxnotes.xyz/tags/)
+- [All Notes](/notes)
 - [[notes/Houdini |Houdini]]
 - [[notes/Deep Learning |Deep Learning]]
 - [[notes/Projects and RnD |Projects and R&D]]
