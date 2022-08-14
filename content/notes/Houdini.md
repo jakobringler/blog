@@ -14,6 +14,9 @@ tags:
 - [[notes/primuv and xyzdist |primuv & xyzdist]]
 - [[notes/IrregularGridAlgorithms |Algorithms for Irregular Grids]]
 
+### HDAs
+- [[notes/HDA Parameters |Parameters]]
+
 ### FX
 - [[notes/General Workflow Tips |General Workflow Tips]]
 - [[notes/FLIP |FLIP]]
