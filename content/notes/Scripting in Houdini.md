@@ -150,7 +150,9 @@ Python Scripts can be added in an xml in the following way:
 can be used to sanity check or load default scenes etc. on startup
 
 `pythonrc.py` runs on startup (as many as found in $HOUDINIPATH)
+
 `123.py` runs when Houdini is started without a scene (only first found)
+
 `456.py` runs after a scenefile is loaded (only first found)
 
 
