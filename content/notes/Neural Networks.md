@@ -4,7 +4,6 @@ tags:
 - machinelearning
 ---
 
-
 ### Artificial Neuron
 ![[notes/images/neuron.png]]
 ### Artificial Neural Network

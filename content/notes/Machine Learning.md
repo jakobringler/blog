@@ -1,5 +1,5 @@
 ---
-title: "Deep Learning"
+title: "Machine Learning"
 tags:
 - list
 ---

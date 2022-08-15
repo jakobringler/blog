@@ -26,6 +26,9 @@ tags:
 - [[notes/Scripting in Houdini |Scripting in Houdini - Talk Notes]]
 
 ### Deep Learning
+- [[notes/ML Castles |ML Castles]]
+	- [[notes/Tower Sketcher |Training a Neural Net to Understand my Drawings]]
+	- [[notes/Vegetation Erosion Prediction |Vegetation and Erosion Prediction on Heightfields using GANs]]
 - [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]
 - [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
 

@@ -7,15 +7,17 @@ enableToc: false
 # Downloads & Scripts
 [[notes/VEX Snippets |VEX Snippets]]
 
+---
+
 # Links
 
 ## CG & VFX
 ### Houdini
-##### Tutorials
+#### Tutorials
 - [Entagma - Moritz Schwind & Manuel Casasola Merkle](https://entagma.com/) procedural & motion design
 - [VEX for Algorithmic Design - Junichiro Horikawa](https://www.youtube.com/playlist?list=PLzRzqTjuGIDhiXsP0hN3qBxAZ6lkVfGDI) VEX, procedural design
 
-##### Blogs & Wikis
+#### Blogs & Wikis
 - [cgwiki - Matt Estela](https://www.tokeru.com/cgwiki/index.php?title=Houdini) all things houdini
 - [procegen - Konstantin Magnus](https://procegen.konstantinmagnus.de/) procedural workflows, automation
 - [wiki - John Kunz](https://wiki.johnkunz.com/index.php?title=Main_Page) VEX, resources
@@ -38,7 +40,7 @@ enableToc: false
 - [The Brain Extension - Iiro Kivistö](https://www.thebrainextension.com/) grooming, CFX
 - [Creature Garage - JesusFC](https://creaturegarage.com/) grooming
 
-##### Tech
+#### Tech
 - [[notes/NVIDIAs Warp for Houdini |NVIDIAs Warp for Houdini]]
 - [[notes/Julia Wrangle in Houdini |Julia Wrangle in Houdini]]
 - [[notes/HoudiniToTaichi |Houdini To Taichi]]
