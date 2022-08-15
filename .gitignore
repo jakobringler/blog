@@ -6,4 +6,4 @@ content/.obsidian
 assets/indices/linkIndex.json
 assets/indices/contentIndex.json
 content/.trash
-content/private/manual
+content/private/*
