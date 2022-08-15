@@ -25,7 +25,7 @@ tags:
 ### Python
 - [[notes/Scripting in Houdini |Scripting in Houdini - Talk Notes]]
 
-### Deep Learning
+### Machine Learning
 - [[notes/ML Castles |ML Castles]]
 	- [[notes/Tower Sketcher |Training a Neural Net to Understand my Drawings]]
 	- [[notes/Vegetation Erosion Prediction |Vegetation and Erosion Prediction on Heightfields using GANs]]
