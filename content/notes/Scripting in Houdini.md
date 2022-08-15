@@ -26,8 +26,6 @@ use an external editor for anything longer than a couple of lines
 - install SideFX Labs to be able to link an external editor (Sublime, VS Code etc.) to write code
 - VS Code has a VEX language extension to enable auto complete
 
----
-
 ### Raising Errors, Warnings & Messages
 Errors and Warnings are displayed in the node's info section while Messages trigger a popup window 
 
@@ -51,8 +49,6 @@ message = "Message."
 if not something:
 	raise hou.ui.displayMessage(message)
 ```
-
----
 
 ### Run, Execute & Communicate with Thrid Party Applications
 
