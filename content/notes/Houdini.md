@@ -24,6 +24,7 @@ tags:
 
 ### Python
 - [[notes/Scripting in Houdini |Scripting in Houdini - Talk Notes]]
+- [[notes/VDBs and Voxels |VDBs and Voxels]]
 
 ### Machine Learning
 - [[notes/ML Castles |ML Castles]]

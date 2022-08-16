@@ -1,5 +1,6 @@
 ---
 title: "Convolutional Neural Networks (CNNs)"
+draft: true
 tags:
 - machinelearning
 ---

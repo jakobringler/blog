@@ -1,5 +1,6 @@
 ---
 title: "Generative Adversarial Networks (GANs)"
+draft: true
 tags:
 - machinelearning
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Neural Radiance Fields (NeRFs)"
+draft: true
 tags:
 - machinelearning
 ---

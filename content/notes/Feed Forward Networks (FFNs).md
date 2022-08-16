@@ -1,5 +1,6 @@
 ---
 title: "Feed Forward Networks (FFNs)"
+draft: true
 tags:
 - machinelearning
 ---

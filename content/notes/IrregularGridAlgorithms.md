@@ -1,5 +1,6 @@
 ---
 title: "Algorithms for Irregular Grids"
+draft: true
 tags:
 - houdini
 - vex

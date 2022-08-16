@@ -1,5 +1,6 @@
 ---
 title: "Vegetation Erosion Prediction"
+draft: true
 tags:
 - houdini
 - machinelearning

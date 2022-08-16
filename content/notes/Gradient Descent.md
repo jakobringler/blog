@@ -1,5 +1,6 @@
 ---
 title: "Gradient Descent"
+draft: true
 tags:
 - machinelearning
 - math

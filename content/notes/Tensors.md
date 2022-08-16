@@ -1,5 +1,6 @@
 ---
 title: "Tensors"
+draft: true
 tags:
 - machinelearning
 - math

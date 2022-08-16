@@ -5,5 +5,5 @@ resources
 content/.obsidian
 assets/indices/linkIndex.json
 assets/indices/contentIndex.json
-content/.trash
+content/.trash/*
 content/private/*
