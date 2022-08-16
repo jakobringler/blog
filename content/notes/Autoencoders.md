@@ -1,5 +1,5 @@
 ---
-title: "{{title}}"
+title: "Autoencoders"
 draft: true
 tags:
 - 

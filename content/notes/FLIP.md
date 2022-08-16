@@ -28,6 +28,8 @@ Key Parameters:
 - Substeps
 - Timescale
 
+When increasing the surface tension by itself the fluid will collapse in on itself. To prevent this substeps have to be increased. If possible this can also be countered by reducing the timescale (e.g. instead of increasing substeps from 4 to 8 the timescale could be set to 0.5). This way the simulation doesn't get more computationally expensive.
+
 
 ---
 

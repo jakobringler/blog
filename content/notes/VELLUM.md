@@ -40,6 +40,11 @@ if(@curveu == 0)
 
 similarly `i@disableself = 1` can be used to avoid collisions with itself.
 
+## Fluids
+### Droplets, Sheets & Tendrils
+same rules as described in [[notes/FLIP#Droplets Sheets Tendrils |FLIP]] apply.
+
+
 ---
 
 sources / further reading:
