@@ -23,6 +23,7 @@ tags:
 - [[notes/VELLUM |VELLUM]]
 
 ### Python
+- [[notes/Python In Houdini |Python In Houdini]]
 - [[notes/Scripting in Houdini |Scripting in Houdini - Talk Notes]]
 - [[notes/VDBs and Voxels |VDBs and Voxels]]
 
