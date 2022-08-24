@@ -34,7 +34,8 @@ enableToc: false
 - [lex.ikoon](https://lex.ikoon.cz/) VEX, Python, technical
 - [rendereverything - Gatis Kurzemnieks](https://www.rendereverything.com/blog/) VEX, technical
 - [1 Minute VEX - Aaron Smith](https://aaronsmith.tv/1-Minute-VEX) VEX
-- [Houdini Tutorials Tailored for Mathematicians](http://wordpress.discretization.de/houdini/) math, technical
+- [Houdini Tutorials Tailored for Mathematicians - Discretization - TU Berlin](http://wordpress.discretization.de/houdini/) math, technical
+- [Blog - Discretization - Visualization Course at TU Berlin](http://wordpress.discretization.de/ddg2018/) math, technical
 - [Daily Hip - Eetu](https://dailyhip.wordpress.com/) technical, hip files
 - [Crowds Plus - Thomas K Christensen](https://crowdsplus.notion.site/)
 - [The Brain Extension - Iiro Kivistö](https://www.thebrainextension.com/) grooming, CFX
@@ -70,3 +71,5 @@ enableToc: false
 ### Courses
 - [Open Source Society University - Path to a free self-taught education in Computer Science!](https://github.com/ossu/computer-science)
 - [Tutorialspoint - Algorithms and Datastructures](https://www.tutorialspoint.com/data_structures_algorithms/)
+### Libraries
+- [The Computational Geometry Algorithms Library](https://www.cgal.org/index.html)
