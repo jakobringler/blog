@@ -23,7 +23,7 @@ opscript -G -r / > $TEMP/temp.cmd
 // in hscript textport
 
 ```bash
-mdread $TEMP/temp.cmd
+cmdread $TEMP/temp.cmd
 ```
 
 ---
