@@ -211,6 +211,18 @@ setcomp(transform, 0, 2, 3);
 
 Have a look at [[notes/Matrix Operations |this note]] for more information on how it's used.
 
+### Flow Vector around Geometry
+// point wrangle
+
+```C
+ vector up = chv("up"); // usually 0, 1, 0 for Y  
+ vector norm = normalize(v@N);  
+ vector c1 = cross(norm, up);  
+ vector c2 = cross(norm, c1);  
+ v@revolve = c1;
+ v@flow = c2;
+```
+
 ### Group by N Connections
 // point wrangle
 
