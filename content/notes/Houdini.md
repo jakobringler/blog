@@ -23,6 +23,9 @@ tags:
 - [[notes/FLIP |FLIP]]
 - [[notes/VELLUM |VELLUM]]
 
+### USD
+- [[notes/USD Basics |USD Basics]]
+
 ### Python
 - [[notes/Python In Houdini |Python In Houdini]]
 - [[notes/Scripting in Houdini |Scripting in Houdini - Talk Notes]]
