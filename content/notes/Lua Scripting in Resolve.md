@@ -1,10 +1,12 @@
 ---
 title: "Lua Scripting in Resolve"
-draft: true
+draft: false
 tags:
 - resolve
 - lua
 ---
+
+Overview and snippets for [[notes/Lua |Lua]] coding in DaVinci Resolve.
 
 > A good API overview and multiple examples can be found in Deric's [Unofficial DaVinci Resolve Scripting Documentation](https://github.com/deric/DaVinciResolve-API-Docs)
 
