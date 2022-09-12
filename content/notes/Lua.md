@@ -54,6 +54,8 @@ end
 
 if (a > b ) or (a > c ) then
 	print("something else")
+else
+	print("something more else")
 end
 
 local age = 33
