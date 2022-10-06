@@ -5,6 +5,7 @@ tags:
 ---
 
 ## Concept
+...
 
 ## Workflow
 1. pull latest
@@ -225,6 +226,7 @@ git pull origin main
 ```
 
 ## Pull Requests
+...
 
 ## Merge
 // merge branch to current branch (main)
@@ -234,6 +236,7 @@ git merge branchname
 ```
 
 ## Rebase
+...
 
 ## .gitignore file
 
@@ -248,12 +251,29 @@ to be able to use git repos inside other git repos use submodules:
 git submodule add https://github.com/username/reponame
 ```
 
+when cloning repos with submodules you get the folders but not the files
+
+// to get the files of the submodules
+
+```bash
+git submodule init
+git submodule update
+```
+
+// do it all in one step
+
+```bash
+
+git clone --recurse-submodules https://github.com/username/reponame
+```
+
 [Submodules - Git Book](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 ---
 
 sources / further reading:
 - [Git Cheat Sheet](https://training.github.com/downloads/github-git-cheat-sheet/)
+- [Git Book](https://git-scm.com/book/en/v2/)
 - [Git and GitHub Tutorial For Beginners | Full Course [2021] [NEW]](https://www.youtube.com/watch?v=3fUbBnN_H2c)
 - [Git MERGE vs REBASE](https://www.youtube.com/watch?v=CRlGDDprdOQ)
 
