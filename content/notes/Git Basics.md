@@ -1,6 +1,6 @@
 ---
 title: "Git Basics"
-draft: true
+draft: false
 tags:
 ---
 
@@ -227,7 +227,6 @@ git pull origin main
 ## Pull Requests
 
 ## Merge
-
 // merge branch to current branch (main)
 
 ```bash
@@ -237,7 +236,19 @@ git merge branchname
 ## Rebase
 
 ## .gitignore file
+
 > Sometimes it may be a good idea to exclude files from being tracked with Git. This is typically done in a special file named `.gitignore`. You can find helpful templates for `.gitignore` files at [github.com/github/gitignore](https://github.com/github/gitignore).
+
+## Submodules
+to be able to use git repos inside other git repos use submodules:
+
+// install a git repo as a submodule into another repo
+
+```bash
+git submodule add https://github.com/username/reponame
+```
+
+[Submodules - Git Book](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 ---
 
