@@ -40,6 +40,7 @@ enableToc: false
 - [Crowds Plus - Thomas K Christensen](https://crowdsplus.notion.site/)
 - [The Brain Extension - Iiro Kivistö](https://www.thebrainextension.com/) grooming, CFX
 - [Creature Garage - JesusFC](https://creaturegarage.com/) grooming
+- [Atom's Link Page - OdForce](https://forums.odforce.net/topic/25173-atoms-link-page/?tab=comments#comment-146668) - useful link list
 
 ##### Tech
 - [[notes/NVIDIAs Warp for Houdini |NVIDIAs Warp for Houdini]]
