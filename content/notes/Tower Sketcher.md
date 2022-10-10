@@ -31,7 +31,7 @@ As mentioned above the data generation was done in PDG.
 ### Results
 
 ![[notes/images/TowerSketcher.gif]]
-// gif plays at 2x speed
+// gif plays at 3x speed
 
 ![[notes/images/towerSketchdemo.png]]
 
