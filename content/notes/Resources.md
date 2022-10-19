@@ -55,6 +55,7 @@ enableToc: false
 ## Math
 - [Essence of Linear Algebra - 3Blue1Brown](https://www.3blue1brown.com/topics/linear-algebra) theory
 - [The Beauty of Bézier Curves - Freya Holmér](https://www.youtube.com/watch?v=aVwxzDHniEw) theory
+- [Math Primer](https://aman.ai/primers/math/) theory, overview
 
 ---
 
@@ -65,6 +66,7 @@ enableToc: false
 ### Theory
 - [Casual GAN Papers](https://www.casualganpapers.com/) theory, papers
 - [Aladdin Persson](https://www.youtube.com/c/AladdinPersson) + [Github Collection](https://github.com/aladdinpersson/Machine-Learning-Collection) theory, paper review, pytorch & tensorflow tutorials
+- [Shervine Amidi - Deep Learning Cheat Sheet](https://stanford.edu/~shervine/teaching/) theory
 
 ### Courses
 - [ML YouTube Courses](https://github.com/dair-ai/ML-YouTube-Courses) 
@@ -75,5 +77,6 @@ enableToc: false
 ### Courses
 - [Open Source Society University - Path to a free self-taught education in Computer Science!](https://github.com/ossu/computer-science)
 - [Tutorialspoint - Algorithms and Datastructures](https://www.tutorialspoint.com/data_structures_algorithms/)
+
 ### Libraries
 - [The Computational Geometry Algorithms Library](https://www.cgal.org/index.html)
