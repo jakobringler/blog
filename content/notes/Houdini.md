@@ -40,4 +40,5 @@ tags:
 
 ### Misc
 - [[notes/Op Operators |Op Operators]]
+- [[notes/Houdini Crash Parsec |Houdini Crash Issue when using Virtual Displays with Parsec]]
 
