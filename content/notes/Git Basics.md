@@ -226,7 +226,7 @@ git pull origin main
 ```
 
 ## Pull Requests
-...
+ask the repository owner on e.g. github to merge your changes to the main/master branch
 
 ## Merge
 // merge branch to current branch (main)
@@ -236,7 +236,32 @@ git merge branchname
 ```
 
 ## Rebase
-...
+
+Assume the following history exists and the current branch is "topic":
+
+```
+          A---B---C topic
+         /
+    D---E---F---G master
+```
+
+From this point, the result of either of the following commands:
+
+//update current branch with changes that happend on master in the mean time
+```bash
+git rebase master
+git rebase master topic
+```
+
+would be:
+
+```
+                  A'--B'--C' topic
+                 /
+    D---E---F---G master
+```
+
+**NOTE:** The latter form is just a short-hand of `git checkout topic` followed by `git rebase master`. When rebase exits `topic` will remain the checked-out branch.
 
 ## .gitignore file
 
@@ -276,4 +301,5 @@ sources / further reading:
 - [Git Book](https://git-scm.com/book/en/v2/)
 - [Git and GitHub Tutorial For Beginners | Full Course [2021] [NEW]](https://www.youtube.com/watch?v=3fUbBnN_H2c)
 - [Git MERGE vs REBASE](https://www.youtube.com/watch?v=CRlGDDprdOQ)
+- [Git Rebase DOCs](https://git-scm.com/docs/git-rebase)
 
