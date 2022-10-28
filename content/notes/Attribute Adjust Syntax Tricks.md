@@ -19,4 +19,5 @@ This tells the node to create values from 1 to 3 with a stepsize of 1 and values
 
 sources / further reading:
 - [Sexy Explosions | Attila Torok | Houdini 18.5 HIVE](https://www.youtube.com/watch?v=Gxfq9DZTuRM)
+- [Houdini DOCs](https://www.sidefx.com/docs/houdini/nodes/sop/attribadjustfloat.html)
 
