@@ -16,7 +16,11 @@ The [Cache Node](https://www.sidefx.com/docs/houdini/nodes/sop/cache.html) can b
 > 
 > lets you scrub otherwise sluggish animations in real time, play pop networks backwards, etc. because the animation is precomputed and stored in memory
 
-
+### Attribute Adjust Nodes
+- Introduced in 18.5
+- Very handy for all sorts of attribute manipulation, remapping or distorting
+- Can do unit conversion from e.g. seconds to frames
+- Check out [[notes/Attribute Adjust Syntax Tricks |Attribute Adjust Syntax Tricks]] for more
 
 
 

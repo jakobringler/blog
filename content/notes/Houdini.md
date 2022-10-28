@@ -22,6 +22,7 @@ tags:
 - [[notes/Vocabulary |Vocabulary]]
 - [[notes/FLIP |FLIP]]
 - [[notes/VELLUM |VELLUM]]
+- [[notes/PYRO |PYRO]]
 
 ### USD
 - [[notes/USD Basics |USD Basics]]
