@@ -17,6 +17,9 @@ tags:
 ### HDAs
 - [[notes/HDA Parameters |Parameters]]
 
+### SOPs
+- [[notes/SOP Solver |SOP Solver]]
+
 ### FX
 - [[notes/General Workflow Tips |General Workflow Tips]]
 - [[notes/Vocabulary |Vocabulary]]

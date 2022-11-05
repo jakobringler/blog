@@ -28,6 +28,14 @@ As mentioned above the data generation was done in PDG.
 
 ![[notes/images/TowerDataset.png]]
 
+### Training
+
+// Code
+
+```python
+
+```
+
 ### Results
 
 ![[notes/images/TowerSketcher.gif]]
