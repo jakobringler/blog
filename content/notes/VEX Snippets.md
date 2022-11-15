@@ -377,6 +377,18 @@ int handle = pcopen(0, "P", @P, chf("radius"), chi("maxpoints"));
 v@P = pcfilter(handle, "P");
 ```
 
+### Vector Flow on Objects
+// point wrangle
+
+```C
+vector pos = v@P * chf("scale");
+vector dir = curlnoise2d(pos + @Time * chf("time"));
+matrix3 mat = dihedral(set(0,0,1), v@N);
+dir *= mat;
+
+v@v = dir;
+```
+
 ### Wave Expressions
 
 [[notes/WaveExpressions |Summary]] of different useful periodic functions like square or sawtooth

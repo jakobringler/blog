@@ -27,6 +27,9 @@ related to: [[notes/Vocabulary#Curl |Curl]]
 
 ### Vorticity
 
+### Perpendicular Lines
+Lines meet at right angle
+
 
 ---
 
