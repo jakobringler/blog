@@ -12,6 +12,24 @@ enableToc: true
 >
 >I recommend installing this handy python panel to manage your own snippet collection: [Vex Snippet Library](https://github.com/dchow1992/Vex_Snippet_Library)
 
+### Alembic Path to Groups
+//primitive wrangle
+
+```C
+string name[] = split(s@path, "/");
+
+foreach (string s; name){
+    setprimgroup(0, s, @primnum, 1, "set");
+} 
+```
+
+### Angle between 2 Vectors
+//point wrangle 
+
+```C
+float angle = degrees(acos(dot(normalize(vector1), normalize(vector2))));
+```
+
 ### Attribute Min Max
 // point wrangle
 
