@@ -47,6 +47,9 @@ enableToc: false
 - [[notes/Julia Wrangle in Houdini |Julia Wrangle in Houdini]]
 - [[notes/HoudiniToTaichi |Houdini To Taichi]]
 
+##### Comparisons
+- [Houdini | Whitewater tests - Attila Siops](https://www.youtube.com/watch?v=nW1pxpAw-4Y)
+
 ### Pipeline
 [Prism Pipeline](https://prism-pipeline.com/) open source
 
