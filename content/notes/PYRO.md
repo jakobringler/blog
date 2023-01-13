@@ -30,6 +30,10 @@ Notes I made for Attila Toroks talk linked below.
 #### Multiple Bursts
 - use multiple input points
 - randomize attributes and frame offsets per input point in the `Burst Animation` parameter tab
+- use attribute adjust button next to attributes name to create node and control attribute values
+### Pyro Trail Path
+### Pyro Trail Source
+
 
 ---
 
