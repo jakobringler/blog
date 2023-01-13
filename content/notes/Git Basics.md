@@ -79,6 +79,7 @@ git config --global user.email "[email address]"
 git config --global color.ui auto
 ```
 
+## Commit, Push & Pull
 ## Commits
 Like a save point for all staged files
 
@@ -118,7 +119,7 @@ git diff
 git commit --amend -m "message"
 ```
 
-## Branches
+### Branches
 
 > Branches are an important part of working with Git. Any commits you make will be made on the branch you’re currently “checked out” to. Use `git status` to see which branch that is.
 
@@ -176,7 +177,7 @@ git checkout -
 git branch -d branchname
 ```
 
-## Push
+### Push
 // push the repository to the remote github repo
 
 ```bash
@@ -228,14 +229,15 @@ git pull origin main
 ## Pull Requests
 ask the repository owner on e.g. github to merge your changes to the main/master branch
 
-## Merge
+## Merging
+### Merge
 // merge branch to current branch (main)
 
 ```bash
 git merge branchname
 ```
 
-## Rebase
+### Rebase
 
 Assume the following history exists and the current branch is "topic":
 
@@ -263,11 +265,12 @@ would be:
 
 **NOTE:** The latter form is just a short-hand of `git checkout topic` followed by `git rebase master`. When rebase exits `topic` will remain the checked-out branch.
 
-## .gitignore file
+## Misc
+### .gitignore file
 
 > Sometimes it may be a good idea to exclude files from being tracked with Git. This is typically done in a special file named `.gitignore`. You can find helpful templates for `.gitignore` files at [github.com/github/gitignore](https://github.com/github/gitignore).
 
-## Submodules
+### Submodules
 to be able to use git repos inside other git repos use submodules:
 
 // install a git repo as a submodule into another repo

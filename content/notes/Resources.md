@@ -5,6 +5,7 @@ tags:
 enableToc: false
 ---
 # Downloads & Scripts
+
 [[notes/VEX Snippets |VEX Snippets]]
 
 ---
@@ -12,6 +13,7 @@ enableToc: false
 # Links
 
 ## CG & VFX
+
 ### Houdini
 ##### Tutorials
 - [Entagma - Moritz Schwind & Manuel Casasola Merkle](https://entagma.com/) procedural & motion design
@@ -47,9 +49,6 @@ enableToc: false
 - [[notes/Julia Wrangle in Houdini |Julia Wrangle in Houdini]]
 - [[notes/HoudiniToTaichi |Houdini To Taichi]]
 
-### Pipeline
-[Prism Pipeline](https://prism-pipeline.com/) open source
-
 ---
 
 ## Math
@@ -60,6 +59,7 @@ enableToc: false
 ---
 
 ## Deep Learning
+
 ### Houdini
 - [Houdini Machine Learning - Edmond Boulet-Gilly](https://www.youtube.com/watch?v=WNEEokEq-Fg&list=PLSie_1zkANDbn7wCD9kifPAp5wJmok02V) ML, PyTorch, technical
 
@@ -74,9 +74,28 @@ enableToc: false
 ---
 
 ## Computer Science 
+
 ### Courses
 - [Open Source Society University - Path to a free self-taught education in Computer Science!](https://github.com/ossu/computer-science)
 - [Tutorialspoint - Algorithms and Datastructures](https://www.tutorialspoint.com/data_structures_algorithms/)
 
 ### Libraries
 - [The Computational Geometry Algorithms Library](https://www.cgal.org/index.html)
+
+---
+
+# Tools
+
+## Workflow
+
+### Pipeline
+- [Prism Pipeline](https://prism-pipeline.com/) open source
+
+### Automation
+- [Power Automate for Win10/11](https://powerautomate.microsoft.com/en-us/) like iOS shortcuts, visual automation programming
+
+### QoL Tools
+- [Advanced Renamer](https://www.advancedrenamer.com/) file renamer
+- [Pure Ref](https://www.pureref.com/) reference board
+
+---
