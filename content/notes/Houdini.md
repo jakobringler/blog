@@ -14,9 +14,6 @@ tags:
 - [[notes/primuv and xyzdist |primuv & xyzdist]]
 - [[notes/IrregularGridAlgorithms |Algorithms for Irregular Grids]]
 
-### HDAs
-- [[notes/HDA Parameters |Parameters]]
-
 ### SOPs
 - [[notes/SOP Solver |SOP Solver]]
 
@@ -29,6 +26,13 @@ tags:
 
 ### Unusual FX / Phenomena
 - [[notes/Reaction Diffusion |Reaction Diffusion]]
+
+### Rendering
+- [[notes/Redshift#Redshift in Houdini |Redshift in Houdini]]
+- [[notes/Karma |Karma]]
+
+### HDAs
+- [[notes/HDA Parameters |Parameters]]
 
 ### USD
 - [[notes/USD Basics |USD Basics]]

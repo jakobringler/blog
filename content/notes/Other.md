@@ -7,6 +7,9 @@ tags:
 ### Nuke
 - [[notes/cat Files |cat Files]]
 
+### Redshift
+[[notes/Redshift | Redshift]]
+
 ### DaVinci Resolve
 - [[notes/Python Scripting in Resolve |Python Scripting in Resolve]]
 - [[notes/Lua Scripting in Resolve |Lua Scripting in Resolve]]

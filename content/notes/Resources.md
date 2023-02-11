@@ -33,6 +33,7 @@ enableToc: false
 - [Blog - Sergen Eren](https://sergeneren.com/) FX, technical, clouds, photon simulation
 - [Blog - Rok Andic](https://www.rokandic.com/blog) rigging, animation
 - [Blog - Chris Turner](https://www.chrisbturner.com/blog) technical
+- [Blog - Jason Harmon (What I Found)](https://whatifound.net/) FLIP, CHOPs
 - [lex.ikoon](https://lex.ikoon.cz/) VEX, Python, technical
 - [rendereverything - Gatis Kurzemnieks](https://www.rendereverything.com/blog/) VEX, technical
 - [1 Minute VEX - Aaron Smith](https://aaronsmith.tv/1-Minute-VEX) VEX
