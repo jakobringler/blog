@@ -268,6 +268,19 @@ u = pow( 1 - u, (1 / (1 - stiffness)));
 > 
 > [Chris Turner's Tweet](https://twitter.com/allexceptn/status/1488954032425213958)
 
+### Helix from Line
+// point wrangle
+
+```C
+  float freq = chf("freq");
+  float amp = chf("amp");
+  vector pos = @P;
+  
+  pos.x += sin(@P.y * freq) * amp;
+  pos.z += cos(@P.y * freq) * amp;
+  @P = pos;
+```
+
 ### Isolate Overlapping Points
 // point wrangle
 
