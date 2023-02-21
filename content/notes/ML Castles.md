@@ -18,13 +18,15 @@ The project files and code can be found on GitHub: [H_ML_Castles](https://github
 
 ### 1. Training a Neural Net to Understand my Sketches
 
+A Machine learning network was used to provide a new kind of user interface to control parameters of an HDA, which procedurally generates towers.
+
 ![[notes/images/TowerSketcher.gif]]
 
-more details can be found under: [[notes/Tower Sketcher |Tower Sketcher]]
+more details can be found here: [[notes/Tower Sketcher |Tower Sketcher]]
 
 ### 2. Predicting Heightfield Data using cGANs
 
-This Idea isn't anything new and was already shown in this [SideFX demo](https://www.sidefx.com/tutorials/machine-learning-data-preparation/). Since heightfields are essentially images (2D arrays) you can use conditional GANs to translate between one image to another.
+This idea isn't anything new and was already shown in this [SideFX demo](https://www.sidefx.com/tutorials/machine-learning-data-preparation/). Since heightfields are essentially images (2D arrays) you can use conditional GANs to translate between one image to another.
 
 You can for example translate height data from a base terrain to an eroded version of that terrain, like shown in the SideFX demo.
 
@@ -34,5 +36,5 @@ In the same way you can then use the erosion data (height, water, sediment etc.)
 
 ![[notes/images/VegetationDemo.gif]]
 
-more details can be found under: [[notes/Vegetation Erosion Prediction |Vegetation Erosion Prediction]]
+more details can be found here: [[notes/Vegetation Erosion Prediction |Vegetation Erosion Prediction]]
 

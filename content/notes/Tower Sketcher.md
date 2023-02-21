@@ -17,7 +17,7 @@ The basic idea was to create an HDA and train a neural net to translate rough pi
 ![[notes/images/towerHDAconcept.png]]
 
 ### Setup
-To create the necessary training data I used PDG. It's pretty straight forward to create almost infinite random variations of an HDA output and write them, or any part of their data, to disk. I generated 10.000 image-parameter pairs to train the network. The training process was also done inside of PDG in a python script node. The network was a combination of a [[notes/Convolutional Neural Networks (CNNs) |CNN]] and a [[notes/Feed Forward Networks (FFNs) |FNN]]. More details further down.
+To create the necessary training data I used PDG. It's pretty straight forward to create almost infinite random variations of an HDA output and write them, or any part of their data, to disk. I generated 10.000 image-parameter pairs to train the network. The training process was also done inside of PDG in a python script node. The network was a combination of a [[notes/Convolutional Neural Networks (CNNs) |CNN]] and a [[notes/Feed Forward Networks (FFNs) |FNN]]. 
  
 ![[notes/images/setuptowerhda(2).jpg |400]]
 
@@ -27,14 +27,6 @@ The Inference process (Predicting new results) was done in SOPs by running an Im
 As mentioned above the data generation was done in PDG.
 
 ![[notes/images/TowerDataset.png]]
-
-### Training
-
-// Code
-
-```python
-
-```
 
 ### Results
 

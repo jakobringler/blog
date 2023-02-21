@@ -7,9 +7,10 @@ tags:
 ## Houdini
 
 ### Projects & Examples
+- [[notes/ML Castles |ML Castles]]
+	- [[notes/Tower Sketcher |Tower Sketcher]]
+	- [[notes/Vegetation Erosion Prediction |Vegetation & Erosion Prediction]]
 - [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]]
-- [[notes/Tower Sketcher |Tower Sketcher]]
-- [[notes/Vegetation Erosion Prediction |Vegetation & Erosion Prediction]]
 
 ### Setup Guides
 -  [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]
@@ -17,10 +18,8 @@ tags:
 ### Houdini DL "Hacks"
 - [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
 
-
 ## Nuke
 - [[notes/cat Files |cat Files]]
-
 
 ## Coming Soon
 
