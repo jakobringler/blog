@@ -43,7 +43,7 @@ As mentioned above the data generation was done in PDG.
 
 ![[notes/images/towerSketchdemo.png]]
 
-Since all the resulting values get clamped to a plausible range everything outputs a somewhat good tower, which results in those rather incoherent pairs:
+Since all the resulting values get clamped to a plausible range every sketch outputs a somewhat reasonable tower, which results in those rather incoherent pairs:
 
  ![[notes/images/towerSketchdemo2.png]]
  
