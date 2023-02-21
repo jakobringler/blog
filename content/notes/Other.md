@@ -19,4 +19,4 @@ tags:
 - [[notes/Git Basics |Git Basics]]
  
 ### Obsidian / Quartz
-- [[notes/Gifs for Obsidian |How to Gifs for Obsidian on Linux]]
+- [[notes/Gifs for Obsidian |How to create Gifs for Obsidian on Linux]]
