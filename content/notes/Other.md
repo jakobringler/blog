@@ -18,3 +18,5 @@ tags:
 - [[notes/Bash Basics |Bash Basics]]
 - [[notes/Git Basics |Git Basics]]
  
+### Obsidian / Quartz
+- [[notes/Gifs for Obsidian |How to Gifs for Obsidian on Linux]]
