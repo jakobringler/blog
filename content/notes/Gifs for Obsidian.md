@@ -1,5 +1,5 @@
 ---
-title: "gifsforobsidian"
+title: "Gifs for Obsidian"
 draft: false
 tags:
 - linux
