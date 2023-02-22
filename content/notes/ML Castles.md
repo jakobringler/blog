@@ -41,8 +41,8 @@ In the same way you can then use the erosion data (height, water, sediment etc.)
 more details can be found here: [[notes/Vegetation and Erosion Prediction |Vegetation Erosion Prediction]]
 
 ### Procedural Systems
+![[notes/images/wallbrickingFullCC.png]]
 
-![[notes/images/wallsandtowers.png]]
 
 ![[notes/images/walkways.png]]
 
