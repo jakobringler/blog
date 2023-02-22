@@ -11,5 +11,5 @@ enableToc: false
 	- [[notes/Vegetation and Erosion Prediction |Vegetation Erosion Prediction]]
 
 ## R&D
-### Deep Learning
+### Machine Learning
 - [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]]
