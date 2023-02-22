@@ -18,6 +18,8 @@ You can use the interactive graph or the content lists below to browse the site 
 ### About 
 fx notes serves as a public *second brain* for some of my visual effects, proceduralism and deep learning related notes and experiments.
 
+If you want to contribute or fix mistakes you can click the `Edit Source` button at the top of every page and open a pull request on GitHub.
+
 I hope you find something useful!
 
 Best,
