@@ -8,7 +8,7 @@ enableToc: false
 ## Projects
 - [[notes/ML Castles |ML  Castles]]
 	- [[notes/Tower Sketcher |Tower Sketcher]]
-	- [[notes/Vegetation Erosion Prediction |Vegetation Erosion Prediction]]
+	- [[notes/Vegetation and Erosion Prediction |Vegetation Erosion Prediction]]
 
 ## R&D
 ### Deep Learning

@@ -8,7 +8,7 @@ tags:
 - pytorch
 ---
 
-## Training a Neural Net to Understand my Drawings
+## Training a Neural Net to Understand Sketches
 This project is part of [[notes/ML Castles |ML Castles]] and was created for my bachelor's thesis.
 
 ### Concept
