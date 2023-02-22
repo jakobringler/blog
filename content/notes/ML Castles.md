@@ -46,6 +46,7 @@ more details can be found here: [[notes/Vegetation and Erosion Prediction |Veget
 
 ![[notes/images/walkways.png]]
 
+![[notes/images/shortestPath.png]]
 ### Results
 
 ![[notes/images/Castle1.png]]

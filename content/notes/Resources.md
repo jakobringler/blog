@@ -8,6 +8,9 @@ enableToc: false
 
 [[notes/VEX Snippets |VEX Snippets]]
 
+[ML Castles](https://github.com/jakobringler/H_ML_Castles/)
+[Pytorch Digit Recognition in Houdini](https://github.com/jakobringler/H_pytorch_digitrecognition)
+
 ---
 
 # Links
@@ -47,18 +50,24 @@ enableToc: false
 
 ##### Tech
 - [[notes/NVIDIAs Warp for Houdini |NVIDIAs Warp for Houdini]]
-- [[notes/Julia Wrangle in Houdini |Julia Wrangle in Houdini]]
-- [[notes/HoudiniToTaichi |Houdini To Taichi]]
+- [Julia Wrangle in Houdini](https://github.com/pedohorse/yuria)
+- [HoudiniToTaichi](https://github.com/taichi-dev/taichi_houdini)
 
 ##### Comparisons
+**FLIP**
 - [Houdini Flip Sim Flat Tank Particle Separation Comparison - Anthony Juno Han](https://www.youtube.com/watch?v=Zvjlg0m0ZlY)
 - [Houdini Flip Simulation Particle Fluid Surface Comparison - Anthony Juno Han](https://www.youtube.com/watch?v=4a3N2qeOF2Y)
+**Whitewater**
 - [Houdini | Whitewater tests - Attila Siops](https://www.youtube.com/watch?v=nW1pxpAw-4Y)
 - [Houdini | Beach Wave Whitewater tests (hip) - Attila Siops](https://www.youtube.com/watch?v=a38RFtpeLqc)
 - [Houdini | Rock Splash tests (comparison) - Attila Siops](https://www.youtube.com/watch?v=8sb_z2fl2hY)
+**Pyro**
 - [Houdini Pyro FX - Explosion comparison. - Cg Art School : CAS](https://www.youtube.com/watch?v=eMQYLipwFiM)
 - [Houdini Sparse Pyro FX - Campfire comparison. - Cg Art School : CAS](https://www.youtube.com/watch?v=grsev1LXOF0)
 - [Houdini Pyro FX - Billowy smoke comparison. - Cg Art School : CAS](https://www.youtube.com/watch?v=A3o2ZD_S5xE)
+
+### Misc 
+- [Physically Based](https://physicallybased.info/) material value database
 
 ### Pipeline
 - [Prism Pipeline](https://prism-pipeline.com/) open source
