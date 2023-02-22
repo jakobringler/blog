@@ -6,10 +6,10 @@ enableToc: false
 ---
 # Downloads & Scripts
 
-[[notes/VEX Snippets |VEX Snippets]]
+- [VEX Snippets](https://github.com/jakobringler/H_VEX_snippets)
 
-[ML Castles](https://github.com/jakobringler/H_ML_Castles/)
-[Pytorch Digit Recognition in Houdini](https://github.com/jakobringler/H_pytorch_digitrecognition)
+- [ML Castles](https://github.com/jakobringler/H_ML_Castles/)
+- [Pytorch Digit Recognition in Houdini](https://github.com/jakobringler/H_pytorch_digitrecognition)
 
 ---
 
@@ -68,9 +68,6 @@ enableToc: false
 
 ### Misc 
 - [Physically Based](https://physicallybased.info/) material value database
-
-### Pipeline
-- [Prism Pipeline](https://prism-pipeline.com/) open source
 
 ---
 
