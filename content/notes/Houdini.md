@@ -54,5 +54,8 @@ tags:
 - [[notes/Today I Learned |"Today I Learned" - Compilation]]
 - [[notes/OpenCL in Houdini |OpenCL]]
 - [[notes/Op Operators |Op Operators]]
+- [[notes/Hscript |Hscript]]
+
+### Issues & Fixes
 - [[notes/Houdini Crash Parsec |Houdini Crash Issue when using Virtual Displays with Parsec]]
 
