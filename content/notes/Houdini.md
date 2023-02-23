@@ -52,8 +52,8 @@ tags:
 
 ### Misc
 - [[notes/Today I Learned |"Today I Learned" - Compilation]]
-- [[notes/OpenCL in Houdini |OpenCL]]
 - [[notes/Op Operators |Op Operators]]
+- [[notes/OpenCL in Houdini |OpenCL]]
 - [[notes/Hscript |Hscript]]
 
 ### Issues & Fixes
