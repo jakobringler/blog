@@ -1,6 +1,6 @@
 ---
 title: "Today I Learned"
-draft: true
+draft: false
 tags:
 - houdini
 ---
