@@ -5,7 +5,7 @@ tags:
 - houdini
 ---
 
-The following is a compilation of all sorts of handy houdini tips & tricks that were shared in the #today-i-learned channel on the [Think Procedural Discord Server](https://thinkprocedural.com/). Over time I will add here what I find useful. 
+The following is a compilation of all sorts of handy houdini tips & tricks that were shared in the #today-i-learned channel on the [Think Procedural Discord Server](https://thinkprocedural.com/).
 Do yourself a favour and check it out an scroll to the top of the thread to find some hidden secrets!
 
 ## Quality of Life
