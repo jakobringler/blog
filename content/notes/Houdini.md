@@ -26,6 +26,7 @@ tags:
 
 ### Unusual FX / Phenomena
 - [[notes/Reaction Diffusion |Reaction Diffusion]]
+- [[notes/Strange Attractors |Strange Attractors]]
 
 ### Rendering
 - [[notes/Redshift#Redshift in Houdini |Redshift in Houdini]]
@@ -50,6 +51,7 @@ tags:
 - [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
 
 ### Misc
+- [[notes/Today I Learned |"Today I Learned" - Compilation]]
 - [[notes/OpenCL in Houdini |OpenCL]]
 - [[notes/Op Operators |Op Operators]]
 - [[notes/Houdini Crash Parsec |Houdini Crash Issue when using Virtual Displays with Parsec]]
