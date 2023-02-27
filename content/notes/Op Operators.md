@@ -33,6 +33,7 @@ or a .hda library
 ### Connected Inputs: opninputs
 
 > [!quote] **DOCs**
+> 
 > Returns the number of the highest connected input. This is _not_ the number of connected inputs. If a node has four inputs and the fourth input is connected, `opninputs` will return `4`. If the first and third inputs are connected, `opninputs` will return `3`.
 
 ```hscript
@@ -54,3 +55,11 @@ Can be used to pipe the output of a COPs network live into a texture input
 ```hscript
 op:`opfullpath("../cop2net1/OUT_COPS")`[$F]
 ```
+
+### Use Input Name for Exports: opinput
+
+```hscript
+$HIP/geo/`opinput(".", 0)`.bgeo.sc
+```
+
+![[notes/images/Pasted image 20230227162722.png]]
