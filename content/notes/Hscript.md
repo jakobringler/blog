@@ -23,6 +23,9 @@ opscript -G -r / > $TEMP/temp.cmd
 cmdread $TEMP/temp.cmd
 ```
 
+### Op Operators
+
+more [[notes/Op Operators |here]]
 
 ---
 
