@@ -58,6 +58,8 @@ op:`opfullpath("../cop2net1/OUT_COPS")`[$F]
 
 ### Use Input Name for Exports: opinput
 
+Flexible ROP outputs
+
 ```hscript
 $HIP/geo/`opinput(".", 0)`.bgeo.sc
 ```
