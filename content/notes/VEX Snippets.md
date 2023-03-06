@@ -241,6 +241,16 @@ Have a look at [[notes/Matrix Operations |this note]] for more information on ho
  v@flow = c2;
 ```
 
+### Follow Surface with Particles using the VDB Gradient
+// pop wrangle
+
+```C
+float surf = volumesample(1, "surface", v@P);
+vector grad = volumegradient(1, "surface", v@P);
+
+v@P -= normalize(grad) * surf;
+```
+
 ### Group by N Connections
 // point wrangle
 
