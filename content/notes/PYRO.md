@@ -34,6 +34,8 @@ Notes I made for Attila Toroks talk linked below.
 ### Pyro Trail Path
 ### Pyro Trail Source
 
+### Retiming
+John Kunz recorded a great demo about retiming volumes. You can find my notes here: [[notes/Retiming Techniques for Pyro |Retiming Techniques for Pyro]]
 
 ---
 

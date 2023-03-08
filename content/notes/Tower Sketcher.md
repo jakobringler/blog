@@ -9,7 +9,7 @@ tags:
 ---
 
 ## Training a Neural Net to Understand Sketches
-This project is part of [[notes/ML Castles |ML Castles]] and was created for my bachelor's thesis.
+This is part of the [[notes/ML Castles |ML Castles]] project and was created for my bachelor's thesis.
 
 ### Concept
 The basic idea was to create an HDA and train a neural net to translate rough pixel sketches into parameter values that produce the drawn shape when entered in the HDA.
