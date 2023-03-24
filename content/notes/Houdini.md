@@ -20,6 +20,7 @@ tags:
 ### FX
 - [[notes/General Workflow Tips |General Workflow Tips]]
 - [[notes/Vocabulary |Vocabulary]]
+- [[notes/Collisions |Collisions]]
 - [[notes/FLIP |FLIP]]
 - [[notes/VELLUM |VELLUM]]
 - [[notes/PYRO |PYRO]]
