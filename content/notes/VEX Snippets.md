@@ -381,6 +381,28 @@ if(@ptnum % 100 < percentage)
 }
 ```
 
+### Remove Point Percentage (ID aware)
+// point wrangle
+
+```C
+if (haspointattrib(0, "id"))
+{    
+    if (rand(@id+chi('seed')+0.33)<chf('percentage'))
+    {
+        removepoint(geoself(), @ptnum);
+    }    
+}
+else
+    if (  rand(@ptnum+chi('seed')+0.33)<chf('percentage')) 
+    {
+        removepoint(geoself(), @ptnum);
+    }
+```
+
+> [!quote] **Sources:**
+> 
+> Thanks Hannes!
+
 ### Rotate Vector
 // point wrangle
 
