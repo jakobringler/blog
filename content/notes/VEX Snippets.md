@@ -11,7 +11,7 @@ enableToc: true
 >
 >I recommend installing this handy python panel to manage your own snippet collection: [Vex Snippet Library](https://github.com/dchow1992/Vex_Snippet_Library)
 
-> [!tip] **Hot Tip:**
+> [!check] **Hot Tip:**
 > 
 > You can find the attribute wrangle node by just typing `aw` ;)
 
