@@ -12,6 +12,10 @@ enableToc: true
 >
 >I recommend installing this handy python panel to manage your own snippet collection: [Vex Snippet Library](https://github.com/dchow1992/Vex_Snippet_Library)
 
+> [!tip] **Hot Tip:**
+> 
+> You can find the attribute wrangle node by just typing `aw` ;)
+
 ### Alembic Path to Groups
 //primitive wrangle
 
@@ -433,6 +437,34 @@ dir *= mat;
 
 v@v = dir;
 ```
+
+### Velocity Tester
+// point wrangle
+
+```C
+@v *=  chf('vScale'); // Should be 1 by default
+float velMax = ch('max_vel'); // Should be a high number by default
+float velLength = length(@v);
+
+// Clamp Velocity
+if(velLength > velMax)
+    {
+    @v = normalize(@v)*velMax;
+    }
+    
+// Export Speed
+if (chi("export_Speed")==1)
+    {
+    @speed = length(@v);
+    }
+
+// Test Velocity
+@P += @v/$FPS*chf('velTester');
+```
+
+> [!quote] **Sources:**
+> 
+> Thanks Hannes!
 
 ### Wave Expressions
 
