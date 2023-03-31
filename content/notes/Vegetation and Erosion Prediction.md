@@ -82,18 +82,18 @@ output B = Plant Type 3
 
 ![[notes/images/ErosionPrediction.gif]]
 
-Result (Ground Truth left / Prediction right)
+// Result (Ground Truth left / Prediction right)
 
 ![[notes/images/heightfieldGroundtruthvspredicted.png]]
 
+// Error Visualization
 ![[notes/images/HeightfieldErrorVis.png]]
-// Error Visualized
 
 #### Vegetation
 
 ![[notes/images/VegetationDemo.gif]]
 
-Predicted Masks (left) & Scattered Assets (right)
+// Predicted Masks (left) & Scattered Assets (right)
 
 ![[notes/images/vegetationToScattering.png]]
 ### Outlook
