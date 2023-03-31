@@ -15,16 +15,12 @@ The basic functionalities were already demonstrated by SideFX in a [talk](https:
 Heightfields are essentially images (2D volumes). Their grid-like topology makes them perfect for machine learning. 
 ![[notes/images/heightfield to pixel.png]]
 
-// Heightfield Image Example
-
 Similar to height data all sorts of other information can be stored in masks on the heightfield. The image below shows masks, which can be used to scatter geometry later.
 ![[notes/images/vegetationMaskToGeo.png]]
-// Scatter Mask Example
 
 The idea is to train a ML model to predict masks, and erosion based on the input heightmap.
 
 ### Pix2Pix
-
 ![Image](https://raw.githubusercontent.com/phillipi/pix2pix/master/imgs/examples.jpg)
 
 [Pix2Pix](https://github.com/phillipi/pix2pix) is a popular machine learning model which translates images from one state to another. Similar to language translation you can translate the content of an image to a different art style.
@@ -41,9 +37,9 @@ The setup is as shown below:
 6. feed new inputs to the model and let it predict the results using a python sop that calls the pytorch model
 
 ![[notes/images/Houdini Heightfield Prediction using Pix2Pix.jpg]]
-// Flowchart of the overall Setup and Dataflow
 
 ### Data Synthesis and PDG
+
 As described above Houdini calculates the correct erosion / vegetation masks for a specific input. With the height data it provides water and sediment maps among others.
 ![[notes/images/noiseterraintoerossion.png]]
 
@@ -62,8 +58,9 @@ output B = Sediment
 
 I chose to encode the castle and bridge foundations, because it was especially important, that there will be little to no height changes in this area and I hoped I could steer the model to focus on that. I can't be sure whether it really worked because of the additional masks, but the results were pretty good.
 
-![[notes/images/erosionsample.png]]
 // Erosion Data Sample (Input & Output)
+
+![[notes/images/erosionsample.png]]
 
 For the Vegetation I included different information:
 
@@ -75,15 +72,18 @@ output R = Plant Type 1
 output G = Plant Type 2
 output B = Plant Type 3
 
-![[notes/images/vegetationsample.png]]
 // Vegetation Data Sample (Input & Output)
+
+![[notes/images/vegetationsample.png]]
 
 ### Results
 
 ###### Erosion
 
 ![[notes/images/ErosionPrediction.gif]]
+
 Result (Ground Truth left / Prediction right)
+
 ![[notes/images/heightfieldGroundtruthvspredicted.png]]
 
 ![[notes/images/HeightfieldErrorVis.png]]
@@ -92,7 +92,9 @@ Result (Ground Truth left / Prediction right)
 #### Vegetation
 
 ![[notes/images/VegetationDemo.gif]]
+
 Predicted Masks (left) & Scattered Assets (right)
+
 ![[notes/images/vegetationToScattering.png]]
 ### Outlook
 
