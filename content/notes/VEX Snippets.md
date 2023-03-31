@@ -1,7 +1,6 @@
 ---
 title: "VEX Snippets"
 tags:
-- list
 - vex
 - houdini
 enableToc: true
@@ -440,6 +439,8 @@ v@v = dir;
 
 ### Velocity Tester
 // point wrangle
+
+Very useful to visualize how meshed fluids will move in the motion blur each of a rendered frame.
 
 ```C
 @v *=  chf('vScale'); // Should be 1 by default
