@@ -68,6 +68,7 @@ enableToc: false
 
 ### Misc 
 - [Physically Based](https://physicallybased.info/) material value database
+- [CG Cinematography - Chris Brejon](https://chrisbrejon.com/cg-cinematography/) cinematography, lighting, color theory & management
 
 ---
 
