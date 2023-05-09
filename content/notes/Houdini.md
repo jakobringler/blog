@@ -21,6 +21,7 @@ tags:
 - [[notes/General Workflow Tips |General Workflow Tips]]
 - [[notes/Vocabulary |Vocabulary]]
 - [[notes/Collisions |Collisions]]
+- [[notes/Velocity Fields |Velocity Fields]]
 - [[notes/FLIP |FLIP]]
 - [[notes/VELLUM |VELLUM]]
 - [[notes/PYRO |PYRO]]
