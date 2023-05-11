@@ -8,13 +8,13 @@ tags:
 
 ![[notes/images/strangeattractors.png]]
 
-//pointwrangle "starting_conditions"
+//pointwrangle "starting_conditions" (used the values in each comment)
 
 ```C
-@a = chf("sigma");
-@b = chf("rho");
-@c = chf("beta");
-@dt = ch("dt");
+@a = chf("sigma"); // 10
+@b = chf("rho");   // 28
+@c = chf("beta");  // 8/3
+@dt = ch("dt");    // 0.002
 ```
 
 The solver is just a point wrangle that moves the starting points along based on the formula and starting conditions.
