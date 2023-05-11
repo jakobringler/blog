@@ -16,9 +16,18 @@ You can use the `VDB Potential Flow` node to predict how air would move around a
 ![[notes/images/potential_flow_vop.png]]
 Check out Mats video on the topic: [Houdini Tutorial: Advanced Velocity Fields / Part One - Mats](https://www.youtube.com/watch?v=K0cNvpXujmk)
 
+### Strange Attractors
+
+![[notes/images/strangeattractors.png]]
+
+might be useful for some magic FX.
+
+I put them on their own page [[notes/Strange Attractors |here]].
+
 ### Magnetic Fields
 
 coming soon
+
 
 ---
 

@@ -1,12 +1,43 @@
 ---
 title: "Strange Attractors"
-draft: true
+draft: false
 tags:
 - houdini
 - math
 ---
 
+![[notes/images/strangeattractors.png]]
 
+//pointwrangle "starting_conditions"
+
+```C
+@a = chf("sigma");
+@b = chf("rho");
+@c = chf("beta");
+@dt = ch("dt");
+```
+
+The solver is just a point wrangle that moves the starting points along based on the formula and starting conditions.
+
+// the solver
+
+![[notes/images/strangeattractors_solver.png]]
+
+//pointwrangle "move_points"
+
+```C
+float x = @P.x;
+float y = @P.y;
+float z = @P.z;
+
+float dx = (@a * ( y - x )) * @dt;
+float dy = (x * ( @b - z ) - y ) * @dt;
+float dz = (x * y - @c * z ) * @dt;
+
+@P.x += dx;
+@P.y += dy;
+@P.z += dz;
+```
 
 ---
 
