@@ -24,6 +24,7 @@ Do yourself a favour and check it out an scroll to the top of the thread to find
 ### Viewport
 - `Ctrl` or `Shift` + `Arrow Keys` let's you rotate / move views
 - `M` enables first person movement with `WASD`, `Shift` to sprint, `Ctrl` to slowdown and `Q` / `E` to lift / descend
+- `Ctrl + Alt + S` enters 'Zen' mode and removes most of the UI clutter
 
 ---
 
