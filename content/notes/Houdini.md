@@ -31,6 +31,9 @@ tags:
 - [[notes/Reaction Diffusion |Reaction Diffusion]]
 - [[notes/Strange Attractors |Strange Attractors]]
 
+### CFX / Grooming
+- [[notes/Hair and Fur |Hair & Fur]]
+
 ### Rendering
 - [[notes/Redshift#Redshift in Houdini |Redshift in Houdini]]
 - [[notes/Karma |Karma]]
