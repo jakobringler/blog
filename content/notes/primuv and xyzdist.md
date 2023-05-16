@@ -1,5 +1,5 @@
 ---
-title: "primuv and xyzdist"
+title: "primuv & xyzdist"
 tags:
 - houdini
 - vex
