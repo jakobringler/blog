@@ -16,7 +16,7 @@ enableToc: true
 > You can find the attribute wrangle node by just typing `aw` ;)
 
 ### Alembic Path to Groups
-//primitive wrangle
+// primitive wrangle
 
 ```C
 string name[] = split(s@path, "/");
@@ -27,7 +27,7 @@ foreach (string s; name){
 ```
 
 ### Angle between 2 Vectors
-//point wrangle 
+// point wrangle 
 
 ```C
 float angle = degrees(acos(dot(normalize(vector1), normalize(vector2))));
