@@ -245,7 +245,7 @@ Have a look at [[notes/Matrix Operations |this note]] for more information on ho
 ```
 
 ### Follow Surface with Particles using the VDB Gradient
-// pop wrangle
+// point pop wrangle
 
 ```C
 float surf = volumesample(1, "surface", v@P);
