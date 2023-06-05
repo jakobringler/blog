@@ -73,5 +73,5 @@ opchange $HIP $JOB
 ```
 
 ```hscript
-opchange /path/to/file /new/path/to/file
+opchange "/path/to/file" "/new/path/to/file"
 ```
