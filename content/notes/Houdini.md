@@ -62,6 +62,7 @@ tags:
 - [[notes/OpenCL in Houdini |OpenCL]]
 - [[notes/Hscript |Hscript]]
 - [[notes/64-bit|Working with 64bit Data]]
+- [[notes/Alembic |Alembic]]
 
 ### Issues & Fixes
 - [[notes/Houdini Crash Parsec |Houdini Crash Issue when using Virtual Displays with Parsec]]
