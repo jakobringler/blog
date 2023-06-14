@@ -21,13 +21,13 @@ tags:
 Gives access to files stored in an HDA
 
 ```hscript
-`opdef:.?filename.ext`
+`opdef:..?filename.ext`
 ```
 
 or a .hda library
 
 ```hscript
-`oplib:.?filename/ext`
+`oplib:..?filename/ext`
 ```
 
 ### Connected Inputs: opninputs
