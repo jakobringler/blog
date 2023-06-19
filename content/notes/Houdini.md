@@ -16,6 +16,7 @@ tags:
 
 ### SOPs
 - [[notes/SOP Solver |SOP Solver]]
+- [[notes/KineFX |KineFX]]
 
 ### FX
 - [[notes/General Workflow Tips |General Workflow Tips]]
