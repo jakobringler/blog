@@ -15,6 +15,86 @@ enableToc: true
 > 
 > You can find the attribute wrangle node by just typing `aw` ;)
 
+## VEX 101
+
+### Datatypes
+// point wrangle
+
+```C
+// Integers
+int IntVariable = 1;
+i@IntAttribute = 1;
+
+// Floats
+float FloatVariable = 0.123;
+f@FloatAttribute = 0.123; // attributes will be float by default if you don't specify it otherwise
+
+// Vectors
+vector VectorVariable = {0,1,0}; // 3 floats > postion, color, v
+vector VectorVariable = set(0.1, 0.2, 0.3); // use the set() function to define a vector with floats 
+vector2 Vector2Variable = {0,1} // 2 float > e.g. uvs
+vector4 Vector4Vairable =  quaternion(angle, axis); // 4 floats > usually used to store quaternions
+
+v@Vector3Attribute = {0,1,0}; 
+u@Vector2Attribute = {0,1};
+p@Vector4Attribute = quaternion(angle, axis);
+
+// Matricies
+matrix2 Matrix2Variable = {1,2,3,4};
+matrix3 Matrix3Variable = {1,2,3,4,5,6,7,8,9};
+matrix4 Matrix3Variable = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+
+2@Matrix2Attribute = {1,2,3,4};
+3@Matrix3Attribute = {1,2,3,4,5,6,7,8,9};
+4@Matrix4Attribute = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+
+// Arrays
+string StringArray[] = {'A','B','C'};
+stringStringArray[] = array(variable_A, variable_B, variable_C);
+s[]@StringArrayAttribute = {'A','B','C'};
+
+// Strings
+string StringVariable = 'Interesting Text';
+s@StringAttribute = 'Interesting Text';
+
+// Dictionaries
+dict Dictionary;
+Dictionary['key'] = 'value';   // Store 3 in the index key
+d@DictAttribute = {}; // dict, can only instantiate as empty type
+d@DictAttribute['key'] = 'value'; // can set values once instantiated
+```
+
+### Conversion
+// point wrangle
+
+```C
+// int to string
+int i = 123456;
+string s = itoa(i);
+
+// string to int
+string s = '123456';
+int i = atoi(i);
+```
+
+### Channel Syntax
+// point wrangle
+
+```C
+ch('float');                    // Float
+chf('float2');                  // Float
+chi('integer');                 // Integer
+chv('vector');                  // Vector 3
+chp('quaternion');              // Vector 4 / Quaternion
+ch3('matrix3');                 // 3x3 Matrix
+ch4('matrix4');                 // 4x4 Matrix
+chs('string');                  // String
+chramp('ramp', x);              // Spline Ramp
+vector(chramp('rgbramp', x));   // RGB Ramp
+```
+
+## Utilities (alphabetically)
+
 ### Alembic Path to Groups
 // primitive wrangle
 
@@ -440,7 +520,7 @@ v@v = dir;
 ### Velocity Tester
 // point wrangle
 
-Very useful to visualize how meshed fluids will move in the motion blur each of a rendered frame.
+Very useful to visualize how meshed fluids will move in the motion blur of a rendered frame.
 
 ```C
 @v *=  chf('vScale'); // Should be 1 by default
