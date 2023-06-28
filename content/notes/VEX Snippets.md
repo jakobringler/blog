@@ -27,12 +27,12 @@ i@IntAttribute = 1;
 
 // Floats
 float FloatVariable = 0.123;
-f@FloatAttribute = 0.123; // attributes will be float by default if you don't specify it otherwise
+f@FloatAttribute = 0.123;                           // attributes will be float by default if you don't specify it otherwise
 
 // Vectors
-vector VectorVariable = {0,1,0}; // 3 floats > postion, color, v
-vector VectorVariable = set(0.1, 0.2, 0.3); // use the set() function to define a vector with floats 
-vector2 Vector2Variable = {0,1} // 2 float > e.g. uvs
+vector VectorVariable = {0,1,0};                    // 3 floats > postion, color, v
+vector VectorVariable = set(0.1, 0.2, 0.3);         // use the set() function to define a vector with floats 
+vector2 Vector2Variable = {0,1}                     // 2 float > e.g. uvs
 vector4 Vector4Vairable =  quaternion(angle, axis); // 4 floats > usually used to store quaternions
 
 v@Vector3Attribute = {0,1,0}; 
@@ -59,9 +59,9 @@ s@StringAttribute = 'Interesting Text';
 
 // Dictionaries
 dict Dictionary;
-Dictionary['key'] = 'value';   // Store 3 in the index key
-d@DictAttribute = {}; // dict, can only instantiate as empty type
-d@DictAttribute['key'] = 'value'; // can set values once instantiated
+Dictionary['key'] = 'value';                         // Store 3 in the index key
+d@DictAttribute = {};                                // dict, can only instantiate as empty type
+d@DictAttribute['key'] = 'value';                    // can set values once instantiated
 ```
 
 ### Conversion
@@ -93,17 +93,25 @@ chramp('ramp', x);              // Spline Ramp
 vector(chramp('rgbramp', x));   // RGB Ramp
 ```
 
-## Utilities (alphabetically)
-
-### Alembic Path to Groups
-// primitive wrangle
+### Debug with printf
+//point wrangle
 
 ```C
-string name[] = split(s@path, "/");
+printf('Hello Houdini');
 
-foreach (string s; name){
-    setprimgroup(0, s, @primnum, 1, "set");
-} 
+// print datatypes
+printf('string: %s', 'Text');               // string: Text
+printf('interger: %d', 123);                // integer: 123
+printf('float: %f', 0.123456);              // float: 0.123456
+printf('float (rounded): %.2f', 0.123456);  // float (rounded): 0.12
+
+// get all primitives
+int primitives[] = expandprimgroup(0, "*");
+
+foreach (int currentPrim; primitives){   
+        // print primnum
+        printf('Prim %s \n', currentPrim);
+        }
 ```
 
 ### Angle between 2 Vectors
