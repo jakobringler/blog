@@ -7,6 +7,7 @@ enableToc: true
 ---
 
 ## Wrangle Cheat Sheet
+
 >I try my best to credit and link to any sources. That being said, some of those are pretty old and I have no idea where they came from.
 >
 >I recommend installing [Vex Snippet Library](https://github.com/dchow1992/Vex_Snippet_Library) to manage your own snippet collection. You can find all snippets formatted as .json files ready to be plugged into the library [here](https://github.com/jakobringler/H_VEX_snippets).
@@ -14,6 +15,15 @@ enableToc: true
 > [!check] **Hot Tip:**
 > 
 > You can find the attribute wrangle node by just typing `aw` ;)
+
+### The Better Cheat Sheets / Snippet Libraries / 101s
+
+- [The Joy of VEX - Matt Estella](https://www.tokeru.com/cgwiki/JoyOfVex)
+- [VexCheatSheet - Matt Estella](https://www.tokeru.com/cgwiki/VexCheatSheet)
+- [VEX Attribute Glossary - John Kunz](https://wiki.johnkunz.com/index.php?title=VEX_Attribute_Glossary#DOP_Grains_Attributes)
+- [VEX for artists - Kiryha](https://github.com/kiryha/Houdini/wiki/vex-for-artists)
+- [VEX snippets - Kiryha](https://github.com/kiryha/Houdini/wiki/vex-snippets)
+- [vex_tutorial - jtomori](https://github.com/jtomori/vex_tutorial)
 
 ## VEX 101
 
@@ -27,12 +37,12 @@ i@IntAttribute = 1;
 
 // Floats
 float FloatVariable = 0.123;
-f@FloatAttribute = 0.123;                           // attributes will be float by default if you don't specify it otherwise
+f@FloatAttribute = 0.123; // attributes will be float by default if you don't specify it otherwise
 
 // Vectors
-vector VectorVariable = {0,1,0};                    // 3 floats > postion, color, v
-vector VectorVariable = set(0.1, 0.2, 0.3);         // use the set() function to define a vector with floats 
-vector2 Vector2Variable = {0,1}                     // 2 float > e.g. uvs
+vector VectorVariable = {0,1,0}; // 3 floats > postion, color, v
+vector VectorVariable = set(0.1, 0.2, 0.3); // use the set() function to define a vector with floats 
+vector2 Vector2Variable = {0,1} // 2 float > e.g. uvs
 vector4 Vector4Vairable =  quaternion(angle, axis); // 4 floats > usually used to store quaternions
 
 v@Vector3Attribute = {0,1,0}; 
@@ -50,7 +60,7 @@ matrix4 Matrix3Variable = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
 
 // Arrays
 string StringArray[] = {'A','B','C'};
-stringStringArray[] = array(variable_A, variable_B, variable_C);
+string StringArray[] = array(variable_A, variable_B, variable_C); // use the array() function to define an array with variables 
 s[]@StringArrayAttribute = {'A','B','C'};
 
 // Strings
@@ -59,9 +69,20 @@ s@StringAttribute = 'Interesting Text';
 
 // Dictionaries
 dict Dictionary;
-Dictionary['key'] = 'value';                         // Store 3 in the index key
-d@DictAttribute = {};                                // dict, can only instantiate as empty type
-d@DictAttribute['key'] = 'value';                    // can set values once instantiated
+Dictionary['key'] = 'value'; // Store 3 in the index key
+d@DictAttribute = {}; // dict, can only instantiate as empty type
+d@DictAttribute['key'] = 'value'; // can set values once instantiated
+```
+
+### Comments
+
+```C
+// normal comment
+
+/*
+multi-line 
+comment
+*/
 ```
 
 ### Conversion
@@ -77,33 +98,60 @@ string s = '123456';
 int i = atoi(i);
 ```
 
+### String manipulation
+// point wrangle
+
+```C
+// Slicing >>> string[start:end]
+string s = 'abcde';
+s[:];     // abcde
+s[:-1];   // abcd
+s[1:];    // bcde
+s[1:-1];  // bcd
+s[-1];    // e
+s[0];     // a
+
+// Concatenation
+string text = 'TEXT';
+string number = '1234';
+string s = sprintf('%s%s%s', text, ' = ', number);
+printf('%s', s);
+// TEXT = 1234
+
+// Reversing
+string s = '1234'
+reverse(s);
+// 4321
+```
+
 ### Channel Syntax
 // point wrangle
 
 ```C
-ch('float');                    // Float
-chf('float2');                  // Float
-chi('integer');                 // Integer
-chv('vector');                  // Vector 3
-chp('quaternion');              // Vector 4 / Quaternion
-ch3('matrix3');                 // 3x3 Matrix
-ch4('matrix4');                 // 4x4 Matrix
-chs('string');                  // String
-chramp('ramp', x);              // Spline Ramp
-vector(chramp('rgbramp', x));   // RGB Ramp
+ch('float'); // Float
+chf('float2'); // Float
+chi('integer'); // Integer
+chv('vector'); // Vector 3
+chp('quaternion'); // Vector 4 / Quaternion
+ch3('matrix3'); // 3x3 Matrix
+ch4('matrix4'); // 4x4 Matrix
+chs('string'); // String
+chramp('ramp', x); // Spline Ramp
+vector(chramp('rgbramp', x)); // RGB Ramp
 ```
 
 ### Debug with printf
 //point wrangle
 
 ```C
+// print strings
 printf('Hello Houdini');
 
 // print datatypes
-printf('string: %s', 'Text');               // string: Text
-printf('interger: %d', 123);                // integer: 123
-printf('float: %f', 0.123456);              // float: 0.123456
-printf('float (rounded): %.2f', 0.123456);  // float (rounded): 0.12
+printf('string: %s', 'Text'); // string: Text
+printf('interger: %d', 123); // integer: 123
+printf('float: %f', 0.123456); // float: 0.123456
+printf('float (rounded): %.2f', 0.123456); // float (rounded): 0.12
 
 // get all primitives
 int primitives[] = expandprimgroup(0, "*");
@@ -113,6 +161,8 @@ foreach (int currentPrim; primitives){
         printf('Prim %s \n', currentPrim);
         }
 ```
+
+## Utilities
 
 ### Angle between 2 Vectors
 // point wrangle 

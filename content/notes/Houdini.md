@@ -42,8 +42,9 @@ tags:
 ### HDAs
 - [[notes/HDA Parameters |Parameters]]
 
-### USD
+### USD / Solaris
 - [[notes/USD Basics |USD Basics]]
+- [[notes/Solaris Attribute Conversion |Solaris Attribute Conversion]]
 
 ### Python
 - [[notes/Python In Houdini |Python In Houdini]]
