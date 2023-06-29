@@ -20,7 +20,7 @@ enableToc: true
 
 - [The Joy of VEX - Matt Estella](https://www.tokeru.com/cgwiki/JoyOfVex)
 - [VexCheatSheet - Matt Estella](https://www.tokeru.com/cgwiki/VexCheatSheet)
-- [VEX Attribute Glossary - John Kunz](https://wiki.johnkunz.com/index.php?title=VEX_Attribute_Glossary#DOP_Grains_Attributes)
+- [VEX Attribute Glossary - John Kunz](https://wiki.johnkunz.com/index.php?title=VEX_Attribute_Glossary)
 - [VEX for artists - Kiryha](https://github.com/kiryha/Houdini/wiki/vex-for-artists)
 - [VEX snippets - Kiryha](https://github.com/kiryha/Houdini/wiki/vex-snippets)
 - [vex_tutorial - jtomori](https://github.com/jtomori/vex_tutorial)
