@@ -66,12 +66,3 @@ $HIP/geo/`opinput(".", 0)`.bgeo.sc
 
 ![[notes/images/Pasted image 20230227162722.png]]
 
-### Batch Rename Paths: opchange
-
-```hscript
-opchange $HIP $JOB
-```
-
-```hscript
-opchange "/path/to/file" "/new/path/to/file"
-```
