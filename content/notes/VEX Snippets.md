@@ -50,9 +50,9 @@ u@Vector2Attribute = {0,1};
 p@Vector4Attribute = quaternion(angle, axis);
 
 // Matricies
-matrix2 Matrix2Variable = {1,2,3,4};
-matrix3 Matrix3Variable = {1,2,3,4,5,6,7,8,9};
-matrix4 Matrix3Variable = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+matrix2 Matrix2Variable = {1,2,3,4}; // 2x2
+matrix3 Matrix3Variable = {1,2,3,4,5,6,7,8,9}; // 3x3
+matrix4 Matrix3Variable ={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}; // 4x4
 
 2@Matrix2Attribute = {1,2,3,4};
 3@Matrix3Attribute = {1,2,3,4,5,6,7,8,9};
@@ -75,6 +75,7 @@ d@DictAttribute['key'] = 'value'; // can set values once instantiated
 ```
 
 ### Comments
+// point wrangle
 
 ```C
 // normal comment
