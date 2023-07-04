@@ -108,7 +108,6 @@ The rest ist pretty much the same as described above. Calculate `xyzdist()`, use
 sources / further reading:
 - [The joy of xyzdist() and primuv() - Toadstorm](https://www.toadstorm.com/blog/?p=465)
 - [Joy Of Vex 19 - cgwiki](https://www.tokeru.com/cgwiki/index.php?title=JoyOfVex19) 
-- [1 Minute VEX II - Aaron Smith](https://aaronsmith.tv/1-Minute-VEX-II)
 - [primuv - Houdini VEX DOCs - SideFX](https://www.sidefx.com/docs/houdini/vex/functions/primuv.html)
 - [xyzdist - Houdini VEX DOCs - SideFX](https://www.sidefx.com/docs/houdini/vex/functions/xyzdist.html)
 

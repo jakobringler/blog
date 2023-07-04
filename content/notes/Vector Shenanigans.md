@@ -11,6 +11,8 @@ tags:
 
 ![[notes/images/vectorflowonobject.png]]
 
+// point wrangle
+
 ```C
 vector pos = v@P * chf("scale");
 vector dir = curlnoise2d(pos + @Time * chf("time"));

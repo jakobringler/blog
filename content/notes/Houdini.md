@@ -5,14 +5,15 @@ tags:
 ---
 
 ### VEX
+- [[notes/VEX 101 |VEX 101]]
 - [[notes/VEX Snippets |VEX Snippets]]
+- [[Common Attributes |Common Attributes]]
 - [[notes/UsefulMathNumbers |Useful Math & Numbers]]
 - [[notes/WaveExpressions |Wave Expressions]]
 - [[notes/Vector Shenanigans |Vector Shenanigans]]
 - [[notes/Quaternion-Euler-Rotations |Quaternion & Euler Rotations]]
 - [[notes/Matrix Operations |Matrix Operations]]
 - [[notes/primuv and xyzdist |primuv & xyzdist]]
-- [[notes/IrregularGridAlgorithms |Algorithms for Irregular Grids]]
 
 ### SOPs
 - [[notes/SOP Solver |SOP Solver]]

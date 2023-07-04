@@ -17,7 +17,7 @@ tags:
 
 ## Op Operators
 
-more [[notes/Op Operators |here]].
+more [[notes/Op Operators |here]]
 
 ## Textport Shenanigans
 
