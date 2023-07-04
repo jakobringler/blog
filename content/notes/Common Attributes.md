@@ -5,7 +5,7 @@ tags:
 - houdini
 ---
 
-This is my own extended & modified list of attributes John Kunz already summarized in his [VEX Attribute Glossary](https://wiki.johnkunz.com/index.php?title=VEX_Attribute_Glossary).
+This is my own extended & modified list of attributes based on SideFX DOCs, John Kunz' [VEX Attribute Glossary](https://wiki.johnkunz.com/index.php?title=VEX_Attribute_Glossary), Matt Estella's [VexCheatSheet](https://www.tokeru.com/cgwiki/VexCheatSheet) and others.
 
 ## Every Day Use
 
@@ -70,6 +70,8 @@ stuff that Houdini knows, expects and casts automatically to the correct type
 @rest // Used by procedural patterns and textures to stick on deforming and animated surfaces. Stores the P of a rest position
 @uv // UV texture coordinates (point/vertex)
 @v // point velocity. can be used for motionblur calculation
+@w // angular velocity used for rbd generally
+@force // used in simulation for many solvers that don't like you to edit v directly, but v will be calculated after updating force
 
 // Vector4
 @orient // local orientation of a point (represented as a quaternion)
