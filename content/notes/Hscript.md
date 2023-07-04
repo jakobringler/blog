@@ -15,10 +15,6 @@ tags:
 `padzero(4,$F+44)`
 ```
 
-## Op Operators
-
-more [[notes/Op Operators |here]]
-
 ## Textport Shenanigans
 
 ### Saving HIPs as text files
