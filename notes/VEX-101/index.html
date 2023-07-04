@@ -1,0 +1,425 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="The Better Cheat Sheets / Snippet Libraries / 101s   The Joy of VEX - Matt Estella  VexCheatSheet - Matt Estella  VEX Attribute Glossary - John Kunz  VEX for artists - Kiryha  VEX snippets - Kiryha  vex_tutorial - jtomori  Datatypes // point wrangle"><title>VEX 101</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://fxnotes.xyz//icon.png><link href=https://fxnotes.xyz/styles.76c8384632ed1e1f62917b5027e790d8.min.css rel=stylesheet><link href=https://fxnotes.xyz/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://fxnotes.xyz/js/darkmode.1feb6613eaffbf49acf3a460f176acbe.min.js></script>
+<script src=https://fxnotes.xyz/js/util.39f53d45cb9520bdaf946bd063598b19.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script src=https://fxnotes.xyz/js/popover.37b1455b8f0603154072b9467132c659.min.js></script>
+<script src=https://fxnotes.xyz/js/code-title.b35124ad8db0ba37162b886afb711cbc.min.js></script>
+<script src=https://fxnotes.xyz/js/clipboard.c20857734e53a3fb733b7443879efa61.min.js></script>
+<script src=https://fxnotes.xyz/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const BASE_URL="https://fxnotes.xyz/",fetchData=Promise.all([fetch("https://fxnotes.xyz/indices/linkIndex.a00ddb70198ada73a31f009090c356a1.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://fxnotes.xyz/indices/contentIndex.dbbd7a6fe4af0d9cdaa95c1f5234ce7e.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const n=new URL(BASE_URL),s=n.pathname,o=window.location.pathname,i=s==o;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts();const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=i&&!0;drawGraph("https://fxnotes.xyz",t,[{"/moc":"#4388cc"}],t?{centerForce:1.3,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.3,linkDistance:1,opacityScale:3,repelForce:1,scale:1}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.4,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2}),initPopover("https://fxnotes.xyz",!0,!0)},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/fxnotes.xyz\/js\/router.9d4974281069e9ebb189f642ae1e3ca2.min.js"
+    attachSPARouting(init, render)
+  </script></head><script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD95KB4J"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-XYFD95KB4J",{anonymize_ip:!1})}</script><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://fxnotes.xyz/js/full-text-search.24827f874defbbc6d529926cbfcfb493.min.js></script><div class=singlePage><header><h1 id=page-title><a href=https://fxnotes.xyz/>fx notes</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><h1>VEX 101</h1><p class=meta>Last updated
+Jul 4, 2023
+<a href=https://github.com/jakobringler/blog/tree/hugo/content/notes/VEX%20101.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://fxnotes.xyz/tags/houdini/>Houdini</a></li><li><a href=https://fxnotes.xyz/tags/vex/>Vex</a></li></ul><aside class=mainTOC><details><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><ol><li><a href=#the-better-cheat-sheets--snippet-libraries--101s>The Better Cheat Sheets / Snippet Libraries / 101s</a></li><li><a href=#datatypes>Datatypes</a></li><li><a href=#datatypes-overview>Datatypes Overview</a></li><li><a href=#comments>Comments</a></li><li><a href=#conversion>Conversion</a></li><li><a href=#string-manipulation>String manipulation</a></li><li><a href=#arrays>Arrays</a></li><li><a href=#channel-syntax>Channel Syntax</a></li><li><a href=#debug-with-printf>Debug with printf</a></li><li><a href=#global-attributes>Global Attributes</a></li></ol></li></ol></nav></details></aside><a href=#the-better-cheat-sheets--snippet-libraries--101s><h3 id=the-better-cheat-sheets--snippet-libraries--101s><span class=hanchor arialabel=Anchor># </span>The Better Cheat Sheets / Snippet Libraries / 101s</h3></a><ul><li><a href=https://www.tokeru.com/cgwiki/JoyOfVex rel=noopener>The Joy of VEX - Matt Estella</a></li><li><a href=https://www.tokeru.com/cgwiki/VexCheatSheet rel=noopener>VexCheatSheet - Matt Estella</a></li><li><a href="https://wiki.johnkunz.com/index.php?title=VEX_Attribute_Glossary" rel=noopener>VEX Attribute Glossary - John Kunz</a></li><li><a href=https://github.com/kiryha/Houdini/wiki/vex-for-artists rel=noopener>VEX for artists - Kiryha</a></li><li><a href=https://github.com/kiryha/Houdini/wiki/vex-snippets rel=noopener>VEX snippets - Kiryha</a></li><li><a href=https://github.com/jtomori/vex_tutorial rel=noopener>vex_tutorial - jtomori</a></li></ul><a href=#datatypes><h3 id=datatypes><span class=hanchor arialabel=Anchor># </span>Datatypes</h3></a><p>// point wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// Integers
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>IntVariable</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>i</span><span class=err>@</span><span class=n>IntAttribute</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Floats
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>float</span> <span class=n>FloatVariable</span> <span class=o>=</span> <span class=mf>0.123</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>f</span><span class=err>@</span><span class=n>FloatAttribute</span> <span class=o>=</span> <span class=mf>0.123</span><span class=p>;</span> <span class=c1>// attributes will be float by default if you don&#39;t specify it otherwise
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Vectors
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>vector</span> <span class=n>VectorVariable</span> <span class=o>=</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>0</span><span class=p>};</span> <span class=c1>// 3 floats &gt; postion, color, v
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>vector</span> <span class=n>VectorVariable</span> <span class=o>=</span> <span class=n>set</span><span class=p>(</span><span class=mf>0.1</span><span class=p>,</span> <span class=mf>0.2</span><span class=p>,</span> <span class=mf>0.3</span><span class=p>);</span> <span class=c1>// use the set() function to define a vector with floats 
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>vector2</span> <span class=n>Vector2Variable</span> <span class=o>=</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span><span class=mi>1</span><span class=p>}</span> <span class=c1>// 2 float &gt; e.g. uvs
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>vector4</span> <span class=n>Vector4Vairable</span> <span class=o>=</span>  <span class=n>quaternion</span><span class=p>(</span><span class=n>angle</span><span class=p>,</span> <span class=n>axis</span><span class=p>);</span> <span class=c1>// 4 floats &gt; usually used to store quaternions
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>v</span><span class=err>@</span><span class=n>Vector3Attribute</span> <span class=o>=</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>0</span><span class=p>};</span> 
+</span></span><span class=line><span class=cl><span class=n>u</span><span class=err>@</span><span class=n>Vector2Attribute</span> <span class=o>=</span> <span class=p>{</span><span class=mi>0</span><span class=p>,</span><span class=mi>1</span><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=n>p</span><span class=err>@</span><span class=n>Vector4Attribute</span> <span class=o>=</span> <span class=n>quaternion</span><span class=p>(</span><span class=n>angle</span><span class=p>,</span> <span class=n>axis</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Matricies
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>matrix2</span> <span class=n>Matrix2Variable</span> <span class=o>=</span> <span class=p>{</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>};</span> <span class=c1>// 2x2
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>matrix3</span> <span class=n>Matrix3Variable</span> <span class=o>=</span> <span class=p>{</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>,</span><span class=mi>6</span><span class=p>,</span><span class=mi>7</span><span class=p>,</span><span class=mi>8</span><span class=p>,</span><span class=mi>9</span><span class=p>};</span> <span class=c1>// 3x3
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>matrix4</span> <span class=n>Matrix3Variable</span> <span class=o>=</span><span class=p>{</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>,</span><span class=mi>6</span><span class=p>,</span><span class=mi>7</span><span class=p>,</span><span class=mi>8</span><span class=p>,</span><span class=mi>9</span><span class=p>,</span><span class=mi>10</span><span class=p>,</span><span class=mi>11</span><span class=p>,</span><span class=mi>12</span><span class=p>,</span><span class=mi>13</span><span class=p>,</span><span class=mi>14</span><span class=p>,</span><span class=mi>15</span><span class=p>,</span><span class=mi>16</span><span class=p>};</span> <span class=c1>// 4x4
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=mi>2</span><span class=err>@</span><span class=n>Matrix2Attribute</span> <span class=o>=</span> <span class=p>{</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=mi>3</span><span class=err>@</span><span class=n>Matrix3Attribute</span> <span class=o>=</span> <span class=p>{</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>,</span><span class=mi>6</span><span class=p>,</span><span class=mi>7</span><span class=p>,</span><span class=mi>8</span><span class=p>,</span><span class=mi>9</span><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=mi>4</span><span class=err>@</span><span class=n>Matrix4Attribute</span> <span class=o>=</span> <span class=p>{</span><span class=mi>1</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>,</span><span class=mi>6</span><span class=p>,</span><span class=mi>7</span><span class=p>,</span><span class=mi>8</span><span class=p>,</span><span class=mi>9</span><span class=p>,</span><span class=mi>10</span><span class=p>,</span><span class=mi>11</span><span class=p>,</span><span class=mi>12</span><span class=p>,</span><span class=mi>13</span><span class=p>,</span><span class=mi>14</span><span class=p>,</span><span class=mi>15</span><span class=p>,</span><span class=mi>16</span><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Arrays
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>string</span> <span class=n>StringArray</span><span class=p>[]</span> <span class=o>=</span> <span class=p>{</span><span class=sc>&#39;A&#39;</span><span class=p>,</span><span class=sc>&#39;B&#39;</span><span class=p>,</span><span class=sc>&#39;C&#39;</span><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=n>string</span> <span class=n>StringArray</span><span class=p>[]</span> <span class=o>=</span> <span class=n>array</span><span class=p>(</span><span class=n>variable_A</span><span class=p>,</span> <span class=n>variable_B</span><span class=p>,</span> <span class=n>variable_C</span><span class=p>);</span> <span class=c1>// use the array() function to define an array with variables 
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>s</span><span class=p>[]</span><span class=err>@</span><span class=n>StringArrayAttribute</span> <span class=o>=</span> <span class=p>{</span><span class=sc>&#39;A&#39;</span><span class=p>,</span><span class=sc>&#39;B&#39;</span><span class=p>,</span><span class=sc>&#39;C&#39;</span><span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Strings
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>string</span> <span class=n>StringVariable</span> <span class=o>=</span> <span class=err>&#39;</span><span class=n>Interesting</span> <span class=n>Text</span><span class=err>&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>s</span><span class=err>@</span><span class=n>StringAttribute</span> <span class=o>=</span> <span class=err>&#39;</span><span class=n>Interesting</span> <span class=n>Text</span><span class=err>&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Dictionaries
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>dict</span> <span class=n>Dictionary</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>Dictionary</span><span class=p>[</span><span class=err>&#39;</span><span class=n>key</span><span class=err>&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=err>&#39;</span><span class=n>value</span><span class=err>&#39;</span><span class=p>;</span> <span class=c1>// Store 3 in the index key
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>d</span><span class=err>@</span><span class=n>DictAttribute</span> <span class=o>=</span> <span class=p>{};</span> <span class=c1>// dict, can only instantiate as empty type
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>d</span><span class=err>@</span><span class=n>DictAttribute</span><span class=p>[</span><span class=err>&#39;</span><span class=n>key</span><span class=err>&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=err>&#39;</span><span class=n>value</span><span class=err>&#39;</span><span class=p>;</span> <span class=c1>// can set values once instantiated
+</span></span></span></code></pre></td></tr></table></div></div><a href=#datatypes-overview><h3 id=datatypes-overview><span class=hanchor arialabel=Anchor># </span>Datatypes Overview</h3></a><p>// point wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=kt>int</span>      <span class=o>=&gt;</span> <span class=n>i</span><span class=err>@</span><span class=n>name</span>
+</span></span><span class=line><span class=cl><span class=kt>float</span>    <span class=o>=&gt;</span> <span class=n>f</span><span class=err>@</span><span class=n>name</span>
+</span></span><span class=line><span class=cl><span class=n>vector2</span>  <span class=o>=&gt;</span> <span class=n>u</span><span class=err>@</span><span class=n>name</span>
+</span></span><span class=line><span class=cl><span class=n>vector3</span>  <span class=o>=&gt;</span> <span class=n>v</span><span class=err>@</span><span class=n>name</span>
+</span></span><span class=line><span class=cl><span class=n>vector4</span>  <span class=o>=&gt;</span> <span class=n>p</span><span class=err>@</span><span class=n>name</span>
+</span></span><span class=line><span class=cl><span class=n>matrix2</span>  <span class=o>=&gt;</span> <span class=mi>2</span><span class=err>@</span><span class=n>name</span>
+</span></span><span class=line><span class=cl><span class=n>matrix3</span>  <span class=o>=&gt;</span> <span class=mi>3</span><span class=err>@</span><span class=n>name</span>
+</span></span><span class=line><span class=cl><span class=n>matrix</span>   <span class=o>=&gt;</span> <span class=mi>4</span><span class=err>@</span><span class=n>name</span>
+</span></span><span class=line><span class=cl><span class=n>string</span>   <span class=o>=&gt;</span> <span class=n>s</span><span class=err>@</span><span class=n>name</span>
+</span></span><span class=line><span class=cl><span class=n>dict</span>     <span class=o>=&gt;</span> <span class=n>d</span><span class=err>@</span><span class=n>name</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#comments><h3 id=comments><span class=hanchor arialabel=Anchor># </span>Comments</h3></a><p>// point wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// normal comment
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=cm>/*
+</span></span></span><span class=line><span class=cl><span class=cm>multi-line 
+</span></span></span><span class=line><span class=cl><span class=cm>comment
+</span></span></span><span class=line><span class=cl><span class=cm>*/</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#conversion><h3 id=conversion><span class=hanchor arialabel=Anchor># </span>Conversion</h3></a><p>// point wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// int to string
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=mi>123456</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>string</span> <span class=n>s</span> <span class=o>=</span> <span class=n>itoa</span><span class=p>(</span><span class=n>i</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// string to int
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>string</span> <span class=n>s</span> <span class=o>=</span> <span class=err>&#39;</span><span class=mi>123456</span><span class=err>&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>i</span> <span class=o>=</span> <span class=n>atoi</span><span class=p>(</span><span class=n>i</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#string-manipulation><h3 id=string-manipulation><span class=hanchor arialabel=Anchor># </span>String manipulation</h3></a><p>// point wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// Slicing &gt;&gt;&gt; string[start:end]
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>string</span> <span class=n>s</span> <span class=o>=</span> <span class=err>&#39;</span><span class=n>abcde</span><span class=err>&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>s</span><span class=p>[</span><span class=o>:</span><span class=p>];</span>     <span class=c1>// abcde
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>s</span><span class=p>[</span><span class=o>:-</span><span class=mi>1</span><span class=p>];</span>   <span class=c1>// abcd
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>s</span><span class=p>[</span><span class=mi>1</span><span class=o>:</span><span class=p>];</span>    <span class=c1>// bcde
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>s</span><span class=p>[</span><span class=mi>1</span><span class=o>:-</span><span class=mi>1</span><span class=p>];</span>  <span class=c1>// bcd
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>s</span><span class=p>[</span><span class=o>-</span><span class=mi>1</span><span class=p>];</span>    <span class=c1>// e
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>s</span><span class=p>[</span><span class=mi>0</span><span class=p>];</span>     <span class=c1>// a
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Concatenation
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>string</span> <span class=n>text</span> <span class=o>=</span> <span class=err>&#39;</span><span class=n>TEXT</span><span class=err>&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>string</span> <span class=n>number</span> <span class=o>=</span> <span class=err>&#39;</span><span class=mi>1234</span><span class=err>&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>string</span> <span class=n>s</span> <span class=o>=</span> <span class=n>sprintf</span><span class=p>(</span><span class=err>&#39;</span><span class=o>%</span><span class=n>s</span><span class=o>%</span><span class=n>s</span><span class=o>%</span><span class=n>s</span><span class=err>&#39;</span><span class=p>,</span> <span class=n>text</span><span class=p>,</span> <span class=err>&#39;</span> <span class=o>=</span> <span class=err>&#39;</span><span class=p>,</span> <span class=n>number</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>printf</span><span class=p>(</span><span class=err>&#39;</span><span class=o>%</span><span class=n>s</span><span class=err>&#39;</span><span class=p>,</span> <span class=n>s</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// TEXT = 1234
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Reversing
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>string</span> <span class=n>s</span> <span class=o>=</span> <span class=err>&#39;</span><span class=mi>1234</span><span class=err>&#39;</span>
+</span></span><span class=line><span class=cl><span class=n>reverse</span><span class=p>(</span><span class=n>s</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=c1>// 4321
+</span></span></span></code></pre></td></tr></table></div></div><a href=#arrays><h3 id=arrays><span class=hanchor arialabel=Anchor># </span>Arrays</h3></a><p>// point wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// Defining
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>nums</span><span class=p>[]</span> <span class=o>=</span> <span class=p>{</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span> <span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=n>i</span><span class=p>[]</span><span class=err>@</span><span class=n>nums</span> <span class=o>=</span> <span class=p>{</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span> <span class=p>};</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>a</span> <span class=o>=</span> <span class=mi>5</span><span class=p>;</span> 
+</span></span><span class=line><span class=cl><span class=n>i</span><span class=p>[]</span><span class=err>@</span><span class=n>nums</span> <span class=o>=</span> <span class=n>array</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=n>a</span><span class=p>);</span> <span class=c1>// just like set() for vectors
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Retrieving 
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>num</span> <span class=o>=</span> <span class=n>nums</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span> <span class=c1>// 2
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>num</span> <span class=o>=</span> <span class=n>i</span><span class=p>[]</span><span class=err>@</span><span class=n>nums</span><span class=p>[</span><span class=mi>3</span><span class=p>]</span> <span class=c1>// 2
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Accessing, Slicing (VEX uses Python style slicing notation)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>start</span><span class=p>[]</span> <span class=o>=</span> <span class=n>nums</span><span class=p>[</span><span class=mi>0</span><span class=o>:</span><span class=mi>2</span><span class=p>];</span> <span class=c1>// { 0, 1 }
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>end</span><span class=p>[]</span> <span class=o>=</span> <span class=n>nums</span><span class=p>[</span><span class=o>-</span><span class=mi>2</span><span class=o>:</span><span class=p>];</span> <span class=c1>// { 4, 5 }
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>rev</span><span class=p>[]</span> <span class=o>=</span> <span class=n>nums</span><span class=p>[</span><span class=o>::-</span><span class=mi>1</span><span class=p>];</span> <span class=c1>// { 5, 4, 3, 2, 1, 0 }
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>odd</span><span class=p>[]</span> <span class=o>=</span> <span class=n>nums</span><span class=p>[</span><span class=mi>1</span><span class=o>::</span><span class=mi>2</span><span class=p>];</span> <span class=c1>// { 1, 3, 5 }
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Sorting, Reversing
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>nums</span><span class=p>[]</span> <span class=o>=</span> <span class=p>{</span><span class=mi>5</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>8</span><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>sorted</span><span class=p>[]</span> <span class=o>=</span> <span class=n>sort</span><span class=p>(</span><span class=n>nums</span><span class=p>));</span> <span class=c1>// {1, 4, 4, 5, 8}
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>reversed</span><span class=p>[]</span> <span class=o>=</span> <span class=n>reverse</span><span class=p>(</span><span class=n>sort</span><span class=p>(</span><span class=n>nums</span><span class=p>)));</span> <span class=c1>// {8, 3, 4, 1, 5}
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Adding Elements
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>numbers</span><span class=p>[]</span> <span class=o>=</span> <span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=mi>6</span><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=n>numbers</span><span class=p>[</span><span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=mi>7</span><span class=p>;</span> <span class=c1>// {1, 7, 3, 4, 5, 6}
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>numbers</span><span class=p>[</span><span class=mi>6</span><span class=p>]</span> <span class=o>=</span> <span class=mi>7</span><span class=p>;</span> <span class=c1>// {1, 2, 3, 4, 5, 6, 7}
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>append</span><span class=p>(</span><span class=n>numbers</span><span class=p>,</span> <span class=mi>7</span><span class=p>);</span> <span class=c1>// {1, 2, 3, 4, 5, 6, 7}
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Finding Index of Value
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>numbers</span><span class=p>[]</span> <span class=o>=</span> <span class=p>{</span><span class=mi>5</span><span class=p>,</span> <span class=mi>4</span><span class=p>,</span> <span class=mi>3</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=mi>1</span><span class=p>};</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>index_of_4</span> <span class=o>=</span> <span class=n>find</span><span class=p>(</span><span class=n>numbers</span><span class=p>,</span> <span class=mi>4</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>printf</span><span class=p>(</span><span class=err>&#39;</span><span class=o>%</span><span class=n>d</span><span class=err>&#39;</span><span class=p>,</span> <span class=n>index_of_4</span> <span class=p>);</span> <span class=c1>// 1
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Split string with a space to array of strings
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>string</span> <span class=n>numbres</span> <span class=o>=</span> <span class=err>&#39;</span><span class=mi>1</span> <span class=mi>2</span> <span class=mi>3</span> <span class=mi>4</span> <span class=mi>5</span> <span class=mi>6</span><span class=err>&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>string</span> <span class=n>array</span><span class=p>[]</span> <span class=o>=</span> <span class=n>split</span><span class=p>(</span><span class=n>numbres</span><span class=p>,</span> <span class=sc>&#39; &#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>printf</span><span class=p>(</span><span class=err>&#39;</span><span class=o>%</span><span class=n>s</span><span class=err>&#39;</span><span class=p>,</span> <span class=n>array</span><span class=p>);</span> <span class=c1>// {1, 2, 3, 4, 5, 6}
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Split integer into array of integers via strings
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>int_number</span> <span class=o>=</span> <span class=mi>312654</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=n>string</span> <span class=n>string_number</span> <span class=o>=</span> <span class=n>itoa</span><span class=p>(</span><span class=n>int_number</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>int_numbers</span><span class=p>[];</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>for</span><span class=p>(</span><span class=kt>int</span> <span class=n>n</span><span class=o>=</span><span class=mi>0</span><span class=p>;</span> <span class=n>n</span><span class=o>&lt;</span><span class=n>len</span><span class=p>(</span><span class=n>string_number</span><span class=p>);</span> <span class=n>n</span><span class=o>++</span><span class=p>){</span>  
+</span></span><span class=line><span class=cl>        <span class=n>int_numbers</span><span class=p>[</span><span class=n>n</span><span class=p>]</span> <span class=o>=</span> <span class=n>atoi</span><span class=p>(</span><span class=n>string_number</span><span class=p>[</span><span class=n>n</span><span class=p>]);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=kt>int</span> <span class=n>nums</span><span class=p>[]</span> <span class=o>=</span> <span class=n>int_numbers</span><span class=p>;</span> <span class=c1>// {3, 1, 2, 6, 5, 4}
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>sorted</span><span class=p>[]</span> <span class=o>=</span> <span class=n>sort</span><span class=p>(</span><span class=n>int_numbers</span><span class=p>);</span> <span class=c1>// {1, 2, 3, 4, 5, 6}
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>reversesorted</span><span class=p>[]</span> <span class=o>=</span> <span class=n>reverse</span><span class=p>(</span><span class=n>sort</span><span class=p>(</span><span class=n>int_numbers</span><span class=p>)));</span> <span class=c1>// {6, 5, 4, 3, 2, 1}
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Copying between arrays and vectors/matrices
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>x</span><span class=p>[];</span>
+</span></span><span class=line><span class=cl><span class=c1>// Cf and P are vectors
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>x</span> <span class=o>=</span> <span class=n>set</span><span class=p>(</span><span class=n>P</span><span class=p>);</span>  <span class=c1>// Assigns the components of P to the corresponding members of the array x
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>Cf</span> <span class=o>=</span> <span class=n>set</span><span class=p>(</span><span class=n>x</span><span class=p>);</span> <span class=c1>// Assigns the first 3 members of x as the components of the vector Cf
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>float</span> <span class=n>x</span><span class=p>[]</span> <span class=o>=</span> <span class=p>{</span><span class=mi>1</span><span class=p>,</span> <span class=mi>2</span><span class=p>}</span> <span class=c1>// Not long enough to fill a vector
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>Cf</span> <span class=o>=</span> <span class=n>set</span><span class=p>(</span><span class=n>x</span><span class=p>);</span>  <span class=c1>// Cf == {1, 2, 2}
+</span></span></span></code></pre></td></tr></table></div></div><a href=#channel-syntax><h3 id=channel-syntax><span class=hanchor arialabel=Anchor># </span>Channel Syntax</h3></a><p>// point wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=n>ch</span><span class=p>(</span><span class=err>&#39;</span><span class=kt>float</span><span class=err>&#39;</span><span class=p>);</span> <span class=c1>// Float
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>chf</span><span class=p>(</span><span class=err>&#39;</span><span class=n>float2</span><span class=err>&#39;</span><span class=p>);</span> <span class=c1>// Float
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>chi</span><span class=p>(</span><span class=err>&#39;</span><span class=n>integer</span><span class=err>&#39;</span><span class=p>);</span> <span class=c1>// Integer
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>chv</span><span class=p>(</span><span class=err>&#39;</span><span class=n>vector</span><span class=err>&#39;</span><span class=p>);</span> <span class=c1>// Vector 3
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>chp</span><span class=p>(</span><span class=err>&#39;</span><span class=n>quaternion</span><span class=err>&#39;</span><span class=p>);</span> <span class=c1>// Vector 4 / Quaternion
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>ch3</span><span class=p>(</span><span class=err>&#39;</span><span class=n>matrix3</span><span class=err>&#39;</span><span class=p>);</span> <span class=c1>// 3x3 Matrix
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>ch4</span><span class=p>(</span><span class=err>&#39;</span><span class=n>matrix4</span><span class=err>&#39;</span><span class=p>);</span> <span class=c1>// 4x4 Matrix
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>chs</span><span class=p>(</span><span class=err>&#39;</span><span class=n>string</span><span class=err>&#39;</span><span class=p>);</span> <span class=c1>// String
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>chramp</span><span class=p>(</span><span class=err>&#39;</span><span class=n>ramp</span><span class=err>&#39;</span><span class=p>,</span> <span class=n>x</span><span class=p>);</span> <span class=c1>// Spline Ramp
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>vector</span><span class=p>(</span><span class=n>chramp</span><span class=p>(</span><span class=err>&#39;</span><span class=n>rgbramp</span><span class=err>&#39;</span><span class=p>,</span> <span class=n>x</span><span class=p>));</span> <span class=c1>// RGB Ramp
+</span></span></span></code></pre></td></tr></table></div></div><a href=#debug-with-printf><h3 id=debug-with-printf><span class=hanchor arialabel=Anchor># </span>Debug with printf</h3></a><p>// point wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// print strings
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>printf</span><span class=p>(</span><span class=err>&#39;</span><span class=n>Hello</span> <span class=n>Houdini</span><span class=err>&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// print datatypes
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>printf</span><span class=p>(</span><span class=err>&#39;</span><span class=nl>string</span><span class=p>:</span> <span class=o>%</span><span class=n>s</span><span class=err>&#39;</span><span class=p>,</span> <span class=err>&#39;</span><span class=n>Text</span><span class=err>&#39;</span><span class=p>);</span> <span class=c1>// string: Text
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>printf</span><span class=p>(</span><span class=err>&#39;</span><span class=nl>interger</span><span class=p>:</span> <span class=o>%</span><span class=n>d</span><span class=err>&#39;</span><span class=p>,</span> <span class=mi>123</span><span class=p>);</span> <span class=c1>// integer: 123
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>printf</span><span class=p>(</span><span class=err>&#39;</span><span class=kt>float</span><span class=o>:</span> <span class=o>%</span><span class=n>f</span><span class=err>&#39;</span><span class=p>,</span> <span class=mf>0.123456</span><span class=p>);</span> <span class=c1>// float: 0.123456
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>printf</span><span class=p>(</span><span class=err>&#39;</span><span class=kt>float</span> <span class=p>(</span><span class=n>rounded</span><span class=p>)</span><span class=o>:</span> <span class=o>%</span><span class=mf>.2f</span><span class=err>&#39;</span><span class=p>,</span> <span class=mf>0.123456</span><span class=p>);</span> <span class=c1>// float (rounded): 0.12
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// get all primitives
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>primitives</span><span class=p>[]</span> <span class=o>=</span> <span class=n>expandprimgroup</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;*&#34;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=n>foreach</span> <span class=p>(</span><span class=kt>int</span> <span class=n>currentPrim</span><span class=p>;</span> <span class=n>primitives</span><span class=p>){</span>   
+</span></span><span class=line><span class=cl>        <span class=c1>// print primnum
+</span></span></span><span class=line><span class=cl><span class=c1></span>        <span class=n>printf</span><span class=p>(</span><span class=err>&#39;</span><span class=n>Prim</span> <span class=o>%</span><span class=n>s</span> <span class=err>\</span><span class=n>n</span><span class=err>&#39;</span><span class=p>,</span> <span class=n>currentPrim</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>        <span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><a href=#global-attributes><h3 id=global-attributes><span class=hanchor arialabel=Anchor># </span>Global Attributes</h3></a><p>// wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// Available in all SOP wrangles
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>Frame</span>     <span class=c1>// current frame number =&gt; $F
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>Time</span>      <span class=c1>// current time in seconds =&gt; $T
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>TimeInc</span>   <span class=c1>// timestep currently being used for simulation or playback
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// only in DOPs
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>SimFrame</span>  <span class=c1>// integer simulation timestep number =&gt; $SF
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>SimTime</span>   <span class=c1>// simulation time in seconds =&gt; $ST
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Available in Attribute Wrangle (point, vertex, primitive and detail)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>P</span>         <span class=c1>// position of the current element
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>i</span><span class=err>@</span><span class=n>ptnum</span>     <span class=c1>// point number attached to the currently processed element
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>numpt</span>     <span class=c1>// total number of points in the geometry
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>vtxnum</span>    <span class=c1>// linear number of the currently processed vertex
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>numvtx</span>    <span class=c1>// number of vertices in the primitive of the currently processed element
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>primnum</span>   <span class=c1>// primitive number attached to the currently processed element
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>numprim</span>   <span class=c1>// total number of primitives in the geometry
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// useful: elemnum and numelem morph into whatever wrangle you are in
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>elemnum</span>   <span class=c1>// index number of the currently processed element
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>numelem</span>   <span class=c1>// total number of elements being processed
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Available in Volume Wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>P</span> <span class=c1>// position of the current voxel
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>density</span> <span class=c1>// density value at the current voxel location
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>resx</span><span class=p>,</span> <span class=n>i</span><span class=err>@</span><span class=n>resy</span><span class=p>,</span> <span class=n>i</span><span class=err>@</span><span class=n>resz</span> <span class=c1>// resolution
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>center</span> <span class=c1>// center of the volume bbox
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>dPdx</span><span class=p>,</span> <span class=n>v</span><span class=err>@</span><span class=n>dPdy</span><span class=p>,</span> <span class=n>v</span><span class=err>@</span><span class=n>dPdz</span> <span class=c1>// change in position that occurs in the x, y, and z voxel indices
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>ix</span><span class=p>,</span> <span class=n>i</span><span class=err>@</span><span class=n>iy</span><span class=p>,</span> <span class=n>i</span><span class=err>@</span><span class=n>iz</span> <span class=c1>// voxel indices (only dense volumes / non-VDBs ) range from 0 to resolution-1
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Available in Heightfield (Volume) Wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>height</span> <span class=c1>// height at xy coordinate
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>mask</span> <span class=c1>// mask at xy coordinate
+</span></span></span></code></pre></td></tr></table></div></div><p>more specific / context related attributes can be found <a href=/notes/Common-Attributes rel=noopener class=internal-link data-src=/notes/Common-Attributes>here</a>.</p><hr><p>sources / further reading:</p><ul><li><a href=https://www.tokeru.com/cgwiki/JoyOfVex rel=noopener>The Joy of VEX - Matt Estella</a></li><li><a href=https://www.tokeru.com/cgwiki/VexCheatSheet rel=noopener>VexCheatSheet - Matt Estella</a></li><li><a href="https://wiki.johnkunz.com/index.php?title=VEX_Attribute_Glossary" rel=noopener>VEX Attribute Glossary - John Kunz</a></li><li><a href=https://github.com/kiryha/Houdini/wiki/vex-for-artists rel=noopener>VEX for artists - Kiryha</a></li><li><a href=https://github.com/kiryha/Houdini/wiki/vex-snippets rel=noopener>VEX snippets - Kiryha</a></li><li><a href=https://github.com/jtomori/vex_tutorial rel=noopener>vex_tutorial - jtomori</a></li><li><a href=https://www.sidefx.com/docs/houdini/vex/index.html rel=noopener>VEX - Houdini DOCs</a></li></ul></article><hr><div class=page-end><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li><a href=/notes/Houdini/ data-ctx="VEX 101" data-src=/notes/Houdini class=internal-link>Houdini</a></li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://fxnotes.xyz/js/graph.8cefef8d9a78cb623e39ee66e5a4af0e.js></script></div></div><div id=contact_buttons><footer><p>Made by <a href=https://www.jakobringler.com>Jakob Ringler</a> using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><ul><li><a href=https://fxnotes.xyz/>Home</a></li><li><a href=https://twitter.com/jakobrin>Twitter</a></li><li><a href=https://github.com/jakobringler>Github</a></li><li><a href=https://fxnotes.xyz/notes/Legal/>Legal / Impressum</a></li></ul></footer></div></div></body></html>

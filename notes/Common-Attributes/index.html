@@ -1,0 +1,261 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=description content="This is my own extended & modified list of attributes John Kunz already summarized in his VEX Attribute Glossary.
+Every Day Use Global Attributes Available in most wrangles"><title>Common Attributes</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://fxnotes.xyz//icon.png><link href=https://fxnotes.xyz/styles.76c8384632ed1e1f62917b5027e790d8.min.css rel=stylesheet><link href=https://fxnotes.xyz/styles/_light_syntax.86a48a52faebeaaf42158b72922b1c90.min.css rel=stylesheet id=theme-link><script src=https://fxnotes.xyz/js/darkmode.1feb6613eaffbf49acf3a460f176acbe.min.js></script>
+<script src=https://fxnotes.xyz/js/util.39f53d45cb9520bdaf946bd063598b19.min.js></script>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css integrity=sha384-R4558gYOUz8mP9YWpZJjofhk+zx0AS11p36HnD2ZKj/6JR5z27gSSULCNHIRReVs crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js integrity=sha384-z1fJDqw8ZApjGO3/unPWUPsIymfsJmyrDVWC8Tv/a1HeOtGmkwNd/7xUS0Xcnvsx crossorigin=anonymous></script>
+<script defer src=https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js integrity=sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR crossorigin=anonymous></script>
+<script src=https://unpkg.com/@floating-ui/core@0.7.3></script>
+<script src=https://unpkg.com/@floating-ui/dom@0.5.4></script>
+<script src=https://fxnotes.xyz/js/popover.37b1455b8f0603154072b9467132c659.min.js></script>
+<script src=https://fxnotes.xyz/js/code-title.b35124ad8db0ba37162b886afb711cbc.min.js></script>
+<script src=https://fxnotes.xyz/js/clipboard.c20857734e53a3fb733b7443879efa61.min.js></script>
+<script src=https://fxnotes.xyz/js/callouts.7723cac461d613d118ee8bb8216b9838.min.js></script>
+<script>const BASE_URL="https://fxnotes.xyz/",fetchData=Promise.all([fetch("https://fxnotes.xyz/indices/linkIndex.a00ddb70198ada73a31f009090c356a1.min.json").then(e=>e.json()).then(e=>({index:e.index,links:e.links})),fetch("https://fxnotes.xyz/indices/contentIndex.dbbd7a6fe4af0d9cdaa95c1f5234ce7e.min.json").then(e=>e.json())]).then(([{index:e,links:t},n])=>({index:e,links:t,content:n})),render=()=>{const n=new URL(BASE_URL),s=n.pathname,o=window.location.pathname,i=s==o;addCopyButtons(),addTitleToCodeBlocks(),addCollapsibleCallouts();const e=document.getElementById("graph-container");if(!e)return requestAnimationFrame(render);e.textContent="";const t=i&&!0;drawGraph("https://fxnotes.xyz",t,[{"/moc":"#4388cc"}],t?{centerForce:1.3,depth:-1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.3,linkDistance:1,opacityScale:3,repelForce:1,scale:1}:{centerForce:1,depth:1,enableDrag:!0,enableLegend:!1,enableZoom:!0,fontSize:.4,linkDistance:1,opacityScale:3,repelForce:2,scale:1.2}),initPopover("https://fxnotes.xyz",!0,!0)},init=(e=document)=>{addCopyButtons(),addTitleToCodeBlocks(),renderMathInElement(e.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}],throwOnError:!1})}</script><script type=module>
+    import { attachSPARouting } from "https:\/\/fxnotes.xyz\/js\/router.9d4974281069e9ebb189f642ae1e3ca2.min.js"
+    attachSPARouting(init, render)
+  </script></head><script async src="https://www.googletagmanager.com/gtag/js?id=G-XYFD95KB4J"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-XYFD95KB4J",{anonymize_ip:!1})}</script><body><div id=search-container><div id=search-space><input autocomplete=off id=search-bar name=search type=text aria-label=Search placeholder="Search for something..."><div id=results-container></div></div></div><script src=https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js integrity="sha256-i3A0NZGkhsKjVMzFxv3ksk0DZh3aXqu0l49Bbh0MdjE=" crossorigin=anonymous defer></script>
+<script defer src=https://fxnotes.xyz/js/full-text-search.24827f874defbbc6d529926cbfcfb493.min.js></script><div class=singlePage><header><h1 id=page-title><a href=https://fxnotes.xyz/>fx notes</a></h1><div class=spacer></div><div id=search-icon><p>Search</p><svg tabindex="0" aria-labelledby="title desc" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title id="title">Search Icon</title><desc id="desc">Icon to open search</desc><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"/><circle cx="8" cy="8" r="7"/></g></svg></div><div class=darkmode><input class=toggle id=darkmode-toggle type=checkbox tabindex=-1>
+<label id=toggle-label-light for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="dayIcon" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35"><title>Light Mode</title><path d="M6 17.5C6 16.672 5.328 16 4.5 16h-3C.672 16 0 16.672.0 17.5S.672 19 1.5 19h3C5.328 19 6 18.328 6 17.5zM7.5 26c-.414.0-.789.168-1.061.439l-2 2C4.168 28.711 4 29.086 4 29.5 4 30.328 4.671 31 5.5 31c.414.0.789-.168 1.06-.44l2-2C8.832 28.289 9 27.914 9 27.5 9 26.672 8.329 26 7.5 26zm10-20C18.329 6 19 5.328 19 4.5v-3C19 .672 18.329.0 17.5.0S16 .672 16 1.5v3C16 5.328 16.671 6 17.5 6zm10 3c.414.0.789-.168 1.06-.439l2-2C30.832 6.289 31 5.914 31 5.5 31 4.672 30.329 4 29.5 4c-.414.0-.789.168-1.061.44l-2 2C26.168 6.711 26 7.086 26 7.5 26 8.328 26.671 9 27.5 9zM6.439 8.561C6.711 8.832 7.086 9 7.5 9 8.328 9 9 8.328 9 7.5c0-.414-.168-.789-.439-1.061l-2-2C6.289 4.168 5.914 4 5.5 4 4.672 4 4 4.672 4 5.5c0 .414.168.789.439 1.06l2 2.001zM33.5 16h-3c-.828.0-1.5.672-1.5 1.5s.672 1.5 1.5 1.5h3c.828.0 1.5-.672 1.5-1.5S34.328 16 33.5 16zM28.561 26.439C28.289 26.168 27.914 26 27.5 26c-.828.0-1.5.672-1.5 1.5.0.414.168.789.439 1.06l2 2C28.711 30.832 29.086 31 29.5 31c.828.0 1.5-.672 1.5-1.5.0-.414-.168-.789-.439-1.061l-2-2zM17.5 29c-.829.0-1.5.672-1.5 1.5v3c0 .828.671 1.5 1.5 1.5s1.5-.672 1.5-1.5v-3C19 29.672 18.329 29 17.5 29zm0-22C11.71 7 7 11.71 7 17.5S11.71 28 17.5 28 28 23.29 28 17.5 23.29 7 17.5 7zm0 18c-4.136.0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5 7.5 3.364 7.5 7.5S21.636 25 17.5 25z"/></svg></label><label id=toggle-label-dark for=darkmode-toggle tabindex=-1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="nightIcon" viewBox="0 0 100 100" style="enable-background='new 0 0 100 100'"><title>Dark Mode</title><path d="M96.76 66.458c-.853-.852-2.15-1.064-3.23-.534-6.063 2.991-12.858 4.571-19.655 4.571C62.022 70.495 50.88 65.88 42.5 57.5 29.043 44.043 25.658 23.536 34.076 6.47c.532-1.08.318-2.379-.534-3.23-.851-.852-2.15-1.064-3.23-.534-4.918 2.427-9.375 5.619-13.246 9.491-9.447 9.447-14.65 22.008-14.65 35.369.0 13.36 5.203 25.921 14.65 35.368s22.008 14.65 35.368 14.65c13.361.0 25.921-5.203 35.369-14.65 3.872-3.871 7.064-8.328 9.491-13.246C97.826 68.608 97.611 67.309 96.76 66.458z"/></svg></label></div></header><article><h1>Common Attributes</h1><p class=meta>Last updated
+Jul 4, 2023
+<a href=https://github.com/jakobringler/blog/tree/hugo/content/notes/Common%20Attributes.md rel=noopener>Edit Source</a></p><ul class=tags><li><a href=https://fxnotes.xyz/tags/houdini/>Houdini</a></li></ul><aside class=mainTOC><details><summary>Table of Contents</summary><nav id=TableOfContents><ol><li><a href=#every-day-use>Every Day Use</a><ol><li><a href=#global-attributes>Global Attributes</a></li><li><a href=#geometry-attributes>Geometry Attributes</a></li><li><a href=#instancing--copy-attributes>Instancing / Copy Attributes</a></li></ol></li><li><a href=#context-specific>Context Specific</a><ol><li><a href=#pop-attributes>POP Attributes</a></li><li><a href=#grain-attributes>Grain Attributes</a></li><li><a href=#packed-rbd-attributes>Packed RBD Attributes</a></li><li><a href=#rbd-constraint-attributes>RBD Constraint Attributes</a></li><li><a href=#flip-attributes>FLIP Attributes</a></li><li><a href=#vellum-point-attributes>Vellum Point Attributes</a></li><li><a href=#vellum-constraint-attributes>Vellum Constraint Attributes</a></li><li><a href=#kinefx>KineFX</a></li></ol></li><li><a href=#niche-stuff>Niche Stuff</a><ol><li><a href=#gl-viewport-attributes>GL Viewport Attributes</a></li><li><a href=#intrinsic-attributes>Intrinsic Attributes</a></li></ol></li></ol></nav></details></aside><p>This is my own extended & modified list of attributes John Kunz already summarized in his
+<a href="https://wiki.johnkunz.com/index.php?title=VEX_Attribute_Glossary" rel=noopener>VEX Attribute Glossary</a>.</p><a href=#every-day-use><h2 id=every-day-use><span class=hanchor arialabel=Anchor># </span>Every Day Use</h2></a><a href=#global-attributes><h3 id=global-attributes><span class=hanchor arialabel=Anchor># </span>Global Attributes</h3></a><p>Available in most wrangles</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// Available in all SOP wrangles
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>Frame</span> <span class=c1>// current frame number =&gt; $F
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>Time</span> <span class=c1>// current time in seconds =&gt; $T
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>TimeInc</span> <span class=c1>// timestep currently being used for simulation or playback
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// only in DOPs
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>SimFrame</span> <span class=c1>// integer simulation timestep number =&gt; $SF
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>SimTime</span> <span class=c1>// simulation time in seconds =&gt; $ST
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Available in Attribute Wrangle (point, vertex, primitive and detail)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>P</span> <span class=c1>// position of the current element
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>i</span><span class=err>@</span><span class=n>ptnum</span> <span class=c1>// point number attached to the currently processed element
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>numpt</span> <span class=c1>// total number of points in the geometry
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>vtxnum</span> <span class=c1>// linear number of the currently processed vertex
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>numvtx</span> <span class=c1>// number of vertices in the primitive of the currently processed element
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>primnum</span> <span class=c1>// primitive number attached to the currently processed element
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>numprim</span> <span class=c1>// total number of primitives in the geometry
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// useful: elemnum and numelem morph into whatever wrangle you are in
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>elemnum</span> <span class=c1>// index number of the currently processed element
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>numelem</span> <span class=c1>// total number of elements being processed
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Available in Volume Wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>P</span> <span class=c1>// position of the current voxel
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>density</span> <span class=c1>// density value at the current voxel location
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>resx</span><span class=p>,</span> <span class=n>i</span><span class=err>@</span><span class=n>resy</span><span class=p>,</span> <span class=n>i</span><span class=err>@</span><span class=n>resz</span> <span class=c1>// resolution
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>center</span> <span class=c1>// center of the volume bbox
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>dPdx</span><span class=p>,</span> <span class=n>v</span><span class=err>@</span><span class=n>dPdy</span><span class=p>,</span> <span class=n>v</span><span class=err>@</span><span class=n>dPdz</span> <span class=c1>// change in position that occurs in the x, y, and z voxel indices
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>ix</span><span class=p>,</span> <span class=n>i</span><span class=err>@</span><span class=n>iy</span><span class=p>,</span> <span class=n>i</span><span class=err>@</span><span class=n>iz</span> <span class=c1>// voxel indices (only dense volumes / non-VDBs ) range from 0 to resolution-1
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Available in Heightfield (Volume) Wrangle
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>height</span> <span class=c1>// height at xy coordinate
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>mask</span> <span class=c1>// mask at xy coordinate
+</span></span></span></code></pre></td></tr></table></div></div><a href=#geometry-attributes><h3 id=geometry-attributes><span class=hanchor arialabel=Anchor># </span>Geometry Attributes</h3></a><p>stuff that Houdini knows, expects and casts automatically to the correct type</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// Int
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>id</span> <span class=c1>// unique number &gt; temporal coherent
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>piece</span> <span class=c1>// like id but used more in rbd context
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Float
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>pscale</span> <span class=c1>// particle radius size / uniform scale / set display particles as &#39;Discs&#39; to visualize.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>width</span> <span class=c1>// thickness of curves.  Enable &#39;Shade Open Curves In Viewport&#39; on the object node to visualize
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Alpha</span> <span class=c1>// alpha transparency override. Used by viewport to set the alpha of OpenGL geometry
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Pw</span> <span class=c1>// spline weight
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Vector3
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>P</span> <span class=c1>// point position
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Cd</span> <span class=c1>// diffuse color override
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>N</span> <span class=c1>// surface or curve normal. Houdini will compute the normal if this attribute does not exist
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>rest</span> <span class=c1>// Used by procedural patterns and textures to stick on deforming and animated surfaces. Stores the P of a rest position
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>uv</span> <span class=c1>// UV texture coordinates (point/vertex)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>v</span> <span class=c1>// point velocity. can be used for motionblur calculation
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Vector4
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>orient</span> <span class=c1>// local orientation of a point (represented as a quaternion)
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// String
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>name</span> <span class=c1>// unique name identifying which primitives belong to which piece 
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>instance</span> <span class=c1>// path of an object node to be instanced at render time
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>shop_materialpath</span> <span class=c1>// material assignment pre primitive
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>path</span> <span class=c1>// used to rebuild alembic hierarchy
+</span></span></span></code></pre></td></tr></table></div></div><a href=#instancing--copy-attributes><h3 id=instancing--copy-attributes><span class=hanchor arialabel=Anchor># </span>Instancing / Copy Attributes</h3></a><p>all the things the copy to points SOP understands:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// Float
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>pscale</span> <span class=c1>// size of a copy
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Vector3
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>P</span> <span class=c1>// position of a copy
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>Cd</span> <span class=c1>// color
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>N</span> <span class=c1>// used to orient Z axis of the copy towards
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>up</span> <span class=c1>// up direction for local space, typically {0, 1, 0}
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>trans</span> <span class=c1>//translation of a copy
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>scale</span> <span class=c1>// scale of a copy
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>pivot</span> <span class=c1>// local pivot of a copy
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>v</span><span class=err>@</span><span class=n>v</span> <span class=c1>// velocity for motionblur, used as +Z if no orient or N is present
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Vector4
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>p</span><span class=err>@</span><span class=n>orient</span> <span class=c1>// local orientation of the point (quaternion)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>p</span><span class=err>@</span><span class=n>rot</span> <span class=c1>// additional rotation. applied after orient, N, and up
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// String
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>s</span><span class=err>@</span><span class=n>shop_materialpath</span> <span class=c1>// shader assignment
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>s</span><span class=err>@</span><span class=n>material_override</span> <span class=c1>// dict mapping parameter names to values to override material properties
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>s</span><span class=err>@</span><span class=n>instance</span>
+</span></span><span class=line><span class=cl><span class=n>s</span><span class=err>@</span><span class=n>instancefile</span> <span class=c1>// file path to geometry to instance.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>s</span><span class=err>@</span><span class=n>instancepath</span> <span class=c1>// geometry to instance. file on disk or an op: path
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// Matrix 3x3 or 4x4
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=mi>3</span><span class=err>@</span><span class=n>transform</span> <span class=c1>// transformation matrix (rotation, scale, and shear) overriding everything except translations from P, pivot, and trans
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=mi>4</span><span class=err>@</span><span class=n>transform</span> <span class=c1>// transformation matrix (translation, rotation, scale, and shear
+</span></span></span></code></pre></td></tr></table></div></div><a href=#context-specific><h2 id=context-specific><span class=hanchor arialabel=Anchor># </span>Context Specific</h2></a><a href=#pop-attributes><h3 id=pop-attributes><span class=hanchor arialabel=Anchor># </span>POP Attributes</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C></code></pre></td></tr></table></div></div><a href=#grain-attributes><h3 id=grain-attributes><span class=hanchor arialabel=Anchor># </span>Grain Attributes</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C></code></pre></td></tr></table></div></div><a href=#packed-rbd-attributes><h3 id=packed-rbd-attributes><span class=hanchor arialabel=Anchor># </span>Packed RBD Attributes</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C></code></pre></td></tr></table></div></div><a href=#rbd-constraint-attributes><h3 id=rbd-constraint-attributes><span class=hanchor arialabel=Anchor># </span>RBD Constraint Attributes</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C></code></pre></td></tr></table></div></div><a href=#flip-attributes><h3 id=flip-attributes><span class=hanchor arialabel=Anchor># </span>FLIP Attributes</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C></code></pre></td></tr></table></div></div><a href=#vellum-point-attributes><h3 id=vellum-point-attributes><span class=hanchor arialabel=Anchor># </span>Vellum Point Attributes</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C></code></pre></td></tr></table></div></div><a href=#vellum-constraint-attributes><h3 id=vellum-constraint-attributes><span class=hanchor arialabel=Anchor># </span>Vellum Constraint Attributes</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C></code></pre></td></tr></table></div></div><a href=#kinefx><h3 id=kinefx><span class=hanchor arialabel=Anchor># </span>KineFX</h3></a><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=n>s</span><span class=err>@</span><span class=n>name</span> <span class=c1>// joint name attribute
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=mi>3</span><span class=err>@</span><span class=n>transform</span> <span class=c1>// world space 3×3 transform of the point (rotation, scale, and shear)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=mi>4</span><span class=err>@</span><span class=n>localtransform</span> <span class=c1>// transform of the point relative to its parent
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>scaleinheritance</span> <span class=c1>// determines how a point inherits the local scale from its parent
+</span></span></span></code></pre></td></tr></table></div></div><a href=#niche-stuff><h2 id=niche-stuff><span class=hanchor arialabel=Anchor># </span>Niche Stuff</h2></a><a href=#gl-viewport-attributes><h3 id=gl-viewport-attributes><span class=hanchor arialabel=Anchor># </span>GL Viewport Attributes</h3></a><p>// detail wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=n>i</span><span class=err>@</span><span class=n>gl_wireframe</span> <span class=c1>// if set to 1: geometry will always appear as wireframe in viewport 
+</span></span></span><span class=line><span class=cl><span class=c1>// if set to -1: geometry will always appear shaded in viewport -&gt; allows for guide geometry to be drawn shaded
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>gl_lit</span> <span class=c1>// if set to 0: geometry will always appear without lighting 
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>gl_showallpoints</span> <span class=c1>// if set to 1: renders all points as sprites even if they are connected to geometry
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>gl_spherepoints</span> <span class=c1>// if set to 1: render points as spheres
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>gl_xray</span> <span class=c1>// if set to 1: draw geo in xray mode 
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>vm_cuspangle</span> <span class=c1>// controls cusp angle to generate normals when the geometry doesn&#39;t have any
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>s</span><span class=err>@</span><span class=n>gl_spritetex</span> <span class=c1>// custom sprite texture for points
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>i</span><span class=err>@</span><span class=n>gl_spriteblend</span> <span class=c1>// if set to 0: no depth sorting or blending
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>gl_spritecutoff</span> <span class=c1>// discards pixels with alpha value below this 
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>v</span><span class=err>@</span><span class=n>Cd</span>             
+</span></span><span class=line><span class=cl><span class=n>f</span><span class=err>@</span><span class=n>Alpha</span> 
+</span></span><span class=line><span class=cl><span class=n>v</span><span class=err>@</span><span class=n>N</span> 
+</span></span><span class=line><span class=cl><span class=n>f</span><span class=err>@</span><span class=n>width</span> <span class=c1>// curve width &gt; `Shade Open Curves In Viewport` has to be turned on on the geo node
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>pscale</span> <span class=c1>// if no pscale exists the viewport defaults to 1.0, while Mantra defaults to 0.1
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>i</span><span class=err>@</span><span class=n>group__3d_hidden_primitives</span>  <span class=c1>// add primitives to this group to hide them from the 3D viewport
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=n>f</span><span class=err>@</span><span class=nl>intrinsic</span><span class=p>:</span><span class=n>volumevisualdensity</span> <span class=c1>// primitive intrinsic attribute controlling the opacity of volumes
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>f</span><span class=err>@</span><span class=n>volvis_shadowscale</span> <span class=c1>// detail attribute controlling the shadow strength for volumes
+</span></span></span></code></pre></td></tr></table></div></div><a href=#intrinsic-attributes><h3 id=intrinsic-attributes><span class=hanchor arialabel=Anchor># </span>Intrinsic Attributes</h3></a><p>// primitive wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// Primitive Intrinsics
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>float</span> <span class=n>primbounds</span><span class=p>[]</span> <span class=o>=</span> <span class=n>prim</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;intrinsic:bounds&#34;</span><span class=p>,</span> <span class=err>@</span><span class=n>primnum</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>primarea</span> <span class=o>=</span> <span class=n>prim</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;intrinsic:measuredarea&#34;</span><span class=p>,</span> <span class=err>@</span><span class=n>primnum</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>memusage</span> <span class=o>=</span> <span class=n>prim</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;intrinsic:memoryusage&#34;</span><span class=p>,</span> <span class=err>@</span><span class=n>primnum</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><p>// any wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=c1>// Detail Intrinsics
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kt>int</span> <span class=n>ptcount</span> <span class=o>=</span> <span class=n>detail</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;intrinsic:pointcount&#34;</span><span class=p>,</span> <span class=mi>0</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=kt>float</span> <span class=n>bounds</span><span class=p>[]</span> <span class=o>=</span> <span class=n>detail</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;intrinsic:bounds&#34;</span><span class=p>,</span> <span class=mi>0</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><blockquote class=check-callout><p><strong>Bounds:</strong></p><p>Bounding box intrinsic attributes, like <code>intrinsic:bounds</code> or <code>intrinsic:packedbounds</code> are returned in (xmin, xmax, ymin, ymax, zmin, zmax) order.</p></blockquote><p>You can set some intrinsic attributes in wrangles:</p><p>// primitive wrangle</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-C data-lang=C><span class=line><span class=cl><span class=n>setprimintrinsic</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=s>&#34;pointinstancetransform&#34;</span><span class=p>,</span> <span class=n>i</span><span class=err>@</span><span class=n>primnum</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=s>&#34;set&#34;</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><p>This enables the use of the standard instancing attributes to transform any packed pieces (e.g. pscale, orient, &mldr; ) further down stream <strong>after setting it up!</strong></p><p><img src=/notes/images/pointinstancetransform_intrinsic.png width=auto></p><hr><p>sources / further reading:</p><ul><li><a href=https://www.sidefx.com/docs/houdini/copy/instanceattrs.html rel=noopener>Copying and instancing point attributes - Houdini DOCs</a></li><li><a href=https://www.sidefx.com/docs/houdini/model/attributes.html rel=noopener>Viewport display attributes - Houdini DOCs</a></li><li><a href=https://tokeru.com/cgwiki/VexCheatSheet rel=noopener>VexCheatSheet - cgwiki</a></li><li><a href="https://wiki.johnkunz.com/index.php?title=VEX_Attribute_Glossary" rel=noopener>VEX Attribute Glossary - John Kunz</a></li></ul></article><hr><div class=page-end><div class=backlinks-container><h3>Backlinks</h3><ul class=backlinks><li><a href=/notes/VEX-101/ data-ctx=here data-src=/notes/VEX-101 class=internal-link>VEX 101</a></li></ul></div><div><script src=https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js integrity="sha256-+7jaYCp29O1JusNWHaYtgUn6EhuP0VaFuswhNV06MyI=" crossorigin=anonymous></script><h3>Interactive Graph</h3><div id=graph-container></div><style>:root{--g-node:var(--secondary);--g-node-active:var(--primary);--g-node-inactive:var(--visited);--g-link:var(--outlinegray);--g-link-active:#5a7282}</style><script src=https://fxnotes.xyz/js/graph.8cefef8d9a78cb623e39ee66e5a4af0e.js></script></div></div><div id=contact_buttons><footer><p>Made by <a href=https://www.jakobringler.com>Jakob Ringler</a> using <a href=https://github.com/jackyzha0/quartz>Quartz</a>, © 2023</p><ul><li><a href=https://fxnotes.xyz/>Home</a></li><li><a href=https://twitter.com/jakobrin>Twitter</a></li><li><a href=https://github.com/jakobringler>Github</a></li><li><a href=https://fxnotes.xyz/notes/Legal/>Legal / Impressum</a></li></ul></footer></div></div></body></html>
