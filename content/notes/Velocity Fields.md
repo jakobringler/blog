@@ -26,11 +26,33 @@ I put them on their own page [[notes/Strange Attractors |here]].
 
 ### Magnetic Fields
 
-coming soon
+![[notes/images/Pasted image 20230706174615.png]]
+- in the top left 3 points are created which have a `charge` attribute ranging from -1 to 1 resembling positive and negative magnets
+- all the purple nodes setup the velocity field
+- everything green is just for visualization
 
+// volume wrangle
+
+```C
+int numCharges = npoints(1);
+vector direction = set(0,0,0);
+
+for( int i = 0; i < numCharges; i++ )
+{
+    vector chargePosition = point(1, "P", i);
+    float chargeValue = point(1, "charge", i);
+    
+    vector chargeinfluence = (( chargePosition - v@P ) * chargeValue ) / pow(length(chargePosition - v@P), chf("power")); // set power to 3 as default
+    direction += chargeinfluence;
+}
+
+direction = direction / numCharges;
+
+v@vel = direction;
+```
 
 ---
 
 sources / further reading:
 - [Houdini Tutorial: Advanced Velocity Fields / Part One - Mats](https://www.youtube.com/watch?v=K0cNvpXujmk)
-
+- [Houdini Algorithmic Live [#021] - Magnetic Field Visualization -  Junichiro Horikawa](https://www.youtube.com/watch?v=pnfFbF-60qw)
