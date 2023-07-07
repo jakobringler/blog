@@ -1,6 +1,6 @@
 ---
 title: "Bash Basics"
-draft: true
+draft: false
 tags:
 - linux
 ---
@@ -31,10 +31,4 @@ touch main.py
 ```bash
 mkdir foldername
 ```
-
-
----
-
-sources / further reading:
-- 
 

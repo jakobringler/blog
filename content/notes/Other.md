@@ -5,15 +5,15 @@ tags:
 ---
 
 ### CG & VFX Tools
-[[notes/Nuke |Nuke]]
-[[notes/Redshift |Redshift]]
-[[notes/DaVinci Resolve |DaVinci Resolve]]
+- [[notes/Nuke |Nuke]]
+- [[notes/Redshift |Redshift]]
+- [[notes/DaVinci Resolve |DaVinci Resolve]]
 
 ### Tech & Programming
-[[notes/Bash and Git |Bash & Git]]
+- [[notes/Bash and Git |Bash and Git]]
 
 ### Live
-[[notes/Touch Designer |Touch Designer]]
+- [[notes/Touch Designer |Touch Designer]]
 
 ### Productivity
-[[notes/Obsidian and Quartz |Obsidian and Quartz]]
+- [[notes/Obsidian and Quartz |Obsidian and Quartz]]
