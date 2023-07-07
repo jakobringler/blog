@@ -4,19 +4,16 @@ tags:
 - list
 ---
 
-### Nuke
-- [[notes/cat Files |cat Files]]
+### CG & VFX Tools
+[[notes/Nuke |Nuke]]
+[[notes/Redshift |Redshift]]
+[[notes/DaVinci Resolve |DaVinci Resolve]]
 
-### Redshift
-- [[notes/Redshift |Redshift]]
+### Tech & Programming
+[[notes/Bash and Git |Bash & Git]]
 
-### DaVinci Resolve
-- [[notes/Python Scripting in Resolve |Python Scripting in Resolve]]
-- [[notes/Lua Scripting in Resolve |Lua Scripting in Resolve]]
+### Live
+[[notes/Touch Designer |Touch Designer]]
 
-### Bash & Git
-- [[notes/Bash Basics |Bash Basics]]
-- [[notes/Git Basics |Git Basics]]
- 
-### Obsidian / Quartz
-- [[notes/Gifs for Obsidian |How to create Gifs for Obsidian on Linux]]
+### Productivity
+[[notes/Obsidian and Quartz |Obsidian and Quartz]]
