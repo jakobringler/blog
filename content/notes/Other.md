@@ -9,11 +9,11 @@ tags:
 - [[notes/Redshift |Redshift]]
 - [[notes/DaVinci Resolve |DaVinci Resolve]]
 
+### Multimedia
+- [[notes/TouchDesigner |TouchDesigner]]
+
 ### Tech & Programming
 - [[notes/Bash and Git |Bash and Git]]
-
-### Live
-- [[notes/Touch Designer |Touch Designer]]
 
 ### Productivity
 - [[notes/Obsidian and Quartz |Obsidian and Quartz]]

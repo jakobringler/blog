@@ -94,6 +94,13 @@ enableToc: false
 
 ---
 
+## Multimedia
+
+### TouchDesigner
+- [The Interactive & Immersive HQ](https://www.youtube.com/@TheInteractiveImmersiveHQ) tutorials, 
+
+---
+
 ## Computer Science 
 
 ### Courses

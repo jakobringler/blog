@@ -7,6 +7,22 @@ tags:
 
 ## Rig Attribute Wrangles
 
+### Basics
+
+We can use any kind of curve and transform it like a parent hierarchy chain using the `Rig Attribute Wrangle`!
+
+![[notes/images/roll_up_kinefx.gif]]
+
+// rigattribwrangle
+
+```C
+prerotate(4@localtransform, chf("amount") * @curveu, {1,0,0});
+```
+
+The wrangle automatically creates a `transform` and `localtransform` matrix on each point to apply all transformations.
+
+Usually you would do this beforehand to better control the orientations. A good way is using the `orientalongcurve` SOP which has a 3x3 transform export option in combination with a `rigdoctor` node.
+
 ### Secondary Motion with CHOPs
 
 The issue with the default secondary motion SOP is that you can only have a single driver point for now (H19.5). If you want to control many different joints with different drivers without setting up a secondary motion SOP for each you are out of luck. 
@@ -43,5 +59,6 @@ You also have to promote the parameters you want to control with the HDA.
 ---
 
 sources / further reading:
+- [Flower Garden | Carl Krause | Paris HIVE 2023 - SideFX](https://www.youtube.com/watch?v=9bsb-WBGPTc)
 - [KineFX Rigging | Fur Dude | Part 9 | Add More Control Joints - SideFX](https://www.youtube.com/watch?v=3Ssa9xXnx9E)
 
