@@ -7,7 +7,7 @@ tags:
 
 ## Basics
 - [[notes/Houdini And Nuke To TouchDesigner |Houdini And Nuke To TouchDesigner]]
-- [[notes/Exporting Image Sequence |Exporting Image Sequence]]
+- [[notes/Exporting Image Sequences|Exporting Image Sequence]]
 - [[notes/Feedback Loops |Feedback Loops]]
 - [[notes/Table DATs |Table DATs]]
 
