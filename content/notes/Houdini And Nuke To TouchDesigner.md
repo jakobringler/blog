@@ -9,7 +9,7 @@ TouchDesigner was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows 
 
 > [!info] **Disclaimer:**
 > 
-> The following are mostly the notes I took whenstarting to learn TD. Don't read this if you want to get started.
+> The following are mostly the notes I took when starting to learn TD. Don't read this if you want to get started.
 > I instead recommend to check out Bileam Tschepe's [Beginner Course](https://www.youtube.com/playlist?list=PLFrhecWXVn5862cxJgysq9PYSjLdfNiHz).
 > This might only be useful if you are looking for some Houdini analogies!
 
@@ -81,7 +81,7 @@ You can't connect operators of different types together but there are many ways 
 
 ### Equivalents
 
-### Hou to Touch
+##### Hou to Touch
 
 - Subnet > Base
 
