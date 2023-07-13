@@ -5,14 +5,14 @@ tags:
 - list
 ---
 
-## Basics
-- [[notes/Houdini And Nuke To TouchDesigner |Houdini And Nuke To TouchDesigner]]
+### Basics
+- [[notes/Houdini and Nuke to TouchDesigner|Houdini and Nuke to TouchDesigner]]
 - [[notes/Exporting Image Sequences|Exporting Image Sequences]]
 - [[notes/Feedback Loops |Feedback Loops]]
-- [[notes/Table DATs |Table DATs]]
+- [[notes/Useful Expressions |Useful Expressions]]
 
-## GLSL
+### GLSL
 - [[notes/TD GLSL Basics |GLSL Basics]]
 
-## Sensors
+### Sensors
 - [[notes/iPhone ARkit and Depth|iPhone ARkit and Depth]]

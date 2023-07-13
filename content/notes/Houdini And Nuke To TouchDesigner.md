@@ -1,5 +1,5 @@
 ---
-title: "Houdini And Nuke To TouchDesigner"
+title: "Houdini and Nuke to TouchDesigner"
 draft: false
 tags:
 - touchdesigner
@@ -82,7 +82,7 @@ You can't connect operators of different types together but there are many ways 
 - Target Circle: Display
 - Dot: Activate BG Display
 
-### Equivalents
+### Comparison
 
 ##### Hou to Touch
 
@@ -90,13 +90,14 @@ You can't connect operators of different types together but there are many ways 
 
 ##### Nuke to TOPs
 
-- Grade, Color Correction > Levels
+- Grade, Color Correction, Invert > Levels
 - Saturation, Hueshift etc. > HSV Adjust
 - Merge > Composite
 - Reformat > Resolution
 - Shuffle > Channel Mix (similar to old shuffle style)
 - Crop = Crop
 - Blur = Blur
+- Transform = Transform
 
 ### Examples
 
@@ -107,6 +108,11 @@ Under the `Help` tab you can find `Operator Snippets` where you can load example
 ###  Similarities to Houdini
 
 - always use `null` nodes to mark the end/output of something (especially useful when the output is referenced somewhere)
+- 'Copy Parameter' / 'Paste Reference' Workflow is the same
+
+### Random Facts
+
+- in TD the axis of any image (TOPs) are mapped to `uv coordinates` ranging from 0-1 (think STMap in Nuke)
 
 ### HDAs to MyComponents
 
