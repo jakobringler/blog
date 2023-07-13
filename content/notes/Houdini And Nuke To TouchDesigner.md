@@ -9,11 +9,23 @@ TouchDesigner was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows 
 
 ## Interface
 
-- `P` toggles the parameter window on top of the Network Graph
+### Hotkeys
+
+- `Tab` to create nodes
+- `P` toggles the parameter window on top of the network graph
 - `C` toggles color options for nodes
 - `O` toggles a small map of all the nodes
 - `D` toggles displays the currently selected node in the background
+- `U` exits node/group and goes one layer up
+- `I` enters/opens selected node/group (one layer down)
 - `MiddleMouse Click` on a node output lets you connect it to a new node directly similar to clicking the output of a Houdini node before searching and adding something
+
+### Designer vs Perform Mode
+
+When working you are in "Designer" mode. This is where you see your network and the TD UI. Perform mode is a setting that hides all the UI and only Displays the output of your network in a new window.
+You can activate "Perform" mode by pressing `F1` and exit it by hitting `ESC`. Closing the window with the windows/macos buttons closes TD fully.
+
+For fullscreen output you have to use a `Window Comp` which has a setting `Open` that has to be set to 1 and a drop down menu that allows you to select `borderless`.
 
 ## Nodes
 
@@ -49,13 +61,19 @@ TouchDesigner was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows 
 - Saturation, Hueshift etc. > HSV Adjust
 - Merge > Composite
 - Reformat > Resolution
+- Shuffle > Channel Mix (similar to old shuffle style)
 - Crop = Crop
 - Blur = Blur
 
-## Workflow compared to Houdini
-### Similarities
+## Workflow
+
+###  Similarities to Houdini
 
 - always use `null` nodes to mark the end/output of something (especially useful when the output is referenced somewhere)
+
+### HDAs to MyComponents
+
+
 
 ---
 
