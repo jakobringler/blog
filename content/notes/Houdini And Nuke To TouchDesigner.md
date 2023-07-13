@@ -19,6 +19,7 @@ TouchDesigner was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows 
 - `U` exits node/group and goes one layer up
 - `I` enters/opens selected node/group (one layer down)
 - `MiddleMouse Click` on a node output lets you connect it to a new node directly similar to clicking the output of a Houdini node before searching and adding something
+- `Right Click` on connections lets you insert or add operators. The latter only connects the input and not the output of the new node
 
 ### Designer vs Perform Mode
 
@@ -29,9 +30,13 @@ For fullscreen output you have to use a `Window Comp` which has a setting `Open`
 
 ## Nodes
 
-### Contexts
+### Contexts > Types / Families
 
-**COMP** (Object Components, Panel Components) - and other miscellaneous components. Components contain other operators:
+**COMPs** (Object Components, Panel Components) - and other miscellaneous components. Components contain other operators:
+- Panels to build UIs with buttons and what not
+- Containers
+- Dynamics solvers
+- Import Export Nodes (FBX, USD, .. )
 
 **TOPs** (Texture Operators) - all 2D image operation:
 - 2D image manipulation like in COPs or normal Nuke
@@ -39,21 +44,29 @@ For fullscreen output you have to use a `Window Comp` which has a setting `Open`
 **CHOPs** (Channel Operators) - motion, audio, animation, control signals:
 - very much like Houdini CHOPs
 - manipulating values and driving parameters with them
+- anything that's got to do with audio
+- input for different sensor types or controllers (e.g. midi)
 
 **SOPs** (Surface Operators) - 3D points, polygons and other 3D "primitives":
 - equal to SOPs in Houdini
 - working with geometry
 
-**MAT** (Material Operators) - materials and shaders:
+**MATs** (Material Operators) - materials and shaders:
 - like MAT and SHOP nets in Houdini
 
-**DAT** (Data Operators) - ASCII text as plain text, scripts, XML, or organized in tables of cells:
+**DATs** (Data Operators) - ASCII text as plain text, scripts, XML, or organized in tables of cells:
 - doesn't really exist in Houdini as data is usually stored in attributes
 
 **Custom** (Custom Operators):
 - you can create custom Operators which can belong to any type with C++
 
+You can't connect operators of different types together but there are many ways to convert between types or reference outputs into parameters just like in Houdini.
+
 ### Equivalents
+
+### Hou to Touch
+
+- Subnet > Base
 
 ##### Nuke to TOPs
 
