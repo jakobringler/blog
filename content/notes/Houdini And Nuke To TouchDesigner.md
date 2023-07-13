@@ -7,6 +7,12 @@ tags:
 
 TouchDesigner was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows in some methodologies and naming conventions. From a [[notes/Nuke |Nuke]] compositing standpoint there are many similarities when it comes to 2D image manipulation as well.
 
+> [!info] **Disclaimer:**
+> 
+> The following are mostly the notes I took whenstarting to learn TD. Don't read this if you want to get started.
+> I instead recommend to check out Bileam Tschepe's [Beginner Course](https://www.youtube.com/playlist?list=PLFrhecWXVn5862cxJgysq9PYSjLdfNiHz).
+> This might only be useful if you are looking for some Houdini analogies!
+
 ## Interface
 
 ### Hotkeys
@@ -20,6 +26,9 @@ TouchDesigner was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows 
 - `I` enters/opens selected node/group (one layer down)
 - `MiddleMouse Click` on a node output lets you connect it to a new node directly similar to clicking the output of a Houdini node before searching and adding something
 - `Right Click` on connections lets you insert or add operators. The latter only connects the input and not the output of the new node
+- `A` activate selected viewer
+- `H` center viewport
+- `W` wireframe mode in SOP viewport
 
 ### Designer vs Perform Mode
 
@@ -61,6 +70,14 @@ For fullscreen output you have to use a `Window Comp` which has a setting `Open`
 - you can create custom Operators which can belong to any type with C++
 
 You can't connect operators of different types together but there are many ways to convert between types or reference outputs into parameters just like in Houdini.
+
+### Node UI
+
+- Star: Viewer Active
+- Arrow: Bypass
+- Lock: Unlock/Lock
+- Target Circle: Display
+- Dot: Activate BG Display
 
 ### Equivalents
 
