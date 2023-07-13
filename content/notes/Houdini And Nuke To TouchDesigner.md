@@ -5,6 +5,8 @@ tags:
 - touchdesigner
 ---
 
+TouchDesigner was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows in some methodologies and naming conventions. From a [[notes/Nuke |Nuke]] compositing standpoint there are many similarities when it comes to 2D image manipulation as well.
+
 ## Interface
 
 - `P` toggles the parameter window on top of the Network Graph
@@ -49,7 +51,6 @@ tags:
 - Blur = Blur
 
 ## Workflow compared to Houdini
-
 ### Similarities
 
 - always use `null` nodes to mark the end/output of something (especially useful when the output is referenced somewhere)
