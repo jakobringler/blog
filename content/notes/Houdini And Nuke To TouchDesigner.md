@@ -29,11 +29,14 @@ TouchDesigner was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows 
 - `A` activate selected viewer
 - `H` center viewport
 - `W` wireframe mode in SOP viewport
+- `N` toggle big names in network graph
+- `MiddleMouse Click` on nodes/operators gives you all the information like in Houdini
+- `Mouse Click` on the outer edge of an operator resizes the viewport to fit the aspect ratio
 
 ### Designer vs Perform Mode
 
 When working you are in "Designer" mode. This is where you see your network and the TD UI. Perform mode is a setting that hides all the UI and only Displays the output of your network in a new window.
-You can activate "Perform" mode by pressing `F1` and exit it by hitting `ESC`. Closing the window with the windows/macos buttons closes TD fully.
+You can activate "Perform" mode by pressing `F1` and exit it by hitting `ESC`. Closing the window with the windows/macOS buttons closes TD fully.
 
 For fullscreen output you have to use a `Window Comp` which has a setting `Open` that has to be set to 1 and a drop down menu that allows you to select `borderless`.
 
@@ -94,6 +97,10 @@ You can't connect operators of different types together but there are many ways 
 - Shuffle > Channel Mix (similar to old shuffle style)
 - Crop = Crop
 - Blur = Blur
+
+### Examples
+
+Under the `Help` tab you can find `Operator Snippets` where you can load examples for most of the nodes
 
 ## Workflow
 

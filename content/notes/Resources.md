@@ -100,6 +100,7 @@ enableToc: false
 - [The Interactive & Immersive HQ](https://www.youtube.com/@TheInteractiveImmersiveHQ) tutorials
 - [ciphrd](https://ciphrd.com/) awesome reference and algorithm explanations
 - [elekktronaut](https://www.elekktronaut.com/tutorials) tutorials, patreon
+- [allTD](http://alltd.org/) tutorial collection (huge)
 
 ---
 
