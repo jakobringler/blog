@@ -10,6 +10,8 @@ TouchDesigner was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows 
 ## Interface
 
 - `P` toggles the parameter window on top of the Network Graph
+- `C` toggles color options for nodes
+- `O` toggles a small map of all the nodes
 - `D` toggles displays the currently selected node in the background
 - `MiddleMouse Click` on a node output lets you connect it to a new node directly similar to clicking the output of a Houdini node before searching and adding something
 
@@ -58,6 +60,8 @@ TouchDesigner was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows 
 ---
 
 sources / further reading:
+- [TouchDesigner Glossary - Derivative](https://docs.derivative.ca/TouchDesigner_Glossary)
 - [Operator - Touchdesigner DOCs - Derivative](https://docs.derivative.ca/Operator)
+- [TouchDesigner Beginner Course - bileam tschepe (elekktronaut)](https://www.youtube.com/playlist?list=PLFrhecWXVn5862cxJgysq9PYSjLdfNiHz)
 - [Why To Use NULLs – TouchDesigner Tips, Tricks and FAQs 2 - bileam tschepe (elekktronaut)](https://www.youtube.com/watch?v=u6hb-31gd1Q)
 
