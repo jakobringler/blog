@@ -32,6 +32,7 @@ TouchDesigner was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows 
 - `N` toggle big names in network graph
 - `MiddleMouse Click` on nodes/operators gives you all the information like in Houdini
 - `Mouse Click` on the outer edge of an operator resizes the viewport to fit the aspect ratio
+- `P` in SOPs viewer active mode opens display options
 
 ### Designer vs Perform Mode
 
@@ -87,6 +88,11 @@ You can't connect operators of different types together but there are many ways 
 ##### Hou to Touch
 
 - Subnet > Base
+- Poly Frame > Attribute Create (only generates normals and tangents)
+- Merge = Merge 
+- Transform = Transform
+- Sort = Sort
+- circle, grid, etc. are mostly the same
 
 ##### Nuke to TOPs
 
@@ -109,6 +115,7 @@ Under the `Help` tab you can find `Operator Snippets` where you can load example
 
 - always use `null` nodes to mark the end/output of something (especially useful when the output is referenced somewhere)
 - 'Copy Parameter' / 'Paste Reference' Workflow is the same
+- You can `Lock`, `Bypass`, and `Display` nodes
 
 ### Random Facts
 

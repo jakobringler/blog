@@ -8,6 +8,9 @@ tags:
 ### Basics
 - [[notes/Houdini and Nuke to TouchDesigner|Houdini and Nuke to TouchDesigner]]
 - [[notes/Exporting Image Sequences|Exporting Image Sequences]]
+- [[notes/TD TOPs |TOPs]]
+- [[notes/TD CHOPs |CHOPs]]
+- [[notes/TD SOPs |SOPs]]
 - [[notes/Feedback Loops |Feedback Loops]]
 - [[notes/Useful Expressions |Useful Expressions]]
 
