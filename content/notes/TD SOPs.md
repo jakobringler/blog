@@ -11,11 +11,11 @@ SOPs are computed on the CPU and therefore don't scale too well. Animation in SO
 
 In active viewer mode you can right click to get different display options:
 
-![[Pasted image 20230714142920.png]]
+![[notes/images/Pasted image 20230714142920.png]]
 
 It generally makes sense to turn the viewer of when working with SOPs. TD has to calculate every viewer for every timestep otherwise. To do so press the viewer flag in the top left of the operator.
 
-![[Pasted image 20230714145122.png]]
+![[notes/images/Pasted image 20230714145122.png]]
 
 ## SOPs
 
@@ -56,7 +56,7 @@ SOPs have the most overlap with [[notes/Houdini |Houdini]]
 
 To do so you need a `Geo`, a `Camera` and a `Light` COMP as well as a `Render` TOP
 
-![[Pasted image 20230714144235.png]]
+![[notes/images/Pasted image 20230714144235.png]]
 
 You can build simple control setups by providing a `null` for the camera to look at.
 
