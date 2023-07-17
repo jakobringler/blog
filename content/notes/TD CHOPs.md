@@ -51,6 +51,9 @@ In active viewer mode you can right click the viewer to reset the min/max bounds
 	- `*` selects everything
 	- `something*` selects every channel that starts with something... 
 
+### Angle
+- converts between different units (e.g. quaternion to degrees)
+
 ### Keyboard In
 - let's you specify keys and outputs 1 once pressed
 
