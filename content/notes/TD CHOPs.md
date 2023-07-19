@@ -54,6 +54,15 @@ In active viewer mode you can right click the viewer to reset the min/max bounds
 ### Angle
 - converts between different units (e.g. quaternion to degrees)
 
+### Speed
+- useful to add up values over time
+
+### Trigger
+- outputs 0 or 1 if threshold is reached
+
+### Counter
+- counts integer triggers 
+
 ### Keyboard In
 - let's you specify keys and outputs 1 once pressed
 
@@ -63,3 +72,21 @@ In active viewer mode you can right click the viewer to reset the min/max bounds
 
 ### Midi In
 - Values often range from 0-127 (128 steps)
+
+
+## Common Setups
+
+### Normalize a Signal to 0-1
+
+The 0-1 pulse signal from the LFO gets squeezed with the lag CHOP.
+
+![[notes/images/Pasted image 20230719151345.png]]
+
+To normalize it again there is a neat trick using the envelope CHOP.
+
+>The Envelope CHOP outputs the maximum amplitude in the vicinity of each sample of the input.
+
+Pretty much like `Bounds` over time in Houdini
+
+Set it to a high number of seconds (e.g. 10). Just divide the signal through the output of it. 
+
