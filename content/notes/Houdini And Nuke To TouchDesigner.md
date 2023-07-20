@@ -5,7 +5,7 @@ tags:
 - touchdesigner
 ---
 
-TouchDesigner was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows in some methodologies and naming conventions. From a [[notes/Nuke |Nuke]] compositing standpoint there are many similarities when it comes to 2D image manipulation as well.
+[[notes/TouchDesigner |TouchDesigner]] was born as a fork of [[notes/Houdini |Houdini]] 4.1, which shows in some methodologies and naming conventions. From a [[notes/Nuke |Nuke]] compositing standpoint there are many similarities when it comes to 2D image manipulation as well.
 
 > [!info] **Disclaimer:**
 > 
@@ -132,4 +132,5 @@ sources / further reading:
 - [Operator - Touchdesigner DOCs - Derivative](https://docs.derivative.ca/Operator)
 - [TouchDesigner Beginner Course - bileam tschepe (elekktronaut)](https://www.youtube.com/playlist?list=PLFrhecWXVn5862cxJgysq9PYSjLdfNiHz)
 - [Why To Use NULLs – TouchDesigner Tips, Tricks and FAQs 2 - bileam tschepe (elekktronaut)](https://www.youtube.com/watch?v=u6hb-31gd1Q)
+
 
