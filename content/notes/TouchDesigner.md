@@ -6,7 +6,7 @@ tags:
 ---
 
 ### Basics
-- [[notes/Houdini and Nuke to TouchDesigner |Houdini and Nuke to TouchDesigner]]
+- [[notes/Houdini to TouchDesigner |Houdini to TouchDesigner]]
 - [[notes/TD TOPs |TOPs]]
 - [[notes/TD CHOPs |CHOPs]]
 - [[notes/TD SOPs |SOPs]]

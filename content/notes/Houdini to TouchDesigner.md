@@ -1,5 +1,5 @@
 ---
-title: "Houdini and Nuke to TouchDesigner"
+title: "Houdini to TouchDesigner"
 draft: false
 tags:
 - touchdesigner
