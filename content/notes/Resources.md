@@ -29,6 +29,7 @@ enableToc: false
 - [Toadstorm Nerdblog - Henry Foster](https://www.toadstorm.com/blog/) MOPs, procedural workflows & python
 - [Houdini Gubbins](https://houdinigubbins.wordpress.com/) technical, VEX, math, geometry, algorithms
 - [FX Thinking - Alessandro Pepe](https://pepefx.blogspot.com/) FX, technical
+- [HouPy Wiki - Luke Van](https://www.houpywiki.com/) python in houdini
 - [Website / Wiki - Deborah R. Fowler](https://www.deborahrfowler.com/index.html) very technical (this has to be the worst best website)
 - [Diffuse FX - Grayden Solman](https://diffusefx.com/) FX, technical
 - [Blog - Nick Taylor (Aeoll)](https://www.nicholas-taylor.com/blog) FX, technical, motion design
