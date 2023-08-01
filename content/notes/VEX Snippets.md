@@ -168,7 +168,7 @@ if(surface < chf("dist"))
 }
 ```
 
-### Refining Color Palette using 'Despill' Technique
+### Color Palette Refinement using 'Despill' Technique
 // point wrangle
 
 ```C
