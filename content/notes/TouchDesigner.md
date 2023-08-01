@@ -11,9 +11,9 @@ tags:
 - [[notes/TD CHOPs |CHOPs]]
 - [[notes/TD SOPs |SOPs]]
 - [[notes/Feedback Loops |Feedback Loops]]
-- [[notes/TD Instancing|Instancing]]
+- [[notes/TD Instancing |Instancing]]
 - [[notes/Useful Expressions |Useful Expressions]]
-- [[notes/Exporting Image Sequences|Exporting Image Sequences]]
+- [[notes/Exporting Image Sequences |Exporting Image Sequences]]
 
 ### GLSL
 - [[notes/TD GLSL Basics |GLSL Basics]]

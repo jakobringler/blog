@@ -168,6 +168,43 @@ if(surface < chf("dist"))
 }
 ```
 
+### Refining Color Palette using 'Despill' Technique
+// point wrangle
+
+```C
+// rotate hue
+v@Cd = rgbtohsv(v@Cd);
+@Cd.r += chf("rotate_Hue");
+v@Cd = hsvtorgb(v@Cd);
+
+// define color spread (value of 2 for Tolerance keeps input colors)
+
+vector originalCd = v@Cd;
+
+if (@Cd.g > (@Cd.b + @Cd.r) / 2 * (chf("Tol") * 2))
+{
+    @Cd.g = (@Cd.b + @Cd.r) / 2 * (chf("Tol") * 2);
+}
+else
+{
+    @Cd.g = @Cd.g;
+}
+
+// apply tint
+
+@Cd += length(originalCd - v@Cd) * chv("Tint") * chf("Luma");
+
+// rotate hue back
+v@Cd = rgbtohsv(v@Cd);
+@Cd.r -= chf("rotate_Hue");
+v@Cd = hsvtorgb(v@Cd);
+```
+
+> [!quote] **Sources:**
+> 
+> [Chris Turner's Twitter thread about Compositing Tricks](https://twitter.com/allexceptn/status/1439253876041998346)
+
+
 ### Edgefalloff
 // point wrangle
 
