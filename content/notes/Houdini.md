@@ -51,7 +51,7 @@ tags:
 - [[notes/Python In Houdini |Python In Houdini]]
 - [[notes/Scripting in Houdini |Scripting in Houdini - Talk Notes]]
 - [[notes/VDBs and Voxels |VDBs and Voxels]]
-
+- [[notes/Node Shapes and Colors |Setting Node Shapes and Colors]]
 ### Machine Learning
 - [[notes/ML Castles |ML Castles]]
 	- [[notes/Tower Sketcher |Training a Neural Net to Understand Sketches]]
