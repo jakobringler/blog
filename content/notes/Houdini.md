@@ -14,6 +14,7 @@ tags:
 - [[notes/Quaternion-Euler-Rotations |Quaternion & Euler Rotations]]
 - [[notes/Matrix Operations |Matrix Operations]]
 - [[notes/primuv and xyzdist |primuv & xyzdist]]
+- [[notes/Deformation Wrangle vs Attribute Wrangle |Deformation Wrangle vs Attribute Wrangle]]
 
 ### SOPs
 - [[notes/SOP Solver |SOP Solver]]
