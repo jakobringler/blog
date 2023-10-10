@@ -37,6 +37,7 @@ enableToc: false
 - [Blog - Sergen Eren](https://sergeneren.com/) FX, technical, clouds, photon simulation
 - [Blog - Rok Andic](https://www.rokandic.com/blog) rigging, animation
 - [Blog - Chris Turner](https://www.chrisbturner.com/blog) technical
+- [Blog - Matt Ebb](http://mattebb.com/blog/) technical
 - [Blog - Jason Harmon (What I Found)](https://whatifound.net/) FLIP, CHOPs
 - [lex.ikoon](https://lex.ikoon.cz/) VEX, Python, technical
 - [rendereverything - Gatis Kurzemnieks](https://www.rendereverything.com/blog/) VEX, technical
@@ -49,6 +50,11 @@ enableToc: false
 - [Creature Garage - JesusFC](https://creaturegarage.com/) grooming
 - [Atom's Link Page - OdForce](https://forums.odforce.net/topic/25173-atoms-link-page/?tab=comments#comment-146668) - useful link list
 
+##### Best of odforce
+- [Differential Curve Growth](https://forums.odforce.net/topic/25534-differential-curve-growth)
+- [FLIP Sheeter Effect](https://forums.odforce.net/topic/18111-flip-smorganicsheeter-effect/)
+- [Smoke Solver | Tips and Tricks](https://forums.odforce.net/topic/31435-smoke-solver-tips-and-tricks/)
+- [Voronoi - Dynamic - Location Based Fracture](https://forums.odforce.net/topic/9119-voronoi-dynamic-location-based-fracture-wip/)
 ##### Tech
 - [[notes/NVIDIAs Warp for Houdini |NVIDIAs Warp for Houdini]]
 - [Julia Wrangle in Houdini](https://github.com/pedohorse/yuria)
