@@ -8,6 +8,7 @@ tags:
 ## Cloth
 
 ### Stiff & Crumply (Paper, Metal, etc.)
+
 Key Parameters:
 - Constraint Iterations (higher = stiffer)
 - Plasticity (prevents unfolding)
@@ -24,8 +25,6 @@ When dealing with intersections on layered cloth the 'post collision passes' par
 ![[notes/images/layersofcloth.png]]
 
 In this example where two cloth folds form I would count 4 possible collisions and probably set 'post collision passes' to 5.
-
-
 ## Hair
 
 ### Collisions
@@ -39,6 +38,26 @@ if(@curveu == 0)
 ```
 
 similarly `i@disableself = 1` can be used to avoid collisions with itself.
+
+### Stiff Hair (LowRes / HiRes Workflow)
+
+To get anything rigid in Vellum you need loads of constraint iterations usually. For Hair you can sometimes get away with using a low resolution (sparsely resampled) version of the guides and simulate those. 
+
+All you have to do is put some uvs on each hair and lookup the new position with the `primuv` function, which takes care of the interpolation of the hiRes guides.
+
+// simulation guides (left) are resampled to about 1/5 of the actual point count
+
+![[notes/images/lowResHiRes_hair.png]]
+
+// both uvtexture nodes
+
+![[notes/images/uvtexture_hair.png]]
+
+// point wrangle
+
+```C
+v@P = primuv(1 ,"P", @primnum, v@uv);
+```
 
 ## Fluids
 ### Droplets, Sheets & Tendrils
