@@ -25,6 +25,7 @@ tags:
 - [[notes/Vocabulary |Vocabulary]]
 - [[notes/Collisions |Collisions]]
 - [[notes/Velocity Fields |Velocity Fields]]
+- [[notes/POP |POP]]
 - [[notes/FLIP |FLIP]]
 - [[notes/VELLUM |VELLUM]]
 - [[notes/PYRO |PYRO]]

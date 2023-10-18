@@ -6,7 +6,7 @@ tags:
 ---
 
 The following is a compilation of all sorts of handy houdini tips & tricks. Most of them were shared in the #today-i-learned channel on the [Think Procedural Discord Server](https://thinkprocedural.com/).
-Do yourself a favour and check it out an scroll to the top of the thread to find some hidden secrets!
+Do yourself a favor and check it out an scroll to the top of the thread to find some hidden secrets!
 
 ## Quality of Life
 
@@ -20,7 +20,8 @@ Do yourself a favour and check it out an scroll to the top of the thread to find
 	- `om` -> Object Merge
 	- `gd` -> Group Delete
 	- `pv` -> Point Velocity
-
+	- `hf` -> Height Field
+- if you capitalize node names they will be sorted on top in the tree view (useful when object merging stuff)
 ### Viewport
 - `Ctrl` or `Shift` + `Arrow Keys` let's you rotate / move views
 - `M` enables first person movement with `WASD`, `Shift` to sprint, `Ctrl` to slowdown and `Q` / `E` to lift / descend

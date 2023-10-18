@@ -4,6 +4,15 @@ draft: false
 tags:
 - houdini
 ---
+## Noise
+
+### Curl Noise
+
+Curl noise is especially useful because it is a divergence free noise, which means that particles cannot converge to sink points where they get stuck.
+
+The easiest way to set this up is through VOPs:
+
+![[notes/images/curlnoise.png]]
 
 ## Advanced Velocity Fields
 
@@ -55,4 +64,4 @@ v@vel = direction;
 
 sources / further reading:
 - [Houdini Tutorial: Advanced Velocity Fields / Part One - Mats](https://www.youtube.com/watch?v=K0cNvpXujmk)
-- [Houdini Algorithmic Live [#021] - Magnetic Field Visualization -  Junichiro Horikawa](https://www.youtube.com/watch?v=pnfFbF-60qw)
+- [Houdini Algorithmic Live #021 - Magnetic Field Visualization -  Junichiro Horikawa](https://www.youtube.com/watch?v=pnfFbF-60qw)

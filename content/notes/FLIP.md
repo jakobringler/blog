@@ -8,7 +8,8 @@ tags:
 ## General
 
 ### Particle Velocity vs Volume Velocity
-It's hard to have exact art directible control over the FLIP particles when working with volume velocities. It makes sense to modify the particle velocity directly in cases where detailed particle control is required.
+
+It's hard to have exact art directable control over the FLIP particles when working with volume velocities. It makes sense to modify the particle velocity directly in cases where detailed particle control is required.
 
 ### Volume Loss
 
@@ -22,9 +23,14 @@ To avoid losing volume in the simulation activate `Apply Particle Separation` un
 > 
 >If the **Particle Radius Scale** / **Grid Scale** >= sqrt(3) / 2, then particles will never be under-resolved.
 
+### Collisions
+
+In general FLIP needs polygonal data as well as a surface vdb to calculate proper collisions. You can provide collision velocities through a volume or point velocities on the geometry. To read more on the topic you can check out these notes about [[notes/Collisions |Collisions]]!
+
 ## Small Scale
 
 ### Droplets, Sheets & Tendrils
+
 Key Parameters:
 - Velocity Transfer (APIC Swirly)
 - Surface Tension
@@ -34,6 +40,7 @@ Key Parameters:
 When increasing the surface tension by itself the fluid will collapse in on itself. To prevent this substeps have to be increased. If possible this can also be countered by reducing the timescale (e.g. instead of increasing substeps from 4 to 8 the timescale could be set to 0.5).
 
 ### Surface Adhesion
+
 You could build a particle based setup in which you use the normal of the collider to build some kind of force to pull the fluid towards the surface. Unfortunately this causes issues with velocities when particles hit the collision from above and the adhesion force constantly fights gravity causing the simulation to slow down.
 
 Luckily there is a better way with less shortcomings:
@@ -43,6 +50,13 @@ The `Gas Stick On Collision` node is perfect for the job and can be piped in the
 It has parameters to control the scale and distance of the effect as well as separate controls for the scale along the normal and tangent. The bias parameter remaps the linear falloff along the distance. For realistic results use a higher normal scale and a lower tangent scale as well as a lower bias. This avoids slow moving fluid while insuring the adhesion effect. 
 
 You can combine this node with the `Use Friction and Bounce` option in the flip solver to get some bouncy motion back when the fluid is fast enough.
+## Large Scale
+
+### Transparency
+
+Sometimes a collider has too much of a displacement force on the particles. When simulating a shark or dolphin in water there might be too big of an expansion in the direct surroundings of the collider. To counter this you can use the transparency parameter under `Volume Motion` > `Collisions`. The value describes a percentage amount of particles that can pass through the collider, which helps art directing and decreasing the displacement effect.
+
+### Air Field Simulation
 
 ---
 
