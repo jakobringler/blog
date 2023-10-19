@@ -1,13 +1,14 @@
 ---
-title: "Vocabulary"
-draft: true
+title: Vocabulary
+draft: false
 tags:
-- list
+  - list
 ---
 
 ### Buoyancy
 
 ### Curl
+
 Rotation of a vector field. Can be viewed as flow of fluid or gas through said field.
 
 ![[notes/images/curl.png]]
@@ -15,6 +16,7 @@ Rotation of a vector field. Can be viewed as flow of fluid or gas through said f
 related to: [[notes/Vocabulary#Divergence |Divergence]]
 
 ### Divergence
+
 Flow of a vector field. Can be viewed as flow of fluid or gas through said field.
 Expanding Flow: positive Divergence (like a magnet pushing away)
 Compressing Flow: negative Divergence (like a magnet pulling in)
@@ -23,12 +25,43 @@ Compressing Flow: negative Divergence (like a magnet pulling in)
 
 related to: [[notes/Vocabulary#Curl |Curl]]
 
+### Eulerian Simulation
+
+Values are stored on grids / volumes / fields
+
+think pyro simulation
+
+related to: [[notes/Vocabulary#Lagrangian Simulation |Lagrangian Simulation]]
+
 ### Gradient
+
+### Lagrangian Simulation
+
+Values are stored on particles
+
+think particle simulation
+
+related to: [[notes/Vocabulary#Eulerian Simulation |Eulerian Simulation]]
+
+### Scalar Fields
+
+Scalar fields store a single float per voxel.
+
+Examples: Density, Temperature, Masks
+
+### Vector Fields
+
+Vector Fields store three floats per voxel.
+
+Examples: Color, Velocity, Force
 
 ### Vorticity
 
+Vorticity is a pseudovector field that describes the local spinning motion of a continuum near some point (the tendency of something to rotate, as would be seen by an observer located at that point and traveling along with the flow.
+
 ### Perpendicular Lines
-Lines meet at right angle
+
+Lines that meet at right angle / 90 degrees
 
 
 ---
@@ -38,3 +71,4 @@ sources / further reading:
 - [The idea of the curl of a vector field - Math Insight](https://mathinsight.org/curl_idea)
 - [The idea of the divergence of a vector field - Math Insight](https://mathinsight.org/divergence_idea)
 - [Gradients and Partial Derivatives - Physics Videos by Eugene Khutoryansky)](https://www.youtube.com/watch?v=GkB4vW16QHI)
+- [Vorticity - Wikipedia](https://en.wikipedia.org/wiki/Vorticity)
