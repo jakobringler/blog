@@ -83,7 +83,7 @@ To make particles collide with polygons you can use  the `POP Collision Detect D
 
 ### Grain and Wire Solver
 
-Grains uses the pop solver and the wire solver behaves like POPs so the same rules apply.
+Grains uses the pop solver and the wire solver behaves like POPs so the same rules apply to both.
 
 Supported Collision data: 
 1. SDF Volume geometry (default) 
@@ -129,17 +129,96 @@ Supported Collision data:
 > 
 > Same goes for FLIP colliders. How these merge in to other existing collision and collisionvel fields is determined by how you mix these in with the `Gas Linear Combination` DOP
 
-### CLOTH Solver
-### SOLID (FEM) Solver 
+### VELLUM Solver
 
-### RBD Solver
+[[notes/VELLUM |VELLUM]] is an XPBD (Extended **Position-Based Dynamics**) solver.
+
+Supported Collision data:
+- Polygonal geometry
+
+as the name "position based" suggests there is no way to use sdf volumes as colliders, because they are only represented as a single point in Houdini.
+
+There isn't much to take care of except making sure that you have a consistent point count on the collider geometry.
+
+You can use the `POP Collision Ignore` node in DOPs to specify which vellum geometry is affected by which collider. Read more [here](https://www.sidefx.com/docs/houdini/vellum/collisions.html).
+
+### (legacy) CLOTH Solver
+
+Cloth supported Collision data: 
+1. Cloth colliders from the Cloth shelf 
+2. Polygonal geometry (supports swept collisions for sub-frame interpolation) 
+3. SDF Volume data for surface collisions 
+4. Height Fields (same as SDF Volume data) 
+5. Volume Velocity Fields
+
+Cloth solver (subset of the Solid FEM solver) is a special solver that prefers to collide against other cloth objects.
+
+### (legacy) SOLID (FEM) Solver 
+
+Solid supported Collision data: 
+1. Solid colliders from the Solid shelf 
+2. Polygonal geometry (supports swept collisions for sub-frame interpolation) 
+3. SDF Volume data for surface collisions 
+4. Height Fields (same as SDF Volume data) 
+5. Volume Velocity Fields
+
+### (legacy) Rigid Body (RBD) Solver
 
 WIP
 
-### VELLUM Solver
+### Rigid Body (BULLET) Solver
 
-## General Collider Workflows
-### Concave Colliders with Convex Hulls ( Bullet )
+Supported Collision data:
+- Bullet Collision data (solver specific)
+- Height Fields
+
+Different Collider Types:
+1. Geometry Based
+	- Convex Hull
+	- Concave (not recommended)
+2. Primitive Types
+	- Box
+	- Capsule
+	- Cylinder
+	- Compound (important!)
+	- Sphere
+	- Plane
+3. SDF Based
+	- Height Field
+
+##### Solver Substeps:
+
+Global Substeps x Bullet Substeps = Total Substeps
+
+Important to resolve collisions / interpenetration / tunneling => especially when lots of different objects are close to each other.
+
+Bullet substeps work like this:
+
+N = number of bullet substeps 
+
+1. Take 1 global substep and divide it in N bullet substeps
+2. Take the velocity and divide it through N as well
+3. Move geometry forward N times by velocity/N and resolve collisions after each step 
+
+recommended minimum: 10
+
+##### Height Fields as Bullet Colliders:
+
+> // from the SideFX pdf:
+> 
+> Height fields make excellent bullet colliders. You can represent complex surfaces with height fields for efficient bullet simulations.
+> 
+> Your only limitation is with height fields themselves. They do not support overhangs. The height fields by their nature are both concave and convex. It is good to know that there is a very fast solution to describing terrain collisions in Bullet without resorting to creating manifold terrain colliders. 
+> 
+> As with infinite plane colliders, you can use several height fields to define collision planes in your Bullet simulations. 
+> 
+> Just like infinite planes, these height field colliders have an inside and an outside. You can think of these as SDF colliders defined by a single voxel high volume. 
+> 
+> Unlike infinite planes, height fields are not infinite. The size of the height field is what the bullet solver uses. Any collisions beyond the height field will will not be by that height field.
+
+You can use the `Terrain Object` shelf tool under the `Collisions` to set this up correctly.
+
+##### Concave Colliders with Convex Hulls
 
 Default bullet colliders are convex:
 
@@ -147,13 +226,68 @@ Default bullet colliders are convex:
 
 To work around this without sacrificing performance too much there are two similar ways. Both split up the geometry into smaller pieces which will be "convex hulled" separately. Make sure to enable `Create Convex Hull per Set of Connected Primitives`!
 
-1. Voronoi Fracture
+1. **Voronoi Fracture**
 
 ![[notes/images/Pasted image 20231018110815.png]]
 
-2. Convex Decomposition
+2. **Convex Decomposition**
 
 ![[notes/images/Pasted image 20231018111022.png]]
+
+You can also use boolean operations or develop your own algorithm that splits up the geometry into mostly convex pieces.
+
+##### Concave Colliders with Spheres
+
+If you need fast but pretty accurate collisions in RBD sims you can generate loads of little spheres inside the geometry and use those as a compound to calculate collisions. In fact this is the fastest way to calculate collisions, because you only need to know 1 point and the radius to calculate where collisions would occur.
+
+![[notes/images/sphere_bullet_collider.png]]
+
+Make sure to use `bake ODE` and set the `Geometry Representation` on the RBD Object to `Compound`. 
+
+You can then apply the transformation back to the original geometry by using `extract transform` for example.
+
+### BULLET Collision Objects and other Solvers
+
+List of possible combinations with bullet colliders: 
+• bullet and particles 
+• bullet and grains 
+• bullet and wires 
+• bullet and flip fluids 
+• bullet and pyro 
+• bullet and cloth 
+• bullet and solids (fem)
+
+##### BULLET and Particles, Grains or Wires
+
+Particles collide quite well against bullet simulation objects.
+
+##### BULLET and FLIP
+
+FLIP uses the Bullet collision geometry to build it's colliders. When using packed RBD objects the geometry you see in the viewport only exists on the GPU, which is why FLIP can't access it. Same thing applies to pyro.
+
+##### BULLET and Pyro
+
+BULLET objects collide the same way as in FLIP. No access to packed geometry.
+
+##### BULLET and Cloth
+
+WIP
+
+##### BULLET and Solids (FEM)
+
+WIP
+
+##### BULLET and VELLUM
+
+Mutual VELLUM - BULLET interaction is unfortunately not possible. You can somewhat fake it but it will always be a hacky workaround.
+
+By now you can use `Shape Match Constraints` and `Vellum Transform Pieces` in VELLUM to achieve a similar look, though. Check out [John Lynch's Talk](https://www.youtube.com/watch?v=5s8I2fs8kMs) about the topic!
+
+## Colliders and Sdubsteps
+
+WIP
+
+## General Collider Workflows
 
 ### Collision VDBs from Bad Topology
 
@@ -166,16 +300,6 @@ When dealing with bad or damaged / 'non watertight' topology you can use the `VD
 To avoid regenerating collision geometry / vdbs of a moving but nondeforming object it makes sense to avoid SOP level animation and only animate on OBJ level and use the transform to move the collider in the DOP network. To do so you have to point the `OBJ Path` Parameter in the static object to the geo node containing your collider and enable `Use Object Transform`. This speeds up collider calculations massively. However you will lose per point collider velocities, because the geometry isn't moving in SOPs. 
 
 ![[notes/images/collision base setup.png]]
-
-### Represent Geo with Spheres for Fast Bullet Collisions
-
-If you need fast but pretty accurate collisions in RBD sims you can generate loads of little spheres inside the geometry and use those as a compound to calculate collisions.
-
-![[notes/images/sphere_bullet_collider.png]]
-
-Make sure to use `bake ODE` and set the `Geometry Representation` on the RBD Object to `Compound`. 
-
-You can then apply the transformation back to the original geometry by using the extract transform for example.
 
 ---
 
