@@ -142,7 +142,7 @@ There isn't much to take care of except making sure that you have a consistent p
 
 You can use the `POP Collision Ignore` node in DOPs to specify which vellum geometry is affected by which collider. Read more [here](https://www.sidefx.com/docs/houdini/vellum/collisions.html).
 
-### (legacy) CLOTH Solver
+### CLOTH Solver
 
 Cloth supported Collision data: 
 1. Cloth colliders from the Cloth shelf 
@@ -153,7 +153,7 @@ Cloth supported Collision data:
 
 Cloth solver (subset of the Solid FEM solver) is a special solver that prefers to collide against other cloth objects.
 
-### (legacy) SOLID (FEM) Solver 
+### SOLID (FEM) Solver 
 
 Solid supported Collision data: 
 1. Solid colliders from the Solid shelf 
@@ -167,10 +167,6 @@ Solid supported Collision data:
 > The Solid solver uses FEM or Finite Element Methods to stimulate different materials from soft fleshy objects to concrete and everything in between.
 > 
 > Collisions with like tet objects that are very rigid is a robust way of managing collisions. But many times we wish to integrate the Solid solver with other collision data such as polygon data. You have two choices: Use the Collision Shelf Static or Deforming tools to introduce polygon colliders, or use the Solid shelf and create a static solid collider comprised of tets.
-
-### (legacy) Rigid Body (RBD) Solver
-
-WIP
 
 ### Rigid Body (BULLET) Solver
 
@@ -255,17 +251,21 @@ You can then apply the transformation back to the original geometry by using `ex
 ### BULLET Collision Objects and other Solvers
 
 List of possible combinations with bullet colliders: 
-• bullet and particles 
-• bullet and grains 
-• bullet and wires 
-• bullet and flip fluids 
-• bullet and pyro 
-• bullet and cloth 
-• bullet and solids (fem)
+- bullet and particles 
+- bullet and grains 
+- bullet and wires 
+- bullet and flip fluids 
+- bullet and pyro 
+- bullet and cloth 
+- bullet and solids (FEM)
 
-##### BULLET and Particles, Grains or Wires
+##### BULLET and Particles or Grains
 
 Particles collide quite well against bullet simulation objects.
+
+##### BULLET and Wires
+
+Wires collide against bullet objects, but there won't be any mutual affection. It's hard to get this working without extensive sop solver trickery and extremely light bullet pieces. Use [[notes/VELLUM |VELLUM]] instead!
 
 ##### BULLET and FLIP
 
@@ -275,13 +275,10 @@ FLIP uses the Bullet collision geometry to build it's colliders. When using pack
 
 BULLET objects collide the same way as in FLIP. No access to packed geometry.
 
-##### BULLET and Cloth
+##### BULLET and Solids (FEM) and Cloth
 
-WIP
-
-##### BULLET and Solids (FEM)
-
-WIP
+Possible. Needs higher number of substeps on DOP network to get stable results.
+Subdivided geometry can help improving interaction, because the solid solver uses polygons to calculate collisions (too few points = inaccurate collisions).
 
 ##### BULLET and VELLUM
 
@@ -349,6 +346,24 @@ To smooth out the motion of your colliders you have a few approaches:
 > If your geometry is deforming rapidly in size, scaling up or down, then your only resort is the first option. 
 > 
 > Actually the first option works well in most cases. Even providing one extra subframe of data works well. 
+
+## Deforming Colliders
+
+If you need volume data for colliders always cache them to disk to improve performance! Also make sure to construct and provide a `collisionVel` velocity volume.
+
+Each Solver deals with deforming collision geometry differently but there is a choice as to how we bring deforming geometry in to the Simulation environment: 
+- Deforming geometry cached to disk
+- Animated geometry at the object level
+- Crowd Agents
+
+> // from the SideFX pdf:
+> 
+> Many of the solvers have to deal with collision data as volume SDF data either as VDB caches or our own volume SDF caches. This is one area where VDB shines and is the recommended workflow both for less memory both on disk and in memory and the speed of VDB cache creation and loading from disk.
+
+Solvers that require VDB SDF volumetric data as colliders:
+- Particle POP Solver and Grains PBD Solver 
+- FLIP Solver 
+- Pyro and Smoke Solvers
 
 ## General Collider Workflows
 

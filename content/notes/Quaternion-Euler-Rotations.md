@@ -5,7 +5,6 @@ tags:
 - math
 - vex
 ---
-
 ### Quaternions
 
 expressed as 4 numbers `vector4 = [x, y, z, w]`

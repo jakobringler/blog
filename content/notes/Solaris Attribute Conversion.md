@@ -5,7 +5,6 @@ tags:
 - houdini
 - solaris
 ---
-
 ### USD Translations for Common Houdini Attributes
 
 ```C

@@ -37,6 +37,7 @@ tags:
 
 ### CFX / Grooming
 - [[notes/Hair and Fur |Hair & Fur]]
+- [[notes/Crowds |Crowds]]
 
 ### Rendering
 - [[notes/Redshift#Redshift in Houdini |Redshift in Houdini]]
