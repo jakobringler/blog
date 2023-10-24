@@ -162,6 +162,12 @@ Solid supported Collision data:
 4. Height Fields (same as SDF Volume data) 
 5. Volume Velocity Fields
 
+> // from the SideFX pdf:
+> 
+> The Solid solver uses FEM or Finite Element Methods to stimulate different materials from soft fleshy objects to concrete and everything in between.
+> 
+> Collisions with like tet objects that are very rigid is a robust way of managing collisions. But many times we wish to integrate the Solid solver with other collision data such as polygon data. You have two choices: Use the Collision Shelf Static or Deforming tools to introduce polygon colliders, or use the Solid shelf and create a static solid collider comprised of tets.
+
 ### (legacy) Rigid Body (RBD) Solver
 
 WIP
@@ -283,9 +289,66 @@ Mutual VELLUM - BULLET interaction is unfortunately not possible. You can somewh
 
 By now you can use `Shape Match Constraints` and `Vellum Transform Pieces` in VELLUM to achieve a similar look, though. Check out [John Lynch's Talk](https://www.youtube.com/watch?v=5s8I2fs8kMs) about the topic!
 
-## Colliders and Sdubsteps
+## Colliders and Substeps
 
-WIP
+### Substepping
+
+There are two areas where you can find substepping: 
+1. The global substep rate used to march all solvers forward.
+2. Local solver substepping
+
+Both of these have ramifications when it comes to collision geometry that is either animated or deforming. Static geometry is static so no issues there.
+
+### Global vs Solver Substeps
+
+Global Substeps = Set on the DOP network / affects all microsolvers etc. end to end
+
+Solver Substeps = Set on each micro solver or DOP object / affects only sub objects (closed system)
+
+> // from the SideFX pdf:
+> 
+> Global substeps are easy to understand. The global substep rate is set at the top level DOP Network folder node. The node that contains the entire DOP network.
+> 
+> This rate forces all the solvers to sync up at these points in time.
+> 
+> Colliders are fetched from their SOP sources at these points. All the geometry for all the colliders is refreshed at these global substeps. Yes you can inject any geometry you like. Remove colliders, introduce new colliders. Your imagination is your only limit. In general colliders should move **gracefully** through your simulation. Solvers like that.
+> 
+> Solver substeps are solver specific substeps that divide up the time between global substeps in to smaller steps. Solver substeps are used for stability and accuracy within the solver. 
+> 
+> FLIP solvers can be run at 2 or more substeps to prevent instability between global substeps. Actually in some cases will run 100 or more internal substeps. 
+> 
+> Bullet Solver makes good use of substeps to prevent instability. 
+> 
+> Solver substeps can be imagined as running in their own little world only communicating with the rest of the world at the global substeps. They will digest all their constraints including collision geometry and manage them in their own way.
+
+### Viewport Debugging (Playback Rate)
+
+To display substepped collision geometry you have to change the playback rate in the playbar options. You can set the rate to match the sub-frame global rate you set in the dop settings.
+
+### Collider Substep Interpolation
+
+By default colliders are interpolated linearly, which works fine in most cases where objects move somewhat straight. If you need finer control it's best to cache out the colliders with substeps. More in the next section.
+
+> // from the SideFX pdf:
+> 
+> If you are using the default shelf setup for deforming colliders, you are getting linear blending between frames. For most fast moving objects, this works because fast moving objects tend to travel relatively straight. But we are in VFX and directors want snappy animation and powerful movement. 
+> 
+> In this case where you have snappy colliders moving very fast, that linear interpolation between frames can spell trouble. What you have is a trajectory that looks like a polygon curve with points at the frames and linear sequences. Those abrupt changes at the frames can do a lot of damage. Especially if an object is animated to stop almost instantaneously and then reflected upward or back. 
+> 
+> That instantaneous change at the frame creates an almost infinite amount of energy that may cause issues
+
+### Smoothing Out Fast Moving Colliders
+
+To smooth out the motion of your colliders you have a few approaches: 
+1. Cache out your colliders at subframes to minimize the abrupt changes. 
+	- remember to change file cache `$F` variable to `$FF` to ensure correct file naming
+2. Rework your colliders to use animation curves for the transforms.
+
+> // from the SideFX pdf:
+> 
+> If your geometry is deforming rapidly in size, scaling up or down, then your only resort is the first option. 
+> 
+> Actually the first option works well in most cases. Even providing one extra subframe of data works well. 
 
 ## General Collider Workflows
 
@@ -304,7 +367,7 @@ To avoid regenerating collision geometry / vdbs of a moving but nondeforming obj
 ---
 
 sources / further reading:
-- [Collision Geometry in DOP Simulations - SideFX](https://www.sidefx.com/community/collision-geometry-in-dop-simulations/) this has download links for demo files and a pdf summary
+- [Collision Geometry in DOP Simulations - SideFX](https://www.sidefx.com/community/collision-geometry-in-dop-simulations/) includes demo files and a pdf summary
 	- [Collisions - Pt 1 | Jeff Wagner | Houdini Illume Webinar](https://vimeo.com/252645795)
 	- [Collisions - Pt 2 (Colliders & Bullet Simulations) | Jeff Wagner | Houdini Illume Webinar](https://vimeo.com/254343083)
 	- [Collisions - Pt 3 | Jeff Wagner | Houdini Illume Webinar](https://vimeo.com/255979341)
