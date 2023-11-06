@@ -181,4 +181,6 @@ This should work in all hydra delegates (tested in Karma & Redshift).
 sources / further reading:
 - [Zombies for Everyone | Quick Intro to Crowds - SideFX](https://www.sidefx.com/tutorials/zombies-for-everyone-quick-intro-to-crowds/)
 - [Intro to Crowds - SideFX](https://www.sidefx.com/tutorials/intro-to-crowds/)
+- [🚶🏻‍♂️ Crowds in Houdini Tutorials - Juanjo Martínez](https://www.youtube.com/playlist?list=PLyzn6-dYuCbFby6Ynlk5ziOM-YsTRw68K)
+- [Crowds - cgwiki](https://www.tokeru.com/cgwiki/HoudiniCrowd.html)
 - [Targetting sub-geometry in Solaris in a crowd sim - SideFX Forum](https://www.sidefx.com/forum/topic/81706/?page=1#post-362705)
