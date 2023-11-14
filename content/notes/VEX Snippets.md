@@ -374,6 +374,13 @@ int points = len(nearpoints(0, @P, maxdist, maxpts));
 f@density = float(points) / maxpts;
 ```
 
+### Ray to Surface SDF
+// point wrangle
+
+```C
+@P -= volumegradient(1, "surface", @P) * volumesample(1, "surface", @P) 
+```
+
 ### Remove Point by Condition
 // point wrangle
 
