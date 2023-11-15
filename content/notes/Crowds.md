@@ -99,6 +99,18 @@ WIP
 
 WIP
 
+### Blend Clips Together > Transform Groups
+
+## Adjusting Clips using KineFX
+
+### Mirroring
+
+WIP
+
+### Add IK Chains
+
+WIP
+
 ## Simulation
 
 WIP
@@ -125,16 +137,26 @@ WIP
 
 ## Rendering
 
-### Mantra & Third Party
-##### Material Style Sheets
-
-WIP
-
 ### Solaris, Karma & Hydra Delegates
 
 ##### Texture Variations in Solaris
 
-WIP
+1. **Karma CPU (VEX Shaders)**
+
+For VEX Shaders you can modify many shader graph parameters using the `Material Variation` LOP. This way you can randomize or write custom logic in a vex snippet to define e.g. which path your diffuse texture is supposed to come from.
+
+![[notes/images/assign_different_textures_crowd_karmavex.png]]
+
+- the **index** variable  is a unique id per element 
+- the **value** variable  is used to write back to the parameter specified under "Name"
+
+2. **Karma XPU (MTLX Shaders)**
+
+As of now (Houdini 19.5) it's not possible to get access to the filepath parameters in the `MTLX Image` node. The only node that can be accessed is the `MTLX Geometry Property Value`. Unfortunately you can't feed the `MTLX Image` node any string inputs. That's why you have to load in all your textures in separate nodes and vary the assignment with some switch logic based on your geompropvalue input. 
+
+I usually assign different point attributes to the packed agent crowd in SOPs and read them in the shader and don't even bother using the `Material Variation` node.
+
+![[notes/images/geompropvalue_shadersetup_crowd_matvariation.png]]
 
 ##### Targetting Sub-Geometry in Solaris
 
@@ -159,7 +181,7 @@ I want to assign the "hat" geometry a different shader then the rest of the agen
 	3. use the `%reference` expression to point to your geometry
 
 ```C
-%reference:/crowd/agentdefinitions/main_agent/shapelibrary/hat
+%reference:/crowd/agentdefinitions/agent/shapelibrary/hat
 ```
 
 ![[notes/images/Pasted image 20231106142401.png]]
@@ -176,6 +198,11 @@ This should work in all hydra delegates (tested in Karma & Redshift).
 
 ![[notes/images/Pasted image 20231106143438.png]]
 
+### Mantra & Third Party
+##### Material Style Sheets
+
+I didn't bother writing anything down because Mantra and Style Sheets are pretty much gone with USD and Solaris being more and more adopted. The [Zombies for Everyone](https://www.sidefx.com/tutorials/zombies-for-everyone-quick-intro-to-crowds/) course chapters 20 - 22 give you a good idea of the basics.
+
 ---
 
 sources / further reading:
@@ -184,3 +211,4 @@ sources / further reading:
 - [🚶🏻‍♂️ Crowds in Houdini Tutorials - Juanjo Martínez](https://www.youtube.com/playlist?list=PLyzn6-dYuCbFby6Ynlk5ziOM-YsTRw68K)
 - [Crowds - cgwiki](https://www.tokeru.com/cgwiki/HoudiniCrowd.html)
 - [Targetting sub-geometry in Solaris in a crowd sim - SideFX Forum](https://www.sidefx.com/forum/topic/81706/?page=1#post-362705)
+- [Be in Control - Crowds and KineFX | Mikael Pettersen | Houdini 18.5 HIVE - SideFX](https://www.youtube.com/watch?v=1cLPYWj4Lqk)
