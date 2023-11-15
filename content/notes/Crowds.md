@@ -101,16 +101,32 @@ WIP
 
 ### Blend Clips Together > Transform Groups
 
+WIP
+
 ## Adjusting Clips using KineFX
 
 ### Mirroring
 
-WIP
+The `Rig Mirror Pose` SOP allows you to flip your clips and essentially double the amount of animations you have practically for free.
 
-### Add IK Chains
+It doesn't work all the time because you need to provide it some kind of rest post / somewhat symmetrical centered frame of your clip.
 
-WIP
+![[notes/images/rigmirrorpose_crowd.png]]
 
+You can feed the updated `Motion Clip` back in an `Agent Clip` SOP.
+
+### On the Fly IK Chains
+
+This allows you to easily manipulate and extend your animation library!
+
+- Drop down a `Agent Animation Unpack` SOP
+- time freeze and blast out any bones you want to add an animation to
+- animate with a `Rig Pose` SOP
+- Use the `IK Chains` SOP to blend in the animation
+	- make sure to enable `Match By Name`
+- Drop down a `Motion Clip` and feed it back to an `Agent Clip` node to create a new clip
+
+![[notes/images/kinefx_ikchains_oncrowd.gif]]
 ## Simulation
 
 WIP
