@@ -151,6 +151,16 @@ WIP
 
 WIP
 
+### Vellum
+
+WIP
+
+## Post Sim Tweaks
+
+### Agent Look At
+
+You can make agents look at stuff after having already simulated everything! That is amazing and very simple to set up. You just need a `Agent Look At` SOP. Pipe in your crowd cache and you are good to go. You can use it in Simulation or in Live mode. If you don't simulate any turns you just directly modify the skeletons rotation to make each agent look at a target. Might have some snappy unexpected behavior but is usually good enough.
+
 ## Rendering
 
 ### Solaris, Karma & Hydra Delegates
