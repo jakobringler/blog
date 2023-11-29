@@ -97,7 +97,62 @@ WIP
 
 ### Clip Transitions
 
-WIP
+The `Agent Clip Transition Graph` SOP lets you define, which and how these clips can blend between each other. There is a automatic function, which does a fairly good job a lot of the time. You can as well filter some of those automatic connections out by hand or create new ones that it didn't pick up by itself. I found the output of the automatic mode too confusing to work with when it comes to working with lots of clips: >15. I often end up just it up manually to be safe.
+
+##### Dealing with Mirrored Clips Automatically
+
+In this example I only set up 3 transitions by hand and the wrangle connects each mirrored version accordingly. It just assumes that all the timings and blend durations etc. are identical for the base and the mirrored clip.
+
+![[notes/images/transitionmirror.png]]
+
+// point wrangle "clipname_to_name"
+
+```C
+s@name = s@clipname;
+```
+
+// primitive wrangle "create_mirror_connections"
+
+```C
+string mirrorsuffix = "_m";
+string newclipname_a = s@clip_a + mirrorsuffix;
+string newclipname_b = s@clip_b + mirrorsuffix;
+
+int clip_a = nametopoint(0, s@clip_a);
+int clip_a_m = nametopoint(0, newclipname_a);
+int clip_b = nametopoint(0, s@clip_b);
+int clip_b_m = nametopoint(0, newclipname_b);
+
+if( clip_a_m != -1 )
+{
+    int prim = addprim(0, "polyline", clip_a_m, clip_b);
+    int pA_clip_a = setprimattrib(0, "clip_a", prim, newclipname_a, "set");
+    int pA_clip_b = setprimattrib(0, "clip_b", prim, s@clip_b, "set");
+    int pA_blend = setprimattrib(0, "blend_durations", prim, f[]@blend_durations, "set");
+    int pA_sync = setprimattrib(0, "sync_points", prim, f[]@sync_points, "set");
+    int pA_regions = setprimattrib(0, "transition_regions", prim, f[]@transition_regions, "set");
+}
+
+if( clip_b_m != -1 )
+{
+    int prim = addprim(0, "polyline", clip_a, clip_b_m);
+    int pA_clip_a = setprimattrib(0, "clip_a", prim, s@clip_a, "set");
+    int pA_clip_b = setprimattrib(0, "clip_b", prim, newclipname_b, "set");
+    int pA_blend = setprimattrib(0, "blend_durations", prim, f[]@blend_durations, "set");
+    int pA_sync = setprimattrib(0, "sync_points", prim, f[]@sync_points, "set");
+    int pA_regions = setprimattrib(0, "transition_regions", prim, f[]@transition_regions, "set");
+}
+
+if( clip_a_m != -1 && clip_b_m != -1 )
+{
+    int prim = addprim(0, "polyline", clip_a_m, clip_b_m);
+    int pA_clip_a = setprimattrib(0, "clip_a", prim, newclipname_a, "set");
+    int pA_clip_b = setprimattrib(0, "clip_b", prim, newclipname_b, "set");
+    int pA_blend = setprimattrib(0, "blend_durations", prim, f[]@blend_durations, "set");
+    int pA_sync = setprimattrib(0, "sync_points", prim, f[]@sync_points, "set");
+    int pA_regions = setprimattrib(0, "transition_regions", prim, f[]@transition_regions, "set");
+}
+```
 
 ### Blend Clips Together > Transform Groups
 

@@ -204,6 +204,51 @@ v@Cd = hsvtorgb(v@Cd);
 > 
 > [Chris Turner's Twitter thread about Compositing Tricks](https://twitter.com/allexceptn/status/1439253876041998346)
 
+### Crowd Transition Mirrored Clips
+//primitive wrangle
+
+```C
+string mirrorsuffix = "_m";
+string newclipname_a = s@clip_a + mirrorsuffix;
+string newclipname_b = s@clip_b + mirrorsuffix;
+
+int clip_a = nametopoint(0, s@clip_a);
+int clip_a_m = nametopoint(0, newclipname_a);
+int clip_b = nametopoint(0, s@clip_b);
+int clip_b_m = nametopoint(0, newclipname_b);
+
+if( clip_a_m != -1 )
+{
+    int prim = addprim(0, "polyline", clip_a_m, clip_b);
+    int pA_clip_a = setprimattrib(0, "clip_a", prim, newclipname_a, "set");
+    int pA_clip_b = setprimattrib(0, "clip_b", prim, s@clip_b, "set");
+    int pA_blend = setprimattrib(0, "blend_durations", prim, f[]@blend_durations, "set");
+    int pA_sync = setprimattrib(0, "sync_points", prim, f[]@sync_points, "set");
+    int pA_regions = setprimattrib(0, "transition_regions", prim, f[]@transition_regions, "set");
+}
+
+if( clip_b_m != -1 )
+{
+    int prim = addprim(0, "polyline", clip_a, clip_b_m);
+    int pA_clip_a = setprimattrib(0, "clip_a", prim, s@clip_a, "set");
+    int pA_clip_b = setprimattrib(0, "clip_b", prim, newclipname_b, "set");
+    int pA_blend = setprimattrib(0, "blend_durations", prim, f[]@blend_durations, "set");
+    int pA_sync = setprimattrib(0, "sync_points", prim, f[]@sync_points, "set");
+    int pA_regions = setprimattrib(0, "transition_regions", prim, f[]@transition_regions, "set");
+}
+
+if( clip_a_m != -1 && clip_b_m != -1 )
+{
+    int prim = addprim(0, "polyline", clip_a_m, clip_b_m);
+    int pA_clip_a = setprimattrib(0, "clip_a", prim, newclipname_a, "set");
+    int pA_clip_b = setprimattrib(0, "clip_b", prim, newclipname_b, "set");
+    int pA_blend = setprimattrib(0, "blend_durations", prim, f[]@blend_durations, "set");
+    int pA_sync = setprimattrib(0, "sync_points", prim, f[]@sync_points, "set");
+    int pA_regions = setprimattrib(0, "transition_regions", prim, f[]@transition_regions, "set");
+}
+```
+
+This is a useful snippet to setup correct transitions of mirrored clips based on the transition settings configured by hand for the base clips. To use this you have to create a name attribute on your points by copying the `clipname` attribute. You can find more [[notes/Crowds#Dealing with Mirrored Clips Automatically |here]].
 
 ### Edgefalloff
 // point wrangle
