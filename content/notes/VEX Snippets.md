@@ -205,7 +205,7 @@ v@Cd = hsvtorgb(v@Cd);
 > [Chris Turner's Twitter thread about Compositing Tricks](https://twitter.com/allexceptn/status/1439253876041998346)
 
 ### Crowd Transition Mirrored Clips
-//primitive wrangle
+// primitive wrangle
 
 ```C
 string mirrorsuffix = "_m";
@@ -249,6 +249,35 @@ if( clip_a_m != -1 && clip_b_m != -1 )
 ```
 
 This is a useful snippet to setup correct transitions of mirrored clips based on the transition settings configured by hand for the base clips. To use this you have to create a name attribute on your points by copying the `clipname` attribute. You can find more [[notes/Crowds#Dealing with Mirrored Clips Automatically |here]].
+
+### Crowd Clip Properties Mirrored Clips
+// point wrangle
+
+```C
+string mirrorsuffix = "_m";
+string clipname = s@clipname;
+string newclipname = clipname + mirrorsuffix;
+
+int clip_m = nametopoint(0, newclipname);
+int clip_exists = nametopoint(1, newclipname);
+
+if( clip_m == -1 && clip_exists != -1)
+{
+    int pt = addpoint(0, set(0,0,0));
+    int pA_clipname = setpointattrib(0, "clipname", pt, newclipname);
+    int pA_agent = setpointattrib(0, "agentname", pt, s@agentname);
+    int pA_clipnamesrc = setpointattrib(0, "clipname_source", pt, newclipname);
+    int pA_blend_a = setpointattrib(0, "blend_duration_after", pt, @blend_duration_after);
+    int pA_blend_b = setpointattrib(0, "blend_duration_before", pt, @blend_duration_before);
+    int pA_loop = setpointattrib(0, "enable_looping", pt, @enable_looping);
+    int pA_gait = setpointattrib(0, "gait_speed", pt, @gait_speed);
+    int pA_loopr = setpointattrib(0, "loop_range", pt, u@loop_range);
+    int pA_sampler = setpointattrib(0, "sample_rate", pt, @sample_rate);
+    int pA_start_time = setpointattrib(0, "start_time", pt, @start_time);
+}
+```
+
+Read more [[notes/Crowds#Dealing with Mirrored Clips Automatically 2 |here]]
 
 ### Edgefalloff
 // point wrangle

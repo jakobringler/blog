@@ -91,10 +91,6 @@ WIP
 
 WIP
 
-### Looping & Blending > Clip Properties 
-
-WIP
-
 ### Clip Transitions
 
 The `Agent Clip Transition Graph` SOP lets you define, which and how these clips can blend between each other. There is a automatic function, which does a fairly good job a lot of the time. You can as well filter some of those automatic connections out by hand or create new ones that it didn't pick up by itself. I found the output of the automatic mode too confusing to work with when it comes to working with lots of clips: >15. I often end up just it up manually to be safe.
@@ -151,6 +147,46 @@ if( clip_a_m != -1 && clip_b_m != -1 )
     int pA_blend = setprimattrib(0, "blend_durations", prim, f[]@blend_durations, "set");
     int pA_sync = setprimattrib(0, "sync_points", prim, f[]@sync_points, "set");
     int pA_regions = setprimattrib(0, "transition_regions", prim, f[]@transition_regions, "set");
+}
+```
+
+### Looping & Blending > Clip Properties 
+
+You can use the `Agent Clip Properties` SOP to specify which clip can loop and how long/where to blend to avoid jumps. This creates a point per clip, which gets fed into the DOP crowd object. 
+
+##### Dealing with Mirrored Clips Automatically 2
+
+I use the following snippet combined with the one above to manage mirrores clips somewhat automatically.
+
+![[notes/images/mirror properties.png]]
+
+It's important that it has access to the tranistion graph output via the second wrangle input.
+
+As before we also need to create a `name` attribute based on the clipname.
+
+// point wrangle "create_mirror_properties"
+
+```C
+string mirrorsuffix = "_m";
+string clipname = s@clipname;
+string newclipname = clipname + mirrorsuffix;
+
+int clip_m = nametopoint(0, newclipname);
+int clip_exists = nametopoint(1, newclipname);
+
+if( clip_m == -1 && clip_exists != -1)
+{
+    int pt = addpoint(0, set(0,0,0));
+    int pA_clipname = setpointattrib(0, "clipname", pt, newclipname);
+    int pA_agent = setpointattrib(0, "agentname", pt, s@agentname);
+    int pA_clipnamesrc = setpointattrib(0, "clipname_source", pt, newclipname);
+    int pA_blend_a = setpointattrib(0, "blend_duration_after", pt, @blend_duration_after);
+    int pA_blend_b = setpointattrib(0, "blend_duration_before", pt, @blend_duration_before);
+    int pA_loop = setpointattrib(0, "enable_looping", pt, @enable_looping);
+    int pA_gait = setpointattrib(0, "gait_speed", pt, @gait_speed);
+    int pA_loopr = setpointattrib(0, "loop_range", pt, u@loop_range);
+    int pA_sampler = setpointattrib(0, "sample_rate", pt, @sample_rate);
+    int pA_start_time = setpointattrib(0, "start_time", pt, @start_time);
 }
 ```
 
