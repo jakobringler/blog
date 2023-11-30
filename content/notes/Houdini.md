@@ -37,6 +37,7 @@ tags:
 
 ### CFX / Grooming
 - [[notes/Hair and Fur |Hair & Fur]]
+- [[notes/Feathers |Feathers]]
 - [[notes/Crowds |Crowds]]
 
 ### Rendering
