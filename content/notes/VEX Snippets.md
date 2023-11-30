@@ -397,6 +397,34 @@ u = pow( 1 - u, (1 / (1 - stiffness)));
   @P = pos;
 ```
 
+### If Statements, Ternary Operations, Select Function
+// point wrangle
+
+```C
+// long and most common version
+if(value > threshold)
+{
+	value;
+}
+else
+{
+	0;
+}
+
+// Ternary
+value = (value > threshold) ? value: 0;
+// this does the same thing but as a oneliner 
+// (condition) ? ValueIfTrue: ValueIfFalse
+
+// Select Function (the fastest of the three when it comes to pure performance)
+value = select( value > threshold, value, 0);
+// select(condition, ValueIfTrue, ValueIfFalse)
+
+// @swalsch pointed out on the cgwiki discord that in this case the absolutely fastest and most elegant way would be as follows:
+value *= value>threshold;
+// which is so elegant that I had to include it. (Only works if your False Value is 0 anyways)
+```
+
 ### Isolate Overlapping Points
 // point wrangle
 
