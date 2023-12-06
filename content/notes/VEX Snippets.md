@@ -425,6 +425,41 @@ value *= value>threshold;
 // which is so elegant that I had to include it. (Only works if your False Value is 0 anyways)
 ```
 
+### Inflate Geo and Avoid Intersections / Fake Collisions 
+// point wrangle
+
+This snippet is best used by running it inside a compiled for-each loop set to "by count". Make sure to recalculate the point normals of the geometry inside the loop before the wrangle!
+
+```C
+int handle;
+int maxPoints = chi('maxPts');
+float searchDist = ch('searchDist');
+vector avgN;
+
+int n[] = nearpoints(0, v@P ,searchDist,maxPoints);
+avgN = v@N;
+for( int ii = 0 ; ii < len(n) ; ii++ ) {
+    int pt = n[ii];
+    
+    if( ii == 1 ){
+        avgN = point(0, "N", pt);        
+    }
+    if( ii > 1 ){ 
+        avgN += point(0, "N", pt);
+    }
+}
+avgN /= len(n);
+
+float dot;
+dot = dot(@N,avgN);
+dot = fit(dot,-.1,1,0,1);
+@P += v@N * ch('stepSize') * dot;
+```
+
+> [!quote] **Sources:**
+> 
+> [Jacob Clark](https://www.linkedin.com/in/jclark2900/) shared this amazing setup on a houdini discord channel. Thanks for letting me post it!
+
 ### Isolate Overlapping Points
 // point wrangle
 
