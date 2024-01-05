@@ -278,7 +278,6 @@ if( clip_m == -1 && clip_exists != -1)
 ```
 
 Read more [[notes/Crowds#Dealing with Mirrored Clips Automatically 2 |here]]
-
 ### Edgefalloff
 // point wrangle
 
@@ -356,6 +355,37 @@ vector grad = volumegradient(1, "surface", v@P);
 
 v@P -= normalize(grad) * surf;
 ```
+
+### Frustum Culling Volume Fields in DOPs
+// gas field wrangle
+
+```C
+string cam = chsop("cam");
+vector ndcP = toNDC(cam,@P);
+//vector camP = ptransform("space:camera",@P); //non perspective space if needed
+
+float mult = 1;
+
+if(chi('cull_x_negative')) mult *= ndcP.x > -ch('cam_x_neg') ;
+if(chi('cull_x_positive')) mult *= ndcP.x < 1 + ch('cam_x_pos') ;
+if(chi('cull_y_negative')) mult *= ndcP.y > -ch('cam_y_neg') ;
+if(chi('cull_y_positive')) mult *= ndcP.y < 1 + ch('cam_y_pos') ;
+if(chi('cull_z_negative')) mult *= ndcP.z < ch('cam_z_neg') ;
+if(chi('cull_z_positive')) mult *= ndcP.z > -ch('cam_z_pos') ;
+
+
+//foreach( int i; string field; split(chs('fields'))){} //maybe loop over given fields, usually density is enough
+f@density *= mult;
+f@temperature *= mult;
+f@flame *= mult;
+@Cd *= mult;
+```
+
+> [!quote] **Sources:**
+> 
+> [Lewis Taylor's Talk on Volume Efficiency](https://vimeo.com/894363970)
+
+Read more [[notes/Volumes#Frustum Rasterizing vs Frustum Culling SOPs vs Frustum Culling DOPs |here]]
 
 ### Group by N Connections
 // point wrangle
