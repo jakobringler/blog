@@ -1,11 +1,11 @@
 ---
 title: Strings in VEX
-draft: true
+draft: false
 tags:
   - houdini
   - vex
 ---
-This list was created and kindly shared by [Mattias Malmer]() on a discord I'm on. Thanks for letting me host it here:
+This list was created and kindly shared by Mattias Malmer on a discord I'm on. Thanks for letting me host it here:
 
 ```
 abspath() -- Returns the full path of a file.
