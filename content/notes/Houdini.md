@@ -27,7 +27,7 @@ tags:
 - [[notes/Collisions |Collisions]]
 - [[notes/Volumes |Volumes]]
 - [[notes/Velocity Fields |Velocity Fields]]
-- [[notes/POP |POP]]
+- [[notes/POP |POPs]]
 - [[notes/FLIP |FLIP]]
 - [[notes/VELLUM |VELLUM]]
 - [[notes/PYRO |PYRO]]
