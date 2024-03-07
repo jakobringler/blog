@@ -12,8 +12,8 @@ When I was first shown this setup it blew my mind, how simple it is.
 
 ![[notes/images/geo_NDC_mb.gif]]
 
-right: shows the viewport from a free camera
-left: shows the viewport from the perspective of cam1 circling around a couple of points moving up and down
+- left: shows the viewport from a free camera
+- right: shows the viewport from the perspective of cam1 circling around a couple of points moving up and down
 
 The geometry is just a couple of points scattered on a grid and moved with an animated noise. It doesn't circulate at all!
 
@@ -75,7 +75,7 @@ after the `add` SOP:
 
 ![[notes/images/add_trails.png]]
 
-Now you can do all your typically SOPs tricks on it:
+Now you can do all your typical SOPs tricks on it:
 - add noise
 - resample
 - color it along curve u
