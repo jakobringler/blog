@@ -33,6 +33,30 @@ v@P = primuv(1, "P", 0, uv);
 
 If you give it a primid and a uv coordinate it returns the value of the specified attribute at the uv-interpolated position. UVs in this case are not typical uv coordinates used for texturing, but special **parametric UVs**.
 
+### Interpolating quaternions (p@orient)
+
+To correctly interpolate quaternions you need spherical interpolation. The `primuv` function only interpolates linearly. To counter this issue you can convert any quaternion on your reference geometry to a `matrix3` transform and then sample it, before converting it back to a quaternion on the target geometry.
+
+This is basically the same as creating 3 vectors, which represent the quaternion, and interpolating those.
+
+You should also use `polardecomp()` on your matrix to make sure it is orthonormal and avoid getting "a wonky quaternion".
+
+the full code looks like this:
+
+// point wrangle on reference geometry
+```C
+matrix3 m  = qconvert(p@orient);
+```
+
+// point wrangle on target geometry
+```C
+matrix3 interp_matrix = primuv(1, "m", prim_num, uv);
+p@orient = quaternion(polardecomp(interp_matrix)); 
+```
+
+> [!quote] **Sources:**
+> @Reinhold pointed this out on a houdini discord. Thanks!!
+
 ### Parametric UVs vs Regular UVs
 
 While regular UVs usually span accross multiple primitives and map a 2D space to the 3D geometry, paramteric UVs are calculated automatically per primitive. They also don't exist as a `@uv` attribute.

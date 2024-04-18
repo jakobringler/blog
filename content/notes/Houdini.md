@@ -50,8 +50,9 @@ tags:
 - [[notes/HDA Parameters |Parameters]]
 
 ### USD / Solaris
-- [[notes/USD Basics |USD Basics]]
 - [[notes/Solaris Attribute Conversion |Solaris Attribute Conversion]]
+- [[notes/USD Basics |USD Basics]]
+- [[notes/USD Instancing |USD Instancing]]
 
 ### Python
 - [[notes/Python In Houdini |Python In Houdini]]
