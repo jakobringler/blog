@@ -127,8 +127,9 @@ p@orient = primuv( 1, 'orient', i@prim, @uv );
 
 The rest ist pretty much the same as described above. Calculate `xyzdist()`, use `primuv()` to fetch `@orient` from the animated geo, copy to points etc.
 
-> [!Warning] **Could Cause Issues**
-> This setup works 99% well but can cause issues with not correctly interpolated orients. I described [[notes/primuv and xyzdist#Interpolating quaternions (p@orient) |above]] how to work around it.
+> [!Warning] **Causes Issues!**
+> 
+> This setup works 95% well but can cause issues with not correctly interpolated orients. I described [[notes/primuv and xyzdist#Interpolating quaternions (p@orient) |above]] how to work around it.
 
 
 
