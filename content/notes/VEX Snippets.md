@@ -18,6 +18,27 @@ enableToc: true
 
 ## Utilities
 
+### Attribute based Probability Grouping
+//point wrangle
+
+```C
+// adjust in min max to attribute min max
+float norm = fit(@pscale, chf("in_Min"), chf("in_Max"), 0, 1);
+// control distribution with ramp
+float ramp = chramp("distribution", norm);
+// set min max percentage to 0/1 in the beginning
+// adjust for random strays
+float max = chf("max_Percentage");
+float min = chf("min_Percentage");
+float percentage = fit01(ramp, min, max);
+float rand = rand(@ptnum);
+
+if(rand<percentage)
+{
+    i@group_selected = 1;
+}
+```
+
 ### Angle between 2 Vectors
 // point wrangle 
 
