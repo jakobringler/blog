@@ -30,13 +30,11 @@ float ramp = chramp("distribution", norm);
 // adjust for random strays
 float max = chf("max_Percentage");
 float min = chf("min_Percentage");
-float percentage = fit01(ramp, min, max);
 float rand = rand(@ptnum);
+float percentage = fit01(ramp, min, max);
+percentage *= ramp;
 
-if(rand<percentage)
-{
-    i@group_selected = 1;
-}
+i@group_selected = rand<percentage;
 ```
 
 ### Angle between 2 Vectors
