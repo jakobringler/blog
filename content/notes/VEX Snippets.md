@@ -31,8 +31,7 @@ float ramp = chramp("distribution", norm);
 float max = chf("max_Percentage");
 float min = chf("min_Percentage");
 float rand = rand(@ptnum);
-float percentage = fit01(ramp, min, max);
-percentage *= ramp;
+float percentage = clamp(fit01(ramp, min, max), 0, 1);
 
 i@group_selected = rand<percentage;
 ```
