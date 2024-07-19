@@ -66,6 +66,8 @@ tags:
 - [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]
 - [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
 
+### Data & Math Tricks
+- [[notes/Volume Denoise with PCA |Volume Denoise with PCA]]
 ### Misc
 - [[notes/Today I Learned |"Today I Learned" - Compilation]]
 - [[notes/Op Operators |Op Operators]]

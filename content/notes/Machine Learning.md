@@ -38,8 +38,8 @@ tags:
 - [[notes/Autoencoders |Autoencoders]]
 - [[notes/Neural Radiance Fields |Neural Radiance Fields (NeRFs)]]
 
-
-
+##### High Dimensionality
+- [[notes/Principal Component Analysis |Principal Component Analysis (PCA)]]
 ##### Data
 - Data Synthesis
 - Data Augmentation
