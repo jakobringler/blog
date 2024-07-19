@@ -16,13 +16,13 @@ It's possible to use [[notes/Principal Component Analysis |Principal Component A
 
 ![[notes/images/PCA_blip_removal.gif]]
 
-### SOP Setup
+### Setup
 
 The setup is pretty straight forward:
 
 ![[notes/images/PCA_denoise_setup.png]]
 
-timeoffset node expression: `$F-(detail("../foreach_count1", "numiterations", 0)/2)+detail("../foreach_count1", "iteration", 0)+1`
+timeoffset expression: `$F-(detail("../foreach_count1", "numiterations", 0)/2)+detail("../foreach_count1", "iteration", 0)+1`
 
 ### How it works
 
