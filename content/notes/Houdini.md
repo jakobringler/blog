@@ -68,6 +68,8 @@ tags:
 
 ### Data & Math Tricks
 - [[notes/Volume Denoise with PCA |Volume Denoise with PCA]]
+- [[notes/Geometry Denoise with PCA |Geometry Denoise with PCA]]
+- [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA |Bounding Box Orientation on Arbitrary Point Clouds with PCA]]
 ### Misc
 - [[notes/Today I Learned |"Today I Learned" - Compilation]]
 - [[notes/Op Operators |Op Operators]]
