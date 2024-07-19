@@ -1,6 +1,6 @@
 ---
 title: Volume Denoise with PCA
-draft: true
+draft: false
 tags:
   - houdini
   - math
