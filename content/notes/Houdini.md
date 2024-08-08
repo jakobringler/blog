@@ -65,6 +65,7 @@ tags:
 	- [[notes/Vegetation and Erosion Prediction |Vegetation and Erosion Prediction on Heightfields using GANs]]
 - [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]
 - [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
+- [[notes/Storing Grooms in Volumes |Storing Grooms in Volumes]]
 
 ### Data & Math Tricks
 - [[notes/Volume Denoise with PCA |Volume Denoise with PCA]]
