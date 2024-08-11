@@ -1,6 +1,7 @@
 ---
 title: Storing Grooms in Volumes
 draft: false
+enableToc: false
 tags:
   - houdini
   - machinelearning
