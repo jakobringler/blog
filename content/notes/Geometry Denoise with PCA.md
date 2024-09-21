@@ -1,6 +1,6 @@
 ---
 title: Geometry Denoise with PCA
-draft: false
+draft: true
 tags:
   - houdini
   - math
