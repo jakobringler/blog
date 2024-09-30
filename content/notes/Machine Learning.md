@@ -11,11 +11,11 @@ enableToc: true
 - [[notes/ML Castles |ML Castles]]
 	- [[notes/Tower Sketcher |Tower Sketcher]]
 	- [[notes/Vegetation and Erosion Prediction |Vegetation & Erosion Prediction]]
+- [[notes/Geometry Denoise with PCA|PCA Dejitter]]
 - [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]]
 ### Setup Guides
 -  [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]
 - [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
-
 ## ML Basics for Technical Artists / TDs
 ##### Concepts
 - [[notes/Neural Networks |Neural Networks]]
