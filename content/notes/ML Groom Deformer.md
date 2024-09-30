@@ -54,27 +54,31 @@ In this case I'm using a combination of a quasi-static tet simulation and a de-i
 
 # more info on blending to pos
 
-![[notes/images/animate_to_pos.gif]]
+![[notes/images/animate_to_pos.gif|400]]
 #### Quasi-Static Tet Simulation (Vellum)
 To simulate the main part of the fur I build a tet cage from the guides to then simulate the volume of the fur and how it deforms. This is very useful to not have to deal with guide/guide collisions and ensures correct layering of fur by design.
 
-![[notes/images/guides_to_tets.gif]]
+![[notes/images/guides_to_tets.gif|400]]
+
+To generate the tet cage I use some simple vdb operations: 
+
+guides > VDB from particles > reshape dilate close erode >tet conform
 
 # more info on sim in vellum
 
-![[notes/images/simulate-tets-edited.gif]]
+![[notes/images/simulate-tets-edited.gif|400]]
 
-# more info on applying result to guides comparsion
+After applying the deformation with a point deform you get rid of all the jagged edges and most of the intersections
 
-![[notes/images/pointdeform_to_tet_cage.gif]]
+![[notes/images/pointdeform_to_tet_cage.gif|400]]
 #### De-Intersection through Velocity Advection 
 To clean up any left over guide intersections I advect the guides through a velocity field that is built from the normals of the skin mesh and the tangents of the guides themselves. Due to the nature of velocity fields the guides basically de-intersect themselves and the flow gets clean up a little on the way there. I first saw this technique in Animalogic's [talk](https://www.youtube.com/watch?v=NgOxluYHb54) about their automated CFX pipeline. 
 
-![[notes/images/velocity_deintersect.gif]]
+![[notes/images/velocity_deintersect.gif|400]]
 
 #### Ground Truth Examples
 
-![[notes/images/generated-guidedeformation.gif]]
+![[notes/images/generated-guidedeformation.gif|400]]
 #### Calculate Rest Displacement
 
 ![[notes/images/rest_space_disp_extraction.gif]]
