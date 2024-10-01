@@ -51,7 +51,6 @@ The result has to be deterministic / procedural / quasi-static!
 That means you can't have any inertia (think jiggle, overshoot, simulation goodness) and you should always get the same result when you rerun the same inputs. Also the inputs should influence the outputs in a smooth way. Inputs that are close to each other should generate outputs that are close to each other as well. So don't use a noise that generates wildly different results on inputs that are almost identical.
 
 In this case I'm using a combination of a quasi-static tet simulation and a de-intersection pass, in which the guides are advected through a velocity field built from the hair and skin.
-
 #### Create Pose Blend Animation
 In this step we blend over from the rest position to the target rig position to create an animation we use to drive our simulation.
 
@@ -68,7 +67,6 @@ guides > VDB from particles > reshape dilate close erode >tet conform
 The tet simulation runs in vellum on quasi-static mode. The red interior points get pinned to the animation to move the soft body with it.
 
 ![[notes/images/simulate-tets-edited.gif|400]]
-
 After applying the deformation with a point deform you get rid of all the jagged edges and most of the intersections. The volume of the whole groom gets preserved too.
 
 ![[notes/images/pointdeform_to_tet_cage.gif|400]]
@@ -76,7 +74,6 @@ After applying the deformation with a point deform you get rid of all the jagged
 To clean up any left over guide intersections I advect the guides through a velocity field that is built from the normals of the skin mesh and the tangents of the guides themselves. Due to the nature of velocity fields the guides basically de-intersect themselves and the flow gets clean up a little on the way there. I first saw this technique in Animalogic's [talk](https://www.youtube.com/watch?v=NgOxluYHb54) about their automated CFX pipeline. 
 
 ![[notes/images/velocity_deintersect.gif|400]]
-
 #### Ground Truth Examples
 After all of this we end up with one correctly deformed set of guides per pose:
 
@@ -92,9 +89,14 @@ To do this we can use the `ml example SOP` which packs each of the inputs before
 
 ![[notes/images/ml_example_slide.png]]
 ## PCA Subspace Compression
-After generating all of our pose displacements we bring in those points all together and calculate out PCA subspace.
-### Creating the Subspace
+After generating all of our pose displacements we bring in those points and merge them all together and calculate our PCA subspace.
 
+If you want to read more on Principal Component Analysis, I tried to explain it in a non mathy way [[notes/Principal Component Analysis|here]].
+### Creating the Subspace
+We let PCA do the math magic and compress our 4000 examples down to fewer components. In this case you can think of it as inventing new, but fewer blendshapes of the original displacements that (if combined correctly) can reconstruct all of your inputs accurately. The reconstruction will never be 100%, but you can reach 95%+ levels while using only a few hundred components.
+Hair guides are especially tough to compress, because of the high point count (100.000+ points). 
+
+For things like skin geometry (think muscle or cloth deformer) you can usually get away with much fewer components (64-128 possibly) and still reach high reconstruction accuracy.
 ### Calculating the Weights per Example
 
 ## Training
