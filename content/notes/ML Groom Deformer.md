@@ -11,7 +11,7 @@ In essence you want to predict how fur deforms on a character/creature using an 
 
 The setup is based on the[ ML Deformer example](https://www.sidefx.com/contentlibrary/ml-deformer-h205/) that was included in the content library with 20.5's release.
 ### The Problem
-There's a couple of common issues when deforming hair naively/linearly. Especially around the joint areas there are lots of intersection issues, where hair above the joint pierces through the fur layer below (see second position in graphic below). What you ideally would want to see is a nice layering of guides and better volume preservation. This is computationally pretty expensive and requires a simulation and sometimes one or more post processing steps to get right. 
+There's a couple of common issues when deforming hair naively/linearly. Especially around the joint areas there are lots of intersection issues, where hair above the joint pierces through the fur layer below (see second position in graphic below). What you ideally would want to see is a nice layering of guides and better volume preservation. This is computationally pretty expensive and requires a simulation and sometimes one or more post processing steps to get right.
 
 ![[notes/images/ML-groom-input-target-comparsion.gif]]
 
@@ -52,7 +52,8 @@ That means you can't have any inertia (think jiggle, overshoot, simulation goodn
 
 In this case I'm using a combination of a quasi-static tet simulation and a de-intersection pass, in which the guides are advected through a velocity field built from the hair and skin.
 
-# more info on blending to pos
+#### Create Pose Blend Animation
+In this step we blend over from the rest position to the target rig position to create an animation we use to drive our simulation.
 
 ![[notes/images/animate_to_pos.gif|400]]
 #### Quasi-Static Tet Simulation (Vellum)
@@ -60,15 +61,15 @@ To simulate the main part of the fur I build a tet cage from the guides to then 
 
 ![[notes/images/guides_to_tets.gif|400]]
 
-To generate the tet cage I use some simple vdb operations: 
+To generate the tet cage I use some simple VDB operations: 
 
 guides > VDB from particles > reshape dilate close erode >tet conform
 
-# more info on sim in vellum
+The tet simulation runs in vellum on quasi-static mode. The red interior points get pinned to the animation to move the soft body with it.
 
 ![[notes/images/simulate-tets-edited.gif|400]]
 
-After applying the deformation with a point deform you get rid of all the jagged edges and most of the intersections
+After applying the deformation with a point deform you get rid of all the jagged edges and most of the intersections. The volume of the whole groom gets preserved too.
 
 ![[notes/images/pointdeform_to_tet_cage.gif|400]]
 #### De-Intersection through Velocity Advection 
@@ -77,12 +78,19 @@ To clean up any left over guide intersections I advect the guides through a velo
 ![[notes/images/velocity_deintersect.gif|400]]
 
 #### Ground Truth Examples
+After all of this we end up with one correctly deformed set of guides per pose:
 
 ![[notes/images/generated-guidedeformation.gif|400]]
 #### Calculate Rest Displacement
+We need to then move each of these poses back into rest space using the classical guide deform node. In rest space we compute the difference of each point on the  deformed guides to the rest guides using the `shapediff SOP`. This gives us a clean point cloud we will store together with the rig position as one training example.
 
 ![[notes/images/rest_space_disp_extraction.gif]]
 ### Storing the Examples
+Once all of the poses are simulated and the displacement is generated we can start assembling what is called an `ML Example` in Houdini. Usually this is called a data sample. It consists of and input and a target and is one many of the examples you show the network during training to make it learn (hopefully) the task at hand.
+
+To do this we can use the `ml example SOP` which packs each of the inputs before packing the merged pairs again. This ensures data stays together and doesn't get out of sync somehow downstream.
+
+![[notes/images/ml_example_slide.png]]
 ## PCA Subspace Compression
 After generating all of our pose displacements we bring in those points all together and calculate out PCA subspace.
 ### Creating the Subspace
