@@ -88,24 +88,76 @@ Once all of the poses are simulated and the displacement is generated we can sta
 To do this we can use the `ml example SOP` which packs each of the inputs before packing the merged pairs again. This ensures data stays together and doesn't get out of sync somehow downstream.
 
 ![[notes/images/ml_example_slide.png]]
-## PCA Subspace Compression
+## PCA Subspace Compression and Serialization
 After generating all of our pose displacements we bring in those points and merge them all together and calculate our PCA subspace.
 
 If you want to read more on Principal Component Analysis, I tried to explain it in a non mathy way [[notes/Principal Component Analysis|here]].
 ### Creating the Subspace
-We let PCA do the math magic and compress our 4000 examples down to fewer components. In this case you can think of it as inventing new, but fewer blendshapes of the original displacements that (if combined correctly) can reconstruct all of your inputs accurately. The reconstruction will never be 100%, but you can reach 95%+ levels while using only a few hundred components.
-Hair guides are especially tough to compress, because of the high point count (100.000+ points). 
+We let PCA do the math magic and compress our 4000 examples down to fewer components. In this case you can think of it as inventing new, but fewer blendshapes of the original displacements that (if combined correctly) can reconstruct all of your inputs accurately. 
 
-For things like skin geometry (think muscle or cloth deformer) you can usually get away with much fewer components (64-128 possibly) and still reach high reconstruction accuracy.
+![[notes/images/pca_subspace_disp_slide.png]]
+
+This PCA generated point cloud is all of the new components (invented blend shapes) stacked on top of each other. They aren't separated in any way in Houdini (not packed, no ids or anything). The way you know what point belongs to which component is by knowing how big a sample is. Say our guides have 100k points. Then you can go through the list of points until you reach ptnum 100k-1. That's one component and the next starts on 100k - 200k-1 and so on.
 ### Calculating the Weights per Example
+In the next step we will calculate how much of each component (blend shape) you need to combine to reconstruct each original displacement.
 
+We loop over each example and "project" (PCA term for calculating the weights) our displacement points onto the subspace. Those weights can then later be applied to the subspace point cloud to return to the original displacement point cloud (close enough at least).
+
+![[notes/images/pca_project_slide.png]]
+
+The reconstruction will never be 100%, but you can reach 95%+ levels while using only a few hundred components.
+Hair guides are especially tricky to compress, because of the high point count (100.000+ points) and the missing relationship between individual hair stands.
+
+For things like skin geometry (think muscle or cloth deformer) you can usually get away with much fewer components (64-128 possibly) and still reach high reconstruction accuracy.\
+### Why Do All This?
+Instead of having to learn 100.000 point positions (300k float values), we only need the model to predict the weights needed for reconstruction (64, 128, 512, 1024 floats or whatever you choose). The size of our network stays small and training and inference is much faster that way. Performance would also suffer immensely, trying to map a few joint rotation values to a giant list of values.
+### Serialization
+On the other side of that for loop we serialize the joint transforms using the new `ml pose serialize SOP`. All this node does is take the 3x3 matrices stored on each joint and map the values to a -1 to 1 range and store each float of that matrix on a single point in series. You end up with a long list of float values which represent your joint rotation data. This is necessary because neural networks don't like matrices as a single input. It's easier to only work with single float values. The mapping to the -1 to 1 range makes sure it plays nicely with [[notes/Activation Functions|activation functions]] inside the network.
+
+![[notes/images/serialize_slide.png]]
+## Data Set Export
+After postprocessing all the examples we can write out the full data set to disk. The `ml example output SOP` stores all the samples together in a single data_set.raw file, which will be read by the training process later on.
 ## Training
-
+The training is completely done inside of TOPs. There isn't too much to it after having done all that preparation work, which does the heavy lifting and is the process that takes the most amount of time (to setup and to run all the simulations as well).
 ### ML Regression Train
 
-### Wedging
+![[notes/images/mlregressiontrain_TOP_slide.png]]
+The core of the whole system is the `ml regression train TOP`, which is a wrapper around pytorch under the hood. You can set all the common training parameters on there and it comes with some nice quality of life features, such as splitting your dataset automatically in training and validation data based on a ratio you can specify. 
 
+![[notes/images/mlregressiontrain_parms_slide.png]]
+
+You can also control all the parameters of the network (called hyperparameters for some obscure ml reason).
+
+The most important ones are:
+- Uniform Hidden Layers (how big is your network in width)
+- Uniform Hidden Width (how many "neurons" each layer has)
+- Batch Size (how many examples to look at before adjusting the weights > average)
+- Learning Rate (how big the steps are the model takes towards the goal / think jumping down mountain or walking carefully)
+
+To start training something you only need to make sure to specify the correct directory and name of your dataset on the files tab. By default this should be correct though. Be careful: Only specify the filename without the extension. It won't run if you add the `.raw`.
+### Wedging
+Having all those parameters available on the node in TOPs opens the door to do some wedging! This is common practice and is usually called hyperparameter tuning. You could run multiple experiments to find the right combination of parameters that give you the best performing model. The parameters I mentioned above are a good place to start wedging. For the groom deformation example here I only wedged the amount of layers and the size of each layer.
 ## Inference
+Or doing everything in reverse..
+
+Inference is the process of applying the model to new inputs. To do this we need to make sure the inputs come in in the exact same shape as they did when training.
+
+So we serialize the new rig pose before applying our model using the `ml regression inference SOP`. This SOP is just a simpler version of the `onnx inference SOP`. It takes the model and some info on what values to read/write from where (points or volumes).
+
+![[notes/images/reverseprep_slide.png]]
+
+The model then spits out a list of weights, which we can use to reconstruct out displacement based on the subspace components we saved earlier.
+
+![[notes/images/reversepca_slide.png]]
+
+Feed those two into a PCA node and let it do it's thing. The rest should be pretty straight forward. Apply the predicted displacement to our guides by adding each vector to the corresponding point on the curves.
+
+![[notes/images/reversedisp_slide.png]]
+
+That gives us a jagged looking ruffled up wolf. But if we deform it using the linear guide deform to the correct position it is based on we get a smooth looking result.
+
+![[notes/images/blend-to-pose.gif]]
+
 
 ## Results
 
