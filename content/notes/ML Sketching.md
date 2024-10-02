@@ -20,7 +20,7 @@ tags:
 ### Constraints
 ## What if? Predicting Full SDFs
 
-### Having 2 Generatos
+### Having 2 Generators
 
 ## Inference
 

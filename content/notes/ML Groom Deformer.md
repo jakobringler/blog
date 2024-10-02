@@ -154,12 +154,18 @@ Feed those two into a PCA node and let it do it's thing. The rest should be pret
 
 ![[notes/images/reversedisp_slide.png]]
 
-That gives us a jagged looking ruffled up wolf. But if we deform it using the linear guide deform to the correct position it is based on we get a smooth looking result.
+That gives us a jagged looking ruffled up wolf. But if we deform it to the correct position it is based on we get a smooth looking result.
 
 ![[notes/images/blend-to-pose.gif]]
 
+![[notes/images/runcycle.gif]]
 
+Here's a frame by frame preview where I blend back and forth with the original linear guide deform.
+
+![[notes/images/guide_blending_edited4_00057600.gif]]
 ## Results
+
+![[notes/images/compare_fullgroom_slide.png]]
 
 ![[notes/images/runcycle_sideview_02.gif]]
 
