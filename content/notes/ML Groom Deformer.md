@@ -2,24 +2,26 @@
 title: ML Groom Deformer
 draft: true
 tags:
+  - houdini
+  - machinelearning
 ---
-This is a project I presented at the Houdini HIVE Horizon event SideFX hosted in Toronto. You can watch the full presentation [here](https://www.youtube.com/watch?v=oDTResIxPeQ). I'll go into more specific setup details in this text summary.
+This is a project I presented at the Houdini HIVE Horizon event hosted by SideFX in Toronto. You can watch the full presentation [here](https://www.youtube.com/watch?v=oDTResIxPeQ). I'll go into more specific setup details in this text summary. You can find an almost identical version of the text (better formatting) on the SideFX tutorial page and download the project files from the content library.
 
 ![[notes/images/previewimage.jpg]]
 ## General Idea
-In essence you want to predict how fur deforms on a character/creature using an almost real-time machine learning model, instead of running expensive simulations/procedural setups. 
+In essence, the goal is to predict how fur deforms on a character or creature using an almost real-time machine learning model, instead of relying on expensive simulations or procedural setups.
 
-The setup is based on the[ ML Deformer example](https://www.sidefx.com/contentlibrary/ml-deformer-h205/) that was included in the content library with 20.5's release.
+The setup is based on the[ ML Deformer example](https://www.sidefx.com/contentlibrary/ml-deformer-h205/) that was included in the content library with the release of Houdini 20.5.
 ### The Problem
-There's a couple of common issues when deforming hair naively/linearly. Especially around the joint areas there are lots of intersection issues, where hair above the joint pierces through the fur layer below (see second position in graphic below). What you ideally would want to see is a nice layering of guides and better volume preservation. This is computationally pretty expensive and requires a simulation and sometimes one or more post processing steps to get right.
+There are a few common issues when deforming hair naively or linearly. Particularly around the joint areas, there are numerous intersection problems, where hair above the joint pierces through the fur layer below (see the second position in the graphic below). Ideally, you want to see a nice layering of guides and better volume preservation. Achieving this can be computationally expensive and often requires a simulation along with one or more post-processing steps to get right.
 
 ![[notes/images/ML-groom-input-target-comparsion.gif]]
 
-left to right: Rig, Default Guide Deform, Ideal Deformation (Quasi-Static Simulation), Rest Guides, Displacement in Rest Space
+Left to right: Rig, Default Guide Deform, Ideal Deformation (Quasi-Static Simulation), Rest Guides, Displacement in Rest Space
 ### The Solution
-What we want to do is predict this deformation that has to be applied to the guides based on the rig position using a ML model. The model learns to map from the rotation data of each rig joint to the approximated displacement of the guides for each pose..
+Our goal is to predict the deformation that needs to be applied to the guides based on the rig position using an ML model. The model learns to map from the rotation data of each rig joint to the approximated displacement of the guides for each pose.
 
-To do this we need loads of examples that we can show the model to learn from. The general pipeline looks something like this:
+To do this, we need a substantial number of examples for the model to learn from. The general pipeline looks something like this:
 
 ![[notes/images/mlgroom_datageneration.png]]
 
@@ -27,16 +29,16 @@ To do this we need loads of examples that we can show the model to learn from. T
 2. Generate a bunch of random poses based on these joint limits (think 3000 or more /you need good coverage)
 3. Simulate a ground truth/good guide deformation for each pose
 4. Collect all deformations and compress the data into a PCA subspace (conceptually the hard part)
-5. Store the full preprocessed data set to disk
-6. Train a ML model in TOPs (the easy part actually)
+5. Store the full preprocessed dataset to disk
+6. Train a ML model in TOPs(which is actually the easy part)
 ## Data Generation
 To generate all the training data we need 2 things to start out with:
 1. a rigged model of a character/creature (in this case the wolf)
 2. a set of guides
 ### Joint Limits
-This could be a set degree value on each joint (say 30) or better, if you have a couple motion clips for the rig, you can procedurally configure the joint limits based on the range of motion present in your clips. To do this use the `configure joint limits SOP`.
+This could be a set degree value on each joint (e.g., 30) or, preferably, if you have a few motion clips for the rig, you can procedurally configure the joint limits based on the range of motion present in your clips. To do this, use the `configure joint limits SOP`.
 ### Pose Randomization
-In Houdini 20.5 a new node to streamline this process was introduced. The `ml pose generate SOP` takes existing joint limits and generates random poses in a gaussian distribution. This means there will be more normal poses than extreme ones, which is desirable to train a model that performs well in common positions.
+In Houdini 20.5, a new node was introduced to streamline this process. The `ml pose generate SOP` takes existing joint limits and generates random poses in a Gaussian distribution. This means there will be more normal poses than extreme ones, which is desirable for training a model that performs well in common positions.
 
 ![[notes/images/ML_groom_generated_poses.gif]]
 
@@ -48,7 +50,7 @@ This step could be almost anything. There is just a few limitations:
 
 The result has to be deterministic / procedural / quasi-static!
 
-That means you can't have any inertia (think jiggle, overshoot, simulation goodness) and you should always get the same result when you rerun the same inputs. Also the inputs should influence the outputs in a smooth way. Inputs that are close to each other should generate outputs that are close to each other as well. So don't use a noise that generates wildly different results on inputs that are almost identical.
+That means you can't have any inertia (think jiggle, overshoot, simulation goodness) and you should always get the same result when you rerun the same inputs. Also the inputs should influence the outputs in a smooth way. Additionally, the relationship between inputs and outputs should be smooth; similar inputs should yield closely related results. So, let's avoid any noise that might lead to wildly different outcomes for nearly identical inputs.
 
 In this case I'm using a combination of a quasi-static tet simulation and a de-intersection pass, in which the guides are advected through a velocity field built from the hair and skin.
 #### Create Pose Blend Animation
@@ -56,7 +58,7 @@ In this step we blend over from the rest position to the target rig position to 
 
 ![[notes/images/animate_to_pos.gif|400]]
 #### Quasi-Static Tet Simulation (Vellum)
-To simulate the main part of the fur I build a tet cage from the guides to then simulate the volume of the fur and how it deforms. This is very useful to not have to deal with guide/guide collisions and ensures correct layering of fur by design.
+To simulate the main part of the fur a tet cage is built from the guides to simulate the volume of the fur and how it deforms. This is very useful for avoiding guide-to-guide collisions and ensures correct layering of fur by design.
 
 ![[notes/images/guides_to_tets.gif|400]]
 
@@ -67,11 +69,12 @@ guides > VDB from particles > reshape dilate close erode >tet conform
 The tet simulation runs in vellum on quasi-static mode. The red interior points get pinned to the animation to move the soft body with it.
 
 ![[notes/images/simulate-tets-edited.gif|400]]
+
 After applying the deformation with a point deform you get rid of all the jagged edges and most of the intersections. The volume of the whole groom gets preserved too.
 
 ![[notes/images/pointdeform_to_tet_cage.gif|400]]
 #### De-Intersection through Velocity Advection 
-To clean up any left over guide intersections I advect the guides through a velocity field that is built from the normals of the skin mesh and the tangents of the guides themselves. Due to the nature of velocity fields the guides basically de-intersect themselves and the flow gets clean up a little on the way there. I first saw this technique in Animalogic's [talk](https://www.youtube.com/watch?v=NgOxluYHb54) about their automated CFX pipeline. 
+To clean up any left over guide intersections we advect the guides through a velocity field that is built from the normals of the skin mesh and the tangents of the guides themselves. Due to the nature of velocity fields the guides basically de-intersect themselves and the flow gets clean up a little on the way there. I first saw this technique in Animalogic's [talk](https://www.youtube.com/watch?v=NgOxluYHb54) about their automated CFX pipeline. 
 
 ![[notes/images/velocity_deintersect.gif|400]]
 #### Ground Truth Examples
@@ -83,7 +86,7 @@ We need to then move each of these poses back into rest space using the classica
 
 ![[notes/images/rest_space_disp_extraction.gif]]
 ### Storing the Examples
-Once all of the poses are simulated and the displacement is generated we can start assembling what is called an `ML Example` in Houdini. Usually this is called a data sample. It consists of and input and a target and is one many of the examples you show the network during training to make it learn (hopefully) the task at hand.
+Once all of the poses are simulated and the displacement is generated we can start assembling what is called an `ML Example` in Houdini. Usually this is called a data sample. It consists of and input and a target and is one many of the examples you show the network during training to make it (hopefully) learn the task at hand.
 
 To do this we can use the `ml example SOP` which packs each of the inputs before packing the merged pairs again. This ensures data stays together and doesn't get out of sync somehow downstream.
 
@@ -97,11 +100,11 @@ We let PCA do the math magic and compress our 4000 examples down to fewer compon
 
 ![[notes/images/pca_subspace_disp_slide.png]]
 
-This PCA generated point cloud is all of the new components (invented blend shapes) stacked on top of each other. They aren't separated in any way in Houdini (not packed, no ids or anything). The way you know what point belongs to which component is by knowing how big a sample is. Say our guides have 100k points. Then you can go through the list of points until you reach ptnum 100k-1. That's one component and the next starts on 100k - 200k-1 and so on.
+This PCA-generated point cloud is all of the new components (invented blend shapes) stacked on top of each other. They aren't separated in any way in Houdini (not packed, no ids or anything). The way you know what point belongs to which component is by knowing how big a sample is. Say our guides have 100k points. Then you can go through the list of points until you reach ptnum 100k-1. That's one component and the next starts on 100k - 200k-1 and so on.
 ### Calculating the Weights per Example
 In the next step we will calculate how much of each component (blend shape) you need to combine to reconstruct each original displacement.
 
-We loop over each example and "project" (PCA term for calculating the weights) our displacement points onto the subspace. Those weights can then later be applied to the subspace point cloud to return to the original displacement point cloud (close enough at least).
+We loop over each example and let PCA "project" (PCA math term for calculating the weights) our displacement points onto the subspace. Those weights can then later be applied to the subspace point cloud to return to the original displacement point cloud (close enough at least).
 
 ![[notes/images/pca_project_slide.png]]
 
@@ -110,7 +113,7 @@ Hair guides are especially tricky to compress, because of the high point count (
 
 For things like skin geometry (think muscle or cloth deformer) you can usually get away with much fewer components (64-128 possibly) and still reach high reconstruction accuracy.\
 ### Why Do All This?
-Instead of having to learn 100.000 point positions (300k float values), we only need the model to predict the weights needed for reconstruction (64, 128, 512, 1024 floats or whatever you choose). The size of our network stays small and training and inference is much faster that way. Performance would also suffer immensely, trying to map a few joint rotation values to a giant list of values.
+Instead of having to learn 100.000 point positions (300k float values), we only need the model to predict the weights needed for reconstruction (64, 128, 512, 1024 floats or whatever you choose). The size of our network stays small and training and inference is much faster that way. Performance would also suffer immensely, trying to map a few joint rotation values to a giant list of point position values.
 ### Serialization
 On the other side of that for loop we serialize the joint transforms using the new `ml pose serialize SOP`. All this node does is take the 3x3 matrices stored on each joint and map the values to a -1 to 1 range and store each float of that matrix on a single point in series. You end up with a long list of float values which represent your joint rotation data. This is necessary because neural networks don't like matrices as a single input. It's easier to only work with single float values. The mapping to the -1 to 1 range makes sure it plays nicely with [[notes/Activation Functions|activation functions]] inside the network.
 
@@ -122,7 +125,8 @@ The training is completely done inside of TOPs. There isn't too much to it after
 ### ML Regression Train
 
 ![[notes/images/mlregressiontrain_TOP_slide.png]]
-The core of the whole system is the `ml regression train TOP`, which is a wrapper around pytorch under the hood. You can set all the common training parameters on there and it comes with some nice quality of life features, such as splitting your dataset automatically in training and validation data based on a ratio you can specify. 
+
+The core of the whole system is the `ml regression train TOP`, which is a wrapper around PyTorch under the hood. You can set all the common training parameters on there and it comes with some nice quality of life features, such as splitting your dataset automatically in training and validation data based on a ratio you can specify. 
 
 ![[notes/images/mlregressiontrain_parms_slide.png]]
 
@@ -146,26 +150,30 @@ So we serialize the new rig pose before applying our model using the `ml regress
 
 ![[notes/images/reverseprep_slide.png]]
 
-The model then spits out a list of weights, which we can use to reconstruct out displacement based on the subspace components we saved earlier.
+The model then spits out a list of weights, which we can use to reconstruct our displacement based on the subspace components we saved earlier.
 
 ![[notes/images/reversepca_slide.png]]
 
-Feed those two into a PCA node and let it do it's thing. The rest should be pretty straight forward. Apply the predicted displacement to our guides by adding each vector to the corresponding point on the curves.
+Feed those two into a PCA node and let it do it's thing. This gives us the displacement we need to deform the guides. The rest should be pretty straight forward. Apply the predicted displacement to our guides by adding each vector to the corresponding point on the curves.
 
 ![[notes/images/reversedisp_slide.png]]
 
-That gives us a jagged looking ruffled up wolf. But if we deform it to the correct position it is based on we get a smooth looking result.
+That gives us a jagged looking ruffled up wolf. But if we deform it into the correct position the displacement is based on we get a smooth looking result.
 
 ![[notes/images/blend-to-pose.gif]]
 
 ![[notes/images/runcycle.gif]]
 
-Here's a frame by frame preview where I blend back and forth with the original linear guide deform.
+Here's a frame by frame preview where I blend back and forth between the original linear guide deform and the ml prediction
 
 ![[notes/images/guide_blending_edited4_00057600.gif]]
 ## Results
 
+Here's a few more screenshots and renders of how this could affect a full groom:
+
 ![[notes/images/compare_fullgroom_slide.png]]
+
+![[notes/images/fullgroom_compare_slide.png]]
 
 ![[notes/images/runcycle_sideview_02.gif]]
 
