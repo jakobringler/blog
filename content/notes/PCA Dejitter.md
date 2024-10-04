@@ -5,7 +5,6 @@ tags:
   - houdini
   - math
 ---
-Similarly to the [[notes/Volume Denoise with PCA |Volume Denoise]] example you can also use PCA on geometry or points as long as you have a constant point count.
 ### Denoising
 
 In this example I added random noise spikes to the left Craig. The middle one is the "filtered" result and the right one is the original animation.

@@ -36,7 +36,7 @@ The setup works for all three cases and depending on the amount of noise/flicker
 
 [[notes/Principal Component Analysis |Principal Component Analysis]] can be used to extract the most "meaningful" part of any given data. PCA gives you a number of components that are ordered in importance/"impact" on the full data. Because the noise changes from frame to frame while the big volume shapes only change relatively slowly, it can be filtered relatively easily by deleting higher order components. 
 
-The same technique can be used on [[notes/Geometry Denoise with PCA |geometry]] in a similar setup,
+The same technique can be used on [[notes/PCA Dejitter|geometry]] in a similar setup,
 
 ---
 

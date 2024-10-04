@@ -11,7 +11,7 @@ enableToc: true
 - [[notes/ML Castles |ML Castles]]
 	- [[notes/Tower Sketcher |Tower Sketcher]]
 	- [[notes/Vegetation and Erosion Prediction |Vegetation & Erosion Prediction]]
-- [[notes/Geometry Denoise with PCA|PCA Dejitter]]
+- [[notes/PCA Dejitter|PCA Dejitter]]
 - [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]]
 ### Setup Guides
 -  [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]

@@ -38,6 +38,8 @@ parm inputs are remapped using sigmoid and cubic functions to control the distri
 
 ![[notes/images/mlsketch_generator_slide.png]]
 
+Other fun thing that is underrated is pack and unpack folders
+
 ![[notes/images/mlsketch_unpackfolders_slide.png]]
 ## Data Generation
 
@@ -85,9 +87,17 @@ Weighted PCA Components based on Inputs
 Adding them all together
 
 ![[notes/images/weighted-components-reconstructe.gif]]
+
+almost perfect reconstruction of the input
+with just 64 weights!  32 looked fine as well
+so we can map from 64 input values to the 8 generator parameters
 ## Data Overview
 
+this is all the data we now have
+
 ![[notes/images/training-data-02.gif]]
+
+Left to Right: Outline (Mono), Outline (SDF), SDF reconstructed from PCA, Parameter values, Geometry
 ## Training
 very simple straight forward
 ### Hyperparameter Tuning with Wedges
@@ -97,17 +107,23 @@ nothing special
 everything backwards
 ### Performance
 pretty fast, decent accuracy
+### Constraints
+colleagues started drawing random shit
 
 always some output > constrained by generator
-### Constraints
 ## What if? Predicting Full SDFs
-
+remember how sdfs compress really well with pca?
+what if instead of predicting the parameters we try to predict a full 3d sdf? 
 ### Having 2 Generators
-
+we then need 2 generators: 
+1 to generate our training data and one that turns sdfs into usable geometry with good topology and uvs
 ## Inference
-
+as before everything backwards
+double pca (project on inputs)
+reconstruct based on outputs
+generator 2 runs after
 ### Performance
-
+much slower but much more flexible
 
 ---
 
