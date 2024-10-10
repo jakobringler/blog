@@ -52,52 +52,72 @@ Because the generator is just the compiled block we need to randomize the input 
 The `invoke compiled block SOP` then runs the generator and spits out our merged geometries, which we can access using the `unpack folder SOP` as mentioned above. The rest is just some data wrangling and rasterizing the outline on the image plane before storing it together with the parameter value list as a ml example.
 
 ![[notes/images/mlsketch_datageneration_slide.png]]
+
+We use that loop to generate 5 or 10 thousand examples and store those on disk.
 ## PCA Subspace Compression
 
-what if we do pca on the inputs?
+In the [[notes/ML Groom Deformer|ML Groom Deformer]] project we used [[notes/Principal Component Analysis|PCA]] to compress all the displacement samples into a smaller subspace, which allowed us to only store the weights for each example and not the whole geometry. We can do the same with our input images this time. Storing a 64x64 px image would mean feeding the neural network an array of 4096 float values. We can compress the image space of the 10.000 examples into much fewer components. 
 
 ![[notes/images/bottle_pca_slide.png]]
 
-Reconstruction
+When reconstructing the input image above we get something like this:
 
 ![[notes/images/bottle_pcareconst_slide.png]]
 
-meh
+Which is kind of meh. You can make out the bottle shape but you get all of that unwanted wavy, noise like ghosting around it. Increasing the components surprisingly doesn't help too much to improve the reconstruction.
 
-What if SDF
+What helps a lot is converting the black and white mask into an SDF using the new COPs SDF tools. That way you don't have to deal with only 0 or 1 values and have a smooth gradual falloff around the bottle outline.
 
 ![[notes/images/bottle_tosdf_slide.png]]
 
-SDF reconstructed
+When reconstructing the SDF from a few components we get a near perfect result.
 
 ![[notes/images/bottle_sdfreconstructed_slide.png]]
 
-PCA Components
+In that case 64 components were enough, because there was a lot of overlap in the input data. Even 32 looked fine, when testing, which is a crazy compression compared to the 10k input images.
+
+A really cool side effect of PCAing your images is that you can really visualize what each component looks like:
 
 ![[notes/images/pca_components.jpg]]
 
-User Input (gets turned into an sdf under the hood)
+Because the components are ordered based on importance we can really see how much actual information each component stores before they gradually become less and less influential on the  reconstruction. In the top left we can still make out the bottle shape, while in the bottom right it almost looks like noise. 
 
+Almost!
+
+The kind of resemble [[notes/Chladni Patterns|Chladni Patterns]]. And that somewhat make sense. While Chladni Patterns are linear combinations of periodic functions our PCA components are linear combinations of all the bottle outline SDFs we provided PCA to analyze. This isn't useful but I thought a pretty cool analogy and cross reference.
+
+![[notes/images/chladni_patterns_sand.png]]
+
+Source: List of Physical Visualizations; Dragicevic, Pierre and Jansen, Yvonne; 2012; https://dataphys.org/list/chladni-plates/
+
+Having access to visually nice and somewhat sensible components also allows us to visualize how they should be weighted to reconstruct a given input.
+
+Say a user draws the following shape(,which gets converted into an sdf under the hood).
 ![[notes/images/drawn_input.png]]
-
-Weighted PCA Components based on Inputs
+Feeding this drawing together with the precomputed subspace components into the PCA SOP gives us the corresponding weights. If we apply those weights to their component counterparts we can really see which components make up the final reconstruction.
 
 ![[notes/images/pca_components_weighted.jpg]]
 
-Adding them all together
+Adding them all together gives us the reconstructed SDF... which looks correct. Yey!
 
 ![[notes/images/weighted-components-reconstructe.gif]]
 
-almost perfect reconstruction of the input
-with just 64 weights!  32 looked fine as well
-so we can map from 64 input values to the 8 generator parameters
+To recap: this working well with so few weights allows us to map from 64 input values to the 8 generator parameters instead of inputting 4096 float values.
 ## Data Overview
 
-this is all the data we now have
+This is all the data we have now:
 
-![[notes/images/training-data-02.gif]]
+![[notes/images/ml_sketch_dataset.gif]]
 
 Left to Right: Outline (Mono), Outline (SDF), SDF reconstructed from PCA, Parameter values, Geometry
+
+Our training examples are just two value lists:
+- `input`: weights that describe the bottle outline image
+- `target`: parameter values that describe the bottle shape
+
+We store those on disk as a `data_set.raw` file using the `ML Examples Output SOP` and load it in the `ML Regression Train TOP`.
+
+![[notes/images/mlsketch_mlexample_dataset_slide.png]]
 ## Training
 very simple straight forward
 ### Hyperparameter Tuning with Wedges
@@ -107,6 +127,14 @@ nothing special
 everything backwards
 ### Performance
 pretty fast, decent accuracy
+
+### COPs
+
+Combine that with some procedural COPs texture setup and you get something that looks much more involved than actually is!
+
+![[notes/images/ml-bottles-cops.gif]]
+Source: Texture Setup was done by [Dixi Wen](https://linkedin.com/in/vincent-wen-a64886123)
+
 ### Constraints
 colleagues started drawing random shit
 

@@ -29,8 +29,8 @@ I recommend taking a look at Karl Sims' [browser demo](https://www.karlsims.com/
 ---
 
 sources / further reading:
-- [Fun with Reaction-Diffusion in Houdini | Dan Wills | SIGGRAPH Asia 2019](https://www.youtube.com/watch?v=K_7TkoIkFhk)
 - [Reaction-Diffusion Tutorial - Karl Sims](http://www.karlsims.com/rd.html)
+- [Fun with Reaction-Diffusion in Houdini | Dan Wills | SIGGRAPH Asia 2019](https://www.youtube.com/watch?v=K_7TkoIkFhk)
 - [Differential curve growth - Odforce](https://forums.odforce.net/topic/25534-differential-curve-growth/)
 - [Houdini Reaction Diffusion - Odforce](https://forums.odforce.net/topic/25906-houdini-reaction-diffusion/)
 - [Diffusion - Odforce](https://forums.odforce.net/topic/24406-diffusion/)
