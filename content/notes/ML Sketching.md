@@ -125,9 +125,13 @@ some wedging
 nothing special
 ## Inference
 everything backwards
+![[notes/images/inputpcaproject_slide.png]]
+
+![[notes/images/mlsketch_weightinference_slide.png]]
+
+![[notes/images/mlsketch_parmsthroughgenerator_slide.png]]
 ### Performance
 pretty fast, decent accuracy
-
 ### COPs
 
 Combine that with some procedural COPs texture setup and you get something that looks much more involved than actually is!
@@ -138,7 +142,11 @@ Source: Texture Setup was done by [Dixi Wen](https://linkedin.com/in/vincent-wen
 ### Constraints
 colleagues started drawing random shit
 
+![[notes/images/mlsketch_colleagueinput_slide.png]]
+
 always some output > constrained by generator
+
+![[notes/images/mlsketch_drawanything_slide.png]]
 ## What if? Predicting Full SDFs
 remember how sdfs compress really well with pca?
 what if instead of predicting the parameters we try to predict a full 3d sdf? 
