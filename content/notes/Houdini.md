@@ -32,7 +32,7 @@ tags:
 ### Unusual FX / Phenomena
 - [[notes/Reaction Diffusion |Reaction Diffusion]]
 - [[notes/Strange Attractors |Strange Attractors]]
-### CFX / Grooming
+### CFX and such
 - [[notes/Hair and Fur |Hair & Fur]]
 - [[notes/Feathers |Feathers]]
 - [[notes/Crowds |Crowds]]
@@ -66,8 +66,8 @@ tags:
 ### Misc
 - [[notes/Today I Learned |"Today I Learned" - Compilation]]
 - [[notes/Op Operators |Op Operators]]
-- [[notes/OpenCL in Houdini |OpenCL]]
 - [[notes/Hscript |Hscript]]
+- [[notes/OpenCL in Houdini |OpenCL]]
 - [[notes/64-bit|Working with 64bit Data]]
 - [[notes/Alembic |Alembic]]
 ### Issues & Fixes
