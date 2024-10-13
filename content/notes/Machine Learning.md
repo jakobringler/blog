@@ -13,18 +13,18 @@ enableToc: true
 	- [[notes/Vegetation and Erosion Prediction |Vegetation & Erosion Prediction]]
 - [[notes/PCA Dejitter|PCA Dejitter]]
 - [[notes/Digit Recognition in Houdini |Digit Recognition in Houdini]]
-### Setup Guides
+### Setup Guides (old)
 -  [[notes/Setting up Anaconda and Houdini for 3D Deep Learning on Linux |Setting up Anaconda and Houdini for 3D Deep Learning on Linux]]
 - [[notes/Abusing Heightfields as Fast Image Canvas |Abusing Heightfields as Fast Image Canvas]]
 ## ML Basics for Technical Artists / TDs
 ##### Concepts
 - [[notes/Neural Networks |Neural Networks]]
 - [[notes/Tensors |Tensors]]
-- [[notes/Gradient Descent |Gradient Descent]]
-- [[notes/Back Propagation |Back Propagation]]
-- [[notes/Activation Functions|Activation Functions]]
 - [[notes/Measuring Error|Measuring Error]]
 - [[notes/Loss|Loss]]
+- [[notes/Activation Functions|Activation Functions]]
+- [[notes/Back Propagation |Back Propagation]]
+- [[notes/Gradient Descent |Gradient Descent]]
 ##### Model Archtiectures
 - [[notes/Feed Forward Networks (FFNs) |Feed Forward Networks (FFNs)]]
 - [[notes/Convolutional Neural Networks (CNNs) |Convolutional Neural Networks (CNNs)]]
@@ -32,9 +32,5 @@ enableToc: true
 - [[notes/Recurrent Neural Networks (RNNs) |Recurrent Neural Networks (RNNs)]]
 - [[notes/Autoencoders |Autoencoders]]
 - [[notes/Neural Radiance Fields |Neural Radiance Fields (NeRFs)]]
-##### High Dimensionality
+##### Dimensionality Reduction
 - [[notes/Principal Component Analysis |Principal Component Analysis (PCA)]]
-##### Data
-- Data Synthesis
-- Data Augmentation
-- Noise

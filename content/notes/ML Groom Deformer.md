@@ -168,7 +168,7 @@ Here's a frame by frame preview where I blend back and forth between the origina
 
 ![[notes/images/guide_blending_edited4_00057600.gif]]
 
-Also you can measure and visualize the error based of your prediction. The number is the [[notes/RMSE|RMSE]] (Root Mean Squared Error) of all the point differences. The color visualizes the local error compared to the ground truth.
+Also you can measure and visualize the error based of your prediction. The number is the [[notes/RMSE|RMSE]] (Root Mean Squared Error) of all the point differences. The color visualizes the local error compared to the ground truth on the right.
 
 ![[notes/images/error-vis.gif]]
 ## Results
