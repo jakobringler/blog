@@ -2,9 +2,11 @@
 title: Bounding Box Orientation on Arbitrary Point Clouds with PCA
 draft: true
 tags:
+  - houdini
+  - math
 ---
 
-
+![[notes/images/pca_bboxorientation.gif]]
 
 ---
 

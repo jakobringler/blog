@@ -38,7 +38,7 @@ parm inputs are remapped using sigmoid and cubic functions to control the distri
 
 ![[notes/images/mlsketch_generator_slide.png]]
 
-Other fun thing that is underrated is pack and unpack folders
+Another fun thing that is underrated is pack and unpack folders, which were originally introduced as part of the APEX/Character workflow.
 
 ![[notes/images/mlsketch_unpackfolders_slide.png]]
 ## Data Generation
@@ -60,7 +60,14 @@ In the [[notes/ML Groom Deformer|ML Groom Deformer]] project we used [[notes/Pri
 
 ![[notes/images/bottle_pca_slide.png]]
 
-When reconstructing the input image above we get something like this:
+The setup looks something like this:
+- on the right we unpack each input image and then analyze them using PCA
+- then we can loop through each example and project each image into the subspace to get the weights
+- We then replace the image volume in the example with only the weights (`ml_example_decompose` & `ml_example` SOPs)
+
+![[notes/images/mlsketch_parm_pca_setup.png|500]]
+
+When reconstructing (yellow node) the input image above we get something like this:
 
 ![[notes/images/bottle_pcareconst_slide.png]]
 
@@ -119,47 +126,114 @@ We store those on disk as a `data_set.raw` file using the `ML Examples Output SO
 
 ![[notes/images/mlsketch_mlexample_dataset_slide.png]]
 ## Training
-very simple straight forward
+Once the data set is prepared and stored on disk as `.raw` file the rest is pretty straight forward. 
+
+![[notes/images/mlregressiontrain_parms_slide.png]]
+
+The following paragraphs are copied 1:1 from the [[notes/ML Groom Deformer|ML Groom Deformer]] project page. 
+
+We can also control all the parameters of the network (called hyperparameters for some obscure ml reason).
+
+The most important ones are:
+- Uniform Hidden Layers (how big is your network in width)
+- Uniform Hidden Width (how many "neurons" each layer has)
+- Batch Size (how many examples to look at before adjusting the weights > average)
+- Learning Rate (how big the steps are the model takes towards the goal / think jumping down mountain or walking carefully)
+
+To start training something we only need to make sure to specify the correct directory and name of our dataset on the files tab. By default this should be correct though. Be careful: Only specify the filename without the extension. It won't run if we add the `.raw`. (last tested in H20.5.370)
 ### Hyperparameter Tuning with Wedges
-some wedging
-nothing special
+Having all those parameters available on the node in TOPs opens the door to do some wedging! This is common practice and is usually called hyperparameter tuning. You could run multiple experiments to find the right combination of parameters that give you the best performing model. The parameters I mentioned above are a good place to start wedging. For the groom deformation example here I only wedged the amount of layers and the size of each layer.
 ## Inference
-everything backwards
+As usual we need to perform all the steps of our data generation to get the input to the right shape. So we mirror the image to make sure it's symmetrical and avoid introducing error on the user side. We then convert it to an SDF using the new `mono_to_sdf COP` node. We let PCA project those weights into our subspace and calculate the weights of the input.
+
 ![[notes/images/inputpcaproject_slide.png]]
+
+We can then take those weights and feed them into inference SOP to let our model predict the correct parameters.
 
 ![[notes/images/mlsketch_weightinference_slide.png]]
 
+We turn the resulting value list into a dictionary and send it into the generator, which creates the corresponding bottle geometry.
+
+// point wrangle (creating the dict)
+
+```C
+dict parms = detail(1, "parms", 0); // input one is a template dict I read from disk
+string keys[] = keys(parms);
+dict newparms;
+newparms[keys[@ptnum]] = @value;
+setdetailattrib(0, "parms", newparms, "append");
+```
+
 ![[notes/images/mlsketch_parmsthroughgenerator_slide.png]]
 ### Performance
-pretty fast, decent accuracy
+The whole inference step is pretty fast and runs in realtime. The bottle neck here is the geometry generation step. When you hook the system up to a very involved HDA that e.g. builds ships instead of simple bottles you will run into performance problems. Might be worth having 2 different HDAs in that case:
+1. to generate the silhouette and quickly iterate on broad shapes
+2. to add detail and refine the shape in procedural ways that aren't captured in the low res drawing canvas anyways
+
+![[notes/images/drawing-demo.gif]]
 ### COPs
 
-Combine that with some procedural COPs texture setup and you get something that looks much more involved than actually is!
+Combine that with some procedural COPs texture setup and we get something that looks much more involved than actually is!
 
 ![[notes/images/ml-bottles-cops.gif]]
 Source: Texture Setup was done by [Dixi Wen](https://linkedin.com/in/vincent-wen-a64886123)
-
 ### Constraints
-colleagues started drawing random shit
+After showing this to my colleagues, they pretty much instantly started drawing random shit, which the generator can't create, due to architectural constraints.
 
 ![[notes/images/mlsketch_colleagueinput_slide.png]]
 
-always some output > constrained by generator
+This can be a downside or a benefit. We will always receive a somewhat sensible output no matter what the input was. The output is constrained by what the generator can create.
 
 ![[notes/images/mlsketch_drawanything_slide.png]]
 ## What if? Predicting Full SDFs
-remember how sdfs compress really well with pca?
-what if instead of predicting the parameters we try to predict a full 3d sdf? 
+Remember how SDFs compress really well with PCA? What if instead of learning to predict the parameters we try to predict a full 3d SDF? 
+
+![[notes/images/mlsketch_predictingsdf_slide.png]]
+
+Just like before we PCA compress the inputs. For this approach however, we also do it for the outputs:
+
+![[notes/images/mlsketch_sdf_pca_setup.png|500]]
+
+The 3D reconstruction looks like a fog volume:
+
+![[notes/images/sdftarget.png|300]]
+
+After converting it and cleaning it up a bit using vdb meshing techniques and then projecting clean uv'ed geometry onto it we get our bottle.
+
+![[notes/images/mlsketch_sdfresult_slide.png]]
 ### Having 2 Generators
-we then need 2 generators: 
-1 to generate our training data and one that turns sdfs into usable geometry with good topology and uvs
+The main downside of this approach is that we need 2 generators. One to generate our training data and one that turns SDFs into usable geometry with good topology and uvs. That is also the most constraining part. Not every object can be converted so easily to good topology and a bottle is one of the easiest shapes.
+
+![[notes/images/mlsketch_doublegenerator_slide.png]]
+
+The left is the original generator, which is used to create the training data. Instead of storing the parameter values as targets it stores the fog SDF that is derived from the bottle geometry.
 ## Inference
-as before everything backwards
-double pca (project on inputs)
-reconstruct based on outputs
-generator 2 runs after
+For the inputs we do the same (mirror, to SDF, PCA projection) thing we did before. We then run the outputs through PCA to reconstruct the 3D SDF based on the predicted weights. 
+
+![[notes/images/mlsketch_sdfinference_slide.png]]
+
+We feed this SDF into our second generator to turn it into clean geometry.
 ### Performance
-much slower but much more flexible
+
+Accuracy and flexibility are much better, however speed suffers.
+
+![[notes/images/sdf_pred_doubledraw.gif]]
+
+![[notes/images/mlsketch_sdfmosaic_slide.gif]]
+
+Because the second generator is the bottle neck the speed is much slower compared to the earlier version. However it's outputs are much more flexible and you can draw "in between" shapes that didn't even exist in the training data. There are still problems with sharp turns and overhangs that could be improved upon with other techniques or better training data.
+## Conclusion
+
+The project builds on top of techniques learned, while building the [[notes/ML Groom Deformer|ML Groom Deformer]] and extends concepts used for the [[notes/Tower Sketcher|Tower Sketcher]] project, which was part of my bachelor's thesis.
+
+The setup could be extended in the future through the use of [[notes/Convolutional Neural Networks (CNNs)|CNNs]] and sparse network architectures to increase inference speed and improve accuracy.
+## Credits
+
+Thanks to the amazing team at SideFX for all the help with this project!
+
+Support on All Fronts: Fianna Wong
+ML Tools Developer: Michiel Hagedoorn
+COPs Bottle Texture Setup: Dixi Wen
 
 ---
 

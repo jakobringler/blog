@@ -130,15 +130,15 @@ The core of the whole system is the `ml regression train TOP`, which is a wrappe
 
 ![[notes/images/mlregressiontrain_parms_slide.png]]
 
-You can also control all the parameters of the network (called hyperparameters for some obscure ml reason).
+We can also control all the parameters of the network (called hyperparameters for some obscure ml reason).
 
 The most important ones are:
-- Uniform Hidden Layers (how big is your network in width)
+- Uniform Hidden Layers (how big is our network in width)
 - Uniform Hidden Width (how many "neurons" each layer has)
 - Batch Size (how many examples to look at before adjusting the weights > average)
 - Learning Rate (how big the steps are the model takes towards the goal / think jumping down mountain or walking carefully)
 
-To start training something you only need to make sure to specify the correct directory and name of your dataset on the files tab. By default this should be correct though. Be careful: Only specify the filename without the extension. It won't run if you add the `.raw`.
+To start training something we only need to make sure to specify the correct directory and name of our dataset on the files tab. By default this should be correct though. Be careful: Only specify the filename without the extension. It won't run if we add the `.raw`. (last tested in H20.5.370)
 ### Wedging
 Having all those parameters available on the node in TOPs opens the door to do some wedging! This is common practice and is usually called hyperparameter tuning. You could run multiple experiments to find the right combination of parameters that give you the best performing model. The parameters I mentioned above are a good place to start wedging. For the groom deformation example here I only wedged the amount of layers and the size of each layer.
 ## Inference
@@ -168,7 +168,7 @@ Here's a frame by frame preview where I blend back and forth between the origina
 
 ![[notes/images/guide_blending_edited4_00057600.gif]]
 
-Also you can measure and visualize the error based of your prediction. The number is the [[notes/RMSE|RMSE]] (Root Mean Squared Error) of all the point differences. The color visualizes the local error compared to the ground truth on the right.
+Also you can measure and visualize the error of your prediction. The number is the [[notes/RMSE|RMSE]] (Root Mean Squared Error) of all the point differences. The color visualizes the local error compared to the ground truth on the right.
 
 ![[notes/images/error-vis.gif]]
 ## Results
@@ -180,6 +180,15 @@ Here's a few more screenshots and renders of how this could affect a full groom:
 ![[notes/images/fullgroom_compare_slide.png]]
 
 ![[notes/images/runcycle_sideview_02.gif]]
+
+## Credits
+
+Thanks to the amazing team at SideFX for all the help with this project!
+
+Support on All Fronts: Fianna Wong
+ML Tools Developer: Michiel Hagedoorn
+Wolf Model & Groom: Lorena E'Vers
+CFX Help: Kai Stavginski & Liesbeth Levick
 
 ---
 

@@ -58,11 +58,12 @@ In 2d this isn’t very useful and doesn’t compress anything, but in highdimen
 
 Not important to understand the math completely but how to use it and what its good for
 
-### How is this useful for CG?
+## How is this useful for CG?
 
+### General CG
 - [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA|Bounding Box Orientation on Arbitrary Point Clouds with PCA]]
 - [[notes/PCA Dejitter|PCA Geometry Dejitter]]
-- [[notes/PCA Volume Denoise|PCA Volume Denoise]]
+### ML in Houdini
 - [[notes/ML Groom Deformer|ML Groom Deformer]]
 - [[notes/ML Sketching|ML Sketching]]
 

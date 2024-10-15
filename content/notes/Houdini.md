@@ -62,7 +62,6 @@ tags:
 ### Data & Math Tricks
 - [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA |Bounding Box Orientation on Arbitrary Point Clouds with PCA]]
 - [[notes/PCA Dejitter|PCA Geometry Dejitter]]
-- [[notes/PCA Volume Denoise|PCA Volume Denoising]]
 ### Misc
 - [[notes/Today I Learned |"Today I Learned" - Compilation]]
 - [[notes/Op Operators |Op Operators]]

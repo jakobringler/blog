@@ -34,37 +34,29 @@ Root Mean Squared Error (RMSE) is a widely used metric in statistics and machine
 float input;
 float output;
 
-float error = output - input;
-@squarederror = pow(error, 2);
-@rse = sqrt(@squarederror); // this is the local error 
+@e = output - input;
+@se = pow(@e, 2);
+
+// @e is the local error
 ```
+
+Promote the attribute to detail using average mode and rename it to `@mse`
 
 // detail wrangle
 
 ```C
-float value;
-float values[];
-
-for (int i=0; i<@numpt; i++)
-{
-	value = point(geoself(), "squarederror", i);
-	append(values,value);
-}
-  
-float mse = avg(values);
-
-@rmse = sqrt(mse);
+@rmse = sqrt(@mse);
 ```
 
-(alternatively you can promote the attribute to detail using average mode)
+### What RMSE Tells Us
 
-### What RMSE Tells You
-
-- **Units**: The RMSE is in the same units as whatever you’re predicting, making it easier to understand.
+- **Units**: The RMSE is in the same units as whatever we’re predicting, making it easier to understand.
 - **Sensitivity**: RMSE really pays attention to outliers; big errors can swing the RMSE value quite a bit.
-- **Comparison**: A lower RMSE means your model is doing a better job. It’s often compared to other metrics, like Mean Absolute Error (MAE), to get a fuller picture of performance.
+- **Comparison**: A lower RMSE means our model is doing a better job. It’s often compared to other metrics, like Mean Absolute Error (MAE), to get a fuller picture of performance.
 
-In short, RMSE is a handy way to summarize how accurate your predictions are, especially in regression tasks!
+In short, RMSE is a handy way to summarize how accurate our predictions are, especially in regression tasks!
+
+Here's a list of other ways to measure error: [[notes/Measuring Error|Measuring Error]]
 
 ---
 

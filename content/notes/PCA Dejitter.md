@@ -5,34 +5,64 @@ tags:
   - houdini
   - math
 ---
-### Denoising
+This is one of the projects I presented at the Houdini HIVE Horizon event hosted by SideFX in Toronto. You can watch the full presentation [here](https://www.youtube.com/watch?v=oDTResIxPeQ). I'll go into more specific setup details in this text summary. You can find an almost identical version of the text (better formatting) on the SideFX tutorial page and download the project files from the content library.
 
-In this example I added random noise spikes to the left Craig. The middle one is the "filtered" result and the right one is the original animation.
+If you haven't heard of [[notes/Principal Component Analysis|PCA]] yet, I recommend taking a look at the [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA|Bounding Box Orientation]] example first.
+## The Problem
 
-![[notes/images/PCA_geo_noise_removal.gif]]
+Sometimes you get jittery geometry from faulty simulations or external capture processes and don't have time or the option to resim/recapture/do it the right way. We can then use [[notes/Principal Component Analysis|Principal Component Analysis]] to de-jitter geometry. 
 
-It's not perfect, but the idea should work pretty well for less extreme noise/jitter.
-### Setup
+![[notes/images/pca_cloth_dejitter_rendered_guideresult_v01.gif|500]]
 
-The setup is slightly more involved than before.
+Here we can see the jittery input on the left and the result of PCA filtering on the right.
+## The Solution
 
-![[notes/images/PCA_geo_denoise_setup.png]]
+The content library file looks pretty involved, but the actual important part is in the 3 network boxes in the middle (purple, green, other purple?). Those are also exactly the same setup. The only thing that changes is what you feed into it. More on that later!
 
-timeoffset expression: `$F-(detail("../foreach_count2", "numiterations", 0)/2)+detail("../foreach_count2", "iteration", 0)+1`
+![[notes/images/pca_dejitter_wholenetwork.png]]
+### PCA Setup
 
-compute_components expression: `npoints(0)/ch("../foreach_end2/iterations")`
+![[notes/images/pca_setup_clean.png|500]]
 
-compute_weights expression: `npoints(0)`
-![[notes/images/geo_denoise_pca2.png]]
+### Why does this work
 
-reconstruct expression: `ch("../compute_components/stride")`
-![[notes/images/geo_denoise_pca3.png]]
-### How it works
+timeshift
 
-1. Use a for loop set to `feedback merge` and bring in multiple geometry frames at one point in time. The iteration number of the for loop defines how many frames of past and future data will be fed to the PCA node.
-2. the first PCA node analysis the data and spits out a number of components. (typically 1 is enough)
-3. The other two PCA nodes rebuild (project and reconstruct) the original point counts in the right position in space
-4. The only thing left to do is to copy the new `P` values to the geometry in a simple wrangle and recalculate the normals
+`$F-(detail("../foreach_count5", "numiterations", 0)/2)+detail("../foreach_count5", "iteration", 0)`
+
+
+![[notes/images/pca_stackedview_slide.jpg]]
+
+
+![[notes/images/pca_reconstruction.png]]
+
+![[notes/images/pca_blendshapesamples.png]]
+
+## The Result
+As you can see below, we got rid of most of the jitter. Depending on how aggressive we dial the settings in, we can remove even more.
+
+![[notes/images/pca_cloth_dejitter_rendered_naive_v01.gif|500]]
+
+There is one issue though. By removing all the small movements and quick direction changes we also de-jitter the animation itself, which you can especially tell when the model claps and the hands seemingly get stuck in the air. 
+## Improvements
+
+There are some workarounds that we can do to counteract that problem, but we would need a full rig to do so. This is external data and I only have alembic cashes of the character and the cloths. That is enough however to save us. 
+
+I will first go over how this would ideally work when we would have the rig and demonstrate that on a simple example. 
+### De-Jittering in Rest Space
+
+
+### De-Jittering with a Guide
+
+For the cloth simulation example that would look something like this:
+
+![[notes/images/pca-cloth-dejitter-newclothes-03.gif]]
+## Credits
+
+Thanks to the amazing team at SideFX for all the help with this project!
+
+Support on All Fronts: Fianna Wong
+ML Tools Developer: Michiel Hagedoorn
 
 ---
 
