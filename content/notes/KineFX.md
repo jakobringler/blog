@@ -46,6 +46,50 @@ It gives quite convincing results without having to sim anything.
 
 ![[notes/images/Tree_Chop_SecondaryMotion.gif]]
 
+## Deformation in Rest Space
+
+Sometimes you want to see/work with a simulation/deformation result in rest space. To do this you need to create a local coordinate system for every point and then deform that with geometry. 
+
+![[notes/images/restspacedeformation.gif]]
+
+> [!quote] **Sources:**
+> 
+>This setup was shown to me by Michiel Hagedoorn @ SideFX, while I was working on the [[notes/ML Groom Deformer|ML Groom Deformer]] project and it comes in handy every once in a while!
+
+![[notes/images/extract_deformation_restspace.png|400]]
+
+// point wrangle "apply_local_coords"
+
+```C
+v@axis_x = set(1, 0, 0);
+v@axis_y = set(0, 1, 0);
+v@axis_z = set(0, 0, 1);
+
+setattribtypeinfo(geoself(), 'point', 'axis_x', 'vector');
+setattribtypeinfo(geoself(), 'point', 'axis_y', 'vector');
+setattribtypeinfo(geoself(), 'point', 'axis_z', 'vector');
+```
+
+You can then introduce some sort of deformation that goes beyond the linear blend skinning one. In this case I'm using the wrinkle deformer, but this could be anything really (Vellum Sim etc.).
+
+// point wrangle "extract_local_disp"
+
+```C
+matrix3 local_from_global = invert( set( v@axis_x, v@axis_y, v@axis_z ) );
+vector global_delta = point(1,"P",@ptnum) - v@P;
+vector local_delta = global_delta * local_from_global;
+
+v@P = local_delta;
+```
+
+// point wrangle "apply_disp"
+
+```C
+v@P += point(1, "P", @ptnum);
+```
+
+The resulting geometry has all the deformation data on it with the input animation being removed. You can easily apply any effects and processing now and use a default bonedeform to move it back to the correct pose after.
+##### Download: [File](https://github.com/jakobringler/blog/tree/hugo/content/notes/sharedfiles/deformation_in_restspace.hip)
 ## Misc
 
 ### Display Rig Controls on HDA Viewer State

@@ -54,6 +54,8 @@ I will first go over how this would ideally work when we would have the rig and 
 
 ### De-Jittering with a Guide
 
+![[notes/images/dejitter_simple_compared.png]]
+
 For the cloth simulation example that would look something like this:
 
 ![[notes/images/pca-cloth-dejitter-newclothes-03.gif]]
