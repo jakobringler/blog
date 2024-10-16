@@ -4,7 +4,6 @@ draft: false
 tags:
 - houdini
 ---
-
 ## Work with the Alembic Hierarchy
 
 ### Building Path Hierarchy
@@ -44,9 +43,42 @@ Say you have a few paths that also include some material information:
 - /GEO/Interior/Leather/GEO
 
 You can use that to assign a glass material to the relevant parts by using `*Glass*` in the group field.
-
 ## Hiccups
 
+### Getting the Time Range, Startframe and Endframe
+
+There is no time range intrinsic available by default so we need to write 3 lines of python to read the range from the file itself.
+
+// python shell
+
+```Python
+import _alembic_hom_extensions as abc 
+abcPath = r"C:/Path/To/Cache.abc" 
+timeRange = abc.alembicTimeRange(abcPath)
+```
+
+You can make it more procedural by first getting the filename automatically. I read it from the instrinsics first and stored it in a regular attribute, but I'm sure you could do that in python too.
+
+![[notes/images/getaabcstartendframe.png]]
+
+// python SOP
+
+```Python
+import _alembic_hom_extensions as abc
+
+node = hou.pwd()
+geo = node.geometry()
+fps = hou.fps()
+
+abcPath = geo.primStringAttribValues('abcfilename')[0]
+abcTimeRange = abc.alembicTimeRange(abcPath)
+
+startframe = int(abcTimeRange[0] * fps);
+endframe = int(abcTimeRange[1] * fps);
+
+geo.prims()[0].setAttribValue("startframe", startframe)
+geo.prims()[0].setAttribValue("endframe", endframe)
+```
 ### Vertex Colors to Maya
 
 Make sure to:
@@ -59,10 +91,6 @@ Make sure to:
 - Qualifier type has to be color (Clr) see below
 
 ![[notes/images/4fltColor.png]]
-
-## Transforms & Instances
-
-WIP
 
 ---
 

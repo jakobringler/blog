@@ -5,12 +5,6 @@ tags:
   - houdini
   - cfx
 ---
-## Concepts
-
-## Creation
-
-## Grooming
-
 ### Interpolation
 
 This setup was shared by Jonas Sorgenfrei for his Houdini 20 HIVE talk about feathers. The Vex snippets are very useful and quite reusable:
@@ -55,11 +49,6 @@ if(len(s[]@templatenames) == 0)
     push(f[]@templateweights, 1);
 }
 ```
-
-### 
-
-## Simulation
-
 
 ---
 

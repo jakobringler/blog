@@ -17,7 +17,6 @@ tags:
 - [[notes/Deformation Wrangle vs Attribute Wrangle |Deformation Wrangle vs Attribute Wrangle]]
 ### SOPs
 - [[notes/SOP Solver |SOP Solver]]
-- [[notes/KineFX |KineFX]]
 ### FX
 - [[notes/General Workflow Tips |General Workflow Tips]]
 - [[notes/Vocabulary |Vocabulary]]
@@ -32,6 +31,8 @@ tags:
 ### Unusual FX / Phenomena
 - [[notes/Reaction Diffusion |Reaction Diffusion]]
 - [[notes/Strange Attractors |Strange Attractors]]
+### Characters, Rigs etc.
+- [[notes/KineFX |KineFX]]
 ### CFX and such
 - [[notes/Hair and Fur |Hair & Fur]]
 - [[notes/Feathers |Feathers]]
