@@ -23,21 +23,44 @@ The content library file looks pretty involved, but the actual important part is
 ### PCA Setup
 
 ![[notes/images/pca_setup_clean.png|500]]
-
-### Why does this work
-
-timeshift
-
-`$F-(detail("../foreach_count5", "numiterations", 0)/2)+detail("../foreach_count5", "iteration", 0)`
-
+#### Merging Frames
+We need to merge all the frames we want to look at. Ideally the number of frames should be uneven (say 7: 3 past frame, the current one and 3 future frames). That we get an equal amount of past and future frames. The output of the for loop is the different geometries stacked on top of each other.
 
 ![[notes/images/pca_stackedview_slide.jpg]]
 
+The timeshift uses this expression to access the frames based on the iteration count we set.
 
-![[notes/images/pca_reconstruction.png]]
+```C
+$F-(detail("../foreach_count5", "numiterations", 0)/2)+detail("../foreach_count5", "iteration", 0)
+```
+#### Computing Components
+Next we let PCA compute the components. In the [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA|Bounding Box Orientation]] Example each sample was a single point in 3D space. Now one sample is the entire geometry of a single frame. So in this case we have 7 samples (7 frames). We give PCA a giant list of all the point position vectors and let it figure out what is the most important bit of information across all the samples given. 
 
 ![[notes/images/pca_blendshapesamples.png]]
 
+Because the geometries we feed into PCA don't have id or piece attributes or any other information on which point belongs to which "pose"/frame, we need to tell the PCA node how big each sample is:
+
+// Expression on "Points per Sample" Parameter
+
+```C
+npoints(0)/ch("../foreach_end3/iterations")
+```
+
+ PCA then "invents" one or more components that can be thought of as blendshapes. Creating one component creates one blendshape that best fits all of the input samples. Creating more gives you multiple blendshapes that you can later mix and match to rebuild a specific pose.
+#### Projecting and Reconstructing
+
+// point wrangle "weightdecay"
+
+```C
+float range = 1-(float)@ptnum/@numpt;
+float weightdecay = chramp("decay", range);
+@weight *= weightdecay;
+```
+
+![[notes/images/pca_reconstruction.png]]
+### Why does this work
+The approach works because the components PCA generates are ordered by importance. Or in other words influence they have on the end result. We can abuse this to filter out less important information, by discarding higher order components. The noise/jitter that is present in the input data changes a lot frame by frame and isn't really important for the general shape. The assumption is that this less important information will be stored in higher order components.
+Reconstructing the geometry without those removes the fine grained movements, noise and jitter.
 ## The Result
 As you can see below, we got rid of most of the jitter. Depending on how aggressive we dial the settings in, we can remove even more.
 
