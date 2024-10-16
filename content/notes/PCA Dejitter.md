@@ -22,9 +22,11 @@ The content library file looks pretty involved, but the actual important part is
 ![[notes/images/pca_dejitter_wholenetwork.png]]
 ### PCA Setup
 
+The core of this setup consists of just a few nodes and the PCA node is used 3 times for different steps. De-jittering and filtering usually works by comparing past and future frames and finding which part of your data is the signal you want to keep and which part is the noise you want to remove.
+
 ![[notes/images/pca_setup_clean.png|500]]
 #### Merging Frames
-We need to merge all the frames we want to look at. Ideally the number of frames should be uneven (say 7: 3 past frame, the current one and 3 future frames). That we get an equal amount of past and future frames. The output of the for loop is the different geometries stacked on top of each other.
+First we need to merge all the frames we want to look at. Ideally the number of frames should be uneven (say 7: 3 past frame, the current one and 3 future frames). That we get an equal amount of past and future frames. The output of the for loop is the different geometries stacked on top of each other.
 
 ![[notes/images/pca_stackedview_slide.jpg]]
 
@@ -34,7 +36,7 @@ The timeshift uses this expression to access the frames based on the iteration c
 $F-(detail("../foreach_count5", "numiterations", 0)/2)+detail("../foreach_count5", "iteration", 0)
 ```
 #### Computing Components
-Next we let PCA compute the components. In the [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA|Bounding Box Orientation]] Example each sample was a single point in 3D space. Now one sample is the entire geometry of a single frame. So in this case we have 7 samples (7 frames). We give PCA a giant list of all the point position vectors and let it figure out what is the most important bit of information across all the samples given. 
+Next we let PCA compute the components. In the [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA|Bounding Box Orientation]] Example each sample was a single point in 3D space. Now one sample is the entire geometry of a single frame (top row). So in this case we have 7 samples (7 frames). We give PCA a giant list of all the point position vectors (bottom row) and let it figure out what is the most important bit of information across all the samples given. 
 
 ![[notes/images/pca_blendshapesamples.png]]
 
@@ -48,6 +50,13 @@ npoints(0)/ch("../foreach_end3/iterations")
 
  PCA then "invents" one or more components that can be thought of as blendshapes. Creating one component creates one blendshape that best fits all of the input samples. Creating more gives you multiple blendshapes that you can later mix and match to rebuild a specific pose.
 #### Projecting and Reconstructing
+Now that we have our components we can compute a weight for each by projecting our original pose onto the new subspace. Sounds complicated, but all you need to do is pipe your geometry to the first input and the components to the second one. Set the node to `project` and set the `points per sample` to the geometry point count (`npoints(0)`). Make sure to disable `include mean weight`, which is the 0th component (an average of all other ones). 
+
+We now have a list of weights that correspond to the components. This can be thought of as blendshape weights in this case. Applying those and adding the components together should return an almost identical result to the input.
+
+![[notes/images/pca_dejitter_weights.png]]
+
+We now multiply those weights with a number, so that the higher order components get less or no influence.
 
 // point wrangle "weightdecay"
 
@@ -57,12 +66,23 @@ float weightdecay = chramp("decay", range);
 @weight *= weightdecay;
 ```
 
+Then we can use those new modified weights and reconstruct the input point positions with them. To do that just set the mode to `reconstruct` and set the `points per sample` to the point count again. Also make sure to disable `include mean weight`. Again!
+
 ![[notes/images/pca_reconstruction.png]]
+
+That returns this point cloud and if we copy the point positions to the input geometry, we have a de-jittered animation.
+
+// point wrangle "apply_P"
+
+```C
+v@P = point(1, "P", @ptnum);
+```
+
 ### Why does this work
-The approach works because the components PCA generates are ordered by importance. Or in other words influence they have on the end result. We can abuse this to filter out less important information, by discarding higher order components. The noise/jitter that is present in the input data changes a lot frame by frame and isn't really important for the general shape. The assumption is that this less important information will be stored in higher order components.
+The approach works because the components PCA generates are ordered by importance. Or in other words by the influence they have on the end result. We can abuse this to filter out less important information, by discarding higher order components. The noise/jitter that is present in the input data changes a lot frame by frame and isn't really important for the general shape. The assumption is that this less important information will be stored in higher order components.
 Reconstructing the geometry without those removes the fine grained movements, noise and jitter.
 ## The Result
-As you can see below, we got rid of most of the jitter. Depending on how aggressive we dial the settings in, we can remove even more.
+As you can see below, we got rid of most of the jitter. Depending on how aggressive we dial the settings in, we can remove even more movement.
 
 ![[notes/images/pca_cloth_dejitter_rendered_naive_v01.gif|500]]
 
