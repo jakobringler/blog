@@ -19,9 +19,9 @@ All image files have to live in `../content/notes/images`
 
 You can scale Images by adding max pixel width value to the end of the path:
 
-`![[notes/images/imagetensor.png|400]]`
+`![[notes/images/imagetensor.png|500]]`
 
-![[notes/images/imagetensor.png|400]]
+![[notes/images/imagetensor.png|500]]
 
 ## Code Blocks
 
@@ -58,8 +58,12 @@ will be rendered like this:
 
 you can have fancy callout boxes using this format:
 
+![[notes/images/md_formatting_callout.png]]
+
+I had to take a screenshot because the website doesn't render the tag at all. just insert it down here instead of TAG: `[!tip]`
+
 ```
-> \[!tip] **Tips**
+> TAG **Tips**
 > 
 > Hot Tip!
 ```
@@ -81,6 +85,7 @@ beside `tip` you can also put:
 > Hot Tip!
 
 > [!quote] **Sources:**
+> 
 > Important Source!
 
 ## Downloads
