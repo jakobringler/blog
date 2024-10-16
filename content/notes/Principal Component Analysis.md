@@ -1,6 +1,6 @@
 ---
 title: Principal Component Analysis
-draft: true
+draft: false
 tags:
   - machinelearning
   - math

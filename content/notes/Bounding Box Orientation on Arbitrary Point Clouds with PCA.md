@@ -7,7 +7,7 @@ tags:
 ---
 The most straight forward utility tool you can build using [[notes/Principal Component Analysis|PCA]] is an automatic bbox generator. Even though the bound SOP can do the exact same thing, it's still a nice exercise that helps you wrap your head around what principal components are and how you can use them.
 
-I recommend reading the post on [[notes/Principal Component Analysis|Principal Component Analysis]] first!
+I recommend reading the article on [[notes/Principal Component Analysis|Principal Component Analysis]] first!
 
 This works because the first PCA component gives you the direction, where the most variance occurs in your data. You could think of this as the longest distance through your point cloud. The components are ordered by importance and a perpendicular to each other. So the second one is the direction that has the second most variance and so on.
 

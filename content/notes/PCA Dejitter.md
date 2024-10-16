@@ -7,7 +7,7 @@ tags:
 ---
 This is one of the projects I presented at the Houdini HIVE Horizon event hosted by SideFX in Toronto. You can watch the full presentation [here](https://www.youtube.com/watch?v=oDTResIxPeQ). I'll go into more specific setup details in this text summary. You can find an almost identical version of the text (better formatting) on the SideFX tutorial page and download the project files from the content library.
 
-If you haven't heard of [[notes/Principal Component Analysis|PCA]] yet, I recommend taking a look at the [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA|Bounding Box Orientation]] example first.
+If you haven't heard of [[notes/Principal Component Analysis|PCA]] yet, I recommend taking a look at the article on [[notes/Principal Component Analysis|it]] and the [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA|Bounding Box Orientation]] example first.
 ## The Problem
 
 Sometimes you get jittery geometry from faulty simulations or external capture processes and don't have time or the option to resim/recapture/do it the right way. We can then use [[notes/Principal Component Analysis|Principal Component Analysis]] to de-jitter geometry. 
