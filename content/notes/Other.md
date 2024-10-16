@@ -15,5 +15,5 @@ tags:
 ### Tech & Programming
 - [[notes/Bash and Git |Bash and Git]]
 
-### Productivity
+### Contributing
 - [[notes/Obsidian and Quartz |Obsidian and Quartz]]

@@ -1,10 +1,9 @@
 ---
-title: fxnotes formatting
+title: FX Notes Formatting
 draft: false
 tags:
   - obsidian
 ---
-
 ## Headline
 
 text should start here
@@ -14,16 +13,22 @@ text should start here
 #### Subsubheadline if really necessary
 ## Images
 
-![[notes/images/200w.gif]]
+All image files have to live in `../content/notes/images`
+
+![[notes/images/imagetensor.png]]
 
 You can scale Images by adding max pixel width value to the end of the path:
 
-`![[notes/images/200w.gif|100]]`
+`![[notes/images/imagetensor.png|150]]`
 
-![[notes/images/200w.gif|100]]
+![[notes/images/imagetensor.png|150]]
 ## Code Blocks
 
 use C style colors for vex
+
+specify what type of wrangle this goes in and the name it has (e.g. in the screenshot above)
+
+// point wrangle "wrangle_name"
 
 ```C
 vex
@@ -36,6 +41,12 @@ print("Hello Houdini")
 
 Attributes and other important stuff can be in single backticks:
 
+```
+`attributes`
+```
+
+will be rendered like this:
+
 `attributes` 
 ## Links
 
@@ -44,8 +55,10 @@ Attributes and other important stuff can be in single backticks:
 [External Link](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 ## Callouts
 
+you can have fancy callout boxes using this format:
+
 ```
-> [!tip] **Tips**
+> \[!tip] **Tips**
 > 
 > Hot Tip!
 ```
@@ -69,23 +82,15 @@ beside `tip` you can also put:
 > [!quote] **Sources:**
 > Important Source!
 
-```
-> [!danger] You can put Images:
-> ![[notes/images/200w.gif|100]]
-```
+## Downloads
 
-> [!danger] You can put Images:
-> ![[notes/images/200w.gif|100]]
+shared files have to live in `../content/notes/sharedfiles`
 
 ```
-> [!warning] And Nest them:
-> > [!question] yey
-> > woo
+##### Download: [File](https://github.com/jakobringler/blog/tree/hugo/content/notes/sharedfiles/filename.hip)
 ```
 
-> [!warning] And Nest them:
-> > [!question] yey
-> > woo
+##### Download: [File](https://github.com/jakobringler/blog/tree/hugo/content/notes/sharedfiles/filename.hip)
 ## Page End
 
 every page ends with this line `---` and the sources block
@@ -93,5 +98,5 @@ every page ends with this line `---` and the sources block
 ---
 
 sources / further reading:
-- links and shit
+- links and shit (format: `[linkname](link)`)
 
