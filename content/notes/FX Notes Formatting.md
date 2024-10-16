@@ -19,9 +19,10 @@ All image files have to live in `../content/notes/images`
 
 You can scale Images by adding max pixel width value to the end of the path:
 
-`![[notes/images/imagetensor.png|150]]`
+`![[notes/images/imagetensor.png|400]]`
 
-![[notes/images/imagetensor.png|150]]
+![[notes/images/imagetensor.png|400]]
+
 ## Code Blocks
 
 use C style colors for vex
