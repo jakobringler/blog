@@ -1,7 +1,7 @@
 ---
-title: "About"
+title: About
+enableToc: false
 ---
-
 Hi there!
 
 Im currently working as an FX TD and created this page to document and share workflows, ideas and notes about Houdini and various other vfx topics as well as my recent machine learning adventures. 

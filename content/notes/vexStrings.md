@@ -4,6 +4,7 @@ draft: false
 tags:
   - houdini
   - vex
+enableToc: false
 ---
 This list was created and kindly shared by Mattias Malmer on a discord I'm on. Thanks for letting me host it here:
 
