@@ -11,7 +11,7 @@ Like the legendary [Joy of Vex](https://www.tokeru.com/cgwiki/JoyOfVex.html), bu
 
 However, the addition of Copernicus to Houdini makes OpenCL useful beyond pure optimization problems.  
 
-> [!warning] 
+> [!warning] Warning!
 >
 > This is an ongoing project! It's still very barebones. Continue at your own risk!
 
