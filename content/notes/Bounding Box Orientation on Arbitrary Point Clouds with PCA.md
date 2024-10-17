@@ -4,6 +4,7 @@ draft: false
 tags:
   - houdini
   - math
+enableToc: false
 ---
 The most straight forward utility tool you can build using [[notes/Principal Component Analysis|PCA]] is an automatic bbox generator. Even though the bound SOP can do the exact same thing, it's still a nice exercise that helps you wrap your head around what principal components are and how you can use them.
 

@@ -5,6 +5,7 @@ tags:
   - machinelearning
   - math
   - houdini
+enableToc: false
 ---
 Root Mean Squared Error (RMSE) is a widely used metric in statistics and machine learning to evaluate the accuracy of a model's predictions. It measures the average magnitude of the errors between predicted values and actual values, giving more weight to larger errors due to the squaring of differences.
 

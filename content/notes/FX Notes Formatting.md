@@ -4,12 +4,11 @@ draft: false
 tags:
   - obsidian
 ---
-
 ## Contributing
 
 ### GitHub Pull Requests
 
-If you just want to fix already existing notes you can open a pull request on github in your browser by clicking the `edit source` button on every page.
+If you just want to fix already existing notes you can open a pull request on GitHub in your browser by clicking the `Edit Source` button on every page.
 
 For more involved contributions and completely new pages you need to fork the repository and add your new files there before opening a pull request.
 

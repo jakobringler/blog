@@ -5,6 +5,7 @@ tags:
   - machinelearning
   - math
   - houdini
+enableToc: false
 ---
 “Principal component analysis is a versatile statistical method for reducing a cases-by-variables data table to its essential features, called principal components. Principal components are a few linear combinations of the original variables that maximally explain the variance of all the variables.”
 
@@ -72,9 +73,11 @@ So:
 ## How is this useful for CG?
 
 ### General CG
+
 - [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA|Bounding Box Orientation on Arbitrary Point Clouds with PCA]]
 - [[notes/PCA Dejitter|PCA Geometry Dejitter]]
 ### ML in Houdini
+
 - [[notes/ML Groom Deformer|ML Groom Deformer]]
 - [[notes/ML Sketching|ML Sketching]]
 

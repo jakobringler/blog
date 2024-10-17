@@ -4,6 +4,7 @@ draft: true
 tags:
   - houdini
   - machinelearning
+enableToc: true
 ---
 This is one of the projects I presented at the Houdini HIVE Horizon event hosted by SideFX in Toronto. You can watch the full presentation [here](https://www.youtube.com/watch?v=oDTResIxPeQ). I'll go into more specific setup details in this text summary. You can find an almost identical version of the text (better formatting) on the SideFX tutorial page and download the project files from the content library.
 
@@ -11,6 +12,7 @@ This is one of the projects I presented at the Houdini HIVE Horizon event hosted
 
 The project builds on top of the [[notes/Tower Sketcher|Tower Sketcher]] demo I created in 2022 for my [[notes/ML Castles|ML Castles]] bachelor's project by adding [[notes/Principal Component Analysis|PCA]] into the mix. Also it is now running end to end inside of Houdini without having to write any code yourself, which makes it much more approachable!
 ## General Idea
+
 The high level goal is pretty clear: control geometry generation using a canvas style drawing UI as user input. The main problem here is that it is super hard (to impossible) to predict proper topology or even meshes at all. Neural networks like grid-like data topology as inputs/outputs.
 
 Shapes like arrays, images or voxel volumes work well. Any one of these with a fixed size can be used as input or output for training relatively easily. Houdini's procedural workflows come in very handy here: We can create an HDA or other type of generator setup that builds our desired object. What we then want the ML model to learn is to map from a silhouette drawing to the parameters that drive the generator to produce the correct object procedurally.
@@ -23,6 +25,7 @@ Doing so, we avoid all sorts of pitfalls and pain trying to predict geometry. Th
 - no matter what input is given the generator will always generate a somewhat sensible result 
 - the generator can generate model details, that don't need to be reflected in the input drawing
 ## Generator
+
 in this case compiled block for convenience and reusability reasons
 
 could be hda or anything
@@ -126,6 +129,7 @@ We store those on disk as a `data_set.raw` file using the `ML Examples Output SO
 
 ![[notes/images/mlsketch_mlexample_dataset_slide.png]]
 ## Training
+
 Once the data set is prepared and stored on disk as `.raw` file the rest is pretty straight forward. 
 
 ![[notes/images/mlregressiontrain_parms_slide.png]]
@@ -142,8 +146,10 @@ The most important ones are:
 
 To start training something we only need to make sure to specify the correct directory and name of our dataset on the files tab. By default this should be correct though. Be careful: Only specify the filename without the extension. It won't run if we add the `.raw`. (last tested in H20.5.370)
 ### Hyperparameter Tuning with Wedges
+
 Having all those parameters available on the node in TOPs opens the door to do some wedging! This is common practice and is usually called hyperparameter tuning. You could run multiple experiments to find the right combination of parameters that give you the best performing model. The parameters I mentioned above are a good place to start wedging. For the groom deformation example here I only wedged the amount of layers and the size of each layer.
 ## Inference
+
 As usual we need to perform all the steps of our data generation to get the input to the right shape. So we mirror the image to make sure it's symmetrical and avoid introducing error on the user side. We then convert it to an SDF using the new `mono_to_sdf COP` node. We let PCA project those weights into our subspace and calculate the weights of the input.
 
 ![[notes/images/inputpcaproject_slide.png]]
@@ -166,6 +172,7 @@ setdetailattrib(0, "parms", newparms, "append");
 
 ![[notes/images/mlsketch_parmsthroughgenerator_slide.png]]
 ### Performance
+
 The whole inference step is pretty fast and runs in realtime. The bottle neck here is the geometry generation step. When you hook the system up to a very involved HDA that e.g. builds ships instead of simple bottles you will run into performance problems. Might be worth having 2 different HDAs in that case:
 1. to generate the silhouette and quickly iterate on broad shapes
 2. to add detail and refine the shape in procedural ways that aren't captured in the low res drawing canvas anyways
@@ -178,6 +185,7 @@ Combine that with some procedural COPs texture setup and we get something that l
 ![[notes/images/ml-bottles-cops.gif]]
 Source: Texture Setup was done by [Dixi Wen](https://linkedin.com/in/vincent-wen-a64886123)
 ### Constraints
+
 After showing this to my colleagues, they pretty much instantly started drawing random shit, which the generator can't create, due to architectural constraints.
 
 ![[notes/images/mlsketch_colleagueinput_slide.png]]
@@ -186,6 +194,7 @@ This can be a downside or a benefit. We will always receive a somewhat sensible 
 
 ![[notes/images/mlsketch_drawanything_slide.png]]
 ## What if? Predicting Full SDFs
+
 Remember how SDFs compress really well with PCA? What if instead of learning to predict the parameters we try to predict a full 3d SDF? 
 
 ![[notes/images/mlsketch_predictingsdf_slide.png]]
@@ -202,12 +211,14 @@ After converting it and cleaning it up a bit using vdb meshing techniques and th
 
 ![[notes/images/mlsketch_sdfresult_slide.png]]
 ### Having 2 Generators
+
 The main downside of this approach is that we need 2 generators. One to generate our training data and one that turns SDFs into usable geometry with good topology and uvs. That is also the most constraining part. Not every object can be converted so easily to good topology and a bottle is one of the easiest shapes.
 
 ![[notes/images/mlsketch_doublegenerator_slide.png]]
 
 The left is the original generator, which is used to create the training data. Instead of storing the parameter values as targets it stores the fog SDF that is derived from the bottle geometry.
 ## Inference
+
 For the inputs we do the same (mirror, to SDF, PCA projection) thing we did before. We then run the outputs through PCA to reconstruct the 3D SDF based on the predicted weights. 
 
 ![[notes/images/mlsketch_sdfinference_slide.png]]
