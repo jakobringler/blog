@@ -4,6 +4,25 @@ draft: false
 tags:
   - obsidian
 ---
+
+## Contributing
+
+### GitHub Pull Requests
+
+If you just want to fix already existing notes you can open a pull request on github in your browser by clicking the `edit source` button on every page.
+
+For more involved contributions and completely new pages you need to fork the repository and add your new files there before opening a pull request.
+
+To edit the notes in obsidian follow the instructions in the next chapter.
+
+### Obsidian Setup
+
+You have to open the `contents` folder in obsidian. not the root directory of the repo.
+
+#### Templates
+
+there is a barebones template for new notes. After creating a new note you should be able to press `Ctrl+T` to fill in the template and start from there.
+
 ## Headline
 
 text should start here
@@ -25,7 +44,9 @@ You can scale Images by adding max pixel width value to the end of the path:
 
 ## Code Blocks
 
-use C style colors for vex
+use triple backticks to start a multiline code block and single backticks for inline code.
+
+use C style colors for VEX by specifying the language after the opening backticks (C, Python etc.)
 
 specify what type of wrangle this goes in and the name it has (e.g. in the screenshot above)
 
@@ -36,6 +57,7 @@ vex
 ```
 
 Python for Python and so on
+
 ```Python
 print("Hello Houdini")
 ```
