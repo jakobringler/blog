@@ -60,7 +60,7 @@ you can have fancy callout boxes using this format:
 
 ![[notes/images/md_formatting_callout.png]]
 
-I had to take a screenshot because the website doesn't render the tag at all. just insert it down here instead of TAG: `[!tip]`
+I had to take a screenshot because the website doesn't render anything in square brackets at all. just insert it down here instead of TAG:
 
 ```
 > TAG **Tips**
