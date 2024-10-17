@@ -68,6 +68,7 @@ tags:
 - [[notes/Op Operators |Op Operators]]
 - [[notes/Hscript |Hscript]]
 - [[notes/OpenCL in Houdini |OpenCL]]
+- [[notes/The Misery Of OpenCL|The Misery Of OpenCL]]
 - [[notes/64-bit|Working with 64bit Data]]
 - [[notes/Alembic |Alembic]]
 ### Issues & Fixes
