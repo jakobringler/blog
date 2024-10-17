@@ -50,7 +50,7 @@ Compared to the [[notes/ML Groom Deformer|ML Groom Deformer]] demo, where the da
 
 Generate a bunch of examples in one workitem, but have multiple instances run at same time
 
-Because the generator is just the compiled block we need to randomize the input dictionary. This is a super simple detail expression that randomizes each value based on the current iteration. Make sure to give a different offset/seed to each otherwise you get the same value in each parameter.
+Because the generator is just the compiled block we need to randomize the input dictionary. This is a super simple detail expression that randomizes each value based on the current iteration. Make sure to give a different offset/seed to each otherwise we get the same value in each parameter.
 
 The `invoke compiled block SOP` then runs the generator and spits out our merged geometries, which we can access using the `unpack folder SOP` as mentioned above. The rest is just some data wrangling and rasterizing the outline on the image plane before storing it together with the parameter value list as a ml example.
 
@@ -74,9 +74,9 @@ When reconstructing (yellow node) the input image above we get something like th
 
 ![[notes/images/bottle_pcareconst_slide.png]]
 
-Which is kind of meh. You can make out the bottle shape but you get all of that unwanted wavy, noise like ghosting around it. Increasing the components surprisingly doesn't help too much to improve the reconstruction.
+Which is kind of meh. We can make out the bottle shape but we get all of that unwanted wavy, noise like ghosting around it. Increasing the components surprisingly doesn't help too much to improve the reconstruction.
 
-What helps a lot is converting the black and white mask into an SDF using the new COPs SDF tools. That way you don't have to deal with only 0 or 1 values and have a smooth gradual falloff around the bottle outline.
+What helps a lot is converting the black and white mask into an SDF using the new COPs SDF tools. That way we don't have to deal with only 0 or 1 values and have a smooth gradual falloff around the bottle outline.
 
 ![[notes/images/bottle_tosdf_slide.png]]
 
@@ -86,7 +86,7 @@ When reconstructing the SDF from a few components we get a near perfect result.
 
 In that case 64 components were enough, because there was a lot of overlap in the input data. Even 32 looked fine, when testing, which is a crazy compression compared to the 10k input images.
 
-A really cool side effect of PCAing your images is that you can really visualize what each component looks like:
+A really cool side effect of PCAing our images is that we can really visualize what each component looks like:
 
 ![[notes/images/pca_components.jpg]]
 
@@ -139,7 +139,7 @@ The following paragraphs are copied 1:1 from the [[notes/ML Groom Deformer|ML Gr
 We can also control all the parameters of the network (called hyperparameters for some obscure ml reason).
 
 The most important ones are:
-- Uniform Hidden Layers (how big is your network in width)
+- Uniform Hidden Layers (how big is our network in width)
 - Uniform Hidden Width (how many "neurons" each layer has)
 - Batch Size (how many examples to look at before adjusting the weights > average)
 - Learning Rate (how big the steps are the model takes towards the goal / think jumping down mountain or walking carefully)
@@ -147,7 +147,7 @@ The most important ones are:
 To start training something we only need to make sure to specify the correct directory and name of our dataset on the files tab. By default this should be correct though. Be careful: Only specify the filename without the extension. It won't run if we add the `.raw`. (last tested in H20.5.370)
 ### Hyperparameter Tuning with Wedges
 
-Having all those parameters available on the node in TOPs opens the door to do some wedging! This is common practice and is usually called hyperparameter tuning. You could run multiple experiments to find the right combination of parameters that give you the best performing model. The parameters I mentioned above are a good place to start wedging. For the groom deformation example here I only wedged the amount of layers and the size of each layer.
+Having all those parameters available on the node in TOPs opens the door to do some wedging! This is common practice and is usually called hyperparameter tuning. We could run multiple experiments to find the right combination of parameters that give we the best performing model. The parameters I mentioned above are a good place to start wedging. For the groom deformation example here I only wedged the amount of layers and the size of each layer.
 ## Inference
 
 As usual we need to perform all the steps of our data generation to get the input to the right shape. So we mirror the image to make sure it's symmetrical and avoid introducing error on the user side. We then convert it to an SDF using the new `mono_to_sdf COP` node. We let PCA project those weights into our subspace and calculate the weights of the input.
@@ -173,7 +173,7 @@ setdetailattrib(0, "parms", newparms, "append");
 ![[notes/images/mlsketch_parmsthroughgenerator_slide.png]]
 ### Performance
 
-The whole inference step is pretty fast and runs in realtime. The bottle neck here is the geometry generation step. When you hook the system up to a very involved HDA that e.g. builds ships instead of simple bottles you will run into performance problems. Might be worth having 2 different HDAs in that case:
+The whole inference step is pretty fast and runs in realtime. The bottle neck here is the geometry generation step. When we hook the system up to a very involved HDA that e.g. builds ships instead of simple bottles we will run into performance problems. Might be worth having 2 different HDAs in that case:
 1. to generate the silhouette and quickly iterate on broad shapes
 2. to add detail and refine the shape in procedural ways that aren't captured in the low res drawing canvas anyways
 
@@ -232,7 +232,7 @@ Accuracy and flexibility are much better, however speed suffers.
 
 ![[notes/images/mlsketch_sdfmosaic_slide.gif]]
 
-Because the second generator is the bottle neck the speed is much slower compared to the earlier version. However it's outputs are much more flexible and you can draw "in between" shapes that didn't even exist in the training data. There are still problems with sharp turns and overhangs that could be improved upon with other techniques or better training data.
+Because the second generator is the bottle neck the speed is much slower compared to the earlier version. However it's outputs are much more flexible and we can draw "in between" shapes that didn't even exist in the training data. There are still problems with sharp turns and overhangs that could be improved upon with other techniques or better training data.
 ## Conclusion
 
 The project builds on top of techniques learned, while building the [[notes/ML Groom Deformer|ML Groom Deformer]] and extends concepts used for the [[notes/Tower Sketcher|Tower Sketcher]] project, which was part of my bachelor's thesis.

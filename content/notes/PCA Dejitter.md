@@ -8,22 +8,22 @@ enableToc: true
 ---
 This is one of the projects I presented at the Houdini HIVE Horizon event hosted by SideFX in Toronto. You can watch the full presentation [here](https://www.youtube.com/watch?v=oDTResIxPeQ). I'll go into more specific setup details in this text summary. You can find an almost identical version of the text (better formatting) on the SideFX tutorial page and download the project files from the content library.
 
-If you haven't heard of [[notes/Principal Component Analysis|PCA]] yet, I recommend taking a look at the article on [[notes/Principal Component Analysis|article on it]] and the [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA|Bounding Box Orientation]] example first.
+If we haven't heard of [[notes/Principal Component Analysis|PCA]] yet, I recommend taking a look at the article on [[notes/Principal Component Analysis|article on it]] and the [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA|Bounding Box Orientation]] example first.
 ## The Problem
 
-Sometimes you get jittery geometry from faulty simulations or external capture processes and don't have time or the option to resim/recapture/do it the right way. We can then use [[notes/Principal Component Analysis|Principal Component Analysis]] to de-jitter geometry. 
+Sometimes we get jittery geometry from faulty simulations or external capture processes and don't have time or the option to resim/recapture/do it the right way. We can then use [[notes/Principal Component Analysis|Principal Component Analysis]] to de-jitter geometry. 
 
 ![[notes/images/pca_cloth_dejitter_rendered_guideresult_v01.gif|500]]
 
 Here we can see the jittery input on the left and the result of PCA filtering on the right.
 ## The Solution
 
-The content library file looks pretty involved, but the actual important part is in the 3 network boxes in the middle (purple, green, other purple?). Those are also exactly the same setup. The only thing that changes is what you feed into it. More on that later!
+The content library file looks pretty involved, but the actual important part is in the 3 network boxes in the middle (purple, green, other purple?). Those are also exactly the same setup. The only thing that changes is what we feed into it. More on that later!
 
 ![[notes/images/pca_dejitter_wholenetwork.png]]
 ### PCA Setup
 
-The core of this setup consists of just a few nodes and the PCA node is used 3 times for different steps. De-jittering and filtering usually works by comparing past and future frames and finding which part of your data is the signal you want to keep and which part is the noise you want to remove.
+The core of this setup consists of just a few nodes and the PCA node is used 3 times for different steps. De-jittering and filtering usually works by comparing past and future frames and finding which part of our data is the signal we want to keep and which part is the noise we want to remove.
 
 ![[notes/images/pca_setup_clean.png|500]]
 #### Merging Frames
@@ -51,10 +51,10 @@ Because the geometries we feed into PCA don't have id or piece attributes or any
 npoints(0)/ch("../foreach_end5/iterations")
 ```
 
- PCA then "invents" one or more components that can be thought of as blendshapes. Creating one component creates one blendshape that best fits all of the input samples. Creating more gives you multiple blendshapes that you can later mix and match to rebuild a specific pose.
+ PCA then "invents" one or more components that can be thought of as blendshapes. Creating one component creates one blendshape that best fits all of the input samples. Creating more gives we multiple blendshapes that we can later mix and match to rebuild a specific pose.
 #### Projecting and Reconstructing
 
-Now that we have our components we can compute a weight for each by projecting our original pose onto the new subspace. Sounds complicated, but all you need to do is pipe your geometry to the first input and the components to the second one. Set the node to `project` and set the `points per sample` to the geometry point count (`npoints(0)`). Make sure to disable `include mean weight`, which is the 0th component (an average of all other ones). 
+Now that we have our components we can compute a weight for each by projecting our original pose onto the new subspace. Sounds complicated, but all we need to do is pipe our geometry to the first input and the components to the second one. Set the node to `project` and set the `points per sample` to the geometry point count (`npoints(0)`). Make sure to disable `include mean weight`, which is the 0th component (an average of all other ones). 
 
 We now have a list of weights that correspond to the components. This can be thought of as blendshape weights in this case. Applying those and adding the components together should return an almost identical result to the input.
 
@@ -88,11 +88,11 @@ The approach works because the components PCA generates are ordered by importanc
 Reconstructing the geometry without those removes the fine grained movements, noise and jitter.
 ## The Result
 
-As you can see below, we got rid of most of the jitter. Depending on how aggressive we dial the settings in, we can remove even more movement.
+As we can see below, we got rid of most of the jitter. Depending on how aggressive we dial the settings in, we can remove even more movement.
 
 ![[notes/images/pca_cloth_dejitter_rendered_naive_v01.gif|500]]
 
-There is one issue though. By removing all the small movements and quick direction changes we also de-jitter the animation itself, which you can especially tell when the model claps and the hands seemingly get stuck in the air. 
+There is one issue though. By removing all the small movements and quick direction changes we also de-jitter the animation itself, which we can especially tell when the model claps and the hands seemingly get stuck in the air. 
 ## Improvements
 
 There are some workarounds that we can do to counteract that problem, but we would need a full rig to do so. This is external data and I only have alembic cashes of the character and the cloths. That is enough however to save us. 
@@ -139,7 +139,7 @@ vector local_delta = global_delta * local_from_global;
 v@P = local_delta;
 ```
 
-We can then apply this displacement to the rest geometry. The resulting geometry has all the deformation data on it without the input animation. You can easily filter or process this now and use the default `bonedeform` to move it back to the correct pose after.
+We can then apply this displacement to the rest geometry. The resulting geometry has all the deformation data on it without the input animation. We can easily filter or process this now and use the default `bonedeform` to move it back to the correct pose after.
 
 // point wrangle "apply_disp"
 
