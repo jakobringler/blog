@@ -94,7 +94,7 @@ Because the components are ordered based on importance we can really see how muc
 
 Almost!
 
-The kind of resemble [[notes/Chladni Patterns|Chladni Patterns]]. And that somewhat make sense. While Chladni Patterns are linear combinations of periodic functions our PCA components are linear combinations of all the bottle outline SDFs we provided PCA to analyze. This isn't useful but I thought a pretty cool analogy and cross reference.
+They kind of resemble [[notes/Chladni Patterns|Chladni Patterns]]. And that somewhat make sense. While Chladni Patterns are linear combinations of periodic functions our PCA components are linear combinations of all the bottle outline SDFs we provided PCA to analyze. This isn't useful but I thought a pretty cool analogy and cross reference.
 
 ![[notes/images/chladni_patterns_sand.png]]
 
@@ -118,8 +118,6 @@ To recap: this working well with so few weights allows us to map from 64 input v
 This is all the data we have now:
 
 ![[notes/images/ml_sketch_dataset.gif]]
-
-Left to Right: Outline (Mono), Outline (SDF), SDF reconstructed from PCA, Parameter values, Geometry
 
 Our training examples are just two value lists:
 - `input`: weights that describe the bottle outline image
@@ -183,7 +181,7 @@ The whole inference step is pretty fast and runs in realtime. The bottle neck he
 Combine that with some procedural COPs texture setup and we get something that looks much more involved than actually is!
 
 ![[notes/images/ml-bottles-cops.gif]]
-Source: Texture Setup was done by [Dixi Wen](https://linkedin.com/in/vincent-wen-a64886123)
+Source: Texture Setup was created by [Dixi Wen](https://linkedin.com/in/vincent-wen-a64886123)
 ### Constraints
 
 After showing this to my colleagues, they pretty much instantly started drawing random shit, which the generator can't create, due to architectural constraints.

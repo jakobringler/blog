@@ -39,7 +39,7 @@ $F-(detail("../foreach_count5", "numiterations", 0)/2)+detail("../foreach_count5
 ```
 #### Computing Components
 
-Next we let PCA compute the components. In the [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA|Bounding Box Orientation]] Example each sample was a single point in 3D space. Now one sample is the entire geometry of a single frame (top row). So in this case we have 7 samples (7 frames). We give PCA a giant list of all the point position vectors (bottom row) and let it figure out what is the most important bit of information across all the samples given. 
+Next we let PCA compute the components. In the [[notes/Bounding Box Orientation on Arbitrary Point Clouds with PCA|Bounding Box Orientation]] example each sample was a single point in 3D space. Now one sample is the entire geometry of a single frame (top row). So in this case we have 7 samples (7 frames). We give PCA a giant list of all the point position vectors (bottom row) and let it figure out what is the most important bit of information across all the samples given. 
 
 ![[notes/images/pca_blendshapesamples.png]]
 
@@ -60,7 +60,7 @@ We now have a list of weights that correspond to the components. This can be tho
 
 ![[notes/images/pca_dejitter_weights.png]]
 
-We now multiply those weights with a number, so that the higher order components get less or no influence.
+We now multiply those weights with a number, so that the higher order components have less or no influence.
 
 // point wrangle "weightdecay"
 
@@ -84,8 +84,7 @@ v@P = point(1, "P", @ptnum);
 
 ### Why does this work
 
-The approach works because the components PCA generates are ordered by importance. Or in other words by the influence they have on the end result. We can abuse this to filter out less important information, by discarding higher order components. The noise/jitter that is present in the input data changes a lot frame by frame and isn't really important for the general shape. The assumption is that this less important information will be stored in higher order components.
-Reconstructing the geometry without those removes the fine grained movements, noise and jitter.
+The approach works because the components PCA generates are ordered by importance. Or in other words by the influence they have on the end result. We can abuse this to filter out less important information, by discarding higher order components. The noise/jitter that is present in the input data changes a lot frame by frame and isn't really important for the general shape. The assumption is that this less important information will be stored in higher order components. Reconstructing the geometry without those removes the fine grained movements, noise and jitter.
 ## The Result
 
 As we can see below, we got rid of most of the jitter. Depending on how aggressive we dial the settings in, we can remove even more movement.
