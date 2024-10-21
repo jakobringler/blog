@@ -43,7 +43,7 @@ Next we let PCA compute the components. In the [[notes/Bounding Box Orientation 
 
 ![[notes/images/pca_blendshapesamples.png]]
 
-Because the geometries we feed into PCA don't have id or piece attributes or any other information on which point belongs to which "pose"/frame, we need to tell the PCA node how big each sample is:
+Because the PCA node only reads attribute data in series and doesn't have any option to deal with id or piece attributes, we need to tell the PCA node how big each sample is:
 
 // Expression on "Points per Sample" Parameter
 
@@ -94,7 +94,7 @@ As we can see below, we got rid of most of the jitter. Depending on how aggressi
 There is one issue though. By removing all the small movements and quick direction changes we also de-jitter the animation itself, which we can especially tell when the model claps and the hands seemingly get stuck in the air. 
 ## Improvements
 
-There are some workarounds that we can do to counteract that problem, but we would need a full rig to do so. This is external data and I only have alembic cashes of the character and the cloths. That is enough however to save us. 
+There are some workarounds that we can implement to counter that problem, but we would need a full rig to do so. This is external data and we only have alembic cashes of the character and the cloths. That is enough however to save us. 
 ### De-Jittering with a Guide
 
 The simple approach is to add a guide mesh to the geometry that doesn't have any jitter on it, but also follows the animation. So we just add our character mesh that drove the simulation in the first place. We then de-jitter both meshes at the same time. Afterwards we can point deform the cloth by the difference of the original character mesh and the de-jittered one.
