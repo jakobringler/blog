@@ -40,6 +40,9 @@ tags:
 ### Rendering
 - [[notes/Redshift#Redshift in Houdini |Redshift in Houdini]]
 - [[notes/Karma |Karma]]
+
+### COPs
+- [[notes/Slit Scanning|Slit Scanning]]
 ### HDAs
 - [[notes/HDA Parameters |Parameters]]
 ### USD / Solaris

@@ -11,7 +11,7 @@ This is one of the projects I presented at the Houdini HIVE Horizon event hosted
 ![[notes/images/previewimage.jpg]]
 ## General Idea
 
-In essence, the goal is to predict how fur deforms on a character or creature using an almost real-time machine learning model, instead of relying on expensive simulations or procedural setups.
+In essence, the goal is to predict how fur deforms on a character or creature using a machine learning model, instead of relying on expensive simulations and procedural setups.
 
 The setup is based on the[ ML Deformer example](https://www.sidefx.com/contentlibrary/ml-deformer-h205/) that was included in the content library with the release of Houdini 20.5.
 ### The Problem
@@ -100,9 +100,9 @@ We need to then move each of these poses back into rest space using the classica
 ![[notes/images/rest_space_disp_extraction.gif]]
 ### Storing the Examples
 
-Once all of the poses are simulated and the displacement is generated we can start assembling what is called an `ML Example` in Houdini. Usually this is called a data sample. It consists of and input and a target and is one many of the examples we show the network during training to make it (hopefully) learn the task at hand.
+Once all of the poses are simulated and the displacement is generated we can start assembling what is called an `ML Example` in Houdini. Usually this is called a data sample. It consists of an input and a target and is one of the many examples we show the network during training to make it (hopefully) learn the task at hand.
 
-To do this we can use the `ml example SOP` which packs each of the inputs before packing the merged pairs again. This ensures data stays together and doesn't get out of sync somehow downstream.
+To do this we can use the `ml example SOP`, which packs each of the inputs before packing the merged pairs again. This ensures data pairs stay together and don't get out of sync somehow downstream.
 
 ![[notes/images/ml_example_slide.png]]
 ## PCA Subspace Compression and Serialization
@@ -116,12 +116,14 @@ We let PCA do the math magic and compress our 4000 examples down to fewer compon
 
 ![[notes/images/pca_subspace_disp_slide.png]]
 
-This PCA-generated point cloud is all of the new components (invented blend shapes) stacked on top of each other. They aren't separated in any way in Houdini (not packed, no ids or anything). The way we know what point belongs to which component is by knowing how big a sample is. Say our guides have 100k points. Then we can go through the list of points until we reach ptnum 100k-1. That's one component and the next starts on 100k - 200k-1 and so on.
+This PCA-generated point cloud is all of the new components (invented blend shapes) stacked on top of each other. They aren't separated in any way in Houdini (not packed, no ids or anything). We determine which points belong to each component by understanding the size of the sample. For example, if our dataset contains 100,000 points, we can identify the components by examining the list of points. The first component consists of points from 0 to 99,999 (ptnum 100k-1), while the second component includes points from 100,000 to 199,999 (ptnum 200k-1), and so forth.
 ### Calculating the Weights per Example
 
 In the next step we will calculate how much of each component (blend shape) we need to combine to reconstruct each original displacement.
 
-We loop over each example and let PCA "project" (PCA math term for calculating the weights) our displacement points onto the subspace. Those weights can then later be applied to the subspace point cloud to return to the original displacement point cloud (close enough at least).
+We loop over each example and let PCA "project" (PCA math term for calculating the weights) our displacement points onto the subspace. This returns a list of weights that correspond to the amount of components in the subspace.
+
+Those weights can later be applied to the subspace point cloud to reconstruct the original displacement point cloud (close enough at least).
 
 ![[notes/images/pca_project_slide.png]]
 

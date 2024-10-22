@@ -28,7 +28,7 @@ The core of this setup consists of just a few nodes and the PCA node is used 3 t
 ![[notes/images/pca_setup_clean.png|500]]
 #### Merging Frames
 
-First we need to merge all the frames we want to look at. Ideally the number of frames should be uneven (say 7 -> 3 past frame, the current one and 3 future frames). That we get an equal amount of past and future frames. The output of the for loop is the different geometries stacked on top of each other.
+First we need to merge all the frames we want to look at. Ideally the number of frames should be uneven (say 7 -> 3 past frame, the current one and 3 future frames). That way we get an equal amount of past and future frames. The output of the for loop is the different geometries stacked on top of each other.
 
 ![[notes/images/pca_stackedview_slide.jpg]]
 
@@ -91,7 +91,7 @@ As we can see below, we got rid of most of the jitter. Depending on how aggressi
 
 ![[notes/images/pca_cloth_dejitter_rendered_naive_v01.gif|500]]
 
-There is one issue though. By removing all the small movements and quick direction changes we also de-jitter the animation itself, which we can especially tell when the model claps and the hands seemingly get stuck in the air. 
+There is one issue though. By removing all the small movements and quick direction changes we also de-jitter the animation itself, which we can especially tell when the character claps and the hands seemingly get stuck in the air. 
 ## Improvements
 
 There are some workarounds that we can implement to counter that problem, but we would need a full rig to do so. This is external data and we only have alembic cashes of the character and the cloths. That is enough however to save us. 
@@ -108,7 +108,7 @@ For the cloth simulation the result looks like this:
 The same amount of jitter is removed, while the animation is maintained.
 ### De-Jittering in Rest Space
 
-The ideal way to deal with that problem is to de-jitter in the correct rest space. To do this we need to create a local coordinate system for every point and then deform those too(`bonedeform` does that by default when the `attribute` parameter is set to `*`. 
+The ideal way to deal with that problem is to de-jitter in rest space. To do this we need to create a local coordinate system for every point and then deform those too (`bonedeform` does that by default when the `attribute` parameter is set to `*`). 
 
 // point wrangle "apply_local_coords"
 
