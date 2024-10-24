@@ -10,7 +10,6 @@ tags:
 - [[notes/WaveExpressions |Wave  Expressions]]
 
 ---
-
 ### Golden Ratio
 
 Ratio between two numbers that equals approximately: 1.618
@@ -28,6 +27,14 @@ $\frac{360\degree -137,5\degree}{137,5\degree}\approx 1.618$
 $F_1=F_2=1$       $F_n=F_{n-1} + F_{n-2}$
 
 0  1  1  2  3  5  8  13  21  34  55  89  144  233  377  610  987 ...
+
+---
+
+### Easing Functions
+
+Check out this amazing page with visualizations on all sorts of easing functions:
+
+https://easings.net/
 
 ---
 
