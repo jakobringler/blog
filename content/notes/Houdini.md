@@ -17,6 +17,7 @@ tags:
 - [[notes/Deformation Wrangle vs Attribute Wrangle |Deformation Wrangle vs Attribute Wrangle]]
 ### SOPs
 - [[notes/SOP Solver |SOP Solver]]
+- [[notes/Slit Scanning|Slit Scanning]]
 ### FX
 - [[notes/General Workflow Tips |General Workflow Tips]]
 - [[notes/Vocabulary |Vocabulary]]
@@ -40,9 +41,6 @@ tags:
 ### Rendering
 - [[notes/Redshift#Redshift in Houdini |Redshift in Houdini]]
 - [[notes/Karma |Karma]]
-
-### COPs
-- [[notes/Slit Scanning|Slit Scanning]]
 ### HDAs
 - [[notes/HDA Parameters |Parameters]]
 ### USD / Solaris
