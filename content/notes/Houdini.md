@@ -17,7 +17,6 @@ tags:
 - [[notes/Deformation Wrangle vs Attribute Wrangle |Deformation Wrangle vs Attribute Wrangle]]
 ### SOPs
 - [[notes/SOP Solver |SOP Solver]]
-- [[notes/Slit Scanning|Slit Scanning]]
 ### FX
 - [[notes/General Workflow Tips |General Workflow Tips]]
 - [[notes/Vocabulary |Vocabulary]]
@@ -29,6 +28,7 @@ tags:
 - [[notes/VELLUM |VELLUM]]
 - [[notes/PYRO |PYRO]]
 - [[notes/AXIOM |AXIOM]]
+- [[notes/Slit Scanning|Slit Scanning]]
 ### Unusual FX / Phenomena
 - [[notes/Reaction Diffusion |Reaction Diffusion]]
 - [[notes/Strange Attractors |Strange Attractors]]
