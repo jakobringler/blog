@@ -28,10 +28,10 @@ tags:
 - [[notes/VELLUM |VELLUM]]
 - [[notes/PYRO |PYRO]]
 - [[notes/AXIOM |AXIOM]]
-- [[notes/Slit Scanning|Slit Scanning]]
 ### Unusual FX / Phenomena
 - [[notes/Reaction Diffusion |Reaction Diffusion]]
 - [[notes/Strange Attractors |Strange Attractors]]
+- [[notes/Slit Scanning|Slit Scanning]]
 ### Characters, Rigs etc.
 - [[notes/KineFX |KineFX]]
 ### CFX and such
