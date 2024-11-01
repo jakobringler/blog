@@ -7,7 +7,6 @@ tags:
 - pytorch
 - project
 ---
-
 ![[notes/images/ML_Castles_Banner.png]]
 
 ## Machine Learning Supported Procedural Castles

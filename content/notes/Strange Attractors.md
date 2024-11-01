@@ -5,6 +5,7 @@ tags:
 - houdini
 - math
 ---
+Strange attractors are patterns that emerge in chaotic systems. Even though the individual movements can seem random and unpredictable, strange attractors show a kind of underlying order. They represent points in the system's phase space where trajectories tend to cluster over time, creating intricate and often beautiful shapes. 
 
 ![[notes/images/strangeattractors.png]]
 
