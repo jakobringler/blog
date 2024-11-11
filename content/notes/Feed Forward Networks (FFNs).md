@@ -22,8 +22,17 @@ So, in a nutshell, a feedforward network is all about moving data from start to 
 
 ### Architecture
 
+TODO:
+
+aso known as Multilayer perceptron
+
+
+
 Related: [[notes/Convolutional Neural Networks (CNNs) |Convolutional Neural Networks (CNNs)]], [[notes/Recurrent Neural Networks (RNNs) |Recurrent Neural Networks (RNNs)]], [[notes/Generative Adversarial Networks (GANs) |Generative Adversarial Networks (GANs)]]
 
+---
+sources / further reading:
+- 
 
 
 

@@ -69,7 +69,7 @@ In 2d this isn’t very useful and doesn’t compress anything, but in highdimen
 
 For general CG purposes it's not too important to understand the math completely, but how to use it and what its good for.
 
-So:
+So ..
 ## How is this useful for CG?
 
 ### General CG
