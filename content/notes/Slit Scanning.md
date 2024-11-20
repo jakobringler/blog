@@ -7,9 +7,9 @@ tags:
 ---
 ## History
 
-Slit scanning is a cool photographic technique that captures motion over time by using a narrow slit to take images of a scene. Instead of snapping a traditional photo, it exposes only a thin strip of the image at a time. This way, it records movement in a way that creates a unique and often surreal effect.
+Slit scanning is a cool photographic technique that captures motion over time by using a narrow slit to take images of a scene. Instead of snapping a traditional photo, it exposes only a thin strip of the image at a time. When moving that slit you expose different parts of the frame at different times. This way, it records movement in a way that creates a unique and often surreal effect.
 
-The technique has roots in early photography, but it gained a lot of attention in the 20th century, especially with artists and filmmakers who wanted to explore time and space in their work. It’s often associated with experimental films and art installations, where the visuals can twist and stretch in unexpected ways. Think of it as capturing a moment while also showing how it unfolds over time—kind of like a time-lapse but with a creative twist.
+The technique has roots in early photography, but it gained a lot of attention in the 20th century, especially with artists and filmmakers who wanted to explore time and space in their work. It’s often associated with experimental films and art installations, where the visuals can twist and stretch in unexpected ways. Think of it as capturing a moment while also showing how it unfolds over time—kind of like a time-lapse but in a single frame. 2001: A Space Odyssey is most well known to have used the effect.
 
 It’s fascinating how something so simple can produce such mind-bending results!
 
@@ -22,6 +22,10 @@ Images are cool, but videos are much cooler! Houdini being Houdini it's easy eno
 > [!quote] Source:
 > 
 > The amazing RBD sim and render is from [Gurmukh Sandhu](https://ca.linkedin.com/in/gurmukh-sandhu-972ba3257), who was so kind to let me use it for this experiment
+
+> [!idea] Inspiration:
+> 
+> Stephan Helbing presented a similar setup for XK Studio in an amazing [hive talk](https://youtu.be/DSgxi06vZI0?si=ObVzLCde-_7orQ7o&t=2807). My setup is loosely inspired by it. The main addition is the "straight to COPs" part, which makes it much faster to iterate
 
 You can see the impact and destruction in some parts of the image before the ball hit the violin. 3D video? somewhat!
 
@@ -77,4 +81,5 @@ v@C = point(1, "Cd", pt);
 
 sources / further reading:
 - [Slit-scan Photography - Wikipedia](https://en.wikipedia.org/wiki/Slit-scan_photography)
+- [XK studio: Morphing Reality | XK studio | OFFF HIVE 2024 - Stephan Helbing](https://youtu.be/DSgxi06vZI0?si=ObVzLCde-_7orQ7o&t=2807)
 
