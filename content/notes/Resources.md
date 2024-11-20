@@ -12,7 +12,6 @@ enableToc: false
 - [Pytorch Digit Recognition in Houdini](https://github.com/jakobringler/H_pytorch_digitrecognition)
 
 ---
-
 # Links
 
 ## CG & VFX
@@ -79,7 +78,6 @@ enableToc: false
 - [Book of USD - Remedy Entertainment](https://remedy-entertainment.github.io/USDBook/index.html) usd
 
 ---
-
 ## Math
 - [Blog - kynd.info](https://kyndinfo.notion.site/kyndinfo/) theory, design, simulation basics / quasi physics
 - [Essence of Linear Algebra - 3Blue1Brown](https://www.3blue1brown.com/topics/linear-algebra) theory
@@ -87,7 +85,6 @@ enableToc: false
 - [Math Primer](https://aman.ai/primers/math/) theory, overview
 
 ---
-
 ## Deep Learning
 
 ### Houdini
@@ -102,7 +99,6 @@ enableToc: false
 - [ML YouTube Courses](https://github.com/dair-ai/ML-YouTube-Courses) 
 
 ---
-
 ## Multimedia
 
 ### TouchDesigner
@@ -112,7 +108,6 @@ enableToc: false
 - [allTD](http://alltd.org/) tutorial collection (huge)
 
 ---
-
 ## Computer Science 
 
 ### Courses
@@ -123,7 +118,6 @@ enableToc: false
 - [The Computational Geometry Algorithms Library](https://www.cgal.org/index.html)
 
 ---
-
 # Tools
 
 ## Workflow
@@ -139,3 +133,7 @@ enableToc: false
 - [Pure Ref](https://www.pureref.com/) reference board
 
 ---
+# Writing
+
+### Blogs
+- [Blog Writing for Developers](https://rmoff.net/2023/07/19/blog-writing-for-developers/)

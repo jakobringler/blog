@@ -25,6 +25,7 @@ enableToc: true
 - [[notes/Activation Functions|Activation Functions]]
 - [[notes/Back Propagation |Back Propagation]]
 - [[notes/Gradient Descent |Gradient Descent]]
+- [[notes/Regularization|Regularization]]
 ##### Model Archtiectures
 - [[notes/Feed Forward Networks (FFNs) |Feed Forward Networks (FFNs)]]
 - [[notes/Convolutional Neural Networks (CNNs) |Convolutional Neural Networks (CNNs)]]

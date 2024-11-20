@@ -5,7 +5,7 @@ tags:
   - machinelearning
   - math
 ---
-There are several common ways to measure error mathematically, especially in the context of machine learning and statistics. Here are a few of the most widely used methods:
+There are several common ways to measure error mathematically, especially in the context of machine learning and statistics. A lot of these come in handy for all sorts of procedural setups that need to compare a bunch of numbers. Here are a few of the most widely used methods:
 
 1. **Mean Absolute Error (MAE)**: This measures the average absolute differences between predicted and actual values. It’s simple to understand and gives equal weight to all errors.
 
