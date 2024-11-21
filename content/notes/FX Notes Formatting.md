@@ -93,7 +93,7 @@ beside `tip` you can also put:
 - info
 - todo
 - success
-- quesiton
+- question
 - warning
 - failure
 - danger
