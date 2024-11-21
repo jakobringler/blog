@@ -16,8 +16,7 @@ Here's a good explanation diagram Paul Bourke shared on his [blog](https://paulb
 2001: A Space Odyssey has the most well known use of this effect.
 
 ![space_odyssey_slitscan_douglas_trumbull](https://flong.com/archive/storage/images/texts/slit_scan/05_douglas_trumbull_665px.jpg)
-
-Here is an amazing collection of different [slit scanning examples from the past](https://flong.com/archive/texts/lists/slit_scan/index.html)
+Here's a screengrab I found in this amazing collection of different [slit scanning examples from the past](https://flong.com/archive/texts/lists/slit_scan/index.html). The effect was done by Douglas Trumbull.
 
 The technique has roots in early photography, but it gained a lot of attention in the 20th century, especially with artists and filmmakers who wanted to explore time and space in their work. It’s often associated with experimental films and art installations, where the visuals can twist and stretch in unexpected ways. You can think of it as capturing a moment while also showing how it unfolds over time—kind of like a time-lapse but in a single frame. 
 
