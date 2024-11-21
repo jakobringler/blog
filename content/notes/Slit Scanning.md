@@ -9,7 +9,7 @@ tags:
 
 Slit scanning is a cool photographic technique that captures motion over time by using a narrow slit to take images of a scene. Instead of snapping a traditional photo, it exposes only a thin strip of the image at a time. When moving that slit you expose different parts of the frame at different times. This way, it records movement in a way that creates a unique and often surreal effect.
 
-Here's a good explanation Paul Bourke shared on his [blog](https://paulbourke.net/miscellaneous/slitscan/). (worth checking out!)
+Paul Bourke shared a great explanation on his [blog](https://paulbourke.net/miscellaneous/slitscan/). (worth checking out!)
 
 `2001: A Space Odyssey` has the most well known use of the effect. Here's a screenshot I found in Golan Levin's amazing collection of slit scan artworks. The effect was done by Douglas Trumbull.
 
