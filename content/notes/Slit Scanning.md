@@ -14,7 +14,8 @@ Here's a good explanation Paul Bourke shared on his [blog](https://paulbourke.ne
 `2001: A Space Odyssey` has the most well known use of the effect. Here's a screenshot I found in Golan Levin's amazing collection of slit scan artworks. The effect was done by Douglas Trumbull.
 
 ![space_odyssey_slitscan_douglas_trumbull](https://flong.com/archive/storage/images/texts/slit_scan/05_douglas_trumbull_665px.jpg)
-Levin, Golan. _An Informal Catalogue of Slit-Scan Video Artworks_, 2005-2015. World Wide Web: [http://www.flong.com/texts/lists/slit_scan](https://flong.com/archive/texts/lists/slit_scan/index.html)
+
+Source: Levin, Golan. _An Informal Catalogue of Slit-Scan Video Artworks_, 2005-2015. World Wide Web: [http://www.flong.com/texts/lists/slit_scan](https://flong.com/archive/texts/lists/slit_scan/index.html)
 
 The technique has roots in early photography, but it gained a lot of attention in the 20th century, especially with artists and filmmakers who wanted to explore time and space in their work. It’s often associated with experimental films and art installations, where the visuals can twist and stretch in unexpected ways. You can think of it as capturing a moment while also showing how it unfolds over time—kind of like a time-lapse but in a single frame. 
 
