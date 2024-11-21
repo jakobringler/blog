@@ -9,14 +9,12 @@ tags:
 
 Slit scanning is a cool photographic technique that captures motion over time by using a narrow slit to take images of a scene. Instead of snapping a traditional photo, it exposes only a thin strip of the image at a time. When moving that slit you expose different parts of the frame at different times. This way, it records movement in a way that creates a unique and often surreal effect.
 
-Here's a good explanation diagram Paul Bourke shared on his [blog](https://paulbourke.net/miscellaneous/slitscan/) (worth checking out!):
+Here's a good explanation Paul Bourke shared on his [blog](https://paulbourke.net/miscellaneous/slitscan/). (worth checking out!)
 
-![diagram_paul_bourke](https://paulbourke.net/miscellaneous/slitscan/diagram1s.png)
-
-2001: A Space Odyssey has the most well known use of this effect.
+`2001: A Space Odyssey` has the most well known use of the effect. Here's a screenshot I found in Golan Levin's amazing collection of slit scan artworks. The effect was done by Douglas Trumbull.
 
 ![space_odyssey_slitscan_douglas_trumbull](https://flong.com/archive/storage/images/texts/slit_scan/05_douglas_trumbull_665px.jpg)
-Here's a screengrab I found in this amazing collection of different [slit scanning examples from the past](https://flong.com/archive/texts/lists/slit_scan/index.html). The effect was done by Douglas Trumbull.
+Levin, Golan. _An Informal Catalogue of Slit-Scan Video Artworks_, 2005-2015. World Wide Web: [http://www.flong.com/texts/lists/slit_scan](https://flong.com/archive/texts/lists/slit_scan/index.html)
 
 The technique has roots in early photography, but it gained a lot of attention in the 20th century, especially with artists and filmmakers who wanted to explore time and space in their work. It’s often associated with experimental films and art installations, where the visuals can twist and stretch in unexpected ways. You can think of it as capturing a moment while also showing how it unfolds over time—kind of like a time-lapse but in a single frame. 
 
