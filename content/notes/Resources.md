@@ -117,6 +117,9 @@ enableToc: false
 ### Libraries
 - [The Computational Geometry Algorithms Library](https://www.cgal.org/index.html)
 
+### Misc
+- [What Every Computer Scientist Should Know About Floating-Point Arithmetic](https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html)
+
 ---
 # Tools
 
